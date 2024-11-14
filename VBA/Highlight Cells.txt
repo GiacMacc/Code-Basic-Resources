@@ -1,0 +1,66 @@
+'Highlight Cells 
+Sub CellCompare()
+    Dim ws1 As Worksheet
+    Dim ws2 As Worksheet
+    Dim rng1 As Range
+    Dim rng2 As Range
+    Dim cell1 As Range
+    Dim cell2 As Range
+    Dim searchValue1 As String
+    Dim searchValue2 As String
+    Dim wb2 As Workbook
+
+    ' Set the worksheets (adjust sheet names as needed)
+    On Error Resume Next
+    Set ws1 = ThisWorkbook.Sheets("Review")
+    If ws1 Is Nothing Then
+        MsgBox "ws1 not found in the current workbook.", vbExclamation
+        Exit Sub
+    End If
+
+    On Error GoTo 0
+
+    On Error Resume Next
+    Set wb2 = Workbooks("AKM52E-AC9NCA00_B01_REACH_ROHS_PFAS_TSCA_SARTORIOUS_GM.xlsm")
+    If wb2 Is Nothing Then
+        MsgBox "Workbook 2 not found.", vbExclamation
+        Exit Sub
+    End If
+
+    On Error GoTo 0
+
+    On Error Resume Next
+    Set ws2 = wb2.Sheets("Review")
+    If ws2 Is Nothing Then
+        MsgBox "ws2 not found.", vbExclamation
+        Exit Sub
+    End If
+
+    On Error GoTo 0
+
+    ' Set the ranges to the used range in the specified columns of each worksheet, starting from the first row
+    Set rng1 = ws1.Range(ws1.Cells(2, 13), ws1.Cells(ws1.Cells(ws1.Rows.Count, 13).End(xlUp).Row, 13))
+    Set rng2 = ws2.Range(ws2.Cells(2, 13), ws2.Cells(ws2.Cells(ws2.Rows.Count, 13).End(xlUp).Row, 13))
+
+    ' Iterate through each cell in the first range
+    For Each cell1 In rng1
+        searchValue1 = cell1.Value
+        ' Iterate through each cell in the second range
+        For Each cell2 In rng2
+            searchValue2 = cell2.Value
+            ' Check if values match
+            If searchValue1 = searchValue2 Then
+                cell1.Interior.Color = RGB(255, 255, 0) ' Yellow color
+                cell2.Interior.Color = RGB(255, 255, 0) ' Yellow color
+                ' Do not exit the loop, continue to find more matches
+            End If
+        Next cell2
+    Next cell1
+
+    ' Cleanup
+    Set ws1 = Nothing
+    Set ws2 = Nothing
+    Set rng1 = Nothing
+    Set rng2 = Nothing
+End Sub
+

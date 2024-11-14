@@ -1,0 +1,50 @@
+' Counts number of times a value appears in a column and 
+' outputs the value and the number of occurrences in a user-specified target sheet
+Sub CountOccurrences()
+    Dim wsSource As Worksheet
+    Dim wsTarget As Worksheet
+    Dim rng As Range
+    Dim cell As Range
+    Dim dict As Object
+    Dim key As Variant
+    Dim targetRow As Long
+
+    ' Set the source and target worksheets
+    Set wsSource = ThisWorkbook.Sheets("R03_AKM11B") ' Change to your source sheet name
+    Set wsTarget = ThisWorkbook.Sheets("Part Occurences") ' Change to your target sheet name
+
+    ' Set the range for the column you want to analyze
+    ' Change "A" to the desired column and "1" to the start row
+    Set rng = wsSource.Range("E2:E" & wsSource.Cells(wsSource.Rows.Count, "E").End(xlUp).Row)
+
+    ' Create a dictionary to store the counts
+    Set dict = CreateObject("Scripting.Dictionary")
+
+    ' Loop through each cell in the range and count occurrences
+    For Each cell In rng
+        If Not IsEmpty(cell.Value) Then
+            If dict.exists(cell.Value) Then
+                dict(cell.Value) = dict(cell.Value) + 1
+            Else
+                dict.Add cell.Value, 1
+            End If
+        End If
+    Next cell
+
+    ' Output the results to the target sheet
+    wsTarget.Cells.Clear ' Clear the target sheet before writing results
+    targetRow = 1
+    wsTarget.Cells(targetRow, 1).Value = "Value"
+    wsTarget.Cells(targetRow, 2).Value = "Count"
+    targetRow = targetRow + 1
+
+    For Each key In dict.Keys
+        wsTarget.Cells(targetRow, 1).Value = key
+        wsTarget.Cells(targetRow, 2).Value = dict(key)
+        targetRow = targetRow + 1
+    Next key
+
+    ' Clean up
+    Set dict = Nothing
+End Sub
+

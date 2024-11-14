@@ -1,0 +1,153 @@
+Family Catalogue Review Macro
+
+Sub ManageData()
+    Dim ws As Worksheet
+    Dim reviewSheet As Worksheet
+    Dim headerNames As Variant
+    Dim lastColumn As Long
+    Dim col As Long
+    Dim i As Long
+    Dim partNumbers As Range
+    Dim cell As Range
+    Dim partCount As Object ' Dictionary to store part numbers and counts
+    Dim reviewRow As Long
+    Dim partNumber As Variant
+    Dim partStatus As String
+    Dim statusColumn As Range
+
+    ' Set the source worksheet
+    Set ws = ThisWorkbook.Sheets(2) ' Adjust the sheet name or index if necessary
+    
+    ' Add a new sheet named 'Review'
+    On Error Resume Next
+    Set reviewSheet = ThisWorkbook.Sheets("Review") ' Check if the sheet already exists
+    On Error GoTo 0
+    
+    If reviewSheet Is Nothing Then
+        ' If the sheet doesn't exist, create it
+        Set reviewSheet = ThisWorkbook.Sheets.Add(After:=ThisWorkbook.Sheets(ThisWorkbook.Sheets.Count))
+        reviewSheet.Name = "Review"
+    End If
+    
+    ' Clear any previous data in the Review sheet
+    reviewSheet.Cells.Clear
+
+    ' Set headers in the Review sheet
+    reviewSheet.Cells(1, 1).Value = "Part Number"
+    reviewSheet.Cells(1, 2).Value = "Count"
+    reviewSheet.Cells(1, 3).Value = "Status"
+    reviewSheet.Cells(1, 4).Value = "Type"
+    reviewSheet.Cells(1, 5).Value = "Description"
+    reviewSheet.Cells(1, 6).Value = "Material(s)"
+    reviewSheet.Cells(1, 7).Value = "Mat. Type"
+    reviewSheet.Cells(1, 8).Value = "Notes"
+    reviewSheet.Cells(1, 9).Value = "REACH"
+    reviewSheet.Cells(1, 10).Value = "ROHS"
+    reviewSheet.Cells(1, 11).Value = "Manufacturer"
+
+    ' Specify the header names you want to delete
+    headerNames = Array("PL", "Parent item status", "Top Level Item Type", "Assy UOM", "Item Sequence", "Comp BOM Qty", "Comp Ext Qty", "Comp UOM", "Supply Type")
+    
+    ' Turn off screen updating for faster processing
+    Application.ScreenUpdating = False
+
+    ' Find the last column with data in row 1 (assuming headers are in row 1)
+    lastColumn = ws.Cells(1, ws.Columns.Count).End(xlToLeft).Column
+
+    ' Loop through the headers in reverse order to avoid issues when deleting columns
+    For col = lastColumn To 1 Step -1
+        ' Loop through the list of header names to check for a match (case-insensitive)
+        For i = LBound(headerNames) To UBound(headerNames)
+            If StrComp(ws.Cells(1, col).Value, headerNames(i), vbTextCompare) = 0 Then
+                ws.Columns(col).Delete
+                Exit For ' Exit the inner loop after deleting the column
+            End If
+        Next i
+    Next col
+
+    ' Set the range for part numbers (assuming part numbers are in Column J of the source sheet)
+    Set partNumbers = ws.Range("E2:E" & ws.Cells(ws.Rows.Count, "E").End(xlUp).Row)
+
+    ' Initialize the dictionary to store part numbers and their counts
+    Set partCount = CreateObject("Scripting.Dictionary")
+
+    ' Loop through the part numbers and count occurrences
+    For Each cell In partNumbers
+        If Not IsEmpty(cell.Value) Then
+            If partCount.exists(cell.Value) Then
+                partCount(cell.Value) = partCount(cell.Value) + 1
+            Else
+                partCount.Add cell.Value, 1
+            End If
+        End If
+    Next cell
+
+    ' Write part numbers and their counts to the Review sheet
+    reviewRow = 2 ' Start writing from the second row
+    For Each partNumber In partCount.Keys
+        reviewSheet.Cells(reviewRow, 1).Value = partNumber
+        reviewSheet.Cells(reviewRow, 2).Value = partCount(partNumber)
+
+        ' Match the part number to its corresponding status in column H
+        Set cell = ws.Columns("E").Find(What:=partNumber, LookAt:=xlWhole)
+        If Not cell Is Nothing Then
+            partStatus = ws.Cells(cell.Row, "H").Value ' Get the status from column H
+            reviewSheet.Cells(reviewRow, 3).Value = partStatus
+        Else
+            reviewSheet.Cells(reviewRow, 3).Value = "Not Found"
+        End If
+        
+        ' Match the part number to its corresponding description in column G
+        If Not cell Is Nothing Then
+            partType = ws.Cells(cell.Row, "G").Value ' Get the type from column G
+            reviewSheet.Cells(reviewRow, 4).Value = partType
+        Else
+            reviewSheet.Cells(reviewRow, 4).Value = "Not Found"
+        End If
+    
+    ' Match the part number to its corresponding description in column F
+        If Not cell Is Nothing Then
+            partDescription = ws.Cells(cell.Row, "F").Value ' Get the status from column F
+            reviewSheet.Cells(reviewRow, 5).Value = partDescription
+        Else
+            reviewSheet.Cells(reviewRow, 5).Value = "Not Found"
+        End If
+        
+        ' Match the part number to its corresponding REACH in column I
+        If Not cell Is Nothing Then
+            partDescription = ws.Cells(cell.Row, "I").Value ' Get the status from column J
+            reviewSheet.Cells(reviewRow, 9).Value = partDescription
+        Else
+            reviewSheet.Cells(reviewRow, 9).Value = "Not Found"
+        End If
+        
+        ' Match the part number to its corresponding ROHS in column J
+        If Not cell Is Nothing Then
+            partDescription = ws.Cells(cell.Row, "J").Value ' Get the status from column J
+            reviewSheet.Cells(reviewRow, 10).Value = partDescription
+        Else
+            reviewSheet.Cells(reviewRow, 10).Value = "Not Found"
+        End If
+
+        reviewRow = reviewRow + 1
+    Next partNumber
+        
+        ' Sort the Review sheet by column B (Count) from largest to smallest
+    With reviewSheet.Sort
+        .SortFields.Clear
+        .SortFields.Add Key:=reviewSheet.Range("B2:B" & reviewRow - 1), Order:=xlDescending ' Sort column B
+        .SetRange reviewSheet.Range("A1:J" & reviewRow - 1) ' Set the range to include all the data
+        .Header = xlYes ' We have headers in the first row
+        .Apply
+    End With
+        
+    
+
+    ' Turn screen updating back on
+    Application.ScreenUpdating = True
+
+    MsgBox "Data Transfer Complete!"
+    
+End Sub
+
+

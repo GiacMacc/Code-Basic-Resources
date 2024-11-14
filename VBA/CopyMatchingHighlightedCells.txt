@@ -1,0 +1,74 @@
+'CopyMatchingHighlightedCells
+'Transfers the information/fomratting for the rows of matching highlighted cells from one book to another
+Sub CopyMatchingHighlightedCells()
+    Dim ws1 As Worksheet
+    Dim ws2 As Worksheet
+    Dim cell1 As Range
+    Dim cell2 As Range
+    Dim srcRange As Range
+    Dim destRange As Range
+    Dim wb2 As Workbook
+    Dim searchValue As Variant
+    Dim cell As Range
+    Dim skipCopy As Boolean
+
+    ' Set the source and destination worksheets
+    ' This is where the sheet of the book you are writing this macro on goes
+    Set ws1 = ThisWorkbook.Sheets("Review Cell Compare")
+    
+    On Error Resume Next
+    ' This is where the file name of the destination/target book goes
+    Set wb2 = Workbooks("AKZM2G-43_5lvl_explode.xlsm")
+    If wb2 Is Nothing Then
+        MsgBox "Workbook 2 not found.", vbExclamation
+        Exit Sub
+    End If
+    On Error GoTo 0
+    ' This is where the destination/target sheet name goes
+    Set ws2 = wb2.Sheets("Review2")
+    
+    ' Iterate through each cell in column 1 of the source worksheet (row,col)
+    ' Set for values in first column starting on second row (2,1). Do not change unless common target values between books changes
+    ' Common Target Values: Values shared across books used as anchor to transfer corresponding rows (e.g. part number)
+    For Each cell1 In ws1.Range(ws1.Cells(2, 1), ws1.Cells(ws1.Rows.Count, 1).End(xlUp))
+        searchValue = cell1.Value
+        ' Check if the cell is highlighted yellow in (2,1) AKA common target value column
+        If cell1.Interior.Color = RGB(255, 255, 0) Then
+            ' Find the corresponding cell in column 1 of the destination worksheet *assuming common target value is on the same column (2,1) in target sheet, change if not
+            ' Assumed that common cells are highlighted on both books before this macro is used
+            For Each cell2 In ws2.Range(ws2.Cells(2, 1), ws2.Cells(ws2.Rows.Count, 1).End(xlUp))
+                If cell2.Value = searchValue Then
+                    ' **Set the destination range** starting col:  |           ending col:  |   of where info from source sheet will be copied to target sheet
+                    Set destRange = ws2.Range(ws2.Cells(cell2.Row, 6), ws2.Cells(cell2.Row, 6))
+                    ' Use same number in both if all info will be transfered to one column
+                    
+                    ' Check if any cell in the destination range already has a value
+                    skipCopy = False
+                    For Each cell In destRange
+                        If cell.Value <> "" Then
+                            skipCopy = True
+                            Exit For
+                        End If
+                    Next cell
+                    
+                    ' If no cell in the destination range has a value, copy the values and format
+                    If Not skipCopy Then
+                    ' **Sets column of source sheet of information that will be copied to target sheet. If all info needed is on one column, both numbers should be equal
+                    ' Source columns to copy over,     starting col:  |           ending col:  |
+                        Set srcRange = ws1.Range(ws1.Cells(cell1.Row, 5), ws1.Cells(cell1.Row, 5))
+                        srcRange.Copy
+                        destRange.PasteSpecial Paste:=xlPasteValuesAndNumberFormats
+                        destRange.PasteSpecial Paste:=xlPasteFormats
+                    End If
+                End If
+            Next cell2
+        End If
+    Next cell1
+    
+    ' Cleanup
+    Application.CutCopyMode = False
+    Set ws1 = Nothing
+    Set ws2 = Nothing
+    Set wb2 = Nothing
+
+End Sub

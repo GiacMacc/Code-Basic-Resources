@@ -1,0 +1,47 @@
+Web Scraper
+
+import requests
+from bs4 import BeautifulSoup
+import re
+
+def find_pdf_links(url):
+    # Send a GET request to the URL
+    response = requests.get(url)
+    
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Parse the HTML content of the page
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Find all anchor tags with href attributes
+        links = soup.find_all('a', href=True)
+        
+        # Regular expression pattern to match PDF files
+        pdf_pattern = re.compile(r'\.pdf$', re.IGNORECASE)
+        
+        # List to store PDF links
+        pdf_links = []
+        
+        # Loop through all links
+        for link in links:
+            href = link.get('href')
+            if href and pdf_pattern.search(href):
+                # If the link ends with .pdf, it's a PDF link
+                # Append the absolute URL to the PDF links list
+                pdf_links.append(url + href if href.startswith('/') else href)
+        
+        return pdf_links
+    else:
+        # If the request was unsuccessful, print an error message
+        print("Failed to retrieve the page:", response.status_code)
+
+# Example usage:
+url = 'https://example.com'  # Replace with the URL of the webpage you want to scrape
+pdf_links = find_pdf_links(url)
+
+if pdf_links:
+    print("PDF links found:")
+    for link in pdf_links:
+        print(link)
+else:
+    print("No PDF links found on the page.")

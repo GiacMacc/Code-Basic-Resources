@@ -1,0 +1,2225 @@
+LEARN R(CODECADEMY)
+``````````````````````
+Module 1(Dataframes)
+
+---
+title: "1985 Cars"
+output: html-notebook
+---
+
+# Task 1
+```{r message=FALSE, warning=FALSE, error=TRUE}
+# load libraries
+library(readr)
+library(dplyr)
+
+```
+# Task 2
+```{r error=TRUE}
+# load data
+cars<- read.csv('cars85.csv')
+```
+# Task 3
+```{r error=TRUE}
+# inspect data
+head(cars)
+summary(cars)
+
+
+```
+# Task 4
+```{r error=TRUE}
+# select columns
+cars<- cars%>%
+  select(-normalized_losses)
+head(cars)
+
+
+```
+# Task 5
+```{r error=TRUE}
+# view columns
+names(cars)
+```
+# Task 6
+```{r error=TRUE}
+# rename column
+cars<- cars%>%
+  rename(risk_factor=symboling)
+names(cars)
+
+
+```
+# Task 7
+```{r error=TRUE}
+# define threshold
+mpg_threshold=30
+```
+# Task 8
+```{r error=TRUE}
+# add column
+cars<- cars %>%
+  mutate(mpg_diff_from_threshold=mpg_threshold-highway_mpg)
+
+```
+# Task 9
+```{r error=TRUE}
+# filter rows
+mpg_exceeds_threshold<- cars%>%
+  filter(mpg_diff_from_threshold>0)
+head(mpg_exceeds_threshold)
+
+```
+# Task 10
+```{r error=TRUE}
+# arrange rows
+mpg_exceeds_threshold<- mpg_exceeds_threshold%>%
+  arrange(desc(mpg_diff_from_threshold))
+head(mpg_exceeds_threshold)
+
+
+```
+# Task 11
+```{r error=TRUE}
+# order rows by engine size
+
+ordered_by_engine_size<- cars%>%
+  arrange(desc(engine_size))
+head(ordered_by_engine_size)
+
+```
+# Task 12
+```{r error=TRUE}
+# choose make
+chosen_make<- 'volvo'
+```
+# Task 13
+```{r error=TRUE}
+# filter rows by make
+chosen_make_details<- cars%>%
+  filter(make==chosen_make)
+head(chosen_make_details)
+
+
+```
+# Task 14
+```{r error=TRUE}
+# order filtered rows by engine size
+
+chosen_make_details<- chosen_make_details%>%
+  arrange(desc(engine_size))
+head(chosen_make_details)
+
+```
+
+---------------------------------------------------------------------------------
+Module 2 (Cleaning Data)
+
+---
+title: "Cleaning US Census Data"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE, error=TRUE}
+# load libraries
+library(readr)
+library(dplyr)
+library(tidyr)
+
+
+```
+
+```{r message=FALSE, warning=FALSE, error=TRUE}
+# load CSVs
+df0<- read.csv('states_0.csv')
+df1<- read.csv('states_1.csv')
+df2<- read.csv('states_2.csv')
+head(df0)
+head(df1)
+
+```
+
+```{r error=TRUE}
+# inspect data
+files<- list.files(pattern="states_.*csv")
+
+df_list<- files%>%
+  lapply(read_csv)
+us_census<- df_list%>%
+  bind_rows()
+print(us_census)
+
+names(us_census)
+str(us_census)
+head(us_census)
+```
+
+```{r error=TRUE}
+# drop X1 column
+us_census<- us_census%>%
+  select(-X1)
+head(us_census)
+
+
+```
+
+```{r error=TRUE}
+# remove % from race columns
+
+us_census<- us_census%>%
+  mutate(
+    Hispanic=gsub("\\%"," ",Hispanic),
+    White=gsub("\\%"," ",White),
+    Black=gsub("\\%"," ",Black),
+    Native=gsub("\\%"," ",Native),
+    Asian=gsub("\\%"," ",Asian),
+    Pacific=gsub("\\%"," ",Pacific)
+  )
+head(us_census)
+
+
+
+
+
+
+```
+
+```{r error=TRUE}
+# remove $ from Income column
+us_census<- us_census%>%
+  mutate(
+    Income=gsub("\\$"," ",Income)
+  )
+head(us_census)
+
+
+```
+
+```{r error=TRUE}
+# separate GenderPop column
+us_census<- us_census%>%
+  separate(
+    GenderPop,c('male_pop','female_pop'),'_'
+  )
+head(us_census)
+
+
+```
+
+```{r error=TRUE}
+# clean male and female population columns
+us_census<- us_census%>%
+  mutate(
+    male_pop=gsub("M","",male_pop),
+    female_pop=gsub("F","",female_pop)
+  )
+head(us_census)
+
+
+
+```
+
+```{r error=TRUE}
+# update column data types
+us_census<- us_census%>%
+  mutate(
+    Hispanic=as.numeric(Hispanic),
+    White=as.numeric(White),
+    Black=as.numeric(Black),
+    Native=as.numeric(Native),
+    Asian=as.numeric(Asian),
+    Pacific=as.numeric(Pacific),
+    Income=as.numeric(Income),
+    male_pop=as.numeric(male_pop),
+    female_pop=as.numeric(female_pop),
+  )
+head(us_census)
+
+
+
+
+
+
+
+
+
+
+```
+
+```{r error=TRUE}
+# update values of race columns
+
+us_census<-us_census %>%
+  mutate(Hispanic = Hispanic/100,
+         White = White/100,
+         Black = Black/100,
+         Native = Native/100,
+         Asian = Asian/100,
+         Pacific = Pacific/100)
+head(us_census)
+
+
+
+
+
+
+```
+
+```{r error=TRUE}
+# check for duplicate rows
+
+us_census%>%
+  duplicated() %>%
+    table()
+
+```
+
+```{r error=TRUE}
+# remove duplicate rows
+
+us_census<- us_census %>%
+  distinct()
+head(us_census)
+
+```
+
+```{r error=TRUE}
+# check for duplicate rows
+
+us_census%>%
+  duplicated() %>%
+    table()
+
+```
+
+```{r error=TRUE}
+# clean data frame
+head(us_census)
+```
+---------------------------------------------------------------------------------
+Module 3 (Data Viz)
+
+---
+title: "Visualizing Carbon Dioxide Levels"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE, error=TRUE}
+# load libraries and data
+library(readr)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r error=TRUE}
+options(scipen=10000) #removes scientific notation
+#Create NOAA Visualization here:
+noaa_data<- read.csv('carbon_dioxide_levels.csv')
+head(noaa_data)
+
+noaa_viz<- ggplot(noaa_data, aes(x=Age_yrBP, y=CO2_ppmv))+
+  geom_line()+
+  labs(title="Carbon Dioxide Levels From 8,000 to 136 Years BP", subtitle="From World Data Center for Paleoclimatology and NOAA Paleoclimatology Program",x="Years Before Today (0=1950)",y="Carbon Dioxide Level (Parts Per Million)")+
+  scale_x_reverse(lim=c(800000,0))
+noaa_viz
+
+millennia_max<- max(noaa_data$CO2_ppmv)
+```
+
+```{r message=FALSE, error=TRUE}
+#Create IAC Visualization
+iac_data<- read.csv('yearly_co2.csv')
+iac_data<- iac_data%>%select(-data_mean_nh,-data_mean_sh)
+head(iac_data)
+
+iac_viz<- ggplot(iac_data, aes(x=year, y=data_mean_global))+
+  geom_line()+
+  labs(title="Carbon Dioxide Levels over Time", subtitle="From Institute for Atmospheric and Climate Science (IAC)", x='Year', y='Carbon Dioxide Level (Parts Per Million)')+
+  geom_hline(aes(yintercept=millennia_max,linetype="Historical CO2 Peak before 1950"))
+iac_viz
+```
+---------------------------------------------------------------------------------
+Module 4 (Aggregates & Joining Data Sets)
+
+---
+title: "Aggregates in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load data
+orders <- read_csv("orders.csv")
+page_visits <- read_csv("page_visits.csv")
+```
+
+```{r}
+# inspect data frames
+head(orders)
+head(page_visits)
+```
+
+```{r}
+# define average_price here:
+
+average_price<-orders%>%
+  summarize(avg_order_price=mean(price,na.rm=TRUE))
+print(average_price)
+
+```
+
+```{r}
+# define click_source here:
+
+click_source<- page_visits%>%
+  group_by(utm_source)%>%
+    summarize(count=n())
+head(click_source)
+
+
+```
+
+```{r}
+# define click_source_by_month here:
+
+click_source_by_month<- page_visits%>%
+  group_by(utm_source,month)%>%
+    summarize(count=n())
+head(click_source_by_month)
+
+
+```
+
+**********************************************************************
+---
+title: "Aggregates in R"
+output: html_notebook
+---
+
+```{r message = FALSE, error=TRUE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE, error=TRUE}
+# load ad clicks data
+ad_clicks <- read_csv("ad_clicks.csv")
+```
+
+```{r error=TRUE}
+# inspect ad_clicks here:
+head(ad_clicks)
+```
+
+```{r error=TRUE}
+# define views_by_utm here:
+views_by_utm<- ad_clicks%>%
+  group_by(utm_source)%>%
+    summarize(count=n())
+  head(views_by_utm)
+
+
+
+```
+
+```{r error=TRUE}
+# define clicks_by_utm here:
+clicks_by_utm<- ad_clicks%>%
+  group_by(utm_source,ad_clicked)%>%
+    summarize(count=n())
+head(clicks_by_utm)
+
+
+
+
+```
+
+```{r error=TRUE}
+# define percentage_by_utm here:
+
+percentage_by_utm<- clicks_by_utm%>%
+  group_by(utm_source)%>%
+    mutate(percentage=count/sum(count))%>%
+      filter(ad_clicked==TRUE)
+head(percentage_by_utm)
+
+
+
+```
+
+```{r error=TRUE}
+# define experiment_split here:
+
+experimental_split<- ad_clicks%>%
+  group_by(experimental_group)%>%
+    summarize(count=n())
+head(experimental_split)
+  
+
+
+
+```
+
+```{r error=TRUE}
+# define clicks_by_experiment here:
+clicks_by_experiment<- ad_clicks%>%
+  group_by(experimental_group,ad_clicked)%>%
+    summarize(count=n())%>%
+      filter(ad_clicked==TRUE)
+head(clicks_by_experiment)
+
+
+
+```
+
+```{r error=TRUE}
+# define a_clicks here:
+a_clicks<- ad_clicks%>%
+  filter(experimental_group== 'A')
+head(a_clicks)
+
+
+
+# define b_clicks here:
+b_clicks<- ad_clicks%>%
+  filter(experimental_group== 'B')
+head(b_clicks)
+
+
+```
+
+```{r error=TRUE}
+# define a_clicks_by_day here:
+a_clicks_by_day<- a_clicks%>%
+  group_by(day,ad_clicked)%>%
+    summarize(count=n())
+head(a_clicks_by_day)
+
+
+
+
+# define b_clicks_by_day here:
+b_clicks_by_day<- b_clicks%>%
+  group_by(day,ad_clicked)%>%
+    summarize(count=n())
+head(b_clicks_by_day)
+
+
+
+```
+
+```{r error=TRUE}
+# define a_percentage_by_day here:
+a_percentage_by_day<- a_clicks_by_day%>%
+  group_by(day)%>%
+    mutate(percentage=count/sum(count))%>%
+      filter(ad_clicked==TRUE)
+head(a_percentage_by_day)
+
+
+
+
+# define b_percentage_by_day here:
+b_percentage_by_day<- b_clicks_by_day%>%
+  group_by(day)%>%
+    mutate(percentage=count/sum(count))%>%
+      filter(ad_clicked==TRUE)
+head(b_percentage_by_day)
+
+
+
+
+```
+---------------------------------------------------------------------------------
+Module 5(Joining tables)
+
+---
+title: "Joining Tables in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load visits and checkouts data
+visits <- read_csv('visits.csv')
+checkouts <- read_csv('checkouts.csv')
+```
+
+```{r}
+# inspect visits and checkouts here:
+head(visits)
+head(checkouts)
+
+```
+
+```{r}
+# define v_to_c here:
+v_to_c<- visits%>%
+  inner_join(checkouts)
+v_to_c
+
+
+
+```
+
+```{r}
+# define avg_time_to_check here:
+v_to_c <- v_to_c %>% 
+  mutate(time = checkout_time - visit_time)
+v_to_c
+
+avg_time_to_check <- v_to_c %>% 
+  summarize(mean_time = mean(time))
+avg_time_to_check
+
+```
+---------------------------------------------------------------------------------
+Module 6 (Mean,Median,Mode)
+
+---
+title: "Mode in R"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE, error=TRUE}
+# Load libraries
+library(readr)
+library(dplyr)
+library(DescTools)
+```
+```{r message=FALSE, warning=FALSE, error=TRUE}
+# Read in housing data
+brooklyn_one_bed <- read_csv('brooklyn-one-bed.csv')
+brooklyn_price <- brooklyn_one_bed$rent
+head(brooklyn_one_bed)
+
+manhattan_one_bed <- read_csv('manhattan-one-bed.csv')
+manhattan_price <- manhattan_one_bed$rent
+head(manhattan_one_bed)
+
+queens_one_bed <- read_csv('queens-one-bed.csv')
+queens_price <- queens_one_bed$rent
+head(queens_one_bed)
+
+```
+
+```{r error=TRUE}
+#Calculate Mean
+brooklyn_mean=mean(brooklyn_price)
+brooklyn_mean
+manhattan_mean=mean(manhattan_price)
+manhattan_mean
+queens_mean=mean(queens_price)
+queens_mean
+```
+
+```{r error=TRUE}
+#Calculate Median
+brooklyn_median<- median(brooklyn_price)
+brooklyn_median
+
+manhattan_median<- median(manhattan_price)
+manhattan_median
+
+queens_median<- median(queens_price)
+queens_median
+
+```
+
+
+```{r error=TRUE}
+#Calculate Mode
+brooklyn_mode<- Mode(brooklyn_price)
+brooklyn_mode
+
+manhattan_mode<- Mode(manhattan_price)
+manhattan_mode
+
+queens_mode<- Mode(queens_price)
+queens_mode
+```
+
+
+```{r error=TRUE}
+# Don't look below here
+# Mean
+if(exists('brooklyn_mean')) {
+  print(paste("The mean price in Brooklyn is" , round(brooklyn_mean, digits=2))) 
+}else{
+    print("The mean price in Brooklyn is not yet defined.")
+}
+
+if(exists("manhattan_mean")) {
+    print(paste("The mean price in Manhattan is", round(manhattan_mean,digits=2)))
+} else {
+    print("The mean in Manhattan is not yet defined.")
+}
+if(exists("queens_mean")) {
+    print(paste("The mean price in Queens is" , round(queens_mean,digits=2)))
+} else {
+  print("The mean price in Queens is not yet defined.")
+}   
+    
+# Median
+if(exists("brooklyn_median")) {
+  print(paste("The median price in Brooklyn is" , brooklyn_median)) 
+}else{
+    print("The median price in Brooklyn is not yet defined.")
+}
+
+if(exists("manhattan_median")) {
+    print(paste("The median price in Manhattan is", manhattan_median))
+} else {
+    print("The median in Manhattan is not yet defined.")
+}
+if(exists("queens_median")) {
+    print(paste("The median price in Queens is" , queens_median))
+} else {
+  print("The median price in Queens is not yet defined.")
+} 
+    
+#Mode
+if(exists("brooklyn_mode")) {
+  print(paste("The mode price in Brooklyn is" , brooklyn_mode)) 
+}else{
+    print("The mode price in Brooklyn is not yet defined.")
+}
+
+if(exists("manhattan_median")) {
+    print(paste("The mode price in Manhattan is", manhattan_mode))
+} else {
+    print("The mode in Manhattan is not yet defined.")
+}
+if(exists("queens_median")) {
+    print(paste("The mode price in Queens is" , queens_mode))
+} else {
+  print("The mode price in Queens is not yet defined.")
+} 
+```
+---------------------------------------------------------------------------------
+Module 7 (Variance and Standard Deviation)
+
+---
+title: "Standard Deviation"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE, error=TRUE}
+library(readr)
+library(dplyr)
+```
+
+```{r error=TRUE}
+load("project.Rda")
+```
+
+```{r error=TRUE}
+# Change these variables to be the standard deviation of each dataset.
+# Inspect Data
+head(london_data)
+nrow(london_data)
+
+temp<- london_data$TemperatureC
+average_temp<- mean(temp)
+average_temp
+# Variance and SD for the year
+temperature_var <- var(temp)
+print(temperature_var)
+
+temperature_standard_deviation<- sd(temp)
+print(temperature_standard_deviation)
+
+#Inspect once again
+head(london_data)
+
+# Get monthly temperature average
+june<- london_data%>%
+  filter(month=="06")
+june
+
+july<- london_data%>%
+  filter(month=="07")
+july
+
+# Analyze by month
+june_mean<- mean(june)
+print(june_mean)
+
+july_mean<- mean(july)
+print(july_mean)
+```
+---------------------------------------------------------------------------------
+Module 8 (Quartile, Quantiles, Interquartile Range)
+
+---
+title: "Life Expectancy By Country"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE, error=TRUE}
+# load packages
+library(ggplot2)
+library(readr)
+library(dplyr)
+```
+
+```{r error=TRUE}
+# import and inspect data
+data <- read_csv("country_data.csv")
+#head(data)
+```
+
+```{r error=TRUE}
+# life expectancy
+life_expectancy<- data%>%
+  pull(life_expectancy)
+
+
+# life expectancy quartiles
+life_expectancy_quartiles<- quantile(life_expectancy, c(0.25,0.5,0.75))
+
+
+```
+
+```{r error=TRUE}
+# plot histogram of life expectancy
+hist(life_expectancy)
+```
+
+```{r error=TRUE}
+# gdp
+gdp<- pull(data,GDP)
+
+
+# median gdp
+median_gdp<- quantile(gdp, 0.5)
+median_gdp
+
+```
+
+```{r error=TRUE}
+# low gdp
+low_gdp<- data%>%
+  filter(GDP<median_gdp)
+low_gdp
+
+
+
+# high gdp
+high_gdp<- data%>%
+  filter(GDP>median_gdp)
+high_gdp
+
+
+
+# low gdp quartiles
+low_gdp<-data%>%
+  filter(GDP<=median_gdp)%>%
+    pull(life_expectancy)
+low_gdp
+
+
+# high gdp quartiles
+high_gdp<-data%>%
+  filter(GDP>=median_gdp)%>%
+    pull(life_expectancy)
+high_gdp
+
+```
+
+```{r message=FALSE, error=TRUE}
+# plot low gdp histogram
+low_gdp_quartiles<-quantile(low_gdp,c(0.25,0.5,0.75))
+low_gdp_quartiles
+
+# plot high gdp histogram
+high_gdp_quartiles<-quantile(high_gdp,c(0.25,0.5,0.75))
+high_gdp_quartiles
+
+hist(low_gdp,col='red')
+hist(high_gdp,col='blue')
+```
+---------------------------------------------------------------------------------
+Module 9 (Hypothesis Testing)
+
+`---
+title: "Blood Transfusion Analysis"
+output: html_notebook
+---
+
+```{r error=TRUE}
+# load data
+load("vein_lifespans.Rda")
+load("artery_lifespans.Rda")
+```
+
+```{r error=TRUE}
+# view vein_lifespans here:
+head(vein_lifespans)
+```
+
+```{r error=TRUE}
+# calculate vein_lifespans_mean here:
+vein_lifespans_mean<- mean(vein_lifespans)
+vein_lifespans_mean
+
+```
+
+```{r error=TRUE}
+# calculate vein_lifespans_sd here:
+vein_lifespans_sd<- sd(vein_lifespans)
+vein_lifespans_sd
+
+```
+
+```{r error=TRUE}
+# perform one sample t-test here:
+vein_pack_test<- t.test(vein_lifespans, mu=71)
+vein_pack_test
+
+```
+
+```{r error=TRUE}
+# view artery_lifespans here:
+head(artery_lifespans)
+```
+
+```{r error=TRUE}
+# calculate artery_lifespans_mean here:
+artery_lifespans_mean<- mean(artery_lifespans)
+artery_lifespans_mean
+
+```
+
+```{r error=TRUE}
+# calculate artery_lifespans_sd here:
+artery_lifespans_sd<- sd(artery_lifespans)
+artery_lifespans_sd
+
+```
+
+```{r error=TRUE}
+# perform two sample t-test here:
+package_comparison_results<- t.test(vein_lifespans,artery_lifespans)
+package_comparison_results
+
+```
+
+---------------------------------------------------------------------------------
+four primary steps of statistical model building: *confirming data assumptions, building a model on training data, assessing model fit, and analyzing model results.*
+
+The RSE is an estimate of the standard deviation of the error of the model (error in our mathematical definition of linear regression). Roughly speaking, it is the average amount that the response will deviate from the true regression line.
+
+The R^2 statistic provides an alternative measure of fit. It represents the proportion of variance explained
+
+*The vertical distance between a datapoint and the line estimated by a regression model is called a residual; residuals and their aggregations are the fundamental units of measures of regression model fit and accuracy.*
+
+When scientists make quantitative arguments for a best fit model, they rely on an aggregation, often the sum or average, of residual values across an entire dataset. While is it easy to be overwhelmed by the variety of measures used to argue that one model is better than the other, it is crucial to realize that all measures are grounded in the simple difference between regression estimate and observed data point.
+
+The most common metric used to compute the accuracy of predicted values is mean squared error on test data.
+
+ANALYZE DATA WITH R (CODECADEMY)
+``````````````````````````````````
+LISTS:
+---
+title: "Data Structures in R"
+output: html_notebook
+---
+
+```{r}
+test_scores <- list(
+  Penny = list(exam1 = 84, exam2 = 79, exam3 = 85),
+  Nick = list(exam1= 77, exam2 = 81, exam3 = 83),
+  Kiara = list(exam1 = 92, exam2 = 89, exam3 = 87)
+)
+```
+
+```{r}
+# create variable nick_scores
+nick_scores<- test_scores$Nick
+nick_scores
+# create variable nick_exam2
+nick_exam2<- test_scores$Nick$exam2
+nick_exam2
+
+```
+---------------------------------------------------------------------------------
+MATRIX:
+---
+title: "Data Structures in R"
+output: html_notebook
+---
+
+```{r}
+# create one_hundred_greetings matrix below:
+one_hundred_greetings<- matrix("hi",nrow=10,ncol=10)
+
+```
+
+```{r}
+# create different_neighbors matrix below:
+different_neighbors<- matrix(c(1,0),nrow=3,ncol=5)
+
+```
+---
+title: "Data Structures in R"
+output: html_notebook
+---
+
+```{r}
+twenty_eight_matrix <- matrix(c(1:28), nrow = 4, ncol = 7)
+print(twenty_eight_matrix)
+```
+
+```{r}
+# get the element in second row, 4th column
+sixth_column<- twenty_eight_matrix[,6]
+sixth_column
+```
+---------------------------------------------------------------------------------
+VECTORS:
+---
+title: "Data Structures in R"
+output: html_notebook
+---
+
+```{r}
+top_movies_2019 = c(
+  "Avengers: Endgame",
+  "The Lion King",
+  "Toy Story 4",
+  "Frozen 2",
+  "Captain Marvel",
+  "Star Wars: Episode IX - The Rise of Skywalker",
+  "Spider-Man: Far from Home",
+  "Aladdin",
+  "Joker",
+  "It Chapter Two"
+)
+```
+```{r}
+# create variable top_six_movies:
+top_six_movies<- top_movies_2019[6]
+top_six_movies
+
+# create vector called top_three_movies:
+top_three_movies<- top_movies_2019[c(1:3)]
+top_three_movies
+```
+---
+title: "Data Structures in R"
+output: html_notebook
+---
+
+```{r}
+vegetables <- c("celery", "squash", "spinach", "kale", "radish", "carrot", "onion")
+```
+```{r}
+# correct to spinach here:
+print(vegetables)
+```
+
+```{r}
+scores <- c(44, 65, 77, 49, 56, 75, 59, 90, 72)
+
+```
+
+```{r}
+#modify scores below:
+scores[scores<60]<-60
+scores
+  
+```
+---------------------------------------------------------------------------------
+LOOPS:
+```{r}
+my_vector <- c("this", "vector", "is", "being", "read", "by", "a", "for", "loop")
+for(word in my_vector){
+  print(word)
+}
+
+```
+
+```{r}
+for (row in 1:nrow(a_matrix)) {
+    for (col in 1:ncol(a_matrix)) {
+        print(a_matrix[row, col])
+    }
+}
+
+```
+
+---
+title: "While loop"
+output: html_notebook
+---
+
+```{r message=FALSE}
+number_of_heads <- 0
+heads_goal <- 2
+coin <- c("heads", "tails")
+while (number_of_heads < heads_goal) {
+  # flip the coin (random)
+  result <- sample(coin, 1)
+  print(result)
+  if (result == "heads") {
+    number_of_heads <- number_of_heads + 1
+  }
+}
+```
+
+---
+title: "Multiplying while loop"
+output: html_notebook
+---
+
+```{r}
+numbers <- c(1.5, 3, 2, 4, 3, 5, 3)
+product <- 1
+i <- 1
+
+# write while loop code here:
+while (numbers[i] != 5) {
+  product <- product * numbers[i]
+  i <- i + 1
+}
+
+```
+---------------------------------------------------------------------------------
+FUNCTIONS:
+function_name <- function(parameter_1, parameter_2, ....) {
+   # do something with parameter_1 and parameter_2
+   return(some_value)
+}
+
+```{r}
+feet_to_meters <- function(feet) {
+  meters <- feet * 0.3048
+  return(meters)
+}
+
+```
+```{r}
+turn_to_percent <- function(decimal) {
+    decimal * 100
+}
+
+decimals <- c(0.45, 0.13, 0.25, 0.78, 0.66, 0.92, 0.84, 0.56)
+percentages_sapply <- sapply(decimals, turn_to_percent)
+percentages_sapply
+# output: [1] 45 13 25 78 66 92 84 56
+
+percentages_lapply <- lapply(decimals, turn_to_percent)
+# output: [[1]]
+[1] 45
+
+[[2]]
+[1] 13
+
+[[3]]
+[1] 25
+
+[[4]]
+[1] 78
+
+[[5]]
+[1] 66
+
+[[6]]
+[1] 92
+
+[[7]]
+[1] 84
+
+[[8]]
+[1] 56
+
+```
+
+---
+title: "Day of the Race"
+output: html_notebook
+---
+
+```{r}
+# create friends vector here:
+friends<- c("Megan","Janet","Tina")
+```
+
+```{r}
+# add on to the list here:
+info_list <- list(
+  Megan = list(
+    jersey = 1363,
+    color = "green"
+  ),
+  Janet = list(
+    jersey = 6729,
+    color = "green"
+  ),
+  Tina = list(
+    jersey = 7501,
+    color = "orange"
+  ),
+  Esther = list(
+    jersey = 3432,
+    color = "purple"
+  ),
+  Feng = list(
+    jersey = 4221,
+    color = "blue"
+  )
+)
+```
+
+```{r}
+print_information <- function(name) {
+  print(paste(name, "is #", info_list[[name]]$jersey, "wearing the color", info_list[[name]]$color))
+}
+# call the print_information function on the friends vector:
+for (friend in friends){
+  print_information(friend)
+}
+```
+
+```{r}
+race_results <- c("Gi", "Francesca", "Lea", "Vivian", "Jessica", "Esther", "Mary", "Yasmina", "Megan", "Janet", "Tiffany", "Kishan", "Feng", "Z", "Tina")
+```
+
+```{r}
+# write find_place() here:
+find_place<- function(runner){
+  for (place in 1:length(race_results)){
+    if (race_results[place]==runner){
+      return(place)
+    }
+  0
+  }
+}
+find_place("Jessica")
+```
+
+
+```{r}
+# call and apply find_place() here:
+lapply(friends,find_place)
+sapply(friends,find_place)
+
+```
+---------------------------------------------------------------------------------
+VISUALIZATIONS:
+---
+title: "Histograms"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+# Load packages
+library(ggplot2)
+
+# Read in our rideshare dataset
+rideshare_df <- read.csv("rideshare_cleaned.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+# Examine rideshare_df using head()
+head(rideshare_df)
+
+# Construct a histogram showing the distribution of Trip.Total 
+rideshare_histogram<- ggplot(rideshare_df, aes(x=Trip.Total)) + geom_histogram()
+
+
+
+# Print the plot to see what it looks like
+rideshare_histogram
+
+# Construct our histogram again, this time adding a binwidth of 5 
+rideshare_histogram_binwidth<- ggplot(rideshare_df, aes(x=Trip.Total)) + geom_histogram(binwidth=5)
+
+# Print the plot to see what it looks like
+rideshare_histogram_binwidth
+
+```
+
+---
+title: "Heatmaps"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+# Load packages
+library(ggplot2)
+
+# Read in our rideshare dataset
+rideshare_df <- read.csv("rideshare_cleaned.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+# Construct a heatmap of trip pickup longitude and latitude
+rideshare_heatmap<- ggplot(rideshare_df,aes(x=Pickup.Centroid.Longitude, y=Pickup.Centroid.Latitude)) + geom_bin2d()
+
+
+
+# Print the plot to see what it looks like
+rideshare_heatmap
+
+# Add binwidths of 0.01 to both variables in our heatmap
+rideshare_heatmap_binwidth<- ggplot(rideshare_df,aes(x=Pickup.Centroid.Longitude, y=Pickup.Centroid.Latitude)) + geom_bin2d(binwidth=c(0.01,0.01))
+
+# Print the plot to see what it looks like
+rideshare_heatmap_binwidth
+
+```
+
+---
+title: "Box Plots"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+# Load packages
+library(ggplot2)
+
+# Read in our rideshare dataset
+rideshare_df <- read.csv("rideshare_cleaned.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+# Construct a box plot showing Trip.Total by Month
+rideshare_boxplot<- ggplot(rideshare_df, aes(x=factor(Month), y=Trip.Total )) + geom_boxplot()
+
+rideshare_boxplot
+
+# Print the plot to see what it looks like
+
+
+```
+
+---
+title: "Stacked Bar Plots"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+# Load packages
+library(ggplot2)
+library(dplyr)
+
+# Read in our msleep dataset
+msleep <- read.csv("msleep_cleaned.csv")
+
+# Read in our graduation dataset
+graduation_df <- read.csv("graduation_cleaned.csv")
+
+# Print the head of msleep
+head(msleep)
+```
+
+```{r message=FALSE, warning=FALSE}
+# Process graduation_df for our stacked bar plot
+graduation_stacked_df <- graduation_df %>% 
+  filter(Demographic %in% c("General Education", "Special Education")) %>%
+  group_by(Demographic, Year, Status) %>%
+  summarize(N = sum(as.numeric(N)))
+
+# Examine graduation_stacked_df using the head() function
+head(graduation_stacked_df)
+
+# Create a stacked bar plot named graduation_stackedbar
+graduation_stackedbar<- 
+  ggplot(graduation_stacked_df, 
+    aes(x=Demographic, y=N, fill=Status))+
+      geom_col()
+
+
+
+# Print the stacked bar plot to see what it looks like
+graduation_stackedbar
+
+# Create a stacked bar plot named graduation_stackedbar, this time with position="fill"
+graduation_stackedbar_fill<- 
+  ggplot(graduation_stacked_df, 
+    aes(x=Demographic, y=N, fill=Status))+
+      geom_col(position="fill")
+
+# Print the new stacked bar plot to see what it looks like
+graduation_stackedbar_fill
+
+```
+
+---
+title: "Clustered Bar Plots"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+# Load packages
+library(ggplot2)
+library(dplyr)
+
+# Read in our msleep dataset
+msleep <- read.csv("msleep_cleaned.csv")
+
+# Read in our graduation dataset
+graduation_df <- read.csv("graduation_cleaned.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+# Process graduation_df for our clustered bar plot
+graduation_clustered_df <- graduation_df %>% 
+  filter(Demographic %in% c("English Language Learners", "English Proficient")) %>%
+  filter(School.ID == "25Q425") %>%
+  filter(Status == "Graduated")
+
+# Examine graduation_clustered_df using the head() function
+head(graduation_clustered_df)
+data<-graduation_clustered_df
+# Create a clustered bar plot named graduation_clusteredbar
+graduation_clusteredbar<- 
+  ggplot(data,aes(x=Year,y=Pct, fill=Demographic))+
+    geom_col(position="dodge")
+
+# Print the clustered bar plot to see what it looks like
+graduation_clusteredbar
+
+
+```
+
+---
+title: "Statistical Summaries"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+# Load packages
+library(ggplot2)
+library(dplyr)
+
+# Read in our graduation dataset
+graduation_df <- read.csv("graduation_cleaned.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+# Process graduation_df for our bar plot showing means
+graduation_means_df <- graduation_df %>% 
+  filter(Demographic == "Total Cohort") %>%
+  filter(Status == "Graduated") %>% 
+  mutate(Year = factor(Year))
+
+# Examine graduation_means_df using the head() function
+head(graduation_means_df)
+data<-graduation_means_df
+# Create a bar plot named graduation_meanbar showing means
+graduation_meanbar<- 
+  ggplot(data,aes(x=Year, y=Pct))+
+    geom_bar(stat="summary", fun="mean")
+
+# Print the bar plot to see what it looks like
+graduation_meanbar
+
+```
+
+---
+title: "Error Bars"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+# Load packages
+library(ggplot2)
+library(dplyr)
+library(plotrix)
+
+# Read in our graduation dataset
+graduation_df <- read.csv("graduation_cleaned.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+# Process graduation_df to calculate means and standard errors
+graduation_error_df <- graduation_df %>% 
+  filter(Demographic == "Total Cohort") %>%
+  filter(Status == "Graduated") %>%
+  group_by(Demographic, Year) %>%
+  summarize(Mean.Pct = mean(Pct), 
+            Mean.SE = std.error(Pct)) %>%
+  mutate(SE.Min = Mean.Pct - Mean.SE, 
+         SE.Max = Mean.Pct + Mean.SE, 
+         Year = factor(Year))
+
+# Examine graduation_error_df using the head() function
+head(graduation_error_df)
+data<-graduation_error_df
+# Create a bar plot named graduation_sebar showing means and standard errors
+graduation_sebar<-
+  ggplot(data,aes(x=Year, y=Mean.Pct))+
+    geom_bar(stat="identity")+
+      geom_errorbar(aes(ymin=SE.Min, ymax=SE.Max), width=0.2)
+
+
+# Print graduation_sebar to see what it looks like
+graduation_sebar
+
+```
+
+---
+title: "Customizing Discrete Axes"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+# Load packages
+library(ggplot2)
+library(dplyr)
+library(plotrix)
+
+# Read in our graduation dataset
+graduation_df <- read.csv("graduation_cleaned.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+# Process graduation_df to calculate means and standard errors
+graduation_error_df <- graduation_df %>% 
+  filter(Demographic == "Total Cohort") %>%
+  filter(Status == "Graduated") %>%
+  group_by(Demographic, Year) %>%
+  summarize(Mean.Pct = mean(Pct), 
+            Mean.SE = std.error(Pct)) %>%
+  mutate(SE.Min = Mean.Pct - Mean.SE, 
+         SE.Max = Mean.Pct + Mean.SE, 
+         Year = factor(Year))
+
+# Complete the following bar plot by adding a scale_x_discrete() layer customizing x axis labels
+graduation_discrete <- 
+  ggplot(graduation_error_df, 
+         aes(x = Year, y = Mean.Pct)) + 
+  geom_bar(stat = "identity") + 
+  geom_errorbar(
+    aes(ymin = SE.Min, ymax = SE.Max), 
+    width = 0.2)+
+  scale_x_discrete(
+    limits = c("2003","2004","2005")
+  )
+
+
+# Print graduation_discrete to see what it looks like
+graduation_discrete
+
+```
+
+---
+title: "Customizing Continuous Axes"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+# Load packages
+library(ggplot2)
+library(dplyr)
+library(plotrix)
+
+# Read in our graduation dataset
+graduation_df <- read.csv("graduation_cleaned.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+# Process graduation_df to calculate means and standard errors
+graduation_error_df <- graduation_df %>% 
+  filter(Demographic == "Total Cohort") %>%
+  filter(Status == "Graduated") %>%
+  group_by(Demographic, Year) %>%
+  summarize(Mean.Pct = mean(Pct), 
+            Mean.SE = std.error(Pct)) %>%
+  mutate(SE.Min = Mean.Pct - Mean.SE, 
+         SE.Max = Mean.Pct + Mean.SE, 
+         Year = factor(Year))
+
+
+# Complete the following bar plot by adding a scale_y_continuous layer as described
+graduation_continuous <- 
+  ggplot(graduation_error_df, 
+         aes(x = Year, y = Mean.Pct)) + 
+  geom_bar(stat = "identity") + 
+  geom_errorbar(
+    aes(ymin = SE.Min, ymax = SE.Max), 
+    width = 0.2) + 
+  scale_x_discrete(
+    limits = c("2003", "2004", "2005"))+
+  scale_y_continuous(labels=scales::label_percent())
+
+
+# Print graduation_continuous to see what it looks like
+graduation_continuous
+
+```
+
+---
+title: "Facets"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+# Load packages
+library(ggplot2)
+library(dplyr)
+
+# Read in our graduation dataset
+graduation_df <- read.csv("graduation_cleaned.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+# Process graduation_df to include the demographics we want to show
+graduation_facets_df <- graduation_df %>% 
+  filter(Demographic %in% c("English Language Learners", "English Proficient")) %>%
+  filter(School.ID %in% c("25Q425", "20K490")) %>%
+  filter(Status == "Graduated")
+
+# Complete the bar plot below by adding a facet layer
+graduation_facet <- 
+  ggplot(graduation_facets_df, 
+         aes(x = Year, 
+             y = Pct, 
+             fill = Demographic)) + 
+  geom_col(position = "dodge") + 
+  theme(legend.position = "bottom")+
+  facet_grid(rows=vars(School.ID))
+
+
+# Print graduation_facet to see what it looks like
+
+graduation_facet
+```
+
+
+---
+title: "Museums and Nature Centers"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r data, message=FALSE}
+
+library(dplyr)
+library(ggplot2)
+library(stringr)
+library(tidyr)
+library(plotrix)
+
+```
+
+## Data Exploration
+
+```{r load, message=FALSE}
+# Load file as data frame
+df<- read.csv("museums.csv")
+```
+
+```{r inspect, message=FALSE}
+# Inspect data frame
+head(df)
+```
+
+## Museums by Type
+
+```{r barplot, message=FALSE}
+# Create and print bar plot by type
+museum_type<- ggplot(df, aes(x=Museum.Type)) + geom_bar() + 
+  scale_x_discrete(labels=scales::wrap_format(8))
+  #makes it so max 8 characters on a line ^^ for each x value category
+museum_type
+```
+
+```{r barplot_museum, message=FALSE}
+# Create and print bar plot by museum vs non-museum
+museum_class<- ggplot(df, aes(x=Is.Museum)) + geom_bar() +
+  scale_x_discrete(labels= c("TRUE"="Museum","FALSE"="Non-Museum"))
+museum_class
+```
+
+```{r barplot_type, message=FALSE}
+# Filter data frame to select states
+museums_states<- df %>% 
+  filter( #column|   value from column |
+    State..Administrative.Location.=="IL"| 
+    State..Administrative.Location.=="CA"| 
+    State..Administrative.Location.=="NY"
+    )
+museums_states
+
+# Create and print bar plot with facets
+museum_facet<- ggplot(museums_states, aes(x=Is.Museum)) + geom_bar() +
+  facet_grid(cols=vars(State..Administrative.Location.))
+      # variable is always a column name ^
+museum_facet
+```
+
+```{r barplot_stack, message=FALSE}
+# Create and print stacked bar plot
+museum_stacked<- ggplot(df, aes(x=factor(Region.Code..AAM.),fill=Is.Museum)) + geom_bar(position="fill")+ scale_x_discrete(
+  labels= c(
+      "1"="New England",
+      "2"="Mid-Atlantic",
+      "3"="Southeastern",
+      "4"="Midwest",
+      "5"="Mountain Plains",
+      "6"="Western"
+    )
+  ) + scale_fill_discrete(labels= c("TRUE"="Museum", "FALSE"="Non-Museum"))+
+  scale_y_continuous(labels= scales::percent_format()) + labs(title="Museum Types by Region", x="Region",y="Percentage of Total", fill="Type")
+  # function turns y axis to percentages ^
+museum_stacked  
+```
+
+## Museums by Revenue
+
+```{r process, message=FALSE}
+# Filter data frame
+
+
+
+museums_revenue_df<- df%>%
+  distinct(Legal.Name, .keep_all=TRUE)%>%
+  #keep only unique values in Legal.Name column
+    filter(Annual.Revenue>0)
+head(museums_revenue_df)
+
+# Filter for only small museums
+museums_small_df<- df%>%
+  distinct(Legal.Name, .keep_all=TRUE)%>%
+    filter(Annual.Revenue<1000000)
+head(museums_small_df)
+
+# Filter for only large museums
+museums_large_df<- df%>%
+  distinct(Legal.Name, .keep_all=TRUE)%>%
+    filter(Annual.Revenue>1000000000)
+head(museums_large_df)
+
+```
+
+```{r histogram, message=FALSE}
+# Create and print histogram
+revenue_histogram<- ggplot(museums_small_df, aes(x=Annual.Revenue)) + 
+  geom_histogram(binwidth=100000) + scale_x_continuous(labels=scales::dollar_format())
+  #affects y axis tick ^ values (size of groups that are counted)
+revenue_histogram
+```
+
+```{r boxplot, message=FALSE}
+# Create and print boxplot
+revenue_boxplot<- ggplot(museums_large_df, aes(x=factor(Region.Code..AAM.),y=Annual.Revenue)) + geom_boxplot() + scale_x_discrete(labels= c(
+      "1"="New England",
+      "2"="Mid-Atlantic",
+      "3"="Southeastern",
+      "4"="Midwest",
+      "5"="Mountain Plains",
+      "6"="Western"
+    )
+) + coord_cartesian(ylim=c(1e9, 3e10)) + scale_y_continuous(labels=function(x
+) paste0("$", x/1e9, "B"))
+# manually adjusted upper and ^^ lower y lims
+revenue_boxplot
+```
+
+```{r mean, message=FALSE}
+# Create and print bar plot with means
+revenue_barplot<- ggplot(museums_revenue_df, aes(x=factor(Region.Code..AAM.), y=Annual.Revenue)) + geom_bar(stat="summary", fun="mean") + scale_x_discrete(labels= c(
+      "1"="New England",
+      "2"="Mid-Atlantic",
+      "3"="Southeastern",
+      "4"="Midwest",
+      "5"="Mountain Plains",
+      "6"="Western"
+    )
+) + labs(title="Mean Annual Revenue by Region", y="Mean Annual Revenue", x="Region")
+revenue_barplot
+```
+
+```{r mean_errorbar, message=FALSE}
+# Calculate means and standard errors
+museums_error_df<- museums_revenue_df %>%
+      group_by(Region.Code..AAM.) %>%
+   summarize(
+     Mean.Revenue= mean(Annual.Revenue),
+     Mean.SE= std.error(Annual.Revenue))%>%
+   mutate(
+     SE.Min= Mean.Revenue - Mean.SE,
+     SE.Max= Mean.Revenue + Mean.SE)
+head(museums_error_df)
+
+# Create and print bar plot with means and standard errors
+revenue_errorbar<- ggplot(museums_error_df, aes(x=factor(Region.Code..AAM.), y=Annual.Revenue)) + geom_bar(stat="identity", fun="mean") + scale_x_discrete(labels= c(
+      "1"="New England",
+      "2"="Mid-Atlantic",
+      "3"="Southeastern",
+      "4"="Midwest",
+      "5"="Mountain Plains",
+      "6"="Western"
+    )
+) + labs(title="Mean Annual Revenue by Region", y="Mean Annual Revenue", x="Region") + geom_errorbar(
+  aes(ymin=SE.Min,ymax=SE.Max),
+  width=0.2
+)
+revenue_errorbar
+
+
+```
+
+---------------------------------------------------------------------------------
+
+LINEAR REGRESSION
+
+---
+title: "Assumptions of Simple Linear Regression"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries and data
+library(readr)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r read_data}
+#read in data
+conversion<- read.csv("conversion.csv")
+head(conversion)
+
+str(conversion)
+```
+
+```{r create_viz}
+# save viz to object
+clicks_dist<- ggplot(conversion, aes(clicks)) + geom_bar()
+clicks_dist
+
+clicks_mode<- 1
+# print out viz object 
+
+
+# declare mode of clicks
+
+```
+
+```{r compute_cor}
+# compute correlation
+correlation<- cor.test(conversion$total_convert, conversion$clicks)
+
+print(correlation$estimate)
+
+# print out estimate value
+
+```
+
+---
+title: "Assumptions of Linear Regression (Outliers)"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries and data
+library(dplyr)
+library(ggplot2)
+conversion <- read.csv('conversion.csv', header= T)
+```
+
+```{r create_viz}
+# create viz object
+clicks_bx_plot<- ggplot(conversion, aes(clicks,clicks)) + geom_boxplot()
+
+
+# print out object 
+clicks_bx_plot
+```
+
+```{r filter_data}
+# set threshold value
+threshold<-100
+
+# remove outliers
+convert_clean<- conversion%>%
+  filter(clicks<threshold)
+convert_clean
+
+# create second box plot 
+clean_bx_plot<- ggplot(convert_clean, aes(clicks,clicks)) + geom_boxplot()
+clean_bx_plot
+```
+
+---
+title: "Building a Simple Linear Model"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# set sampling seed
+set.seed(123)
+# load libraries and data
+library(dplyr)
+library(ggplot2)
+conversion_clean <- read.csv('conversion_clean.csv', header= T)
+```
+
+```{r split_train_test}
+# specify 60/40 split
+data_sample <- sample(c(TRUE, FALSE), nrow(conversion_clean), replace = T, prob = c(0.6,0.4))
+# subset data points into train and test sets
+train <- conversion_clean[data_sample, ]
+test <- conversion_clean[!data_sample, ]
+```
+
+```{r build_model}
+# build model
+model <- lm(total_convert ~ clicks, data = train)
+model
+```
+
+---
+title: "Quantifying Model Fit"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# set sampling seed
+set.seed(123)
+# load libraries and data
+library(dplyr)
+library(ggplot2)
+conversion_clean <- read.csv('conversion_clean.csv', header= T)
+# sample training data
+sample <- sample(c(TRUE, FALSE), nrow(conversion_clean), replace = T, prob = c(0.6,0.4))
+train <- conversion_clean[sample, ]
+```
+
+```{r compute_rse}
+model <- lm(total_convert ~ clicks, data = train)
+# compute avg_rse
+avg_rse<- sigma(model)/mean(train$total_convert)
+#uncomment f-string below
+sprintf("The percentage error of the model is %s. Any prediction drawn from this model could be %s percent off from the actual observed value.", avg_rse, avg_rse)
+```
+
+```{r build_model2}
+model_2<- lm(total_convert ~ impressions, data=train)
+
+```
+
+```{r compute_rsquare}
+# compute r-squared
+r_sq<- summary(model)$r.squared
+r_sq_2<- summary(model_2)$r.squared
+
+# print out r-squared values
+print(r_sq)
+print(r_sq_2)
+
+# uncomment f-string below
+ sprintf("Based on a pair of simple linear regression models, we have determined that %s percent of the variation in user purchase behavior can be explained by the number of times a user viewed on a relevant ad campaign; whereas only %s percent of this variation can be explained by the number of times a user clicked on a relevant ad.", r_sq_2*100, r_sq*100)
+```
+
+---
+title: "Checking Model Residuals"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# set sampling seed
+set.seed(123)
+# load libraries and data
+library(dplyr)
+library(ggplot2)
+conversion_clean <- read.csv('conversion_clean.csv', header= T)
+# sample training data
+sample <- sample(c(TRUE, FALSE), nrow(conversion_clean), replace = T, prob = c(0.6,0.4))
+train <- conversion_clean[sample, ]
+```
+
+```{r message=FALSE}
+model <- lm(total_convert ~ clicks, data = train)
+
+#save predicted and residual values to df
+train$estimate<-predict(model)
+train$residuals<- residuals(model)
+#create visualization
+plot<- ggplot(train, aes(clicks,total_convert)) + geom_point(aes(y=estimate), color= "blue")
+plot
+
+
+```
+
+---
+title: "Visualizing Model Fit"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# set sampling seed
+set.seed(123)
+# load libraries and data
+library(dplyr)
+library(ggplot2)
+conversion_clean <- read.csv('conversion_clean.csv', header= T)
+# sample training data
+sample <- sample(c(TRUE, FALSE), nrow(conversion_clean), replace = T, prob = c(0.6,0.4))
+train <- conversion_clean[sample, ]
+```
+
+```{r build_viz}
+# build plot of clicks on total_convert below
+plot <- ggplot(train, aes(clicks, total_convert)) +
+geom_point()+
+geom_smooth(method="lm")+
+geom_smooth(se=FALSE, color="red")
+
+plot
+
+linear_relationship<- "a"
+```
+
+```{r build_model2}
+# build plot of impressions on total_convert below
+plot_2 <- ggplot(train, aes(impressions, total_convert)) +
+geom_point()+
+geom_smooth(method="lm")+
+geom_smooth(se=FALSE, color="red")
+
+plot_2
+
+linear_relationship_2<- "c"
+```
+
+---
+title: "Assessing Simple Linear Regression"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# set sampling seed
+set.seed(123)
+# load libraries and data
+library(dplyr)
+library(ggplot2)
+conversion_clean <- read.csv('conversion_clean.csv', header= T)
+# sample training data
+sample <- sample(c(TRUE, FALSE), nrow(conversion_clean), replace = T, prob = c(0.6,0.4))
+train <- conversion_clean[sample, ]
+```
+
+```{r message=FALSE}
+model <- lm(total_convert ~ clicks, data = train)
+model2 <- lm(total_convert ~ impressions, data = train)
+
+summary(model)
+summary(model2)
+
+clicks_coefficient<- model$coefficients[2]
+
+# uncomment f-string below
+sprintf("Based on a simple regression of `total_convert` by `clicks`, we estimate that for every additional click, the number of product purchases increases by %s.", clicks_coefficient)
+
+intercept_coefficient<- "c"
+```
+
+---
+title: "Making Predictions"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# set sampling seed
+set.seed(123)
+# load libraries and data
+library(dplyr)
+library(ggplot2)
+library(modelr)
+conversion_clean <- read.csv('conversion_clean.csv', header= T)
+# sample training data
+sample <- sample(c(TRUE, FALSE), nrow(conversion_clean), replace = T, prob = c(0.6,0.4))
+train <- conversion_clean[sample, ]
+test <- conversion_clean[!sample, ]
+```
+
+```{r message=FALSE}
+model <- lm(total_convert ~ clicks, data = train)
+model2 <- lm(total_convert ~ impressions, data = train)
+
+add_predictions(model)%>%
+summarize(MSE=mean((clicks-total_convert)^2))
+```
+
+```{r message = FALSE}
+
+```
+
+---
+title: "Assessing Multiple Linear Regression"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# set sampling seed
+set.seed(123)
+# load libraries and data
+library(dplyr)
+library(ggplot2)
+conversion_clean <- read.csv('conversion_clean.csv', header= T)
+# sample training data
+sample <- sample(c(TRUE, FALSE), nrow(conversion_clean), replace = T, prob = c(0.6,0.4))
+train <- conversion_clean[sample, ]
+```
+
+```{r  message=FALSE}
+# build model below
+model<-lm(total_convert~impressions+clicks+gender, data=train)
+summary(model)
+
+gender_coefficient<- "c"
+
+# define gender_coefficient below
+
+```
+
+```{r  message=FALSE}
+# build second model below
+model2<- lm(total_convert~impressions+clicks, data=train)
+# compute r-squared below
+rsq_model<- summary(model)$r.squared
+rsq_model2<- summary(model2)$r.squared
+
+rsq_model
+rsq_model2
+
+# define best_fit below
+best_fit<- rsq_model
+
+# define gender_diff below
+gender_diff<- rsq_model-rsq_model2
+sprintf("Based on the results of a series of multiple linear regressions on total_convert, we estimate that user gender accounts for approximately %s percent of the variation in product purchase rate.", gender_diff*100)
+```
+
+---
+title: "Predicting Income with Social Data"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load packages and data
+library(ggplot2)
+library(dplyr)
+library(modelr)
+psid <- read.csv("psid_2017.csv")
+
+```
+
+```{r}
+# view data structure
+str(psid)
+
+# plot age
+age_dist<-ggplot(psid, aes(age)) +
+  geom_bar()
+age_dist
+
+
+
+# filter to reasonable age group
+psid_clean<- psid%>%
+  filter(age<18 | age>75)
+head(psid_clean)
+
+# plot flitered age
+psid_clean_plt<-ggplot(psid_clean, aes(age))+
+  geom_bar()
+psid_clean_plt
+
+# plot education
+educ_dist<- ggplot(psid_clean, aes(education_years,age))+
+  geom_boxplot()
+educ_dist
+
+
+# filter to reasonable education levels
+psid_clean<- psid_clean%>%
+  filter(education_years>5 , education_years<25)
+psid_clean
+
+
+# plot income
+labor_income_plt<- ggplot(psid_clean, aes(labor_income, age))+ geom_boxplot()
+
+labor_income_plt
+
+
+# view income summary statistics
+summary(psid_clean$labor_income)
+
+# plot mean income by age
+mean_income_by_age<- group_by(psid_clean,age)%>% summarize(mean_income= mean(labor_income))%>% ggplot(aes(age, mean_income)) + geom_point()
+
+mean_income_by_age
+
+
+# subset data points into train and test sets
+set.seed(123)
+sample <- sample(c(TRUE, FALSE), nrow(psid_clean), replace = T, prob = c(0.6,0.4))
+
+# define train and test
+train<- psid_clean[sample,]
+test<- psid_clean[!sample,]
+
+
+# build model
+model<- lm(labor_income~education_years, data=train)
+model
+
+
+#plot against LOESS model
+plot<- ggplot(train, aes(education_years, labor_income)) + geom_point() +
+  geom_smooth(method="lm") + 
+  geom_smooth(se=FALSE,color="red")
+plot
+
+
+# compute r-squared
+r_sq<- summary(model)$r.squared * 100
+r_sq
+
+# uncomment to write out r-squared interpretation
+ sprintf("Based on a simple linear regression model, we have determined that %s percent of the variation in respondent income can be predicted by a respondent's education level.", r_sq)
+
+# build second model
+model_2<- lm(labor_income~education_years+age+gender, data=train)
+model_2
+
+r_sq_2<- summary(model_2)$r.squared * 100
+r_sq_2
+# uncomment to write out r-squared interpretation
+ sprintf("Based on a simple linear regression model, we have determined that %s percent of the variation in respondent income can be predicted by a respondent's education level, age and gender.", r_sq_2)
+
+# plot predictions versus observed
+plot<- add_predictions(test,model_2) %>%
+  ggplot(aes(age,labor_income))+
+  geom_point()+
+  geom_line(aes(y=pred),color="blue")
+plot
+
+# write out model results
+summary(model_2)
+# extract education coefficent
+education_coefficient<- model_2$coefficients[2]
+education_coefficient
+# uncomment to write out coefficent interpretation
+ sprintf("Based on a multiple linear regression model of education, age, and gender, for every additional year of formal education, the average American resident's income increases by $%s.", education_coefficent)
+```
+
+---------------------------------------------------------------------------------

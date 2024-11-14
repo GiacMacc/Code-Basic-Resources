@@ -1,0 +1,67 @@
+Sub WordTransfer()
+'Creates Word doc from excel
+
+    Dim wdApp As Object ' Word.Application
+    Dim wdDoc As Object ' Word.Document
+    Dim rng As Range
+    Dim cell As Range
+    Dim sentences(1 To 17) As String
+    Dim sentenceIndex As Integer
+    Dim i As Integer
+    
+    ' Create new instance of Word application
+    Set wdApp = CreateObject("Word.Application")
+    wdApp.Visible = True ' Make Word application visible
+    
+    ' Create a new document in Word
+    Set wdDoc = wdApp.Documents.Add
+    
+    ' Insert pre-filled sentences describing the data being processed
+    wdDoc.Content.InsertAfter "The following data is extracted from Excel:" & vbCrLf & vbCrLf
+    
+    ' Define 17 pre-filled sentences
+    sentences(1) = "Recert #: "
+    sentences(2) = "Product Name: "
+    sentences(3) = "Expiration Date: "
+    sentences(4) = "Recertified Until: "
+    sentences(5) = "Date Analyzed: "
+    sentences(6) = "Engineer: "
+    sentences(7) = "First Recert: "
+    sentences(8) = "Previous Recert #: "
+    sentences(9) = "IM: "
+    sentences(10) = "Batch/Lot: "
+    sentences(11) = "Purchase #: "
+    sentences(12) = "Containers: "
+    sentences(13) = "Volume: "
+    sentences(14) = "Request Date: "
+    sentences(15) = "Request By: "
+    sentences(16) = "Dept.: "
+    sentences(17) = "Revenue: "
+    
+    ' Set the range in Excel to search for highlighted cells
+    Set rng = Selection.SpecialCells(xlCellTypeVisible)
+    
+    ' Initialize sentence index
+    sentenceIndex = 1
+    
+    ' Loop through each cell in the range
+    For Each cell In rng
+        ' Insert the sentence into the Word document with the cell value
+        wdDoc.Content.InsertAfter sentences(sentenceIndex) & cell.Value & vbCrLf
+        
+        ' Increment sentence index
+        sentenceIndex = sentenceIndex Mod 17 + 1 ' Wrap around to 1 if it exceeds 17
+    Next cell
+    
+    wdDoc.Content.InsertAfter "Comments:" & vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf
+    
+    ' Insert a sentence at the bottom of the page
+    wdDoc.Content.InsertAfter vbCrLf & "This is a sentence at the bottom of the page."
+    
+    ' Release objects
+    Set wdDoc = Nothing
+    Set wdApp = Nothing
+    Set rng = Nothing
+    
+    MsgBox "Word document with sentences for each highlighted cell value has been created.", vbInformation
+End Sub

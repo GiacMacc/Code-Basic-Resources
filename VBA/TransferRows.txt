@@ -1,0 +1,77 @@
+Sub TransferRows()
+    ' Transfers specified information from one excel sheet to another
+    
+    Dim sourceSheet As Worksheet
+    Dim targetSheet As Worksheet
+    Dim lastRow As Long, i As Long
+    Dim transferColumns As Variant
+    Dim j As Long
+    Dim dataExists As Boolean
+    
+    ' Set your source and target sheets
+    Set sourceSheet = ThisWorkbook.Sheets("2024")
+    Set targetSheet = ThisWorkbook.Sheets("PEC Declarations Complete")
+    
+    ' Define the array of column indices you want to transfer
+    transferColumns = Array(3, 4, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19) ' Adjust column indices as needed
+    
+    ' Find the last row in the source sheet
+    lastRow = sourceSheet.Cells(sourceSheet.Rows.Count, "A").End(xlUp).Row
+    
+    ' Initialize an array to store the data to be transferred
+    Dim dataToTransfer() As Variant
+    ReDim dataToTransfer(1 To lastRow - 1, 1 To UBound(transferColumns) - LBound(transferColumns) + 1)
+    
+    ' Loop through each row in the source sheet
+    Dim transferRowIndex As Long
+    transferRowIndex = 1
+    
+    For i = 2 To lastRow
+        ' Check if column M (17th column) has a date value in the current row
+        If IsDate(sourceSheet.Cells(i, 17).Value) Then
+            ' Reset dataExists flag
+            dataExists = False
+            
+            ' Loop through target sheet to check if data already exists
+            For j = 2 To targetSheet.Cells(targetSheet.Rows.Count, "A").End(xlUp).Row
+                Dim matchCount As Integer
+                matchCount = 0
+                
+                For k = LBound(transferColumns) To UBound(transferColumns)
+                    ' Check if the cell in the specified column has a value
+                    If targetSheet.Cells(j, transferColumns(k) - 1).Value = sourceSheet.Cells(i, transferColumns(k)).Value Then
+                        matchCount = matchCount + 1
+                    End If
+                Next k
+                
+                ' Check if all transfer columns match
+                If matchCount = UBound(transferColumns) - LBound(transferColumns) + 1 Then
+                    dataExists = True
+                    Exit For
+                End If
+            Next j
+            
+            ' If data does not exist, collect it for transfer
+            If Not dataExists Then
+                ' Collect values from specified columns
+                For j = LBound(transferColumns) To UBound(transferColumns)
+                    ' Check if the cell in the specified column has a value
+                    If Not IsEmpty(sourceSheet.Cells(i, transferColumns(j)).Value) Then
+                        ' Store the value in the array
+                        dataToTransfer(transferRowIndex, j - LBound(transferColumns) + 1) = sourceSheet.Cells(i, transferColumns(j)).Value
+                    End If
+                Next j
+                
+                ' Move to the next row index in the transfer array
+                transferRowIndex = transferRowIndex + 1
+            End If
+        End If
+    Next i
+    
+    ' Determine the target range for data transfer
+    Dim targetRange As Range
+    Set targetRange = targetSheet.Cells(targetSheet.Rows.Count, "A").End(xlUp).Offset(1, 0).Resize(UBound(dataToTransfer, 1), UBound(dataToTransfer, 2))
+    
+    ' Transfer data to the target sheet in one go
+    targetRange.Value = dataToTransfer
+End Sub

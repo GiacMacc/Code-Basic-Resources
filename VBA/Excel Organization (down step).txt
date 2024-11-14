@@ -1,0 +1,22 @@
+Excel Organization (down step):
+' Allows user to shift entries down after entering so more recent info is always at top
+
+Sub Organization()
+'
+'   Dim lastRow As Long
+    
+    ' Find the last used row in column A
+    lastRow = Cells(Rows.Count, 1).End(xlUp).Row
+    
+    ' Shift the rows down starting from the last row
+    For i = lastRow To 2 Step -1
+        Rows(i + 1).Value = Rows(i).Value
+    Next i
+    
+    ' Clear the values in row 2
+    Rows(2).ClearContents
+    
+' Keyboard Shortcut: Ctrl+e
+
+End Sub
+
