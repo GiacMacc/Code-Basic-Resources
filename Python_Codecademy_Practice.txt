@@ -1,0 +1,3857 @@
+DATA SCIENCE FOUNDATIONS SKILL PATH
+
+LAMBDA FUNCTIONS:
+
+import random
+add_random= lambda num: num + random.randint(1,10)
+print(add_random(5))
+print(add_random(100))
+
++++++++++++++++++++++++++
+
+ones_place = lambda num: num%10
+
+print(ones_place(123))
+print(ones_place(4))
+
++++++++++++++++++++++++++
+
+rate_movie = lambda rating: 'I liked this movie' if rating>8.5 else 'This movie was not very good'
+
+print(rate_movie(9.2))
+print(rate_movie(7.2))
+
++++++++++++++++++++++++++
+
+multiple_of_three = lambda num: 'multiple of three' if num%3 ==0 else 'not a multiple'
+print(multiple_of_three(9))
+print(multiple_of_three(10))
+
++++++++++++++++++++++++++
+
+even_or_odd = lambda num: 'even' if num%2 else 'odd'
+
+print(even_or_odd(10))
+print(even_or_odd(5))
+
++++++++++++++++++++++++++
+
+ends_in_a=lambda str: str[-1] == 'a'
+
+print(ends_in_a("data"))
+print(ends_in_a("aardvark"))
+
++++++++++++++++++++++++++
+
+contains_a= lambda word: 'a' in word
+print(contains_a("banana"))
+print(contains_a("apple"))
+print(contains_a("cherry"))
+
+-------------------------
+
+PANDAS:
+
+import codecademylib3
+import pandas as pd
+
+orders= pd.read_csv('shoefly.csv')
+
+print(orders.head(5))
+
+emails = orders.email
+
+frances_palmer = orders[orders.first_name == 'Frances']
+print(frances_palmer)
+
+comfy_shoes = orders[orders.shoe_type.isin(['clogs','boots','ballet flats'])]
+print(comfy_shoes)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.DataFrame([
+  ['January', 100, 100, 23, 100],
+  ['February', 51, 45, 145, 45],
+  ['March', 81, 96, 65, 96],
+  ['April', 80, 80, 54, 180],
+  ['May', 51, 54, 54, 154],
+  ['June', 112, 109, 79, 129]],
+  columns=['month', 'clinic_east',
+           'clinic_north', 'clinic_south',
+           'clinic_west']
+)
+
+df2 = df.loc[[1, 3, 5]]
+df2=df2.reset_index(drop=True,inplace=True)
+print(df2)
+
+df3= df2.reset_index()
+print(df3)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.DataFrame([
+  ['January', 100, 100, 23, 100],
+  ['February', 51, 45, 145, 45],
+  ['March', 81, 96, 65, 96],
+  ['April', 80, 80, 54, 180],
+  ['May', 51, 54, 54, 154],
+  ['June', 112, 109, 79, 129]],
+  columns=['month', 'clinic_east',
+           'clinic_north', 'clinic_south',
+           'clinic_west'])
+
+january_february_march = df[df.month.isin(['January','February','March'])]
+print(january_february_march)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.DataFrame([
+  ['January', 100, 100, 23, 100],
+  ['February', 51, 45, 145, 45],
+  ['March', 81, 96, 65, 96],
+  ['April', 80, 80, 54, 180],
+  ['May', 51, 54, 54, 154],
+  ['June', 112, 109, 79, 129]],
+  columns=['month', 'clinic_east',
+           'clinic_north', 'clinic_south',
+           'clinic_west'])
+
+march_april= df[(df.month == 'March') | (df.month =='April')]
+print(march_april)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.DataFrame([
+  ['January', 100, 100, 23, 100],
+  ['February', 51, 45, 145, 45],
+  ['March', 81, 96, 65, 96],
+  ['April', 80, 80, 54, 180],
+  ['May', 51, 54, 54, 154],
+  ['June', 112, 109, 79, 129]],
+  columns=['month', 'clinic_east',
+           'clinic_north', 'clinic_south',
+           'clinic_west'])
+
+march = df.iloc[2]
+print(march)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.DataFrame([
+  ['January', 100, 100, 23, 100],
+  ['February', 51, 45, 145, 45],
+  ['March', 81, 96, 65, 96],
+  ['April', 80, 80, 54, 180],
+  ['May', 51, 54, 54, 154],
+  ['June', 112, 109, 79, 129]],
+  columns=['month', 'clinic_east',
+           'clinic_north', 'clinic_south',
+           'clinic_west']
+)
+
+clinic_north_south = df[['clinic_north','clinic_south']]
+
+print(type(clinic_north_south))
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df=pd.read_csv('imdb.csv')
+print(df.head())
+
+print(df.info())
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df2 = pd.DataFrame([
+  [1, 'San Diego', 100],
+  [2, 'Los Angeles', 120],
+  [3, 'San Francisco', 90],
+  [4, 'Sacramento', 115]],
+  columns=['Store ID', 'Location', 'Number of Employees'])
+
+print(df2)
+
+---
+MODIFYING DATAFRAMES:
+
+import codecademylib3
+import pandas as pd
+
+orders = pd.read_csv('shoefly.csv')
+print(orders.head())
+
+shoe = lambda x: \'animal' if x== 'leather' else 'vegan'
+orders['shoe_source'] = orders.shoe_material.apply(shoe)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.read_csv('imdb.csv')
+
+df.rename(columns={
+  'name':'movie_title',
+}, inplace = True)
+print(df)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.read_csv('imdb.csv')
+
+df.columns = ['ID','Title','Category','Year Released', 'Rating']
+print(df)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+total_earned = lambda row: row['hourly_wage']*1.5 if row['hours_worked']>40
+df = pd.read_csv('employees.csv')
+print(df.head())
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.read_csv('employees.csv')
+
+get_last_name = lambda name: name.split(' ')[-1]
+df['last_name'] = df.name.apply(get_last_name)
+print(df)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+
+mylambda = lambda age: 'Welcome to BattleCity!' if age>13 else 'You must be 13 or older'
+
+mylambda(14)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.DataFrame([
+  ['JOHN SMITH', 'john.smith@gmail.com'],
+  ['Jane Doe', 'jdoe@yahoo.com'],
+  ['joe schmo', 'joeschmo@hotmail.com']
+],
+columns=['Name', 'Email'])
+
+df['Lowercase Name']=df.Name.apply(str.lower)
+print(df)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.DataFrame([
+  [1, '3 inch screw', 0.5, 0.75],
+  [2, '2 inch nail', 0.10, 0.25],
+  [3, 'hammer', 3.00, 5.50],
+  [4, 'screwdriver', 2.50, 3.00]
+],
+  columns=['Product ID', 'Description', 'Cost to Manufacture', 'Price']
+)
+
+df['Margin']=df.Price - df['Cost to Manufacture']
+print(df)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.DataFrame([
+  [1, '3 inch screw', 0.5, 0.75],
+  [2, '2 inch nail', 0.10, 0.25],
+  [3, 'hammer', 3.00, 5.50],
+  [4, 'screwdriver', 2.50, 3.00]
+],
+  columns=['Product ID', 'Description', 'Cost to Manufacture', 'Price']
+)
+
+df['Is taxed?']='Yes'
+print(df)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+df = pd.DataFrame([
+  [1, '3 inch screw', 0.5, 0.75],
+  [2, '2 inch nail', 0.10, 0.25],
+  [3, 'hammer', 3.00, 5.50],
+  [4, 'screwdriver', 2.50, 3.00]
+],
+  columns=['Product ID', 'Description', 'Cost to Manufacture', 'Price']
+)
+
+df['Sold in Bulk?'] = ['Yes', 'Yes', 'No', 'No']
+print(df)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+inventory = pd.read_csv('inventory.csv')
+print(inventory.head(10))
+
+staten_island = inventory.head(10)
+
+print(staten_island)
+
+product_request = staten_island['product_description']
+print(product_request)
+
+seed_request = inventory[(inventory['location'] == 'Brooklyn') & (inventory['product_type'] == 'seeds')]
+
+inventory['in_stock']= inventory['quantity'].apply(lambda x: True if x>0 else False)
+
+inventory['total_value'] = inventory.price *inventory.quantity
+
+print(inventory.head())
+
+combine_lambda = lambda row: \
+    '{} - {}'.format(row.product_type,
+                     row.product_description)
+inventory['full_description'] = inventory.apply(combine_lambda, axis=1)
+
+print(inventory.head())
+
+-------------------------
+
+AGGREGATES (PIVOTS):
+
+import codecademylib3
+import pandas as pd
+
+user_visits = pd.read_csv('page_visits.csv')
+
+print(user_visits.head())
+
+click_source= user_visits.groupby('utm_source').id.count().reset_index()
+
+print(click_source)
+
+click_source_by_month= user_visits.groupby(['utm_source','month']).id.count().reset_index()
+
+click_source_by_month_pivot= click_source_by_month.pivot(
+  columns= 'month',
+  index= 'utm_source',
+  values= 'id'
+).reset_index()
+
+print(click_source_by_month_pivot)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import numpy as np
+import pandas as pd
+
+orders = pd.read_csv('orders.csv')
+
+shoe_counts = orders.groupby(['shoe_type', 'shoe_color']).id.count().reset_index()
+
+shoe_counts_pivot = shoe_counts.pivot(
+    columns='shoe_color',
+    index='shoe_type',
+    values='id').reset_index()
+
+print(shoe_counts_pivot)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import numpy as np
+import pandas as pd
+
+orders = pd.read_csv('orders.csv')
+
+shoe_counts = orders.groupby(['shoe_type','shoe_color'])['id'].count().reset_index()
+
+print(shoe_counts)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import numpy as np
+import pandas as pd
+
+orders = pd.read_csv('orders.csv')
+
+# np.percentile can calculate any percentile over an array of values
+cheap_shoes = orders.groupby('shoe_color').price.apply(lambda x: np.percentile(x, 25)).reset_index()
+
+print(cheap_shoes)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+orders = pd.read_csv('orders.csv')
+
+pricey_shoes = orders.groupby('shoe_type').price.max().reset_index()
+
+print(pricey_shoes)
+print(type(pricey_shoes))
+
+
+print(pricey_shoes)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+orders = pd.read_csv('orders.csv')
+
+pricey_shoes= orders.groupby('shoe_type').price.max()
+
+print(pricey_shoes)
+print(type(pricey_shoes))
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+orders = pd.read_csv('orders.csv')
+
+print(orders.head(10))
+
+most_expensive = orders.price.max()
+
+print(most_expensive)
+
+num_colors= orders.shoe_color.nunique()
+
+print(num_colors)
+
+-------------------------
+
+DATA ACQUISITION (JOINS):
+
+import numpy
+
+print(numpy.random.binomial(n=100, p=0.8, size=500))
+
++++++++++++++++++++++++++
+
+import pandas
+ 
+commute_df = pandas.read_csv("commute_data.csv")
+
+# # Preview DataFrame
+print(commute_df.head())
+ 
+# # Rename DataFrame columns
+commute_df.columns = ['name', 'total_commuters', 'state', 'state', 'county']
+
++++++++++++++++++++++++++
+
+import requests
+import csv
+
+
+r = requests.get('https://api.census.gov/data/2020/acs/acs5?get=NAME,B08303_001E,B08303_013E&for=county:*&in=state:36')
+
+r_json=r.json()
+
+with open('commute_data.csv', mode='w', newline='') as file:
+  writer = csv.writer(file)
+  writer.writerows(r.json())
+
++++++++++++++++++++++++++
+
+import requests
+
+r = requests.get('https://api.census.gov/data/2020/acs/acs5?get=NAME,B08303_001E,B08303_013E&for=county:*&in=state:36') 
+
+# Access data as JSON string
+r_text= r.text
+print(r.text)
+ 
+# Access decoded JSON data as Python object
+r_json= r.json()
+print(r.json())
+
+-------------------------
+
+STRINGS:
+
+def username_generator(first_name,last_name):
+  if len(first_name) < 3 or len(last_name) < 4:
+    print(first_name + last_name)
+  elif
+    print(first_name[3:] + last_name[4:])
+  else:
+    0
+
++++++++++++++++++++++++++
+
+def contains(big_string, little_string):
+  return little_string in big_string
+
+def common_letters(string_one, string_two):
+  common = []
+  for letter in string_one:
+    if (letter in string_two) and not (letter in common):
+      common.append(letter)
+  return common
+
++++++++++++++++++++++++++
+
+def letter_check(word,letter):
+  if letter in word:
+    return True
+  else:
+    return False
+
+print(letter_check('Hello', 'l'))
+
++++++++++++++++++++++++++
+
+def get_length(string):
+  counter = 0
+  for letter in string:
+    counter+=1
+return count
+
+get_length('test')
+
++++++++++++++++++++++++++
+
+first_name = "Bob"
+last_name = "Daily"
+
+fixed_first_name = 'R' + first_name[1:]
+
++++++++++++++++++++++++++
+
+first_name = "Reiko"
+last_name = "Matsuki"
+
+def password_generator(first_name,last_name):
+  password= first_name[len(first_name)-3:] + last_name[len(last_name)-3:]
+  return password
+
+  temp_password=password_generator(first_name,last_name)
+
++++++++++++++++++++++++++
+
+first_name = "Julie"
+last_name = "Blevins"
+def account_generator(first_name,last_name):
+  comb= first_name[:3] + last_name[:3]
+return comb
+
+-------------------------
+
+EDA (VARIABLE TYPES):
+
+import codecademylib3
+
+# Import pandas with alias
+import pandas as pd
+
+# Import dataset as a Pandas Dataframe
+cereal = pd.read_csv('cereal.csv', index_col=0)
+
+# Show the first five rows of the `cereal` dataframe
+print(cereal.head())
+
+# Create a new dataframe with the `mfr` variable One-Hot Encoded
+cereal = pd.get_dummies(data=cereal, columns=['mfr'])
+print(cereal.head())
+
+
+# Show first five rows of new dataframe
+
++++++++++++++++++++++++++
+
+import codecademylib3
+
+# Import pandas with alias
+import pandas as pd
+
+# Import dataset as a Pandas Dataframe
+movies = pd.read_csv('netflix_movies.csv')
+
+# View the first five rows of the dataframe
+print(movies.head())
+
+# Print the unique values of the rating column
+print(movies['rating'].unique())
+
+# Change the data type of `rating` to category
+movies['rating'] = pd.Categorical(movies['rating'], ['NR', 'G', 'PG','PG-13','R'], ordered=True)
+
+
+# Recheck the values of `rating` with .unique()
+print(movies['rating'].unique())
+
++++++++++++++++++++++++++
+
+import codecademylib3
+
+# Import pandas with alias
+import pandas as pd
+
+# Import dataset as a Pandas dataframe
+movies = pd.read_csv("netflix_movies.csv")
+
+# View the first five rows of the dataframe
+print(movies.head())
+
+# Print the data types of dataframe 
+print(movies.dtypes)
+
+# Add the variables you plan to change to this list
+change = ['title', 'country']
+
+# Change the title variable to a "string"
+movies['title']=movies['title'].astype('string')
+movies['country']=movies['country'].astype('string')
+# Change any other variables
+
+# Print the data types again
+print(movies.dtypes)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+
+# Import pandas with alias
+import pandas as pd
+
+# Import dataset as a Pandas dataframe
+movies = pd.read_csv("netflix_movies.csv")
+
+# View the first five rows of the dataframe
+print(movies.head())
+
+# Print the data types
+print(movies.dtypes)
+# Fill in the missing cast_count values with 0
+movies['cast_count'].fillna(0, inplace = True)
+
+# Change the type of the cast_count column
+movies['cast_count'] = movies['cast_count'].astype('int64')
+
+# Check the data types of the columns again. 
+
++++++++++++++++++++++++++
+
+import codecademylib3
+
+# Import pandas with alias
+import pandas as pd
+
+# Import dataset as a Pandas dataframe
+movies = pd.read_csv("netflix_movies.csv")
+
+# View the first five rows of the dataframe
+print(movies.head())
+print(movies.release_year)
+print(movies.cast_count)
+# Set the correct value for release_year_variable_type
+release_year_variable_type = 'discrete'
+print(release_year_variable_type)
+
+# Set the correct value for duration_variable_type
+cast_count_variable_type = 'discrete'
+print(cast_count_variable_type)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+
+# Import pandas with alias
+import pandas as pd
+
+# Import dataset as a Pandas dataframe
+movies = pd.read_csv("netflix_movies.csv")
+
+# View the first five rows of the dataframe
+print(movies.head())
+
+# Print the unique values in the country column
+print(movies.country.unique())
+
+# Set the correct value for country_variable_type
+country_variable_type= 'nominal'
+
+---
+
+import codecademylib3
+import pandas as pd
+import numpy as np
+
+# code goes here
+
+diabetes_data = pd.read_csv('diabetes.csv')
+print(diabetes_data.head())
+
+print(diabetes_data.info())
+
+print(diabetes_data.isnull().sum())
+
+print(diabetes_data.describe())
+
+diabetes_data[['Glucose','BloodPressure','SkinThickness','Insulin','BMI']] = diabetes_data[['Glucose','BloodPressure','SkinThickness','Insulin','BMI']].replace(0,np.nan)
+
+print(diabetes_data.isnull().sum())
+
+print(diabetes_data[diabetes_data.isnull().any(axis=1)])
+
+print(diabetes_data.info())
+
+print(diabetes_data.Outcome.unique())
+diabetes_data['Outcome'].replace('O',0)
+print(diabetes_data.Outcome.unique())
+
+---
+
+SUMMARIZING A SINGLE VARIABLE (VISUALIZATION):
+
+
+import codecademylib3
+import matplotlib.pyplot as plt 
+import seaborn as sns
+import pandas as pd
+
+movies = pd.read_csv('movies.csv')
+
+# Create a bar chart for movie genre 
+# Bar chart for borough
+sns.countplot(x='genre', data=movies)
+plt.show()
+plt.close()
+
+
+# Create a pie chart for movie genre
+
+# Pie chart for borough
+movies.genre.value_counts().plot.pie()
+plt.show()
+plt.close()
+
++++++++++++++++++++++++++
+
+import pandas as pd
+
+movies = pd.read_csv('movies.csv')
+
+# Save the proportions to genre_props
+
+genre_props = movies.genre.value_counts(normalize=True)
+print(genre_props)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+movies = pd.read_csv('movies.csv')
+
+# Create a boxplot for movie budget 
+sns.boxplot(x='production_budget', data=movies)
+plt.show()
+plt.close()
+
+# Create a histogram for movie budget
+# Histogram for rent
+sns.histplot(x='production_budget', data=movies)
+plt.show()
+plt.close()
+
++++++++++++++++++++++++++
+
+import pandas as pd
+
+movies = pd.read_csv('movies.csv')
+
+# Save the range to range_budget
+range_budget= movies.production_budget.max()- movies.production_budget.min()
+print(range_budget)
+
+# Save the interquartile range to iqr_budget
+from scipy.stats import iqr
+iqr_budget = iqr(movies.production_budget)
+print(iqr_budget)
+# Save the variance to var_budget
+var_budget = movies.production_budget.var()
+print(var_budget)
+
+# Save the standard deviation to std_budget
+std_budget = movies.production_budget.std()
+print('sd: '+ str(std_budget))
+
+# Save the mean absolute deviation to mad_budget
+mad_budget = movies.production_budget.mad()
+print(round(mad_budget))
+
++++++++++++++++++++++++++
+
+import pandas as pd
+
+movies = pd.read_csv('movies.csv')
+
+# Save the mean to mean_budget
+
+
+# Save the median to med_budget
+
+
+# Save the mode to mode_budget
+
+
+# Save the trimmed mean to trmean_budget
+# Mean
+mean_budget = movies.production_budget.mean()
+print(mean_budget)
+# Median
+med_budget = movies.production_budget.median()
+print(med_budget)
+# # Mode
+mode_budget = movies.production_budget.mode()
+print(mode_budget)
+# # Trimmed mean
+from scipy.stats import trim_mean
+
+trmean_budget=trim_mean(movies.production_budget, proportiontocut=0.2)  # trim extreme 10%
+print(trmean_budget)
+
++++++++++++++++++++++++++
+
+import codecademylib3
+import pandas as pd
+
+movies = pd.read_csv('movies.csv')
+
+# Print the first 5 rows 
+print(movies.head(5))
+
+# Print the summary statistics for all columns
+print(movies.describe(include='all'))
+
+---
+
+SUMMARIZING TWO VARIABLES (VISUALIZATION):
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt 
+import seaborn as sns
+import codecademylib3
+
+titanic = pd.read_csv('titanic.csv')
+
+Survived = titanic.Fare[titanic.Survived == 1]
+Dies = titanic.Fare[titanic.Survived == 0]
+
+survive_mean = np.mean(Survived)
+died_mean = np.mean(Dies)
+
+diff_mean = survive_mean-died_mean
+
+print(diff_mean)
+
+survive_med= np.median(Survived)
+died_med = np.median(Dies)
+
+diff_med = survive_med-died_med
+
+print(diff_med)
+
+sns.boxplot(data = titanic, x = 'Survived', y = 'Fare')
+plt.show()
+
++++++++++++++++++++++++++
+
+import pandas as pd
+import matplotlib.pyplot as plt 
+import seaborn as sns
+import codecademylib3
+
+students = pd.read_csv('students.csv')
+
+#create the box-plot here:
+sns.boxplot(data = students, x = 'Fjob', y = 'G3')
+plt.show()
+
++++++++++++++++++++++++++
+
+import numpy as np
+import pandas as pd
+import codecademylib3
+import matplotlib.pyplot as plt 
+students = pd.read_csv('students.csv')
+
+scores_urban = students.G3[students.address == 'U']
+scores_rural = students.G3[students.address == 'R']
+
+#create the overlapping histograms here:
+plt.hist(scores_urban , color="blue", label="Urban", normed=True, alpha=0.5)
+plt.hist(scores_rural , color="red", label="Rural", normed=True, alpha=0.5)
+plt.legend()
+plt.show()
+
++++++++++++++++++++++++++
+
+import pandas as pd
+import codecademylib3
+import matplotlib.pyplot as plt 
+import seaborn as sns
+
+students = pd.read_csv('students.csv')
+
+#create the boxplot here:
+sns.boxplot(data = students, x = 'address', y = 'G3')
+plt.show()
+
++++++++++++++++++++++++++
+
+import numpy as np
+import pandas as pd
+students = pd.read_csv('students.csv')
+
+scores_urban = students.G3[students.address == 'U']
+scores_rural = students.G3[students.address == 'R']
+
+#calculate means for each group:
+scores_urban_mean = np.mean(scores_urban)
+scores_rural_mean = np.mean(scores_rural)
+
+#print mean scores:
+print('Mean score - students w/ urban address:')
+print(scores_urban_mean)
+print('Mean score - students w/ rural address:')
+print(scores_rural_mean)
+
+#calculate mean difference:
+mean_diff = scores_urban_mean - scores_rural_mean
+
+#print mean difference
+print('Mean difference:')
+print(mean_diff)
+
+#calculate medians for each group:
+scores_urban_median = np.median(scores_urban)
+scores_rural_median = np.median(scores_rural)
+
+#print median scores
+print('Median score - students w/ urban address:')
+print(scores_urban_median)
+print('Median score - students w/ rural address:')
+print(scores_rural_median)
+
+#calculate median difference
+median_diff = scores_urban_median - scores_rural_median
+
+#print median difference
+print('Median difference:')
+print(median_diff)
+
++++++++++++++++++++++++++
+
+import numpy as np
+import pandas as pd
+import codecademylib3
+
+students = pd.read_csv('students.csv')
+
+#print the first five rows of students:
+print(students.head(5))
+
+#separate out scores for students who live in urban and rural locations:
+scores_urban = students.G3[students.address == 'U']
+print(scores_urban)
+scores_rural = students.G3[students.address == 'R']
+
+---
+
+TWO QUANTITATIVE VARIABLES:
+
+import pandas as pd
+import matplotlib.pyplot as plt 
+import codecademylib3
+from scipy.stats import pearsonr
+
+sleep = pd.read_csv('sleep_performance.csv')
+
+# create your scatter plot here:
+plt.scatter(sleep.hours_sleep, sleep.performance)
+plt.xlabel('Hours of Sleep')
+plt.ylabel('Performance')
+plt.show()
+
+# calculate the correlation for `hours_sleep` and `performance`:
+corr_sleep_performance, p = pearsonr(sleep.hours_sleep, sleep.performance)
+print(corr_sleep_performance)
+
++++++++++++++++++++++++++
+
+import pandas as pd
+import matplotlib.pyplot as plt 
+import codecademylib3
+from scipy.stats import pearsonr
+
+housing = pd.read_csv('housing_sample.csv')
+
+# calculate corr_sqfeet_beds and print it out:
+from scipy.stats import pearsonr
+corr_sqfeet_beds, p = pearsonr(housing.sqfeet, housing.beds)
+print(corr_sqfeet_beds) 
+
+# create the scatter plot here:
+plt.xlabel('Number of beds')
+plt.ylabel('Number of sqfeet')
+plt.scatter(x = housing.beds, y = housing.sqfeet)
+plt.show()
+
++++++++++++++++++++++++++
+
+import numpy as np
+import pandas as pd
+np.set_printoptions(suppress=True, precision = 1) 
+
+housing = pd.read_csv('housing_sample.csv')
+
+# calculate and print covariance matrix:
+cov_mat_sqfeet_beds = np.cov(housing.sqfeet, housing.beds)
+print(cov_mat_sqfeet_beds)
+
+
+# store the covariance as cov_sqfeet_beds
+cov_sqfeet_beds = 228.2
+
++++++++++++++++++++++++++
+
+import pandas as pd
+import matplotlib.pyplot as plt 
+import codecademylib3
+
+housing = pd.read_csv('housing_sample.csv')
+
+print(housing.head())
+
+#create your scatter plot here:
+plt.scatter(x = housing.beds , y =  housing.sqfeet)
+plt.xlabel('Sq Feet')
+plt.ylabel('Beds')
+plt.show()
+
+---
+
+TWO CATEGORICAL VARIABLES:
+
+import pandas as pd
+import numpy as np
+from scipy.stats import chi2_contingency
+
+npi = pd.read_csv("npi_sample.csv")
+
+special_authority_freq = pd.crosstab(npi.special, npi.authority)
+
+# calculate the chi squared statistic and save it as chi2, then print it:
+chi2, pval, dof, expected = chi2_contingency(special_authority_freq)
+print(chi2)
+
++++++++++++++++++++++++++
+
+import pandas as pd
+import numpy as np
+from scipy.stats import chi2_contingency
+
+npi = pd.read_csv("npi_sample.csv")
+
+special_authority_freq = pd.crosstab(npi.special, npi.authority)
+print("observed contingency table:")
+print(special_authority_freq)
+
+# calculate the expected contingency table if there's no association and save it as expected
+chi2, pval, dof, expected = chi2_contingency(special_authority_freq)
+print(np.round(expected))
+
+# print out the expected frequency table
+print("expected contingency table (no association):")
+
++++++++++++++++++++++++++
+
+import pandas as pd
+import numpy as np
+
+npi = pd.read_csv("npi_sample.csv")
+
+# save the table of frequencies as special_authority_freq:
+special_authority_freq = pd.crosstab(npi.special, npi.authority)
+
+# save the table of proportions as special_authority_prop:
+special_authority_prop = special_authority_freq/len(npi)
+
+# calculate and print authority_marginals
+authority_marginals = special_authority_prop.sum(axis=0)
+print(authority_marginals)
+special_marginals = special_authority_prop.sum(axis=1)
+print(special_marginals)
+
+
+# calculate and print special_marginals
+
++++++++++++++++++++++++++
+
+import pandas as pd
+import numpy as np
+
+npi = pd.read_csv("npi_sample.csv")
+
+special_authority_freq = pd.crosstab(npi.special, npi.authority)
+
+# save the table of proportions as special_authority_prop:
+special_authority_prop = special_authority_freq/len(npi)
+print(special_authority_prop)
+# print out special_authority_prop
+
++++++++++++++++++++++++++
+
+import pandas as pd
+import codecademylib3
+
+npi = pd.read_csv("npi_sample.csv")
+
+special_authority_freq = pd.crosstab(npi.special, npi.authority)
+print(special_authority_freq)
+
+---
+
+PROBABILITY:
+
+The addition rule, The product rule, Bayes’ Theorem, Tree Diagrams Binomial Distribution, Poisson Distribution, Cumulative Distribution Function, Probability Density Functions, Probability Mass Function, Random Variables, Discrete & Continuous, Law of Large Numbers, Set Theory, Union vs Intersection vs Complement, Conditional Probability
+
+Coin Flipper:
+
+import matplotlib.pyplot as plt
+import numpy as np
+import codecademylib3
+
+def coin_flip_experiment():
+  # defining our two coins as lists
+  coin1 = ['Heads', 'Tails']
+  coin2 = ['Heads', 'Tails']
+ 
+  # "flipping" both coins randomly
+  coin1_result = np.random.choice(coin1)
+  coin2_result = np.random.choice(coin2)
+ 
+  # checking if both flips are heads
+  if coin1_result == 'Heads' and coin2_result == 'Heads':
+    return 1
+  else:
+    return 0
+ 
+# how many times we run the experiment
+num_trials = 5
+prop = []
+flips = []
+# keep track of the number of times heads pops up twice
+two_heads_counter = 0
+ 
+# perform the experiment five times
+for flip in range(num_trials):
+  # if both coins are heads add 1 to the counter
+  two_heads_counter += coin_flip_experiment()
+  # keep track of the proportion of two heads at each flip 
+  prop.append(two_heads_counter/(flip+1))
+  # keep a list for number of flips
+  flips.append(flip+1)
+ 
+# plot all flips and proportion of two heads
+plt.plot(flips, prop, label='Experimental Probability')
+plt.xlabel('Number of Flips')
+plt.ylabel('Proportion of Two Heads')
+
+plt.hlines(0.25, 0, num_trials, colors='orange', label='True Probability')
+plt.legend()
+
+
+ 
+plt.show()
+
++++++++++++++++++++++++++
+
+Addition Rule:
+
+def prob_a_or_b(a, b, all_possible_outcomes):
+  # probability of event a
+	prob_a = len(a)/len(all_possible_outcomes)
+	
+	# probability of event b
+	prob_b = len(b)/len(all_possible_outcomes)
+	
+	# intersection of events a and b
+	inter = a.intersection(b)
+	
+	# probability of intersection of events a and b
+	prob_inter = len(inter)/len(all_possible_outcomes)
+	
+	# add return statement here
+	return prob_a + prob_b - prob_inter
+
+# rolling an even or odd 
+evens = {2, 4, 6}
+odds = {1, 3, 5}
+all_possible_rolls = {1, 2, 3, 4, 5, 6}
+
+# call function here first
+print(prob_a_or_b(evens, odds, all_possible_rolls))
+
+# rolling an odd or a number greater than 2
+odds = {1, 3, 5}
+greater_than_two = {3, 4, 5, 6}
+all_possible_rolls = {1, 2, 3, 4, 5, 6}
+
+# call function here second
+print(prob_a_or_b(odds, greater_than_two, all_possible_rolls))
+
+# selecting a diamond card or a face card from a standard deck of cards
+diamond_cards = {'ace_diamond', '2_diamond', '3_diamond', '4_diamond', '5_diamond', '6_diamond', '7_diamond', '8_diamond', '9_diamond', '10_diamond', 'jack_diamond', 'queen_diamond', 'king_diamond'}
+face_cards = {'jack_diamond', 'jack_spade', 'jack_heart', 'jack_club', 'queen_diamond', 'queen_spade', 'queen_heart', 'queen_club', 'king_diamond', 'king_spade', 'king_heart', 'king_club'}
+# all cards in a deck representing the entire sample space
+all_possible_cards = {'ace_diamond', '2_diamond', '3_diamond', '4_diamond', '5_diamond', '6_diamond', '7_diamond', '8_diamond', '9_diamond', '10_diamond', 'jack_diamond', 'queen_diamond', 'king_diamond', 'ace_heart', '2_heart', '3_heart', '4_heart', '5_heart', '6_heart', '7_heart', '8_heart', '9_heart', '10_heart', 'jack_heart', 'queen_heart', 'king_heart', 'ace_spade', '2_spade', '3_spade', '4_spade', '5_spade', '6_spade', '7_spade', '8_spade', '9_spade', '10_spade', 'jack_spade', 'queen_spade', 'king_spade', 'ace_club', '2_club', '3_club', '4_club', '5_club', '6_club', '7_club', '8_club', '9_club', '10_club', 'jack_club', 'queen_club', 'king_club'}
+
+# call function here third
+print(prob_a_or_b(diamond_cards, face_cards, all_possible_cards))
+
++++++++++++++++++++++++++
+
+Probability Distributions:
+
+import scipy.stats as stats
+import numpy as np
+
+## Exercise 1
+# sampling from a 6-sided die
+die_6 = range(1, 7)
+print(np.random.choice(die_6, size = 5, replace = True))
+
+
+## Exercise 4 - binomial probability mass function
+# 6 heads from 10 fair coin flips
+print(stats.binom.pmf(6, 10, 0.5))
+
+
+## Exercise 6 - binomial probability mass function
+# 2 to 4 heads from 10 coin flips
+# P(X = 2) + P(X = 3) + P(X = 4)
+print(stats.binom.pmf(2, n=10, p=.5) + stats.binom.pmf(3, n=10, p=.5) + stats.binom.pmf(4, n=10, p=.5))
+
+# 0 to 8 heads from 10 coin flips
+# 1 - (P(X = 9) + P(X = 10))
+print(1 - (stats.binom.pmf(9, n=10, p=.5) + stats.binom.pmf(10, n=10, p=.5)))
+
+
+## Exercise 9 - binomial cumulative distribution function
+# 6 or fewer heads from 10 coin flips
+print(stats.binom.cdf(6, 10, 0.5))
+
+# more than 6 heads from 10 coin flips
+print(1 - stats.binom.cdf(6, 10, 0.5))
+
+# between 4 and 8 heads from 10 coin flips
+print(stats.binom.cdf(8, 10, 0.5) - stats.binom.cdf(3, 10, 0.5))
+
+
+## Exercise 10 - normal distribution cumulative distribution function
+# stats.norm.cdf(x, loc, scale)
+# temperature being less than 14*C
+  # x = 14, loc = 20, scale = 3
+print(stats.norm.cdf(14, 20, 3))
+
+
+# Exercise 11
+# temperature being greater than 24*C
+  # x = 24, loc = 20, scale = 3
+print(1 - stats.norm.cdf(24, 20, 3))
+
+# temperature being between 21*C and 25*C
+  # x = 24, loc = 20, scale = 3
+print(stats.norm.cdf(25, 20, 3) - stats.norm.cdf(21, 20, 3))
+
++++++++++++++++++++++++++
+
+Probability Distributions:
+
+import scipy.stats as stats
+
+## Checkpoint 1
+temp_prob_1 = stats.norm.cdf(25, 20,3)- stats.norm.cdf(18, 20,3)
+
+
+## Checkpoint 2
+temp_prob_2 = 1- stats.norm.cdf(24, 20,3)
+
++++++++++++++++++++++++++
+
+Probability Distributions:
+
+import scipy.stats as stats
+
+prob = stats.norm.cdf(175, 167.64,8)
+
++++++++++++++++++++++++++
+
+Probability Mass Function:
+
+ import scipy.stats as stats
+
+## Checkpoint 1
+prob_1 = stats.binom.pmf(4, n=10, p=.5) + stats.binom.pmf(5, n=10, p=.5) + stats.binom.pmf(6, n=10, p=.5)
+
+print(prob_1)
+
+## Checkpoint 2
+prob_2 = 1- stats.binom.pmf(3, n=10, p=.5) + stats.binom.pmf(2, n=10, p=.5) + stats.binom.pmf(1, n=10, p=.5) + stats.binom.pmf(0, n=10, p=.5)
+print(prob_2)
+
++++++++++++++++++++++++++
+
+Simple Probability Calc:
+
+import scipy.stats as stats
+
+# value of interest
+# change this
+x = 3
+
+# sample size
+# change this
+n = 10
+
+# calculate probability
+prob_1 = stats.binom.pmf(x, n, 0.5)
+print(prob_1)
+
+## Question 2
+prob_2 = stats.binom.pmf(7,20,0.5)
+print(prob_2)
+
++++++++++++++++++++++++++
+
+Variance in Poisson:
+
+import scipy.stats as stats
+import numpy as np
+
+## Checkpoint 1
+expected_bonus = 75000*0.08
+
+
+## Checkpoint 2
+num_goals = stats.poisson.rvs(4, size=100)
+
+
+## Checkpoint 3
+var=np.var(num_goals)
+print(var)
+## Checkpoint 4
+num_goals_2 = num_goals * 2
+print(np.var(num_goals_2))
+
++++++++++++++++++++++++++
+
+Variance in Binomial Distribution:
+
+## Checkpoint 1
+variance_baskets = 20*0.85*(1-0.85)
+
+
+## Checkpoint 2
+variance_late = 180*(1-0.98)*(1-0.02)
+
++++++++++++++++++++++++++
+
+Spread of Poisson:
+
+import scipy.stats as stats
+import numpy as np
+
+## For checkpoints 1 and 2
+# 5000 draws, lambda = 7
+rand_vars_7 = stats.poisson.rvs(7, size = 5000)
+
+## Checkpoint 1
+# print variance of rand_vars_7
+print(np.var(rand_vars_7))
+
+## Checkpoint 2
+# print minimum and maximum of rand_vars_7
+print(min(rand_vars_7), max(rand_vars_7))
+
+## For checkpoints 3 and 4
+# 5000 draws, lambda = 17
+rand_vars_17 = stats.poisson.rvs(17, size = 5000)
+
+## Checkpoint 3
+# print variance of rand_vars_17
+print(np.var(rand_vars_17))
+
+## Checkpoint 4
+# print minimum and maximum of rand_vars_17
+print(min(rand_vars_17), max(rand_vars_17))
+
++++++++++++++++++++++++++
+
+Spread of Poisson:
+
+import scipy.stats as stats
+import codecademylib3
+
+from histogram_function import histogram_function
+
+## Checkpoint 1
+# lambda = 15, 1000 random draws 
+rand_vars = stats.poisson.rvs(15, size=1000)
+
+## Checkpoint 2
+# print the mean of rand_vars
+print(rand_vars)
+
+## Checkpoint 3
+histogram_function(rand_vars)
+
++++++++++++++++++++++++++
+
+Calculating Probabilities of a Range/ exact values using the Cumulative Density Function:
+
+
+import scipy.stats as stats
+
+## Checkpoint 1
+# calculate prob_more_than_20
+prob_more_than_20 = 1- stats.poisson.cdf(20,15)
+
+print (prob_more_than_20)
+
+## Checkpoint 
+# calculate prob_17_to_21
+prob_17_to_21 = stats.poisson.cdf(21,15) - stats.poisson.cdf(16,15)
+
+print (prob_17_to_21)
+
++++++++++++++++++++++++++
+
+import scipy.stats as stats
+
+## Checkpoint 1
+# calculate prob_15
+prob_15 = stats.poisson.pmf(15,15)
+
+print (prob_15)
+
+
+## Checkpoint 
+# calculate prob_7_to_9
+prob_7_to_9 = stats.poisson.pmf(7,15) + stats.poisson.pmf(8,15) + stats.poisson.pmf(9,15)
+
+print (prob_7_to_9)
+
+---
+
+SAMPLING FOR DATA SCIENCE:
+
+Standard Error, Sampling vs Population Distributions
+
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import stats
+import codecademylib3
+
+# Set up parameters here:
+x = None
+population_mean = None
+population_std_dev = None
+samp_size = None
+
+### Below is code to create simulated dataset and calculate Standard Error
+standard_error = population_std_dev / (samp_size**.5)
+
+this_cdf = round(stats.norm.cdf(x,population_mean,standard_error),3)
+
+# Create the population
+population = np.random.normal(population_mean, population_std_dev, size = 100000)
+
+# Simulate the sampling distribution
+sample_means = []
+for i in range(500):
+    samp = np.random.choice(population, samp_size, replace = False)
+    sample_means.append(np.mean(samp))
+
+mean_sampling_distribution = round(np.mean(sample_means),3)
+std_sampling_distribution = round(np.std(sample_means),3)
+
+std_error = population_std_dev / (samp_size **0.5)
+
+sns.histplot(population, stat = 'density')
+plt.title(f"Population Mean: {population_mean} \n Population Std Dev: {population_std_dev} \n Standard Error = {population_std_dev} / sq rt({samp_size}) \n Standard Error = {std_error} ")
+plt.xlabel("")
+plt.show()
+plt.clf()
+
+# Plot the sampling distribution
+sns.histplot(sample_means, stat = 'density')
+plt.axvline(x,color='r',linestyle='dashed')
+plt.title(f"Sampling Dist Mean: {mean_sampling_distribution} \n Sampling Dist Standard Deviation: {std_sampling_distribution}\n CDF for x={x}: {this_cdf}")
+plt.xlabel("")
+plt.show()
+
++++++++++++++++++++++++++
+
+Calc Probabilities:
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+## Setting up our parameters
+std_dev = 20
+samp_size = 25
+
+standard_error = std_dev / (samp_size**.5)
+# remember that **.5 is raising to the power of one half, or taking the square root
+
+x = 30
+mean = 36
+
+cod_cdf = stats.norm.cdf(x,mean,standard_error)
+print(cod_cdf)
+
++++++++++++++++++++++++++
+
+Biased Estimators:
+
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import stats
+import codecademylib3
+
+app_stat_text = "Maximum"
+def app_statistic(x):
+    return np.mean(x)
+
+### Below calculates the statistic for this population:
+### You don't need to change anything below to pass the checkpoints
+mean, std_dev = 50, 15
+population = np.random.normal(mean, std_dev, 1000)
+
+pop_statistic = round(app_statistic(population),2)
+
+sns.histplot(population, stat = 'density')
+plt.axvline(pop_statistic,color='r',linestyle='dashed')
+plt.title(f"Population {app_stat_text}: {pop_statistic}")
+plt.xlabel("")
+plt.show()
+plt.clf()
+
+sample_stats = []
+samp_size = 5
+for i in range(500):
+    samp = np.random.choice(population, samp_size, replace = False)
+    this_sample_stat = app_statistic(samp)
+    sample_stats.append(this_sample_stat)
+
+sns.histplot(sample_stats, stat = 'density')
+plt.title(f"Sampling Dist of the {app_stat_text} \nMean: {round(np.mean(sample_stats),2)}")
+plt.axvline(np.mean(sample_stats),color='r',linestyle='dashed')
+plt.xlabel(f"Sample {app_stat_text}")
+plt.show()
+plt.clf()
+
++++++++++++++++++++++++++
+
+Standard Error:
+
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import scipy.stats as stats
+import codecademylib3
+
+population_mean = 36
+population_std_dev = 2
+# Set the sample size:
+samp_size = 100
+
+### Below is code to create simulated dataset and calculate Standard Error
+
+# Create the population
+population = np.random.normal(population_mean, population_std_dev, size = 100000)
+
+## Simulate the sampling distribution
+sample_means = []
+for i in range(500):
+    samp = np.random.choice(population, samp_size, replace = False)
+    sample_means.append(np.mean(samp))
+
+mean_sampling_distribution = round(np.mean(sample_means),3)
+std_sampling_distribution = round(np.std(sample_means),3)
+
+std_error = population_std_dev / (samp_size **0.5)
+
+sns.histplot(population, stat = 'density')
+plt.title(f"Population Mean: {population_mean} \n Population Std Dev: {population_std_dev} \n Standard Error = {population_std_dev} / sq rt({samp_size}) \n Standard Error = {std_error} ")
+plt.xlim(-50,125)
+plt.ylim(0,0.045)
+plt.show()
+plt.clf()
+
+## Plot the sampling distribution
+sns.histplot(sample_means, stat = 'density')
+# calculate the mean and SE for the probability distribution
+mu = np.mean(population)
+sigma = np.std(population)/(samp_size**.5)
+
+# plot the normal distribution with mu=popmean, sd=sd(pop)/sqrt(samp_size) on top
+x = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)
+plt.plot(x, stats.norm.pdf(x, mu, sigma), color='k', label = 'normal PDF')
+# plt.axvline(mean_sampling_distribution,color='r',linestyle='dashed')
+plt.title(f"Sampling Dist Mean: {mean_sampling_distribution} \n Sampling Dist Standard Deviation: {std_sampling_distribution}")
+plt.xlim(20,50)
+plt.ylim(0,0.3)
+plt.show()
+
++++++++++++++++++++++++++
+
+Central Limit Theorem:
+
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+import seaborn as sns
+import codecademylib3
+
+# Set the population mean & standard deviation:
+population_mean = 10
+population_std_dev = 10
+# Set the sample size:
+samp_size = 6
+
+# Create the population
+population = np.random.normal(population_mean, population_std_dev, size = 100000)
+
+# Simulate the samples and calculate the sampling distribution
+sample_means = []
+for i in range(500):
+    samp = np.random.choice(population, samp_size, replace = False)
+    sample_means.append(np.mean(samp))
+
+mean_sampling_distribution = round(np.mean(sample_means),3)
+
+# Plot the original population
+sns.histplot(population, stat = 'density')
+plt.title(f"Population Mean: {population_mean} ")
+plt.xlabel("")
+plt.show()
+plt.clf()
+
+## Plot the sampling distribution
+sns.histplot(sample_means, stat='density')
+# calculate the mean and SE for the probability distribution
+mu = np.mean(population)
+sigma = np.std(population)/(samp_size**.5)
+# plot the normal distribution with mu=popmean, sd=sd(pop)/sqrt(samp_size) on top
+x = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)
+
+plt.plot(x, stats.norm.pdf(x, mu, sigma), color='k', label = 'normal PDF')
+plt.title(f"Sampling Dist Mean: {mean_sampling_distribution}")
+plt.xlabel("")
+plt.show()
+
++++++++++++++++++++++++++
+
+Central Limit Theorem:
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+import seaborn as sns
+import codecademylib3
+
+cod_population = pd.read_csv("cod_population.csv")
+# Save transaction times to a separate numpy array
+population = cod_population['Cod_Weight']
+
+## Checkpoint 1:
+sns.histplot(population, stat = 'density' )
+plt.title("Population Distribution")
+plt.show()
+
+sample_means = []
+
+# Below is our sample size
+samp_size = 400
+
+for i in range(500):
+    samp = np.random.choice(population, samp_size, replace = False)
+    this_sample_mean = np.mean(samp)
+    sample_means.append(this_sample_mean)
+
+## Checkpoint 2
+plt.clf() # this closes the previous plot
+sns.histplot(sample_means, stat = 'density' )
+plt.title("Sampling Distribution of the Mean")
+plt.xlabel("Weight (lbs)")
+plt.show()
+
++++++++++++++++++++++++++
+
+Sampling Distributions:
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import codecademylib3
+
+population = pd.read_csv("cod_population.csv")
+# Save transaction times to a separate numpy array
+population = population['Cod_Weight']
+
+sample_size = 50
+sample_means = []
+
+for i in range(500):
+  samp = np.random.choice(population, sample_size, replace = False)
+  this_sample_mean = np.mean(samp)
+  sample_means.append(this_sample_mean)
+
+sns.histplot(sample_means,stat='density')
+plt.title("Sampling Distribution of the Mean")
+plt.xlabel("Weight (lbs)")
+plt.show()
+
++++++++++++++++++++++++++
+
+Random Sampling:
+
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import codecademylib3
+
+population = pd.read_csv("salmon_population.csv")
+population = np.array(population.Salmon_Weight)
+pop_mean = round(np.mean(population),3)
+
+## Plotting the Population Distribution
+sns.histplot(population, stat='density')
+plt.axvline(pop_mean,color='r',linestyle='dashed')
+plt.title(f"Population Mean: {pop_mean}")
+plt.xlabel("Weight (lbs)")
+plt.show()
+plt.clf() # close this plot
+
+samp_size = 10
+# Generate our random sample below
+sample = np.random.choice(np.array(population), samp_size, replace = False)
+
+### Define sample mean below
+sample_mean = round(np.mean(sample),3)
+
+### Uncomment the lines below to plot the sample data:
+sns.histplot(sample, stat='density')
+plt.axvline(sample_mean,color='r',linestyle='dashed')
+plt.title(F"Sample Mean: {sample_mean}")
+plt.xlabel("Weight (lbs)")
+plt.show()
+
+---
+
+INFERENTIAL STATISTICS:
+
+One-Sample T-Test, Hypothesis Tests, Binomial Test, Descriptive vs Inferential Statistics, Null vs Alternative Hypothesis/distributions, Calculating P-Value/Confidence Interval (Greater than, less than, Not), Significance Thresholds, Type I vs Type II Errors,
+
+One-Sample T-Test:
+
+import codecademylib3
+import numpy as np
+import matplotlib.pyplot as plt
+
+prices = np.genfromtxt("prices.csv")
+
+#plot your histogram here
+plt.hist(prices)
+plt.show()
+
++++++++++++++++++++++++++
+
+from scipy.stats import ttest_1samp
+import numpy as np
+
+prices = np.genfromtxt("prices.csv")
+print(prices)
+
+prices_mean = np.mean(prices)
+print("mean of prices: " + str(prices_mean))
+
+# use ttest_1samp to calculate pval
+tstat, pval = ttest_1samp(prices,1000)
+# print pval
+print(pval)
+
++++++++++++++++++++++++++
+
+from scipy.stats import ttest_1samp
+import numpy as np
+
+daily_prices = np.genfromtxt("daily_prices.csv", delimiter=",")
+
++++++++++++++++++++++++++
+
+Simulating Binomial Test:
+
+import numpy as np
+import pandas as pd
+from scipy.stats import binom_test
+
+def simulation_binomial_test(observed_successes, n, p):
+  #initialize null_outcomes
+  null_outcomes = []
+  
+  #generate the simulated null distribution
+  for i in range(10000):
+    simulated_monthly_visitors = np.random.choice(['y', 'n'], size=n, p=[p, 1-p])
+    num_purchased = np.sum(simulated_monthly_visitors == 'y')
+    null_outcomes.append(num_purchased)
+
+  #calculate a 1-sided p-value
+  null_outcomes = np.array(null_outcomes)
+  p_value = np.sum(null_outcomes <= observed_successes)/len(null_outcomes) 
+  
+  #return the p-value
+  return p_value
+
++++++++++++++++++++++++++
+
+import numpy as np
+import pandas as pd
+from scipy.stats import binom_test
+
+# calculate p_value_2sided here:
+p_value_2sided = binom_test(41,n=500,p=.1)
+print(p_value_2sided)
+# calculate p_value_1sided here:
+p_value_1sided = binom_test(41,n=500,p=.1,alternative='less')
+print(p_value_1sided)
+
++++++++++++++++++++++++++
+
+import numpy as np
+import pandas as pd
+from scipy.stats import binom_test
+
+def simulation_binomial_test(observed_successes,n,p):
+  #initialize null_outcomes
+  null_outcomes = []
+ 
+  #generate the simulated null distribution
+  for i in range(10000):
+    simulated_monthly_visitors = np.random.choice(['y', 'n'], size=n, p=[p, 1-p])
+    num_purchased = np.sum(simulated_monthly_visitors == 'y')
+    null_outcomes.append(num_purchased)
+
+  #calculate a 1-sided p-value
+  null_outcomes = np.array(null_outcomes)
+  p_value = np.sum(null_outcomes <= observed_successes)/len(null_outcomes) 
+  
+  #return the p-value
+  return p_value
+
+#Test your function below by uncommenting the code below. You should see that your simulation function gives you a very similar answer to the binom_test function from scipy:
+
+p_value1 = simulation_binomial_test(45, 500, .1)
+print("simulation p-value: ", p_value1)
+
+p_value2 = binom_test(45, 500, .1, alternative = 'less')
+print("binom_test p-value: ", p_value2)
+
++++++++++++++++++++++++++
+
+Two-Sided P-Value:
+
+import numpy as np
+import pandas as pd
+
+null_outcomes = []
+
+for i in range(10000):
+  simulated_monthly_visitors = np.random.choice(['y', 'n'], size=500, p=[0.1, 0.9])
+
+  num_purchased = np.sum(simulated_monthly_visitors == 'y')
+
+  null_outcomes.append(num_purchased)
+
+#calculate the p-value here:
+import numpy as np
+null_outcomes = np.array(null_outcomes)
+p_value = np.sum((null_outcomes <= 41) | (null_outcomes >= 59))/len(null_outcomes)
+print(p_value) 
+
++++++++++++++++++++++++++
+
+One-Sided P-Value:
+
+import numpy as np
+import pandas as pd
+
+null_outcomes = []
+
+for i in range(10000):
+  simulated_monthly_visitors = np.random.choice(['y', 'n'], size=500, p=[0.1, 0.9])
+
+  num_purchased = np.sum(simulated_monthly_visitors == 'y')
+
+  null_outcomes.append(num_purchased)
+
+#calculate the p-value here:
+null_outcomes = np.array(null_outcomes)
+p_value = np.sum(null_outcomes <= 41)/len(null_outcomes) 
+print(p_value)
+
++++++++++++++++++++++++++
+
+Confidence Intervals:
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import codecademylib3
+
+null_outcomes = []
+
+for i in range(10000):
+  simulated_monthly_visitors = np.random.choice(['y', 'n'], size=500, p=[0.1, 0.9])
+
+  num_purchased = np.sum(simulated_monthly_visitors == 'y')
+
+  null_outcomes.append(num_purchased)
+
+#calculate the 90% interval here:
+null_90CI=np.percentile(null_outcomes,[5,95])
+print()
+
++++++++++++++++++++++++++
+
+Null Distribution:
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import codecademylib3
+
+null_outcomes = []
+
+for i in range(10000):
+  simulated_monthly_visitors = np.random.choice(['y', 'n'], size=500, p=[0.1, 0.9])
+
+  num_purchased = np.sum(simulated_monthly_visitors == 'y')
+
+  null_outcomes.append(num_purchased)
+
+#plot the histogram here:
+plt.hist(null_outcomes)
+plt.axvline(41, color='r')
+plt.show()
+
++++++++++++++++++++++++++
+
+import numpy as np
+import pandas as pd
+
+null_outcomes = []
+
+#start for loop here:
+for i in range(10000):
+  simulated_monthly_visitors = np.random.choice(['y', 'n'], size=500, p=[0.1, 0.9])
+  num_purchased = np.sum(simulated_monthly_visitors == 'y')
+  null_outcomes.append(num_purchased)
+
+
+
+#calculate the minimum and maximum values in null_outcomes here:
+null_min= np.min(null_outcomes)
+print(null_min)
+null_max= np.max(null_outcomes)
+print(null_max)
+
++++++++++++++++++++++++++
+
+import numpy as np
+import pandas as pd
+
+monthly_report = pd.read_csv('monthly_report.csv')
+
+#simulate 500 visitors:
+simulated_monthly_visitors = np.random.choice(['y', 'n'], size=500, p=[0.1, 0.9])
+
+#calculate the number of simulated visitors who made a purchase:
+num_purchased = np.sum(simulated_monthly_visitors=='y')
+print(num_purchased)
+
++++++++++++++++++++++++++
+
+Simulating Randomness:
+
+import numpy as np
+import pandas as pd
+
+monthly_report = pd.read_csv('monthly_report.csv')
+
+#simulate one visitor:
+one_visitor = np.random.choice(['y','n'],size =1, p=[0.1,0.9])
+
+print(one_visitor)
+
+#simulate 500 visitors:
+simulated_montly_visitor = [np.random.choice(['y','n'],size =500, p=[0.1,0.9])]
+
++++++++++++++++++++++++++
+
+Summarizing the Sample:
+
+import numpy as np
+import pandas as pd
+import codecademylib3
+
+monthly_report = pd.read_csv('monthly_report.csv')
+
+#print the head of monthly_report:
+print(monthly_report.head())
+
+#calculate and print sample_size:
+sample_size = len(monthly_report)
+print(sample_size)
+
+#calculate and print num_purchased:
+num_purchased = np.sum(monthly_report.purchase =='y')
+print(num_purchased)
+
++++++++++++++++++++++++++
+
+Multiple Hypothesis Tests (Issues with them, more tests = higher error probability ):
+
+import codecademylib3
+
+# Import libraries
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Set a correct value for num_tests_50percent
+num_tests_50percent = 15
+
+
+# Create the plot
+sig_threshold = 0.01
+num_tests = np.array(range(50))
+probabilities = 1-((1-sig_threshold)**num_tests)
+plt.plot(num_tests, probabilities)
+
+# Edit title and axis labels
+plt.title('Type I Error Rate for Multiple Tests', fontsize=15)
+# Label the y-axis
+plt.ylabel('Probability of at Least One Type I Error', fontsize=12)
+# Label the x-axis
+plt.xlabel('Number of Tests', fontsize=12)
+
+# Show the plot                
+plt.show()
+
++++++++++++++++++++++++++
+
+Setting the Type I Error Rate:
+
+import codecademylib3
+
+# Import libraries
+import numpy as np
+from scipy.stats import binom_test
+
+# Initialize num_errors
+false_positives = 0
+# Set significance threshold value
+sig_threshold = 0.01
+
+# Run binomial tests & record errors
+for i in range(1000):
+    sim_sample = np.random.choice(['correct', 'incorrect'], size=100, p=[0.8, 0.2])
+    num_correct = np.sum(sim_sample == 'correct')
+    p_val = binom_test(num_correct, 100, .8)
+    if p_val < sig_threshold:
+        false_positives += 1
+
+# Print proportion of type I errors 
+print(false_positives/1000)
+
+---
+
+LINEAR REGRESSION:
+
+OLS Linear Regression, Quantitative vs Binary Categorical Predictors, Coefficients of Regressions, Assumptions of Regressions, 
+X-Matrix
+
+Categorical Predictors - Fit and Interpretation(Turns categories into binary 'True' 'False' (0 or 1):
+
+# Load libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
+# Read in the data
+students = pd.read_csv('test_data.csv')
+
+# Calculate and print group means
+mean_score_no_breakfast = np.mean(students.score[students.breakfast == 0])
+mean_score_breakfast = np.mean(students.score[students.breakfast == 1])
+print('Mean score (no breakfast): ', mean_score_no_breakfast)
+print('Mean score (breakfast): ', mean_score_breakfast)
+
+# Fit the model and print the coefficients
+model=sm.OLS.from_formula('score ~ breakfast', students)
+results = model.fit()
+print(results.params)
+
+# Calculate and print the difference in group means
+means= mean_score_breakfast - mean_score_no_breakfast
+
+print(means)
+
++++++++++++++++++++++++++
+
+# Load libraries
+import codecademylib3
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Read in the data
+students = pd.read_csv('test_data.csv')
+
+# Calculate group means
+print(students.groupby('breakfast').mean().score)
+
+# Create the scatter plot here:
+plt.scatter(students.breakfast,students.score)
+
+# Add the additional line here:
+plt.plot([0,1],[61.66,73.72])
+
+# Show the plot
+plt.show()
+
++++++++++++++++++++++++++
+
+Assumptions of Linear Regression:
+
+# Load libraries
+import codecademylib3
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
+# Read in the data
+students = pd.read_csv('test_data.csv')
+
+# Fit the model
+model = sm.OLS.from_formula('score ~ hours_studied', students)
+results = model.fit()
+
+# Calculate fitted values
+fitted_values = results.predict(students)
+
+# Calculate residuals
+residuals = students.score - fitted_values
+
+# Plot a histogram of the residuals here:
+plt.hist(residuals)
+
+plt.show()
+plt.clf()
+
+# Plot the residuals against the fitted vals here:
+plt.scatter(fitted_values,residuals)
+
+plt.show()
+
++++++++++++++++++++++++++
+
+# Load libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
+# Read in the data
+students = pd.read_csv('test_data.csv')
+
+# Fit the model
+model = sm.OLS.from_formula('score ~ hours_studied', students)
+results = model.fit()
+
+# Calculate `fitted_values` here:
+fitted_values = results.predict(students)
+print(fitted_values)
+# Calculate `residuals` here:
+residuals = students.score - fitted_values
+print(residuals.head())
+# Print the first 5 residuals here:
+
++++++++++++++++++++++++++
+
+Regressions for Predictions:
+
+# Load libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
+# Read in the data
+students = pd.read_csv('test_data.csv')
+
+# Fit the model
+model = sm.OLS.from_formula('score ~ hours_studied', students)
+results = model.fit()
+
+# Print the model params
+print(results.params)
+# Calculate and print `pred_3hr` here:
+pred_3hr = results.params[1]*3+results.params[0]
+print(pred_3hr)
+# Calculate and print `pred_5hr` here:
+newdata={"hours_studied":[5]}
+pred_5hr = results.predict(newdata)
+print(pred_5hr)
+
++++++++++++++++++++++++++
+
+# Load libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
+# Read in the data
+students = pd.read_csv('test_data.csv')
+
+# Create the model here:
+model=sm.OLS.from_formula('score ~ hours_studied', data = students)
+# Fit the model here:
+results = model.fit()
+# Print the coefficients here:
+print(results.params)
+
++++++++++++++++++++++++++
+
+# Load libraries
+import codecademylib3
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Read in the data
+students = pd.read_csv('test_data.csv')
+
+# Write equation for a line
+predicted_score = 10 * students.hours_studied + 45
+
+# Create the plot
+plt.scatter(students.hours_studied, students.score)
+plt.plot(students.hours_studied, predicted_score)
+plt.show()
+
++++++++++++++++++++++++++
+
+X-Matrix Stuff:
+
+model = sm.OLS.from_formula('rent ~ C(borough, Treatment("Manhattan"))', rentals).fit()
+print(model.params)
+
++++++++++++++++++++++++++
+
+import pandas as pd
+rentals = pd.get_dummies(rentals, columns = ['borough'], drop_first = True)
+print(rentals.head())
+
++++++++++++++++++++++++++
+
+from sklearn.linear_model import LinearRegression
+
+X = rentals[['borough_Manhattan', 'borough_Queens']]
+y = rentals[['rent']]
+
+# Fit model
+regr = LinearRegression()
+regr.fit(X, y)
+print(regr.intercept_)
+print(regr.coef_)
+
+---
+
+DATA VIZUALIZATIONS:
+
+Figures, Bar Graphs vs Histograms, Pie chart controversies, Normalize Histograms, (Preparing, Visualizing, and Styling),
+Composition charts, Distribution Charts, Relationship Charts, Comparison Charts, Exploratory Data Analysis Visuals, Univariate analysis, Quantitative variables, Bivariate analysis, Multivariate analysis, Multi-dimensional plots (3-D), Time-Series Data,
+Lag scatter plot, Autocorrelation plot
+
+Line Charts:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+x = [1,2,3]
+y1 = [1,2,3]
+y2 = [5,6,7]
+
+plt.plot(y1,x, color = 'pink', marker = 'o')
+plt.plot(y2,x, color = 'gray', marker = 'o')
+plt.title("Two Lines on One Graph")
+plt.xlabel('Amazing X-axis')
+plt.ylabel('Incredible Y-axis')
+plt.legend([x,y1,y2],loc=4)
+plt.show()
+
++++++++++++++++++++++++++
+
+Figures:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+word_length = [8, 11, 12, 11, 13, 12, 9, 9, 7, 9]
+power_generated = [753.9, 768.8, 780.1, 763.7, 788.5, 782, 787.2, 806.4, 806.2, 798.9]
+years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009]
+
+plt.close('all')
+plt.figure()
+plt.plot(years, word_length)
+plt.savefig('winning_word_lenths.png')
+
+plt.figure(figsize=(7,3))
+plt.plot(years,power_generated)
+plt.savefig('power_generated.png')
+
++++++++++++++++++++++++++
+
+Modify Ticks:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep","Oct", "Nov", "Dec"]
+
+months = range(12)
+conversion = [0.05, 0.08, 0.18, 0.28, 0.4, 0.66, 0.74, 0.78, 0.8, 0.81, 0.85, 0.85]
+
+plt.xlabel("Months")
+plt.ylabel("Conversion")
+
+plt.plot(months, conversion)
+
+ax = plt.subplot()
+ax.set_xticks(months)
+ax.set_xticklabels(month_names)
+ax.set_yticks([.10,.25,.5,.75])
+ax.set_yticklabels(['10%','25%','50%','75%'])
+
+plt.show()
+
++++++++++++++++++++++++++
+
+Legends:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+months = range(12)
+hyrule = [63, 65, 68, 70, 72, 72, 73, 74, 71, 70, 68, 64]
+kakariko = [52, 52, 53, 68, 73, 74, 74, 76, 71, 62, 58, 54]
+gerudo = [98, 99, 99, 100, 99, 100, 98, 101, 101, 97, 98, 99]
+
+plt.plot(months, hyrule, label = 'hyrule')
+plt.plot(months, kakariko, label = 'kakariko')
+plt.plot(months, gerudo, label = "gerudo")
+
+#create your legend here
+legend_labels = ['Hyrule','Kakariko','Gerudo Valley']
+plt.legend(legend_labels, loc = 8)
+plt.show()
+
++++++++++++++++++++++++++
+
+Subplots:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+x = range(7)
+straight_line = [0, 1, 2, 3, 4, 5, 6]
+parabola = [0, 1, 4, 9, 16, 25, 36]
+cubic = [0, 1, 8, 27, 64, 125, 216]
+
+plt.subplot(2,1,1)
+plt.plot(x, straight_line)
+plt.subplot(2,2,3)
+plt.plot(x, parabola)
+plt.subplot(2,2,4)
+plt.plot(x, cubic)
+plt.subplots_adjust(wspace = 0.35, bottom = 0.2)
+plt.show()
+
++++++++++++++++++++++++++
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+months = range(12)
+temperature = [36, 36, 39, 52, 61, 72, 77, 75, 68, 57, 48, 48]
+flights_to_hawaii = [1200, 1300, 1100, 1450, 850, 750, 400, 450, 400, 860, 990, 1000]
+
+plt.subplot(1,2,1)
+plt.plot(months,temperature)
+plt.xlabel('Months')
+plt.ylabel('Temp')
+plt.show()
+
+plt.subplot(1,2,2)
+plt.plot(temperature, flights_to_hawaii, "o")
+plt.xlabel('Flights')
+plt.ylabel('Temp')
+plt.show()
+
++++++++++++++++++++++++++
+
+Labeling the Axes:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+x = range(12)
+y = [3000, 3005, 3010, 2900, 2950, 3050, 3000, 3100, 2980, 2980, 2920, 3010]
+plt.plot(x, y)
+plt.axis([0, 12, 2900, 3100])
+plt.xlabel('Time')
+plt.ylabel('Dollars spent on coffee')
+plt.title('My Last Twelve Years of Coffee Drinking')
+plt.show()
+
++++++++++++++++++++++++++
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+x = range(12)
+y = [3000, 3005, 3010, 2900, 2950, 3050, 3000, 3100, 2980, 2980, 2920, 3010]
+plt.plot(x, y)
+
+#your code here
+x = range(12)
+y = [2900:3100]
+plt.show()
+
++++++++++++++++++++++++++
+
+Linestyles:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+time = [0, 1, 2, 3, 4]
+revenue = [200, 400, 650, 800, 850]
+costs = [150, 500, 550, 550, 560]
+
+plt.plot(time,revenue, color='purple', linestyle='--')
+plt.plot(time,costs, color='#82edc9', marker='s')
+plt.show()
+
++++++++++++++++++++++++++
+
+Line Plots:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+time = [0, 1, 2, 3, 4]
+revenue = [200, 400, 650, 800, 850]
+costs = [150, 500, 550, 550, 560]
+
+plt.plot(time, revenue)
+plt.plot(time, costs)
+plt.show()
+
++++++++++++++++++++++++++
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+days = [0, 1, 2, 3, 4, 5, 6]
+money_spent = [10, 12, 12, 10, 14, 22, 24]
+plt.plot(days, money_spent)
+plt.show()
+
++++++++++++++++++++++++++
+
+Other Charts:
+
+Multiple Histograms:
+
+import codecademylib3
+from matplotlib import pyplot as plt
+from script import sales_times1
+from script import sales_times2
+
+plt.hist(sales_times1, bins=20, alpha=0.4, density = True)
+#plot your other histogram here
+plt.hist(sales_times2, alpha=0.4, density=True)
+
+plt.show()
+
++++++++++++++++++++++++++
+
+Histogram:
+
+import codecademylib
+from matplotlib import pyplot as plt
+from script import sales_times
+
+#create the histogram here
+plt.hist(sales_times,bins=20)
+plt.show()
+
++++++++++++++++++++++++++
+
+Pie Chart:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+payment_method_names = ["Card Swipe", "Cash", "Apple Pay", "Other"]
+payment_method_freqs = [270, 77, 32, 11]
+
+plt.pie(payment_method_freqs,autopct='%0.1f%%')
+plt.axis('equal')
+plt.legend(payment_method_names)
+
+plt.show()
+
++++++++++++++++++++++++++
+
+import codecademylib
+from matplotlib import pyplot as plt
+import numpy as np
+
+payment_method_names = ["Card Swipe", "Cash", "Apple Pay", "Other"]
+payment_method_freqs = [270, 77, 32, 11]
+
+#make your pie chart here
+plt.pie(payment_method_freqs)
+plt.axis('equal')
+plt.show()
+
++++++++++++++++++++++++++
+
+Fill Between (Error/ranges on Line Graph):
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+months = range(12)
+month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+revenue = [16000, 14000, 17500, 19500, 21500, 21500, 22000, 23000, 20000, 19500, 18000, 16500]
+
+#your work here
+
+plt.plot(months,revenue)
+ax = plt.subplot()
+ax.set_xticks(months)
+ax.set_xticklabels(month_names)
+y_lower = [i - 0.1*i for i in revenue]
+y_upper = [i + 0.1*i for i in revenue]
+plt.fill_between(months,y_lower,y_upper,alpha=.2)
+plt.show()
+
++++++++++++++++++++++++++
+
+Error Bars:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+ounces_of_milk = [6, 9, 4, 0, 9, 0]
+error = [0.6, 0.9, 0.4, 0, 0.9, 0]
+
+# Plot the bar graph here
+error=0.1
+plt.bar(range(len(ounces_of_milk)), ounces_of_milk, yerr=error, capsize =5)
+plt.show()
+
++++++++++++++++++++++++++
+
+Stacked Bars:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+sales1 =  [91, 76, 56, 66, 52, 27]
+sales2 = [65, 82, 36, 68, 38, 40]
+
+plt.bar(range(len(sales1)),sales1, bottom = sales2)
+plt.show()
+
++++++++++++++++++++++++++
+
+Side-By-Side Bars:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+sales1 =  [91, 76, 56, 66, 52, 27]
+sales2 = [65, 82, 36, 68, 38, 40]
+
+n = 1  # This is our first dataset (out of 2)
+t = 2 # Number of datasets
+d = 6 # Number of sets of bars
+w = 0.8 # Width of each bar
+store1_x = [t*element + w*n for element
+             in range(d)]
+plt.bar(store1_x,sales1)
+
+n = 2  # This is our second dataset (out of 2)
+t = 2 # Number of datasets
+d = 6 # Number of sets of bars
+w = 0.8 # Width of each bar
+store2_x = [t*element + w*n for element
+             in range(d)]
+plt.bar(store2_x,sales2)
+plt.show()
+
++++++++++++++++++++++++++
+
+Bar Chart:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+sales =  [91, 76, 56, 66, 52, 27]
+
+plt.bar(range(len(drinks)), sales)
+
+ax = plt.subplot()
+ax.set_xticks(range(len(drinks)))
+ax.set_xticklabels(drinks)
+plt.show()
+
++++++++++++++++++++++++++
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+sales =  [91, 76, 56, 66, 52, 27]
+
+plt.bar(range(len(sales)),sales)
+plt.show()
+
++++++++++++++++++++++++++
+
+Line with Shaded Error:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+hours_reported =[3, 2.5, 2.75, 2.5, 2.75, 3.0, 3.5, 3.25, 3.25,  3.5, 3.5, 3.75, 3.75,4, 4.0, 3.75,  4.0, 4.25, 4.25, 4.5, 4.5, 5.0, 5.25, 5, 5.25, 5.5, 5.5, 5.75, 5.25, 4.75]
+exam_scores = [52.53, 59.05, 61.15, 61.72, 62.58, 62.98, 64.99, 67.63, 68.52, 70.29, 71.33, 72.15, 72.67, 73.85, 74.44, 75.62, 76.81, 77.82, 78.16, 78.94, 79.08, 80.31, 80.77, 81.37, 85.13, 85.38, 89.34, 90.75, 97.24, 98.31]
+
+# Create your figure here
+plt.figure(figsize=(10,8))
+plt.plot(exam_scores,hours_reported,linewidth=2)
+# Create your hours_lower_bound and hours_upper_bound lists here 
+hours_lower_bound = [i-0.2*i for i in hours_reported]
+hours_upper_bound = [i+0.2*i for i in hours_reported]
+# Make your graph here
+plt.fill_between(exam_scores,hours_lower_bound,hours_upper_bound, alpha=0.2)
+plt.title('Time spent studying vs final exam scores')
+plt.xlabel('Score')
+plt.ylabel('Hours studying (self-reported)')
+plt.show()
+plt.savefig('my_line_graph.png')
+
++++++++++++++++++++++++++
+
+Labeled Pie Chart:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+unit_topics = ['Limits', 'Derivatives', 'Integrals', 'Diff Eq', 'Applications']
+num_hardest_reported = [1, 3, 10, 15, 1]
+
+#Make your plot here
+plt.figure(figsize=(10,8))
+plt.pie(num_hardest_reported)
+plt.axis('equal')
+plt.label(unit_topics,%df%%)
+plt.show()
+
++++++++++++++++++++++++++
+
+Two Histograms on a Plot:
+
+import codecademylib3
+from matplotlib import pyplot as plt
+
+exam_scores1 = [62.58, 67.63, 81.37, 52.53, 62.98, 72.15, 59.05, 73.85, 97.24, 76.81, 89.34, 74.44, 68.52, 85.13, 90.75, 70.29, 75.62, 85.38, 77.82, 98.31, 79.08, 61.72, 71.33, 80.77, 80.31, 78.16, 61.15, 64.99, 72.67, 78.94]
+exam_scores2 = [72.38, 71.28, 79.24, 83.86, 84.42, 79.38, 75.51, 76.63, 81.48,78.81,79.23,74.38,79.27,81.07,75.42,90.35,82.93,86.74,81.33,95.1,86.57,83.66,85.58,81.87,92.14,72.15,91.64,74.21,89.04,76.54,81.9,96.5,80.05,74.77,72.26,73.23,92.6,66.22,70.09,77.2]
+
+# Make your plot here
+plt.figure(figsize=(10,8))
+plt.hist(exam_scores1,bins=12,histtype='step',density=True, linewidth=2)
+plt.hist(exam_scores2,bins=12,histtype='step',density=True, linewidth=2)
+
+plt.legend(['1st Yr Teaching','2nd Yr Teaching'])
+plt.show()
+
++++++++++++++++++++++++++
+
+Stacked Bars:
+
+import codecademylib
+from matplotlib import pyplot as plt
+import numpy as np
+
+unit_topics = ['Limits', 'Derivatives', 'Integrals', 'Diff Eq', 'Applications']
+As = [6, 3, 4, 3, 5]
+Bs = [8, 12, 8, 9, 10]
+Cs = [13, 12, 15, 13, 14]
+Ds = [2, 3, 3, 2, 1]
+Fs = [1, 0, 0, 3, 0]
+
+x = range(5)
+
+c_bottom = np.add(As, Bs)
+#create d_bottom and f_bottom here
+d_bottom = np.add(c_bottom, Cs)
+f_bottom = np.add(d_bottom, Ds)
+
+plt.figure(figsize=(10,8))
+#create your plot heres
+
+plt.show()
+
++++++++++++++++++++++++++
+
+Side By Side Bars:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+unit_topics = ['Limits', 'Derivatives', 'Integrals', 'Diff Eq', 'Applications']
+middle_school_a = [80, 85, 84, 83, 86]
+middle_school_b = [73, 78, 77, 82, 86]
+
+def create_x(t, w, n, d):
+    return [t*x + w*n for x in range(d)]
+school_a_x = create_x(2,0.8,1,5)
+school_b_x = create_x(2,0.8,2,5)
+# Make your chart here
+plt.figure(figsize=(10,8))
+ax = plt.subplot()
+plt.bar(school_a_x,middle_school_a)
+plt.bar(school_b_x,middle_school_b)
+
+middle_x = [ (a + b) / 2.0 for a, b in zip(school_a_x, school_b_x)]
+
+ax.set_xticks(middle_x)
+ax.set_xticklabels(unit_topics)
+
+plt.legend(['Middle School A','Middle School B'])
+plt.title('Test Averages on Different Units')
+plt.xlabel('Unit')
+plt.ylabel('Test Average')
+
+plt.savefig('my_side_by_side.png')
+
+plt.show()
+
++++++++++++++++++++++++++
+
+Bar Chart with Error:
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+past_years_averages = [82, 84, 83, 86, 74, 84, 90]
+years = [2000, 2001, 2002, 2003, 2004, 2005, 2006]
+error = [1.5, 2.1, 1.2, 3.2, 2.3, 1.7, 2.4]
+
+# Make your chart here
+error = error
+plt.figure(figsize=(10,8))
+plt.bar(range(len(past_years_averages)),past_years_averages, yerr=error, capsize = 5)
+plt.axis([-0.5,6.5,70,95])
+
+ax = plt.subplot()
+ax.set_xticks(range(len(years)))
+ax.set_xticklabels(years)
+
+plt.title('Final Exam Averages')
+plt.xlabel('Year')
+plt.ylabel('Test average')
+plt.show()
+
+plt.savefig('my_bar_chart.png')
+
++++++++++++++++++++++++++
+
+Pie Chart Best Practice:
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+import codecademylib3
+
+major_data = pd.read_csv("major_data.csv")
+print(major_data.head())
+
+major_data_agg = pd.read_csv("major_data_agg.csv")
+print(major_data_agg.head())
+
+pie_wedges = major_data["proportion"]
+pie_labels = major_data["major"]
+
+pie_wedges_agg = major_data_agg["proportion"]
+pie_labels_agg = major_data_agg["department"]
+
+plt.subplot(2,1,1)
+plt.pie(pie_wedges, labels = pie_labels)
+plt.axis('Equal')
+plt.title("Too Many Slices")
+plt.tight_layout()
+
+plt.subplot(2,1,2)
+plt.pie(pie_wedges_agg, labels=pie_labels_agg)
+plt.axis('Equal')
+plt.title("Good Number of Slices")
+plt.tight_layout()
+
+plt.show()
+
++++++++++++++++++++++++++
+
+Bar Chart Ordering:
+
+import codecademylib3
+import pandas as pd 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("school_data.csv")
+print(df.head())
+
+value_order = ["NOT ENOUGH DATA", "VERY WEAK", "WEAK", "NEUTRAL", "STRONG", "VERY STRONG"]
+
+type_of_data = "ordinal"
+
+
+# plot using .countplot() method here
+sns.countplot(df['Supportive Environment'], order = value_order)
+plt.xticks(rotation=30)
+plt.show()
+# show your plot here
+
++++++++++++++++++++++++++
+
+Bar Chart w/ Seaborn:
+
+import codecademylib3
+import pandas as pd 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("games.csv")
+print(df.head())
+
+sns.countplot(df['victory_status'])
+plt.show()
+
++++++++++++++++++++++++++
+
+Bar Chart Subplot:
+
+import codecademylib3
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
+# add in your answers here!
+left_plot = " Bar Chart"
+right_plot = "Histogram"
+
+heroes_data = pd.read_csv("heroes_information.csv")
+# line of code used to clean up messy data
+heroes_data_cleaned = heroes_data[heroes_data.Alignment != "-"]
+
+#### code for left plot
+plt.subplot(1, 2, 1)
+sns.countplot(heroes_data_cleaned["Alignment"])
+
+#### code for right plot
+plt.subplot(1, 2, 2)
+sns.histplot(heroes_data_cleaned["Height"])
+plt.xlim(0,500)
+
+plt.show()
+
++++++++++++++++++++++++++
+
+EDA:
+
+sns.displot(rentals.rent, bins=10, kde=False)
+plt.show()
+
++++++++++++++++++++++++++
+
+# Load libraries
+import seaborn as sns
+import matplotlib.pyplot as plt 
+
+# Create the plot
+sns.boxplot(x='rent', data=rentals)
+plt.show()
+
++++++++++++++++++++++++++
+
+# Create a barplot of the counts in the borough variable
+# The palette parameter will set the color scheme for the plot
+sns.countplot(x='borough', data=rentals, palette='winter')
+plt.show()
+
++++++++++++++++++++++++++
+Hist:
+
+plt.hist(rentals.rent[rentals.borough=='Manhattan'], label='Manhattan', density=True, alpha=.5)
+plt.hist(rentals.rent[rentals.borough=='Queens'], label='Queens', density=True, alpha=.5)
+plt.hist(rentals.rent[rentals.borough=='Brooklyn'], label='Brooklyn', density=True, alpha=.5)
+plt.legend()
+plt.show()
+
++++++++++++++++++++++++++
+Scatter:
+
+sns.scatterplot(rentals.size_sqft, rentals.rent, hue = rentals.borough, palette='bright')
+plt.show()
+
++++++++++++++++++++++++++
+
+Heat Map:
+
+# Define the colormap which maps the data values to the color space defined with the diverging_palette method  
+colors = sns.diverging_palette(150, 275, s=80, l=55, n=9, as_cmap=True)
+
+# Create heatmap using the .corr method on df, set colormap to cmap
+sns.heatmap(rentals.corr(), center=0, cmap=colors, robust=True)
+plt.show()
+
++++++++++++++++++++++++++
+
+# scatter plot with four variables
+sns.scatterplot(x = 'Schooling', y = 'LifeExpectancy', hue = 'Status', style = 'Year', data = health_data)
+plt.show()
+
++++++++++++++++++++++++++
+
+# scatter plot with a visual cue
+sns.scatterplot(x = 'Schooling', y = 'LifeExpectancy', hue = 'Status', palette = 'bright', data = health_data)
+plt.show()
+
++++++++++++++++++++++++++
+
+Grouped box plots:
+
+# box plot showing relationship between education and compenstation
+sns.boxplot(x = "Education", y = "CompTotal", palette = "pastel", data = salary_data)
+plt.show()
+
++++++++++++++++++++++++++
+
+# side-by-side box plots grouped by gender
+sns.boxplot(x = "Education", y = "CompTotal", hue = "Gender", palette = "pastel", data = salary_data)
+plt.show()
+
++++++++++++++++++++++++++
+
+Multi-dimensional plots (3-D):
+
+# import library
+import plotly.express as px
+
+# load in iris data
+df = px.data.iris()
+
+# create 3D scatter plot
+fig = px.scatter_3d(df, x='sepal_length', y='sepal_width', z='petal_width', color='species')
+fig.show()
+
++++++++++++++++++++++++++
+
+Time-Series-Plots:
+
+Lines:
+
+# convert string to datetime64
+sales_data["date"] = sales_data["date"].apply(pd.to_datetime)
+sales_data.set_index("date", inplace=True)
+
+# create line plot of sales data
+plt.plot(sales_data["date"], sales_data["sales"])
+plt.xlabel("Date")
+plt.ylabel("Sales (USD)")
+plt.show()
+
++++++++++++++++++++++++++
+
+Box plot:
+
+# extract year from date column
+sales_data["year"] = sales_data["date"].dt.year
+
+# box plot grouped by year
+sns.boxplot(data=sales_data, x="year", y="sales")
+plt.show()
+
++++++++++++++++++++++++++
+
+Heatmap:
+
+# calculate total sales for each month
+sales = sales_data.groupby(["year", "month"]).sum()
+
+# re-format the data for the heat-map
+sales_month_year = sales.reset_index().pivot(index="year", columns="month", values="sales")
+
+# create heatmap
+sns.heatmap(sales_month_year, cbar_kws={"label": "Total Sales"})
+plt.title("Sales Over Time")
+plt.xlabel("Month")
+plt.ylabel("Year")
+plt.show()
+
++++++++++++++++++++++++++
+
+Lag scatter plot (Compares a point with the point at the immediate previous time interval):
+
+# import lag_plot function
+from pandas.plotting import lag_plot
+
+# lag scatter plot
+lag_plot(sales_data)
+plt.show()
+
++++++++++++++++++++++++++
+
+Autocorrelation plot (Shows correlation (+ or - or Independent/no correl.):
+
+# import autocorrelation function
+from pandas.plotting import autocorrelation_plot
+
+# autocorrelation plot
+autocorrelation_plot(sales_data)
+plt.show()
+
++++++++++++++++++++++++++
+
+Messy Data Viz:
+
+Plotting for Outliers:
+
+housing2 = housing[(housing.price < 10000000) & (housing.price>0)]
+housing2 = housing2[(housing2.sqfeet < 2000000) & (housing2.sqfeet>0)]
+
+sns.scatterplot(housing2['sqfeet'], housing2['price'])
+
++++++++++++++++++++++++++
+
+Visualizing many data points:
+
+#5% of data used for this chart
+perc = 0.05
+housing_sub = housing2.sample(n = int(housing2.shape[0]*perc))
+
+sns.scatterplot(housing_sub['sqfeet'], housing_sub['price'])
+
+sns.scatterplot(housing_sub['sqfeet'], housing_sub['price'], s = 5)
+
+sns.scatterplot(housing_sub['sqfeet'], housing_sub['price'], alpha = 0.2)
+
+sns.lmplot(x='sqfeet', y='price', data = housing_sub, line_kws={'color': 'black'}, lowess=True)
+
++++++++++++++++++++++++++
+
+Visualizing discrete variables:
+
+sns.scatterplot('beds', 'baths', data = housing_sub)
+
+sns.lmplot('beds', 'baths', data = housing_sub, x_jitter = .15, y_jitter = .15, fit_reg = False)
+
++++++++++++++++++++++++++
+
+Log transformation:
+
+sns.displot(housing.price)
+
+log_price = housing.price[housing.price>0]
+log_price = np.log(log_price)
+sns.displot(log_price)
+plt.xlabel('log price')
+
+sns.displot(log_price)
+plt.xlabel('log price')
+plt.xlim(5,10)
+
+---
+
+DATA WRANGLING/MUNGING, CLEANING, TIDYING:
+
+Regular Expressions (Regex), Pandas Data Cleaning, Tidy Data Best Practices, Missing Data Types (Structurally Missing, MCAR, MAR, MNAR), Listwise (<5% missing data) vs Pairwise Deletion, Dropping Variables (only when missing data is >60% in variable),
+Imputation (Last Observation Carried Forward (LOCF), Next Observation Carried Backward (NOCB), Baseline Observation Carried Forward (BOCF), Worst Observation Carried Forward (WOCF)),
+
+Wrangling/Preliminary data cleaning:
+
+#Identifies rows and columns
+restaurants.shape
+
+# the .drop_duplicates() function removes duplicate rows
+restaurants = restaurants.drop_duplicates() 
+
+# the .head(10) function will show us the first 10 rows in our dataset
+print(restaurants.head(10))
+
+restaurants.shape 
+
+# map() applies the str.lower() function to each of the columns in our dataset to convert the column names to all lowercase
+restaurants.columns = map(str.lower, restaurants.columns)
+
+# the .head(10) function will show us the first 10 rows in our dataset
+print(restaurants.head(10))  
+
+# axis=1` refers to the columns, `axis=0` would refer to the rows
+# In the dictionary the key refers to the original column name and the value refers to the new column name {'oldname1': 'newname1', 'oldname2': 'newname2'}
+restaurants = restaurants.rename({'dba': 'name', 'cuisine description': 'cuisine'}, axis=1)
+
+
+# the .head(10) function will show us the first 10 rows in our dataset
+print(restaurants.head(10))
+
++++++++++++++++++++++++++
+
+Data Types:
+
+restaurants.dtypes
+
+# .nunique() counts the number of unique values in each column 
+restaurants.nunique() 
+
++++++++++++++++++++++++++
+
+Missing Data:
+
+# counts the number of missing values in each column 
+restaurants.isna().sum() 
+
+# here our .where() function replaces latitude values less than 40 with NaN values
+restaurants['latitude'] = restaurants['latitude'].where(restaurants['latitude'] > 40) 
+
+# here our .where() function replaces longitude values greater than -70 with NaN values
+restaurants['longitude'] = restaurants['longitude'].where(restaurants['longitude'] < -70) 
+
+# .sum() counts the number of missing values in each column
+restaurants.isna().sum() 
+
++++++++++++++++++++++++++
+
+Crosstab for Missingness:
+
+pd.crosstab(
+ 
+        # tabulates the boroughs as the index
+        restaurants['boro'],  
+
+        # tabulates the number of missing values in the url column as columns
+        restaurants['url'].isna(), 
+
+        # names the rows
+        rownames = ['boro'],
+
+        # names the columns 
+        colnames = ['url is na']) 
+
++++++++++++++++++++++++++
+
+Removing prefixes:
+
+# .str.lstrip('https://') removes the “https://” from the left side of the string
+restaurants['url'] = restaurants['url'].str.lstrip('https://') 
+
+# .str.lstrip('www.') removes the “www.” from the left side of the string
+restaurants['url'] = restaurants['url'].str.lstrip('www.') 
+
+# the .head(10) function will show us the first 10 rows in our dataset
+print(restaurants.head(10))
+
++++++++++++++++++++++++++
+
+Melting:
+
+annual_wage = pd.read_csv("annual_wage_restaurant_boro.csv")
+print(annual_wage)
+
+annual_wage=annual_wage.melt(
+
+      # which column to use as identifier variables
+      id_vars=["boro"], 
+      
+      # column name to use for “variable” names/column headers (ie. 2000 and 2007) 
+      var_name=["year"], 
+
+      # column name for the values originally in the columns 2000 and 2007
+      value_name="avg_annual_wage") 
+
+print(annual_wage)
+
++++++++++++++++++++++++++
+
+Regular Expressions:
+
+Regular expressions are special sequences of characters that describe a pattern of text that is to be matched
+We can use literals to match the exact characters that we desire
+
+Alternation, using the pipe symbol |, allows us to match the text preceding or following the |
+
+Character sets, denoted by a pair of brackets [], let us match one character from a series of characters
+
+Wildcards, represented by the period or dot ., will match any single character (letter, number, symbol or whitespace)
+
+Ranges allow us to specify a range of characters in which we can make a match
+
+Shorthand character classes like \w, \d and \s represent the ranges representing word characters, digit characters, and whitespace characters, respectively
+
+Groupings, denoted with parentheses (), group parts of a regular expression together, and allows us to limit alternation to part of a regex
+
+Fixed quantifiers, represented with curly braces {}, let us indicate the exact quantity or a range of quantity of a character we wish to match
+
+Optional quantifiers, indicated by the question mark ?, allow us to indicate a character in a regex is optional, or can appear either 0 times or 1 time
+
+The Kleene star, denoted with the asterisk *, is a quantifier that matches the preceding character 0 or more times
+
+The Kleene plus, denoted by the plus +, matches the preceding character 1 or more times
+
+The anchor symbols hat ^ and dollar sign $ are used to match text at the start and end of a string, respectively
+
++++++++++++++++++++++++++
+
+Cleaning Data:
+
+Missing Values:
+
+Method 1: drop all of the rows with a missing value - bill_df = bill_df.dropna() , bill_df = bill_df.dropna(subset=['num_guests'])
+
+Method 2: fill the missing values with the mean of the column, or with some other aggregate value - 
+
+bill_df = bill_df.fillna(value={"bill":bill_df.bill.mean(), "num_guests":bill_df.num_guests.mean()})
+
+
+import codecademylib3_seaborn
+import pandas as pd
+from students import students
+
+print(students)
+
+
+students = students.fillna(value=0)
+
+score_mean_2 = students.score.mean()
+print(score_mean_2)
+print(students)
+
++++++++++++++++++++++++++
+
+String Parsing:
+
+
+Extract Numbers From String - 
+
+split_df = df['exerciseDescription'].str.split('(\d+)', expand=True)
+
+df.reps = pd.to_numeric(split_df[1])
+df.exercise = split_df[0].replace('[\- ]', '', regex=True)
+
+
+Eliminate Dollar Signs - fruit.price = fruit['price'].replace('[\$,]', '', regex=True)
+
+Convert String to Numeric - fruit.price = pd.to_numeric(fruit.price)
+
++++++++++++++++++++++++++
+
+Data Types:
+
+import codecademylib3_seaborn
+import pandas as pd
+from students import students
+
+print(students.head())
+
+print(students.dtypes)
+
+print(students['score'].mean())
+
++++++++++++++++++++++++++
+
+Splitting by Character:
+
+# Split the string and save it as `string_split`
+string_split = df['type'].str.split('_')
+ 
+# Create the 'usertype' column
+df['usertype'] = string_split.str.get(0)
+ 
+# Create the 'country' column
+df['country'] = string_split.str.get(1)
+
++++++++++++++++++++++++++
+
+Splitting by Index:
+
+# Create the 'month' column
+df['month'] = df.birthday.str[0:2]
+
+# Create the 'day' column
+df['day'] = df.birthday.str[2:4]
+
+# Create the 'year' column
+df['year'] = df.birthday.str[4:]
+
+
+import codecademylib3_seaborn
+import pandas as pd
+from students import students
+
+print(students)
+print(students.columns)
+
+print(students.head())
+
+students['gender']=students.gender_age.str[0]
+students['age']=students.gender_age.str[1:]
+
+students = students[['full_name', 'grade', 'exam', 'score','gender','age']]
+print(students.head())
+
++++++++++++++++++++++++++
+
+Duplicates:
+
+Remove every row with duplicate in item column - fruits = fruits.drop_duplicates(subset=['item'])
+
+import codecademylib3_seaborn
+import pandas as pd
+from students import students
+
+print(students)
+
+duplicates=students.duplicated()
+
+duplicates.value_counts()
+
+students = students.drop_duplicates()
+
+duplicates= students.duplicated()
+
++++++++++++++++++++++++++
+
+Reshaping Data:
+
+df = pd.melt(frame=df, id_vars="Account", value_vars=["Checking","Savings"], value_name="Amount", var_name="Account Type")
+df.columns(["Account", "Account Type", "Amount"])
+
+import codecademylib3_seaborn
+import pandas as pd
+from students import students
+
+print(students.columns)
+
+students = pd.melt(frame=students, id_vars = ['full_name','gender_age','grade'],
+value_vars=['fractions','probability'],
+value_name= 'score', var_name = 'exam')
+
+print(students.head())
+print(students.columns)
+print(students.value_counts())
+
++++++++++++++++++++++++++
+
+Multiple Files:
+
+import glob
+import pandas as pd
+
+files = glob.glob("file*.csv")
+
+df_list = []
+for filename in files:
+  data = pd.read_csv(filename)
+  df_list.append(data)
+
+df = pd.concat(df_list)
+
+print(files)
+
+import codecademylib3_seaborn
+import pandas as pd
+import glob
+
+student_files = glob.glob('exams*.csv')
+
+df_list=[]
+
+for filename in student_files:
+  df_list.append(pd.read_csv(filename))
+  
+
+students = pd.concat(df_list)
+
+print(students)
+print(len(students))
+
++++++++++++++++++++++++++
+
+Imputation (how to fill in missing data):
+
+LOCF(Forwardfilling)-
+
+df['comfort'].ffill(axis=0, inplace=True)
+# Applying Forward Fill (another name for LOCF) on the comfort column
+
+impyute.imputation.ts.locf(data, axis=0)
+# Applying LOCF to the dataset
+
+
+NOCB(Backfilling)-
+
+df['comfort'].bfill(axis=0, inplace=True)
+impyute.imputation.ts.nocb(data, axis=0)
+
+
+BOCF(Baseline Filling)-
+
+# Isolate the first (baseline) value for our data
+baseline = df['concentration'][0]
+
+# Replace missing values with our baseline value
+df['concentration'].fillna(value=baseline, inplace=True)
+
+
+WOCF(Wort Case Filling)-
+
+# Isolate worst pain value (in this case, the highest)
+worst = df['pain'].max()
+
+# Replace all missing values with the worst value
+df['pain'].fillna(value=worst, inplace=True)
+
+
++++++++++++++++++++++++++
+
+Multiple Imputation:
+
+import numpy as np
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
+import pandas as pd
+
+# Create the dataset as a Python dictionary
+d = {
+    'X': [5.4,13.8,14.7,17.6,np.nan,1.1,12.9,3.4,np.nan,10.2],
+    'Y': [18,27.4,np.nan,18.3,49.6,48.9,np.nan,13.6,16.1,42.7],
+    'Z': [7.6,4.6,4.2,np.nan,4.7,8.5,3.5,np.nan,1.8,4.7]
+}
+
+dTest = {
+    'X': [13.1, 10.8, np.nan, 9.7, 11.2],
+    'Y': [18.3, np.nan, 14.1, 19.8, 17.5],
+    'Z': [4.2, 3.1, 5.7,np.nan, 9.6]
+}
+
+# Create the pandas DataFrame from our dictionary
+df = pd.DataFrame(data=d)
+dfTest = pd.DataFrame(data=dTest)
+
+# Create the IterativeImputer model to predict missing values
+imp = IterativeImputer(max_iter=10, random_state=0)
+
+# Fit the model to the test dataset
+imp.fit(dfTest)
+
+# Transform the model on the entire dataset
+dfComplete = pd.DataFrame(np.round(imp.transform(df),1), columns=['X','Y','Z'])
+
+print(dfComplete.head(10))
+
+---
+
+FULL ANALYSIS RUN THROUGH:
+
+Project Overview
+You work for a staffing agency that specializes in finding qualified candidates for development roles. One of your latest clients is growing rapidly and wants to understand what kinds of developers they can hire, and to understand general trends of the technology market. Your organization has access to this Stack Overflow dataset, which consists of survey responses by developers all over the world for the last few years.
+
+Your project is to put together several statistical analyses about the community to educate your client about the potential hiring market for their company.
+
+Project Steps
+Explore data
+You decide to start by performing some Exploratory Data Analysis (EDA). This will provide you with a high-level understanding of the data fields, as well as help you identify which columns have missing data. In this case, you load the dataset into a pandas DataFrame and call it df. Take a moment to explore which columns you have in the data.
+
+*
+
+import pandas as pd
+
+df = pd.read_csv('developer_dataset.csv')
+
+print(df.columns)
+
+*
+
+At an initial glance, you notice the following kinds of information: A variety of columns that identify the person (RespondentID, Year, Country) Information about their experiences (LanguageWorkedWith, DatabaseWorkedWith, UndergradMajor, etc.) Information about what they might want to do in the future (LanguageDesireNextYear, DatabaseDesireNextYear, etc.)
+
+At this point, you want a good understanding of how much data you have. Since this is a survey where each question is optional, you don’t expect every column to have a full set of data.
+
+Run df.count() to see a row count for each column. It should look something like this:
+
+From here, you can perform some basic summary statistics on the dataset. This will allow you to understand things like:
+
+average values
+max and min values
+the number of missing data points
+This will only work for numerical columns, but that will still be helpful. Use the following code: df.describe()
+
+Based on the above information, what observations can you make about the dataset?
+
+Are there columns that have more missing data than others?
+Which columns seem interesting? What insights would you want to gain from the data?
+Are there columns that have potentially more sensitive data than others? How would that change our strategies in dealing with them?
+Delete highly missing data
+You notice this dataset has a number of columns with a significant amount of missing data. With this much missing data, it is unlikely that any statistical analysis using that data would be accurate and representative of the developers who filled out the survey. Luckily, you recall that you can safely remove columns with ~60% or more missing data.
+
+Run the below code to see the percentage missing data for each column.
+
+*
+
+maxRows = df['RespondentID'].count()
+
+print('% Missing Data:')
+print((1 - df.count() / maxRows) * 100)
+
+*
+
+Based on the above numbers, you assume that it is safe to remove the following columns:
+
+NEWJobHunt
+NEWJobHuntResearch
+NEWLearn
+Use pandas to drop those DataFrame columns.
+
+*
+
+df.drop(['NEWJobHunt','NEWJobHuntResearch','NEWLearn'],
+    axis=1,
+    inplace=True)
+
+*
+
+
+Analyze developers by country
+Start thinking about the questions you want to ask of the data. You decide to investigate the distribution of employment and developer type from a geographical (i.e. Country) perspective.
+
+Both the Employment and DevType fields have missing data, but not a very significant amount, both with less than 10% missing. This is going to be foundational for your analyses moving forward, so you want to ensure that there are no missing data points.
+
+Determine what kind of missing data you have for employment and developer type. One way to do that is check, at a country level, where the data is missing for each field:
+
+*
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df[['RespondentID','Country']].groupby('Country').count()
+
+missingData = df[['Employment','DevType']].isnull().groupby(df['Country']).sum().reset_index()
+
+A=sns.catplot(
+    data=missingData, kind="bar",
+    x="Country", y="Employment",
+    height = 6, aspect = 2)
+B=sns.catplot(
+    data=missingData, kind="bar",
+    x="Country", y="DevType",
+    height = 6, aspect = 2)
+
+*
+
+
+As we can see from the above plots, the data doesn’t appear to be missing for any country significantly more than any other. Using your domain knowledge, you understand that the missing data appears to scale with the relative size of each country (e.g. there is more missing data in the United States vs. Japan because there will be more respondents there). You also note that the United States and Germany have significantly more developers (on average) than the other countries, explaining why they have more missing data points.
+
+You determine that the missing data for these two columns can be categorized as MCAR. This means you can safely delete the rows that have missing data in these columns! This is a prime example of where you can employ Pairwise Deletion to only delete rows that have missing data for either Employment or DevType:
+
+*
+
+df.dropna(subset = ['Employment','DevType'],
+    inplace = True,
+    how = 'any')
+
+*
+
+Now you can analyze the distribution of employment and developer types by country. You decide to aggregate the employment data by key developer roles that align with major parts of the development lifecycle:
+
+Front-end
+Back-end
+Full-stack
+Mobile development
+Administration roles
+
+*
+
+empfig = sns.catplot(x="Country", col="Employment",
+                data=df, kind="count",
+                height=6, aspect=1.5);
+
+# Focus on a few of the key developer types outlined in the Stack Overflow survey
+devdf = df[['Country','DevType']]
+devdf.loc[devdf['DevType'].str.contains('back-end'), 'BackEnd'] = True
+devdf.loc[devdf['DevType'].str.contains('front-end'), 'FrontEnd'] = True
+devdf.loc[devdf['DevType'].str.contains('full-stack'), 'FullStack'] = True
+devdf.loc[devdf['DevType'].str.contains('mobile'), 'Mobile'] = True
+devdf.loc[devdf['DevType'].str.contains('administrator'), 'Admin'] = True
+
+devdf = devdf.melt(id_vars=['Country'], 
+    value_vars=['BackEnd','FrontEnd','FullStack','Mobile','Admin'], 
+    var_name='DevCat',
+    value_name='DevFlag')
+
+devdf.dropna(how='any', inplace=True)
+
+devFig = sns.catplot(x="Country", col="DevCat",
+                data=devdf, kind="count",
+                height=6, aspect=1.5);
+
+*
+
+
+You see that the vast majority of respondents are employed full-time. Since these developers are mainly employed, this data will be relevant for a client who wants to see what developers look for in a potential job. You also see that the majority of developers will have skill sets in front-end, back-end, or full-stack development. This is interesting, and shows that the market values developers who can excel in at least a major part of the development lifecycle, if not the entire stack.
+
+Investigate developer undergraduate majors
+You decide to dive into the background for each type of developer to see trends in their educational experience that ultimately led to a career with technology. In particular, you look at the overall trend of majors year over year for respondents. As you saw before, you are missing about 11% of the data for UndergradMajor. Why do you think this data is missing? Could something have happened over the course of these three years? Is the fact that data is missing accurate?
+
+To test your theory, take a look at the distribution of majors over each year:
+
+
+*
+
+missingUndergrad = df['UndergradMajor'].isnull().groupby(df['Year']).sum().reset_index()
+
+sns.catplot(x="Year", y="UndergradMajor",
+                data=missingUndergrad, kind="bar",
+                height=4, aspect=1);
+
+*
+
+
+You see that all of the data for 2020 undergrad majors is filled in, indicating that each participant in these surveys had some level of decision for their undergrad major. For the purposes of your analysis, you are most interested in what major a person ultimately landed on, as this would be the educational background they would carry into a job search. You want to carry that value backwards for each participant to fill in any missing data. This is a great use for one of our Single Imputation techniques: NOCB! Fill in the gaps using NOCB:
+
+*
+
+# Sort by ID and Year so that each person's data is carried backwards correctly
+df = df.sort_values(['RespondentID','Year'])
+
+df['UndergradMajor'].bfill(axis=0, inplace=True)
+
+*
+
+From here, you analyze the major distribution for each year, using a vertical bar chart visualization:
+
+
+*
+
+# Key major groups outlined in the Stack Overflow survey
+majors = ['social science','natural science','computer science','development','another engineering','never declared']
+
+edudf = df[['Year','UndergradMajor']]
+edudf.dropna(how='any', inplace=True)
+edudf.loc[edudf['UndergradMajor'].str.contains('(?i)social science'), 'SocialScience'] = True
+edudf.loc[edudf['UndergradMajor'].str.contains('(?i)natural science'), 'NaturalScience'] = True
+edudf.loc[edudf['UndergradMajor'].str.contains('(?i)computer science'), 'ComSci'] = True
+edudf.loc[edudf['UndergradMajor'].str.contains('(?i)development'), 'ComSci'] = True
+edudf.loc[edudf['UndergradMajor'].str.contains('(?i)another engineering'), 'OtherEng'] = True
+edudf.loc[edudf['UndergradMajor'].str.contains('(?i)never declared'), 'NoMajor'] = True
+
+edudf = edudf.melt(id_vars=['Year'], 
+    value_vars=['SocialScience','NaturalScience','ComSci','OtherEng','NoMajor'], 
+    var_name='EduCat',
+    value_name='EduFlag')
+
+edudf.dropna(how='any', inplace=True)
+edudf = edudf.groupby(['Year','EduCat']).count().reset_index()
+
+eduFig = sns.catplot(x="Year", y='EduFlag', col="EduCat",
+                data=edudf, kind="bar",
+                height=6, aspect=1.5);
+
+*
+
+
+You notice that the vast majority of people who enter the workforce for development have some background in a Computer Science major. Interestingly, however, the number of Computer Science majors significantly declined over the years surveyed, indicating that there could be other majors that have successfully entered the workforce for their desired job. This would require further analysis and could allow an individual to pursue a separate education path and still end up in some kind of developer role.
+
+Examine the relationship between years of experience and compensation
+At this point, you have studied the demographics of developers around the world, from where they live to the education paths they have taken. Now, you turn your focus to the various aspects that would influence the job-hunting process.
+
+Years of experience are an important metric when looking to understand the general skill and technical capabilities of a potential candidate. Compensation is also important for our client to understand what the “going rate” for a particular developer is in today’s market. You might assume that there is a strong correlation between experience and job compensation, making it an excellent hypothesis to explore.
+
+In order to understand a bit about the data for each of these two fields, perform some more exploratory analysis:
+
+
+*
+
+compFields = df[['Year','YearsCodePro','ConvertedComp']]
+
+D = sns.boxplot(x="Year", y="YearsCodePro",
+            data=compFields)
+
+E = sns.boxplot(x="Year", y="ConvertedComp",
+            data=compFields)
+
+*
+
+
+You see that although there are some outlier data points for each column, the overall distribution is fairly consistent year-over-year. This indicates that there is a strong correlation between the data points, which should tell a good story about how experience can translate into compensation. Since there is a clear trend with the data points, you decide the best method for filling in the missing data for these two columns is through Multiple Imputation:
+
+*
+
+import numpy as np
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
+from sklearn.model_selection import train_test_split
+
+imputedf = df[['YearsCodePro','ConvertedComp']]
+
+traindf, testdf = train_test_split(imputedf, train_size=0.1)
+
+# Create the IterativeImputer model to predict missing values
+imp = IterativeImputer(max_iter=20, random_state=0)
+
+# Fit the model to the the test dataset
+imp.fit(imputedf)
+
+# Transform the model on the entire dataset
+compdf = pd.DataFrame(np.round(imp.transform(imputedf),0), columns=['YearsCodePro','ConvertedComp'])
+
+*
+
+
+The above code will loop through (up to 20 times), and fill in the missing data based on the context provided by the other column. This should create data points that are indicative of the overall trend of the data. Now, you can analyze the relationship between YearsCodePro and CinvertedComp through the use of a boxplot like so:
+
+
+*
+
+compPlotdf = compdf.loc[compdf['ConvertedComp'] <= 150000]
+compPlotdf['CodeYearBins'] = pd.qcut(compPlotdf['YearsCodePro'], q=5)
+
+sns.boxplot(x="CodeYearBins", y="ConvertedComp",
+            data=compPlotdf)
+
+*
+
+
+The plot above validates your hypothesis from before. While there are high (and low) earning developers at every experience level, experience appears to correlate with compensation. The more experienced a developer was, the more (on average) they were compensated.
+
+Summary and Results
+At this point, we have analyzed information about the developer community from a variety of points of view. Our client understands the global presence of the developer community, their varied backgrounds, and how their experience translates into compensation. Overall, these statistical analyses can guide actions in moving forward with a staffing plan that aligns with your client’s growth plan and technical requirements.
+
+By using a variety of techniques for handling missing data, you were able to reliably curate a cleaner dataset to fuel this set of analyses. These strategies allow you to salvage otherwise messy data, and should help you in the future with other datasets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

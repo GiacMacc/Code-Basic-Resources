@@ -1,0 +1,1577 @@
+DATA ANALYSIS WITH SQL (CODECADEMY)
+
+-----------------------------------
+
+INTRODUCTION:
+
+ CREATE TABLE celebs(
+  id INTEGER,
+  name TEXT,
+  age INTEGER
+ );
+
+ SELECT * FROM celebs;
+
++++++++++++++++++++++++++++++++++
+
+INSERT INTO celebs(id,name,age)
+VALUES (2,'Jeremy Lin ', 35);
+
+INSERT INTO celebs(id,name,age)
+VALUES (3,'Beyonce Knowles ', 42); 
+
+INSERT INTO celebs(id,name,age)
+VALUES (4,'Taylor Swift ', 33); 
+
+INSERT INTO celebs(id,name,age)
+VALUES (5,'Justin Bieber  ', 29); 
+
+SELECT * FROM celebs;
+
++++++++++++++++++++++++++++++++++
+
+ALTER TABLE celebs
+ADD COLUMN REAL;
+
+SELECT * FROM celebs;
+
++++++++++++++++++++++++++++++++++
+
+UPDATE celebs
+SET twitter_handle = '@taylorswift13'
+WHERE id=4;
+
+SELECT * FROM celebs;
+
++++++++++++++++++++++++++++++++++
+
+DELETE FROM celebs
+WHERE twitter_handle IS NULL;
+
+SELECT * FROM celebs;
+
++++++++++++++++++++++++++++++++++
+
+CREATE TABLE friends(
+  id INTEGER,
+  name TEXT,
+  birthday DATE
+);
+
+
+/*To insert a row the column order must be mentioned first, then followed by the inserted values in the respective order*/
+INSERT INTO friends (id,name,birthday)
+VALUES(1,'Storm','05-30-1940');
+INSERT INTO friends (id,name,birthday)
+VALUES(2,'a','05-30-1941');
+INSERT INTO friends (id,name,birthday)
+VALUES(3,'b','05-30-1942');
+
+ALTER TABLE friends
+ADD COLUMN email;
+
+UPDATE friends
+SET email= "storm@codecademy.com"
+WHERE id=1;
+
+SELECT * FROM friends;
+
+---
+
+SELECT COUNT(DISTINCT user_id) AS enrollments,
+	COUNT(CASE
+       	WHEN strftime("%m", cancel_date) = '03'
+        THEN user_id
+  END) AS march_cancellations,
+ 	ROUND(100.0 * COUNT(CASE
+       	WHEN strftime("%m", cancel_date) = '03'
+        THEN user_id
+  END) / COUNT(DISTINCT user_id)) AS churn_rate
+FROM pro_users
+WHERE signup_date < '2017-04-01'
+	AND (
+    (cancel_date IS NULL) OR
+    (cancel_date > '2017-03-01')
+  );
+
+-----------------------------------
+
+QUERIES:
+
+SELECT name,
+CASE
+  WHEN genre='romance' THEN 'Chill'
+  WHEN genre='comedy' THEN 'Chill'
+  ELSE 'Intense'
+END AS 'Mood'
+FROM movies ;
+
+---
+
+SELECT * FROM nomnom;
+
+SELECT DISTINCT neighborhood FROM nomnom;
+
+SELECT DISTINCT cuisine FROM nomnom;
+
+SELECT * FROM nomnom
+WHERE cuisine='Chinese';
+
+SELECT * FROM nomnom
+WHERE review>4;
+
+SELECT * FROM nomnom
+WHERE cuisine='Italian' AND price='$$$';
+
+SELECT * FROM nomnom
+WHERE name LIKE '%meatball%';
+
+SELECT * FROM nomnom
+WHERE neighborhood= 'Midtown' 
+OR neighborhood= 'Downtown' 
+OR neighborhood= 'Chinatown';
+
+SELECT * FROM nomnom
+WHERE health IS NULL;
+
+SELECT * FROM nomnom
+ORDER BY review DESC
+LIMIT 10 ;
+
+SELECT name,
+CASE
+  WHEN review>4.5 THEN 'Extraordinary'
+  WHEN review>4 THEN 'Excellent'
+  WHEN review>3 THEN 'Good'
+  WHEN review>2 THEN 'Fair'
+  ELSE 'poor'
+END AS 'Quality'
+FROM nomnom;
+
+---
+
+-- 1
+-- What are the column names?
+SELECT * FROM transaction_data
+LIMIT 10;
+
+-- 2
+-- Find the full_names and emails
+-- of the transactions listing 20252 as the zip code.
+SELECT full_name, email,zip FROM transaction_data
+WHERE zip=20252;
+
+-- 3
+-- Use a query to find the names 
+-- and emails associated with these transactions.
+SELECT full_name, email FROM transaction_data
+WHERE full_name = 'Art Vandelay' 
+OR full_name LIKE '% der %';
+
+
+-- 4
+-- Find the ip_addresses and emails listed with these transactions.
+SELECT ip_address,email FROM transaction_data
+WHERE ip_address LIKE '10%';
+
+-- 5
+-- Find the emails in transaction_data with
+-- ‘temp_email.com’ as a domain.
+SELECT email 
+FROM transaction_data
+WHERE email LIKE '%temp_email.com';
+
+-- 6
+-- The finance department is looking for a specific transaction. 
+-- They know that the transaction occurred from an ip address starting 
+-- with ‘120.’ and their full name starts with ‘John’.
+
+-- Can you find the transaction?
+SELECT ip_address, full_name, id
+FROM transaction_data
+WHERE ip_address LIKE '120%' AND
+full_name LIKE 'John%';
+
+-- 7
+-- Challenge
+-- Return only those customers residing in GA. Use the list of ZIP CODE prefixes
+-- (https://en.wikipedia.org/wiki/List_of_ZIP_Code_prefixes)
+-- to determine the best query for zip codes belonging to Georgia(GA).
+SELECT zip,full_name FROM transaction_data
+WHERE zip BETWEEN 30000 AND 32000;
+
+---
+
+-- 1
+-- What are the column names?
+SELECT * FROM users
+LIMIT 10;
+ 
+-- 2
+-- Find the email addresses and birthdays of users whose 
+-- birthday is between 1980-01-01 and 1989-12-31.
+SELECT email,birthday FROM users
+WHERE birthday BETWEEN '1980-01-01' AND '1989-12-12'
+LIMIT 10;
+   
+-- 3
+-- Find the emails and creation date of users 
+-- whose created_at date matches this condition.
+SELECT email, created_at FROM users
+WHERE created_at <'2017-05-01'
+LIMIT 10;
+
+
+-- 4
+-- Find the emails of the users who received the ‘bears’ test.
+SELECT test,email FROM users
+WHERE test='bears'
+LIMIT 10;
+
+-- 5
+-- Find all the emails of all users who 
+-- received a campaign on website BBB.
+SELECT campaign,email FROM users
+WHERE campaign LIKE 'BBB%'
+LIMIT 10;
+
+-- 6
+-- Find all the emails of all users who received ad copy 2 in 
+-- their campaign.
+SELECT campaign,email FROM users
+WHERE campaign LIKE '%2'
+LIMIT 10;
+
+-- 7
+-- Find the emails for all users who received both a campaign and a test. 
+-- These users will have non-empty entries in the 
+-- campaign and test columns.
+SELECT campaign,test,email FROM users
+WHERE test IS NOT NULL 
+AND campaign IS NOT NULL
+LIMIT 10;
+
+-- 8
+-- Challenge
+-- One of the members of the marketing team had an idea of calculating
+-- how old users were when they signed up.
+
+---
+
+-- 1
+-- What are the column names?
+SELECT * FROM orders
+LIMIT 10;
+
+-- 2 
+-- How recent is this data?
+SELECT DISTINCT order_date FROM orders
+ORDER BY order_date DESC
+LIMIT 10;
+
+-- 3
+-- Instead of selecting all the columns using *, 
+-- write a query that selects only the special_instructions column.
+
+-- Limit the result to 20 rows.
+SELECT special_instructions FROM orders
+WHERE special_instructions IS NOT NULL
+ORDER BY special_instructions ASC
+LIMIT 20;
+
+-- 4 
+-- Can you edit the query so that we are only 
+-- returning the special instructions that are not empty?
+
+
+-- 5
+-- Let’s go even further and sort the instructions 
+-- in alphabetical order (A-Z).
+
+
+-- 6
+-- Let’s search for special instructions that have the word ‘sauce’.
+
+-- Are there any funny or interesting ones? 
+SELECT special_instructions FROM orders
+WHERE special_instructions LIKE '%sauce%';
+
+-- 7
+-- Let’s search for special instructions that have the word ‘door’.
+-- Any funny or interesting ones?
+SELECT special_instructions FROM orders
+WHERE special_instructions LIKE '%door%';
+
+-- 8
+-- Let’s search for special instructions that have the word ‘box’.
+-- Any funny or interesting ones?
+SELECT special_instructions FROM orders
+WHERE special_instructions LIKE '%box%';
+
+-- 9
+-- Instead of just returning the special instructions, also return their order ids.
+
+-- For more readability:
+-- Rename id as ‘#’
+-- Rename special_instructions as ‘Notes’
+SELECT special_instructions AS 'Notes',
+id AS '#' FROM orders
+WHERE special_instructions LIKE '%box%';
+
+-- 10
+-- Challenge
+-- They have asked you to query the customer who made the phrase. 
+-- Return the item_name restaurant_id, and user_id for the person created the phrase.
+SELECT item_name, restaurant_id, user_id 
+FROM orders
+WHERE special_instructions = 'Draw a narwhal on the delivery box.';
+
+-----------------------------
+
+AGGREGATE FUNCTIONS:
+
+SELECT price, 
+   ROUND(AVG(downloads)),
+   COUNT(*)
+FROM fake_apps
+GROUP BY price
+HAVING COUNT(*)>10;
+
+---
+
+SELECT *
+FROM startups;
+
+SELECT COUNT(name), SUM(valuation), MAX(raised) AS seed_stage, MIN(founded)
+FROM startups
+WHERE stage='Seed';
+
+SELECT category, ROUND(AVG(valuation),2) AS val FROM startups
+GROUP BY category
+ORDER BY val DESC;
+
+SELECT category, COUNT(name) AS comps FROM startups
+GROUP BY category
+HAVING comps>3;
+
+SELECT location, AVG(employees) AS emps FROM startups
+GROUP BY location
+HAVING emps>500;
+
+---
+
+ SELECT *
+FROM met
+LIMIT 10;
+
+SELECT COUNT(*) FROM met;
+
+SELECT COUNT(category) FROM met
+WHERE category LIKE '%celery%';
+
+SELECT title,medium,date FROM met
+ORDER BY title ASC
+LIMIT 5;
+
+SELECT country, COUNT(country) AS count FROM met
+GROUP BY country
+ORDER BY count DESC
+LIMIT 10;
+
+SELECT category, COUNT(category) AS amount FROM met
+GROUP BY category
+HAVING amount>100;
+
+SELECT COUNT(*), medium FROM met
+WHERE medium='Gold' OR medium='Silver'
+GROUP BY medium
+ORDER BY COUNT(*) DESC;
+
+---
+
+SELECT title, score
+FROM hacker_news
+ORDER BY score DESC
+LIMIT 5;
+
+SELECT SUM(score) FROM hacker_news;
+
+SELECT user, score FROM hacker_news
+GROUP BY user
+HAVING score>200;
+
+SELECT (517 + 309 + 304 + 282) / 6366.0;
+
+
+
+SELECT user,
+   COUNT(*)
+FROM hacker_news
+WHERE url LIKE '%watch?v=dQw4w9WgXcQ%'
+GROUP BY user
+ORDER BY COUNT(*) DESC;
+
+SELECT CASE
+   WHEN url LIKE '%github%' THEN 'GitHub'
+   WHEN url LIKE '%medium%' THEN 'Medium'
+   WHEN url LIKE '%nytimes%' THEN 'New York Times'
+   ELSE 'Other'
+  END AS 'Source',
+  COUNT(*)
+FROM hacker_news
+GROUP BY 1;
+
+SELECT timestamp FROM hacker_news
+LIMIT 10;
+
+SELECT timestamp, strftime('%H',timestamp) FROM hacker_news
+GROUP BY 1
+LIMIT 20;
+
+SELECT strftime('%H',timestamp) AS time, 
+  ROUND(AVG(score)) AS score, 
+  COUNT(*) 
+FROM hacker_news
+WHERE timestamp IS NOT NULL
+GROUP BY time
+ORDER BY 2 DESC;
+
+---
+
+ SELECT * FROM transactions;
+
+ SELECT SUM(money_in) FROM transactions;
+
+ SELECT SUM(money_out) FROM transactions;
+
+ SELECT COUNT(money_in) FROM transactions;
+
+ SELECT COUNT(money_in) FROM transactions
+ WHERE currency = 'BIT';
+
+SELECT MAX(money_in) FROM transactions;
+SELECT MAX(money_out) FROM transactions;
+
+SELECT AVG(money_in) FROM transactions
+WHERE currency = 'ETH';
+
+SELECT date, ROUND(AVG(money_in),2) AS 'In', ROUND(AVG(money_out),2) AS 'Out' FROM transactions
+GROUP BY date;
+
+-----------------------------
+
+MULTIPLE TABLES:
+
+SELECT *
+FROM orders
+JOIN subscriptions
+  ON orders.subscription_id = subscriptions.subscription_id;
+
+SELECT *
+FROM orders
+JOIN subscriptions
+  ON orders.subscription_id = subscriptions.subscription_id
+  WHERE description = 'Fashion Magazine';
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT COUNT(*) FROM newspaper
+WHERE start_month<=3 AND end_month>=3;
+
+SELECT * FROM newspaper
+CROSS JOIN months
+LIMIT 10;
+
+SELECT month, COUNT(*) FROM newspaper
+CROSS JOIN months
+WHERE start_month<=month AND end_month>= month
+GROUP BY month;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT * FROM newspaper
+UNION
+SELECT * FROM online;
+
+++++++++++++++++++++++++++++++++++++
+
+WITH previous_query AS (
+  SELECT customer_id,
+   COUNT(subscription_id) AS 'subscriptions'
+FROM orders
+GROUP BY customer_id
+)
+SELECT customers.customer_name , previous_query.subscriptions
+FROM previous_query
+JOIN customers
+  ON customers.customer_id = previous_query.customer_id;
+
+---
+
+WITH play_count AS (
+  SELECT song_id,
+     COUNT(*) as times_played
+  FROM plays
+  GROUP BY song_id)
+SELECT songs.title,
+	songs.artist,
+  play_count.times_played
+FROM play_count
+JOIN songs
+	ON play_count.song_id = songs.id;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT premium_users.user_id,
+  months.months,
+  CASE
+    WHEN (
+      premium_users.purchase_date <= months.months
+      )
+      AND
+      (
+        premium_users.cancel_date >= months.months
+        OR
+        premium_users.cancel_date IS NULL
+      )
+    THEN 'active'
+    ELSE 'not_active'
+  END AS 'status'
+
+FROM premium_users
+CROSS JOIN months;
+
+++++++++++++++++++++++++++++++++++++
+
+WITH january AS (
+  SELECT *
+  FROM plays
+  WHERE strftime("%m", play_date) = '01'
+),
+february AS (
+  SELECT *
+  FROM plays
+  WHERE strftime("%m", play_date) = '02'
+
+)
+SELECT january.user_id FROM january
+LEFT JOIN february
+ON january.user_id = february.user_id
+WHERE february.user_id IS NULL;
+
+---
+
+SUBQUERIES:
+
+SELECT first_name, last_name
+FROM band_students
+WHERE id IN (
+   SELECT id
+   FROM drama_students);
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT first_name, last_name FROM band_students
+WHERE id NOT IN(
+  SELECT id
+  FROM drama_students
+);
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT first_name, last_name FROM band_students
+WHERE EXISTS(
+  SELECT *
+  FROM drama_students
+  WHERE id=band_students.id
+);
+
+---
+
+SELECT * FROM trips;
+
+SELECT * FROM riders;
+
+SELECT * FROM cars;
+
+SELECT * FROM riders
+CROSS JOIN cars;
+
+SELECT trips.rider_id, riders.total_trips FROM trips
+LEFT JOIN riders
+ON trips.rider_id = riders.id;
+
+SELECT * FROM trips
+JOIN cars
+ON trips.car_id = cars.id;
+
+SELECT * FROM riders
+UNION
+SELECT * FROM riders2;
+
+SELECT ROUND(AVG(cost)) FROM trips;
+
+SELECT username, total_trips FROM riders
+WHERE total_trips > 500;
+
+SELECT COUNT(*) FROM cars
+WHERE status='active';
+
+SELECT * FROM cars
+ORDER BY trips_completed DESC
+LIMIT 2;
+
+---
+
+SELECT * 
+FROM places
+LIMIT 5;
+
+SELECT * 
+FROM reviews
+LIMIT 5;
+
+SELECT * FROM places
+WHERE price_point = '$$' OR price_point ='$'
+LIMIT 5;
+
+SELECT places.name, places.average_rating, reviews.username, reviews.rating, reviews.review_date, reviews.note FROM places
+JOIN reviews
+ON places.id = reviews.place_id
+LIMIT 5;
+
+SELECT places.name, places.average_rating, reviews.username, reviews.rating, reviews.review_date, reviews.note FROM places
+LEFT JOIN reviews
+ON places.id = reviews.place_id
+LIMIT 5;
+
+SELECT places.id, places.name FROM places
+LEFT JOIN reviews
+ON places.id = reviews.place_id
+WHERE reviews.place_id IS NULL
+LIMIT 5;
+
+
+WITH reviews_2020 AS (
+SELECT * FROM reviews
+WHERE strftime("%Y", review_date)='2020'
+)
+SELECT * FROM reviews_2020
+JOIN places
+ON places.id  = reviews_2020.place_id
+LIMIT 5;
+
+---
+
+SELECT * FROM users
+LIMIT 10;
+SELECT * FROM posts
+LIMIT 10;
+SELECT * FROM subreddits
+LIMIT 10;
+
+SELECT COUNT(*) FROM subreddits;
+
+SELECT username, MAX(score) FROM users;
+SELECT title, MAX(score) FROM posts;
+SELECT name, subscriber_count FROM subreddits
+ORDER BY subscriber_count DESC
+LIMIT 5;
+
+SELECT users.username, COUNT(posts.user_id) FROM users
+LEFT JOIN posts
+ON users.id = posts.user_id
+GROUP BY users.id
+ORDER BY 2 DESC
+LIMIT 5;
+
+SELECT * FROM posts
+JOIN users
+ON users.id = posts.user_id
+LIMIT 10;
+
+SELECT * FROM posts
+UNION
+SELECT * FROM posts2
+LIMIT 5;
+
+WITH popular_posts AS(
+  SELECT * FROM posts
+  WHERE score>=5000
+)
+SELECT subreddits.name, popular_posts.title, popular_posts.score 
+FROM subreddits
+JOIN popular_posts
+ON subreddits.id = popular_posts.subreddit_id
+ORDER BY popular_posts.score DESC
+LIMIT 5;
+
+SELECT * FROM subreddits
+JOIN posts
+ON subreddits.id = posts.subreddit_id
+GROUP BY subreddit_id
+ORDER BY score DESC
+LIMIT 5;
+
+SELECT AVG(posts.score), subreddits.name FROM subreddits
+JOIN posts
+ON subreddits.id = posts.subreddit_id
+GROUP BY subreddits.name
+ORDER BY 1 DESC
+LIMIT 5;
+
+---
+
+SELECT * FROM employees
+LIMIT 5;
+
+SELECT * FROM projects
+LIMIT 5;
+
+SELECT * FROM employees
+WHERE current_project IS NULL
+LIMIT 5;
+
+SELECT project_name FROM projects
+WHERE project_id NOT IN(
+  SELECT current_project
+  FROM employees
+  WHERE current_project IS NOT NULL
+)
+LIMIT 5;
+
+SELECT project_name FROM projects
+JOIN employees
+ON projects.project_id = employees.current_project
+WHERE current_project IS NOT NULL
+GROUP BY project_name
+ORDER BY COUNT(employee_id) DESC;
+
+SELECT project_name FROM projects
+JOIN employees
+ON projects.project_id = employees.current_project
+WHERE current_project IS NOT NULL
+GROUP BY current_project
+HAVING COUNT(current_project)>1
+ORDER BY COUNT(current_project) DESC;
+
+SELECT (COUNT(*) * 2) - (
+  SELECT COUNT(*)
+  FROM employees
+  WHERE current_project IS NOT NULL
+    AND position = 'Developer') AS 'Count'
+FROM projects;
+
+SELECT personality, COUNT(personality) 
+FROM employees
+ORDER BY COUNT(personality) DESC;
+
+SELECT project_name 
+FROM projects
+INNER JOIN employees 
+  ON projects.project_id = employees.current_project
+WHERE personality = (
+   SELECT personality
+   FROM employees
+   GROUP BY personality
+   ORDER BY COUNT(personality) DESC
+   LIMIT 1);
+
+   SELECT last_name, first_name, personality, project_name
+FROM employees
+INNER JOIN projects 
+  ON employees.current_project = projects.project_id
+WHERE personality = (
+   SELECT personality 
+   FROM employees
+   WHERE current_project IS NOT NULL
+   GROUP BY personality
+   ORDER BY COUNT(personality) DESC
+   LIMIT 1);
+
+   SELECT first_name, personality, p
+
+SELECT last_name, first_name, personality, project_name,
+CASE 
+   WHEN personality = 'INFP' 
+   THEN (SELECT COUNT(*)
+      FROM employees 
+      WHERE personality IN ('ISFP', 'ESFP', 'ISTP', 'ESTP', 'ISFJ', 'ESFJ', 'ISTJ', 'ESTJ'))
+   WHEN personality = 'ISFP' 
+   THEN (SELECT COUNT(*)
+      FROM employees 
+      WHERE personality IN ('INFP', 'ENTP', 'INFJ'))
+   ELSE 0
+END AS 'IMCOMPATS'
+FROM employees
+LEFT JOIN projects on employees.current_project = projects.project_id;
+
+
+
+-----------------------------
+
+FUNNELS:
+
+SELECT * FROM onboarding_modals
+LIMIT 10;
+
+SELECT modal_text, COUNT(DISTINCT user_id) FROM onboarding_modals
+GROUP BY modal_text;
+
+SELECT modal_text,
+  COUNT(DISTINCT CASE
+    WHEN ab_group = 'control' THEN user_id
+    END) AS 'control_clicks', COUNT(CASE WHEN ab_group='variant' THEN user_id END) AS 'variant_clicks'
+FROM onboarding_modals
+GROUP BY 1
+ORDER BY 1;
+
+---
+
+WITH funnels AS (
+  SELECT DISTINCT b.browse_date,
+     b.user_id,
+     c.user_id IS NOT NULL AS 'is_checkout',
+     p.user_id IS NOT NULL AS 'is_purchase'
+  FROM browse AS 'b'
+  LEFT JOIN checkout AS 'c'
+    ON c.user_id = b.user_id
+  LEFT JOIN purchase AS 'p'
+    ON p.user_id = c.user_id)
+
+++++++++++++++++++++++++++++++++++++
+
+
+SELECT COUNT(*) AS 'num_browse', SUM(is_checkout) AS 'num_checkout', SUM(is_purchase) AS 'num_purchase', 1.0 * SUM(is_checkout) / COUNT(user_id), 1.0 * SUM(is_purchase) / SUM(is_checkout)
+FROM funnels;
+
+++++++++++++++++++++++++++++++++++++
+
+WITH funnels AS (
+  SELECT DISTINCT b.browse_date,
+     b.user_id,
+     c.user_id IS NOT NULL AS 'is_checkout',
+     p.user_id IS NOT NULL AS 'is_purchase'
+  FROM browse AS 'b'
+  LEFT JOIN checkout AS 'c'
+    ON c.user_id = b.user_id
+  LEFT JOIN purchase AS 'p'
+    ON p.user_id = c.user_id)
+SELECT browse_date, COUNT(*) AS 'num_browse',
+   SUM(is_checkout) AS 'num_checkout',
+   SUM(is_purchase) AS 'num_purchase',
+   1.0 * SUM(is_checkout) / COUNT(user_id) AS 'browse_to_checkout',
+   1.0 * SUM(is_purchase) / SUM(is_checkout) AS 'checkout_to_purchase'
+FROM funnels
+GROUP BY browse_date
+ORDER BY browse_date;
+
+---
+
+ SELECT * FROM survey
+ LIMIT 10;
+
+ SELECT question, COUNT(DISTINCT user_id)
+ FROM survey
+ GROUP BY question;
+
+ SELECT * FROM  quiz
+ LIMIT 5;
+ SELECT * FROM  home_try_on
+ LIMIT 5;
+ SELECT * FROM  purchase
+ LIMIT 5;
+
+SELECT DISTINCT q.user_id,
+   h.user_id IS NOT NULL AS 'is_home_try_on',
+   h.number_of_pairs,
+   p.user_id IS NOT NULL AS 'is_purchase'
+FROM quiz q
+LEFT JOIN home_try_on h
+   ON q.user_id = h.user_id
+LEFT JOIN purchase p
+   ON p.user_id = q.user_id
+LIMIT 10;
+
+---
+
+CHURN:
+
+SELECT 1.0 *
+(
+  SELECT COUNT(*)
+  FROM subscriptions
+  WHERE subscription_start < '2017-01-01'
+  AND (
+    subscription_end
+    BETWEEN '2017-01-01' AND '2017-01-31'
+  )
+)/(
+  SELECT COUNT(*)
+  FROM subscriptions
+  WHERE subscription_start < '2017-01-01'
+  AND (
+    (subscription_end >= '2017-01-01')
+    OR (subscription_end IS NULL)
+)
+)
+
+AS results;
+
+
+++++++++++++++++++++++++++++++++++++
+
+WITH enrollments AS
+(SELECT *
+FROM subscriptions
+WHERE subscription_start < '2017-01-01'
+AND (
+  (subscription_end >= '2017-01-01')
+  OR (subscription_end IS NULL)
+)), status AS 
+(SELECT
+CASE
+  WHEN (subscription_end > '2017-01-31')
+    OR (subscription_end IS NULL) THEN 0
+    ELSE 1
+  END as is_canceled, status AS
+  CASE
+    WHEN subscription_start < '2017-01-01'
+      AND (
+        (subscription_end >= '2017-01-01')
+        OR (subscription_end IS NULL)
+      ) THEN 1
+    ELSE 0
+  END as is_active
+  FROM enrollments
+  )
+  SELECT 1.0 * SUM(is_canceled) / SUM(is_active)
+FROM status;
+
+
+++++++++++++++++++++++++++++++++++++
+
+WITH months AS
+(SELECT
+  '2017-01-01' as first_day,
+  '2017-01-31' as last_day
+UNION
+SELECT
+  '2017-02-01' as first_day,
+  '2017-02-28' as last_day
+UNION
+SELECT
+  '2017-03-01' as first_day,
+  '2017-03-31' as last_day
+),
+cross_join AS
+(SELECT *
+FROM subscriptions
+CROSS JOIN months),
+status AS (
+  SELECT id, first_day AS month,
+    CASE
+      WHEN (subscription_start < first_day)
+  AND (
+    subscription_end > first_day
+    OR subscription_end IS NULL
+  ) THEN 1
+ELSE 0
+
+)
+SELECT *
+FROM status
+LIMIT 100;
+
+++++++++++++++++++++++++++++++++++++
+
+WITH months AS
+(SELECT
+  '2017-01-01' as first_day,
+  '2017-01-31' as last_day
+UNION
+SELECT
+  '2017-02-01' as first_day,
+  '2017-02-28' as last_day
+UNION
+SELECT
+  '2017-03-01' as first_day,
+  '2017-03-31' as last_day
+),
+cross_join AS
+(SELECT *
+FROM subscriptions
+CROSS JOIN months),
+status AS
+(SELECT is_canceled,id, first_day as month,
+CASE
+  WHEN (subscription_start < first_day)
+    AND (
+      subscription_end > first_day
+      OR subscription_end IS NULL
+    ) THEN 1
+  ELSE 0
+END as is_active,
+WHEN subscription_end BETWEEN first_day AND last_day THEN 1
+ELSE 0
+END as is_canceled
+FROM cross_join)
+SELECT *
+FROM status
+LIMIT 100;
+
+++++++++++++++++++++++++++++++++++++
+
+WITH months AS
+(SELECT
+  '2017-01-01' as first_day,
+  '2017-01-31' as last_day
+UNION
+SELECT
+  '2017-02-01' as first_day,
+  '2017-02-28' as last_day
+UNION
+SELECT
+  '2017-03-01' as first_day,
+  '2017-03-31' as last_day
+),
+cross_join AS
+(SELECT *
+FROM subscriptions
+CROSS JOIN months),
+status AS
+(SELECT id, first_day as month,
+CASE
+  WHEN (subscription_start < first_day)
+    AND (
+      subscription_end > first_day
+      OR subscription_end IS NULL
+    ) THEN 1
+  ELSE 0
+END as is_active,
+CASE 
+  WHEN subscription_end BETWEEN first_day AND last_day THEN 1
+  ELSE 0
+END as is_canceled
+FROM cross_join),
+status_aggregate AS
+(
+  SELECT month, SUM(is_active) AS active, SUM(is_canceled) AS canceled
+  FROM status
+  GROUP BY month
+)
+SELECT *
+FROM status_aggregate;
+
+
+++++++++++++++++++++++++++++++++++++
+
+WITH months AS
+(SELECT
+  '2017-01-01' as first_day,
+  '2017-01-31' as last_day
+UNION
+SELECT
+  '2017-02-01' as first_day,
+  '2017-02-28' as last_day
+UNION
+SELECT
+  '2017-03-01' as first_day,
+  '2017-03-31' as last_day
+),
+cross_join AS
+(SELECT *
+FROM subscriptions
+CROSS JOIN months),
+status AS
+(SELECT id, first_day as month,
+CASE
+  WHEN (subscription_start < first_day)
+    AND (
+      subscription_end > first_day
+      OR subscription_end IS NULL
+    ) THEN 1
+  ELSE 0
+END as is_active,
+CASE 
+  WHEN subscription_end BETWEEN first_day AND last_day THEN 1
+  ELSE 0
+END as is_canceled
+FROM cross_join),
+status_aggregate AS
+(SELECT
+  month,
+  SUM(is_active) as active,
+  SUM(is_canceled) as canceled
+FROM status
+GROUP BY month)
+SELECT status_aggregate_month, status_aggregate.canceled / status_aggregate.active AS churn rate
+FROM status;
+
+++++++++++++++++++++++++++++++++++++
+
+WITH months AS (
+  SELECT 
+    '2017-01-01' AS first_day, 
+    '2017-01-31' AS last_day 
+  UNION 
+  SELECT 
+    '2017-02-01' AS first_day, 
+    '2017-02-28' AS last_day 
+  UNION 
+  SELECT 
+    '2017-03-01' AS first_day, 
+    '2017-03-31' AS last_day
+), 
+cross_join AS (
+  SELECT *
+  FROM subscriptions
+  CROSS JOIN months
+), 
+status AS (
+  SELECT 
+    id, 
+    first_day AS month, 
+    CASE
+      WHEN (subscription_start < first_day) 
+        AND (
+          subscription_end > first_day 
+          OR subscription_end IS NULL
+        ) THEN 1
+      ELSE 0
+    END AS is_active, 
+    CASE
+      WHEN subscription_end BETWEEN first_day AND last_day THEN 1
+      ELSE 0
+    END AS is_canceled 
+  FROM cross_join
+), 
+status_aggregate AS (
+  SELECT 
+    month, 
+    SUM(is_active) AS active, 
+    SUM(is_canceled) AS canceled 
+  FROM status 
+  GROUP BY month
+) 
+SELECT
+  month, 
+  1.0 * canceled / active AS churn_rate 
+FROM status_aggregate;
+
+---
+
+ SELECT * FROM subscriptions
+ LIMIT 100;
+
+ SELECT MIN(subscription_start), MAX(subscription_end) FROM subscriptions;
+
+  WHEN months AS
+  (
+    SELECT 
+    '2017-01-01' as first_day,
+    '2017-01-31' as last_day
+    UNION
+    '2017-02-01' as first_day,
+    '2017-02-28' as last_day
+    UNION
+    '2017-03-01' as first_day,
+    '2017-03-31' as last_day
+  ),
+  cross_join AS 
+  (
+    SELECT subscriptions.*, months.*
+    FROM subscriptions
+    CROSS JOIN months
+  ),
+  status AS 
+  (
+    SELECT id, first_day AS month,
+    CASE 
+      WHEN subscription_start < first_day 
+        AND subscription_end > first_day OR
+        subscription_end IS NULL
+    THEN 1
+    ELSE 0
+  END as is_active_87
+  
+  )
+
+---
+
+MARKETING:
+
+WITH last_touch AS(
+  SELECT user_id,
+    MAX(timestamp) AS 'last_touch_at'
+  FROM page_visits
+  WHERE user_id=10069
+  GROUP BY user_id
+)
+SELECT last_touch.user_id, last_touch.last_touch_at,
+pv.utm_source
+FROM last_touch
+JOIN page_visits
+  ON last_touch.user_id = page_visits.user_id
+  AND last_touch.last_touch_at = page_visits.timestamp;
+
+
+-----------------------------
+
+WINDOW FUNCTIONS:
+
+SELECT 
+   month,
+   change_in_followers,
+   SUM(change_in_followers) OVER (
+      ORDER BY month
+   ) AS 'running_total',
+   AVG(change_in_followers) OVER (
+      ORDER BY month
+   ) AS 'running_avg',
+   COUNT(change_in_followers) OVER (
+      ORDER BY month
+   ) AS 'running_count'
+FROM
+   social_media
+WHERE
+   username = 'instagram';
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT 
+    username,
+    month,
+    change_in_followers,
+    SUM(change_in_followers) OVER (
+      PARTITION BY username 
+      ORDER BY month
+    ) 'running_total_followers_change',
+    AVG(change_in_followers) OVER(
+      PARTITION BY username
+      ORDER BY month
+    ) 'running_avg_followers_change'
+FROM
+    social_media;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT
+   username,
+   posts,
+   LAST_VALUE (posts) OVER (
+      PARTITION BY username 
+      ORDER BY posts
+      RANGE BETWEEN UNBOUNDED PRECEDING AND 
+      UNBOUNDED FOLLOWING
+    ) most_posts
+FROM
+    social_media;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT
+   artist,
+   week,
+   streams_millions,
+   streams_millions - LAG(streams_millions, 1, streams_millions) OVER ( 
+      PARTITION BY artist
+      ORDER BY week 
+   ) AS 'streams_millions_change',
+   chart_position,
+   LAG(chart_position, 1, chart_position) OVER ( 
+      PARTITION BY artist
+      ORDER BY week 
+) - chart_position AS 'chart_position_change'
+FROM
+   streams
+WHERE 
+   artist = 'Lady Gaga';
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT
+   artist,
+   week,
+   streams_millions,
+   LEAD(streams_millions, 1) OVER (
+      PARTITION BY artist
+      ORDER BY week
+   ) - streams_millions AS 'streams_millions_change',
+   chart_position,
+   chart_position - LEAD(chart_position, 1) OVER ( 
+      PARTITION BY artist
+      ORDER BY week 
+) AS 'chart_position_change'
+FROM
+   streams;
+
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT 
+   ROW_NUMBER() OVER (
+      ORDER BY streams_millions DESC
+   ) AS 'row_num', 
+   artist, 
+   week,
+   streams_millions
+FROM
+   streams;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT 
+   RANK() OVER (
+      PARTITION BY week
+      ORDER BY streams_millions DESC
+   ) AS 'rank', 
+   artist, 
+   week,
+   streams_millions
+FROM
+   streams;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT 
+   NTILE(4) OVER (
+      PARTITION BY week
+      ORDER BY streams_millions DESC
+   ) AS 'quartile', 
+   artist, 
+   week,
+   streams_millions
+FROM
+   streams;
+
+
+---
+
+MATH & DATE:
+
+SELECT item_name,( price - CAST(discount AS REAL)) * quantity FROM bakery;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT DATE(order_date) FROM bakery;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT DATETIME(order_date, 'start of day', '+2 days', '+7 hours') FROM bakery;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT STRFTIME('%d', order_date), COUNT(*) FROM bakery
+GROUP BY 1
+ORDER BY 2 DESC;
+
+---
+
+SELECT * 
+FROM state_climate
+LIMIT 5;
+
+SELECT state, year, tempf, AVG(tempf) OVER(
+  PARTITION BY state
+  ORDER BY YEAR
+) FROM state_climate
+LIMIT 5;
+
+SELECT state, year, tempf, FIRST_VALUE(tempf) OVER(
+  PARTITION BY state
+  ORDER BY tempf
+) FROM state_climate
+LIMIT 5;
+
+SELECT state, year, tempf, LAST_VALUE(tempf) OVER(
+  PARTITION BY state
+  ORDER BY tempf
+  RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+) AS Highest_temp FROM state_climate
+LIMIT 5;
+
+SELECT state, year, tempf, 
+       tempf - LAG(tempf, 1) OVER(PARTITION BY state ORDER BY year) AS change_in_temp
+FROM state_climate
+ORDER BY change_in_temp DESC
+LIMIT 5;
+
+SELECT year, state, tempf, RANK()OVER(
+  ORDER BY tempf ASC
+) coldest_tempf
+FROM state_climate
+LIMIT 5;
+
+SELECT year, state, tempf, RANK()OVER(
+  PARTITION BY state
+  ORDER BY tempf DESC
+) warmest_tempf
+FROM state_climate
+LIMIT 5;
+
+WITH AvgYearlyTemp AS (
+  SELECT state, year, AVG(tempf) AS avg_tempf
+  FROM state_climate
+  GROUP BY state, year
+)
+SELECT year, state, avg_tempf, 
+       NTILE(4) OVER(PARTITION BY state ORDER BY avg_tempf ASC) AS quartile
+FROM AvgYearlyTemp
+LIMIT 5;
+
+SELECT year, state, tempf, NTILE(5)OVER(
+  ORDER BY tempf ASC
+) warmest_tempf
+FROM state_climate
+LIMIT 5;
+
+-----------------------------
+
+INTERVIEW PREP:
+
+SELECT id,  
+CASE WHEN
+home_points > away_points THEN 'HOME WIN'
+ELSE 'AWAY WIN'
+END
+FROM nba_matches;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT genre,COUNT(*) FROM apps
+GROUP BY genre;
+
+SELECT genre, SUM(reviews) AS R FROM apps
+GROUP BY genre
+HAVING R > 30000000;
+
+++++++++++++++++++++++++++++++++++++
+
+
+SELECT * FROM math_students
+WHERE student_id IN(
+  SELECT student_id
+  FROM english_students
+);
+
+SELECT * FROM math_students
+WHERE grade IN(
+  SELECT grade
+  FROM math_students 
+  WHERE student_id = 7
+);
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT * FROM english_students
+WHERE student_id NOT IN(
+  SELECT student_id
+  FROM math_students
+);
+
+SELECT grade FROM math_students
+WHERE
+ EXISTS(
+  SELECT grade
+  FROM english_students
+);
+
+++++++++++++++++++++++++++++++++++++
+
+
+SELECT title, week, gross, 
+SUM(gross) OVER(
+  PARTITION BY title
+  ORDER BY week
+) AS running_total_gross
+FROM box_office;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT ROW_NUMBER()OVER(
+ORDER BY gross
+), title, week, gross FROM box_office;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT date, (CAST(low as 'REAL')+CAST(high as 'REAL'))/2.0 AS average FROM weather;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT purchase_id, DATE(purchase_date, '+7 days') FROM purchases;
+SELECT STRFTIME('%H', purchase_date) FROM purchases;
+
+++++++++++++++++++++++++++++++++++++
+
+SELECT STRFTIME('%m-%d', purchase_date) FROM purchases;
+---
+
+SELECT * FROM chat
+LIMIT 5;
+
+SELECT * FROM stream
+LIMIT 5;
+
+SELECT DISTINCT(game) FROM stream;
+SELECT DISTINCT(channel) FROM stream
+LIMIT 5;
+
+SELECT game, COUNT(*) FROM stream
+GROUP BY game
+LIMIT 5;
+
+SELECT country, COUNT(*) FROM stream
+WHERE game = 'League of Legends'
+GROUP BY country
+LIMIT 5;
+
+SELECT player, COUNT(*) FROM stream
+GROUP BY 1
+ORDER BY 2
+LIMIT 5;
+
+SELECT game, 
+CASE 
+WHEN game = 'League of Legends' THEN 'MOBA'
+WHEN game = 'Dota 2' THEN 'MOBA'
+WHEN game = 'Heroes of the Storm' THEN 'MOBA'
+WHEN game = 'Counter-Strike: Global Offensive' THEN 'FPS'
+WHEN game = 'DayZ' THEN 'Survival'
+WHEN game = 'ARK: Survival Evolved' THEN 'Survival'
+ELSE 'Other'
+END AS 'genre',
+COUNT(*)
+FROM stream
+GROUP BY 1
+ORDER BY 3 DESC
+LIMIT 5;
+
+SELECT time
+FROM stream
+LIMIT 10;
+
+SELECT time,
+   strftime('%S', time)
+FROM stream
+GROUP BY 1
+LIMIT 20;
+
+SELECT time, strftime('%H', time),COUNT(*) FROM stream
+WHERE country='US'
+GROUP BY 1
+LIMIT 5;
+
+SELECT * FROM stream
+JOIN chat
+ON stream.device_id = chat.device_id
+LIMIT 10;
+
+
+
+
+
+
+
+
+  
