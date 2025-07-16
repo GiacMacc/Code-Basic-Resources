@@ -389,7 +389,7 @@ Emissions
 *Product Certification Info*
 
 *NRTL is Intertek
-*The Tesla Mid-Circuit Interrupters (MCIs) are normally open solid-state switches (no moving parts). The Solar Inverter has a built-in exciter circuit that activates (closes) all MCIs via a 250 kHz AC frequency signal when the inverter is operating
+*The Tesla Mid-Circuit Interrupters (MCIs) aka Solar Shutdown Device are normally open solid-state switches (no moving parts). The Solar Inverter has a built-in exciter circuit that activates (closes) all MCIs via a 250 kHz AC frequency signal when the inverter is operating
 
 UL 1741
 	Powerwall 3
