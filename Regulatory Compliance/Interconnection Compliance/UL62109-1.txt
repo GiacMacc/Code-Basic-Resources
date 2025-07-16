@@ -1,0 +1,21 @@
+UL62109-1
+Safety of Power Converters PV Power Systems
+
+-Ingress protection/enclosure ratings:
+Type 3R/IP34
+Type 1/IP20
+
+-Limits of voltage classes
+Class A = AC sine: <_25RMS, AC nonsine:35.4 peak, DC: <_60 means
+Class B = AC sine:50RMS, AC nonsine: 71 peak, DC: 120 mean
+Class C = AC sine: >50RMS, AC nonsine: >71peak, DC: >120mean
+
+-Impulse test voltage (impulse withstand for insulation between circuit directly/not connected to mains per overvoltage Cat. II:
+
+System Voltage: 50V RMS (71 Vdc)<2000Vdc
+Not connected to mains:
+Basic/supplementary Insulation = 500V-8000V
+Reinforced = 800V-12000V
+Connected to mains:
+Basic/supplementary Insulation = 800V-12000V
+Reinforced = 1500V-16000V

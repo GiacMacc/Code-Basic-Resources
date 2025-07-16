@@ -1,0 +1,24 @@
+UL 3741
+
+Standard for Photovoltaic Hazard Control
+
+-Based on firefighter exposure hazards (determined by accessibility to parts *probe)
+
+-Water spray conductivity test (10 ft distance)
+
+-Probability Fault Risk levels:
+0:Unlikely
+1:Likely
+2:Plausible
+3:Likely
+
+-Probability of event Risk levels:
+1: Extremely rare
+2: Plausible
+3: Likely
+
+*-Allowed exposure current hazard level:
+0: 0-2.67A (No risk of shock)
+1: >2.67-40A (Muscular contraction)
+2: >40-100A (Strong involuntary muscular contractions)
+3: 100A< (Max allowable current exposure

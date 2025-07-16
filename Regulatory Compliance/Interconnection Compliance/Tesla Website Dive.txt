@@ -1,0 +1,560 @@
+Tesla Website Dive
+
+*Accelerating the World's Transition to Sustainable Energy*
+
+-Tesla-Related Sectors and global emissions (46%):
+Electricity/Heat = 31%
+Transportation = 15%
+
+*-Batteries degrade 12-15% after 200,000 miles
+
+-Model 3 Freemont Factory is segmented (buildings spaced apart) while Model 3 Gigafactory in Shanghai is one monolithic building for more efficiency
+	35% less energy used per vehicle in Shanghai
+	100% of Gigafactory Berlin electricity was matched with renewables in 2023
+	49% of HVAC in Gigafactory Nevada run by dynamic controls
+
+-Total Cost of Ownership (TCO) of Model Y is $0.70
+
+*-Tesla EnergyLibrary
+
+-First Model S was out of Freemont factory in 2012
+
+-Anode Material innovation is 20% of range increase plan
+
+-Each Megapack stores 3.9 MWh and has its own inverter for efficiency (also over-air updates)
+
+-Model Y Subsystems (Manual):
+Rear Motor = AC variable frequency permanent magnet synchronous motor, liquid cooled
+Front Motor (AWD) = AC variable frequency induction motor, liquid cooled
+Transmission = Single speed fixed gear
+Gearbox Ration = 9:1 (torque multiplies by 9, for every 9 turns of motor shaft wheels turn once)
+Braking = Regenerative Braking
+Low V Battery = 6.9 Amp hours, 15.5 V
+High V Battery = 345 Vdc liquid-cooled Li-ion (optimal between -22F and 140F)
+
+-Model 3 Subsystems (Manual):
+Rear Motor = AC variable frequency permanent magnet synchronous motor, liquid cooled
+Front Motor (AWD) = AC variable frequency induction motor, liquid cooled
+Transmission = Single speed fixed gear
+Gearbox Ration = 9:1 (torque multiplies by 9, for every 9 turns of motor shaft wheels turn once)
+Braking = Regenerative Braking
+Low V Battery = 33 Amp hours
+Li-ion High V Battery = 355 Vdc liquid-cooled Li-ion (optimal between -22F and 140F)
+Lithium Iron Phosphate High V Battery = 345 Vdc liquid-cooled Li-ion (optimal between -22F and 140F)
+
+-Model S Subsystems (Manual):
+Rear Motor = AC variable frequency permanent magnet synchronous motor, liquid cooled
+Front Motor (AWD) = Carbon fiber wrapped rotor AC variable frequency induction motor, liquid cooled (2 motors)
+Transmission = Single speed fixed gear
+Front Gearbox Ration = 7.56:1 (torque multiplies by 7.56, for every 7.56 turns of motor shaft wheels turn once)
+Rear Gearbox Ration = 9.04:1 (torque multiplies by 9.04, for every 9.04 turns of motor shaft wheels turn once)
+Braking = Regenerative Braking
+Low V Battery = 6.9 Amp hours, 15.5 V
+Li-ion High V Battery = 407 Vdc liquid-cooled Li-ion (optimal between -22F and 140F)
+-------------------------------
+
+Tesla Master Plans
+
+The Secret Tesla Motors Master Plan (just between you and me) (2006):
+
+So, in short, the master plan is:
+
+Build sports car
+Use that money to build an affordable car
+Use that money to build an even more affordable car
+While doing above, also provide zero emission electric power generation options
+
+Don't tell anyone.
+
+-"Overarching purpose of Tesla Motors is to help expedite the move from a mine-and-burn hydrocarbon economy towards a solar electric economy, which I believe to be the primary, but not exclusive, sustainable solution"
+
+-Initial product = $89k Tesla Roadster (should beat Porsche or Ferrari in 'head to head showdown'), but long term plan was to make range of affordable family cars. Roadster also should be twice as efficient as Prius.
+
+-Strategy is to enter at high end of market (with roadster sportscar) with customers paying premiums, and then drive down market as fast as possible
+
+-Idea is that when someone buys Roadster, they are paying for R&D of low cost family car
+
+-Repeated arguments against EV:
+Battery Disposal
+	Li-Ion batteries not classified as hazardous (landfill safe), are recyclable even with 100,000+ miles
+Power Plant Emissions (long-tailpipe)
+	Electric grid can be composed of renewables
+	H-System Combined Cycle Generator from GE is 60% efficient in turning nat gas into electric with a 'Combined Cycle' where waste heat is used to create 	steam
+	Roadster requires 0.4MJ/km, full cycle charge/discharge efficiency is 86% (for every 100MJ charge, 86MJ can be discharged)
+	Roadster efficiency/range with power from nat gas is 1.14km/MJ
+	Gas cards are 34.3 MJ/L - refinement/transport losses (18.3%) x MPG
+	Prius at 55MPG with energy efficiency of 0.56km/MJ vs Toyota Camry with 0.28km/MJ
+
+-Hybrid is a misnomer, they are really just gas cars with a little battery assistance with only slightly more efficiency
+
+-"A world 100% full of Prius drivers is still 100% addicted to oil"
+
+-Carbon Content Fossil fuels:
+Natural Gas = 14.4g carbon/MJ
+Oil = 19.9g carbon/MJ
+
+Honda CNG (nat gas)               [14.4gC02/MJ content, 0.32km/MJ efficiency, 45.0g/km C02 emissions]
+Honda FCX (nat gas-fuel cell)     [14.4gC02/MJ content, 0.35km/MJ efficiency, 41.1g/km C02 emissions]
+Toyota Prius (Oil)                [19.9gC02/MJ content, 0.56km/MJ efficiency, 35.8g/km C02 emissions]
+Tesla Roadster (nat gas-electric) [14.4gC02/MJ content, 1.14km/MJ efficiency, 12.6g/km C02 emissions]
+
+-SolarCity solar panels to generate up to 50 miles/day of electricity
+*you can be energy positive if you travel less than 350 miles/week
+
+-------------------------------
+Master Plan, Part Deux (2016):
+
+So, in short, Master Plan, Part Deux is:
+
+Create stunning solar roofs with seamlessly integrated battery storage
+Expand the electric vehicle product line to address all major segments
+Develop a self-driving capability that is 10X safer than manual via massive fleet learning
+Enable your car to make money for you when you aren't using it
+
+The first master plan that I wrote 10 years ago is now in the final stages of completion. It wasn't all that complicated and basically consisted of:
+
+Create a low volume car, which would necessarily be expensive
+Use that money to develop a medium volume car at a lower price
+Use that money to create an affordable, high volume car
+And...
+Provide solar power. No kidding, this has literally been on our website for 10 years.
+
+-Starting off with step one was necessary because it was all Elon could afford to do with what he made from Paypal
+*thought chances of success were low, only wanted to risk his own funds
+
+-As of 2016, only car companies to not go bankrupt are Ford and Tesla *starting a car company is idiotic, electric is idiotic ^2
+
+-First master plan miss the point of attacks to tesla for making cars for rich people, but its main goal was achieved of explaining how Tesla would accelerate the advent of sustainable energy
+
+-Key points in plan:
+Integrate Energy Generation and Storage
+	Solar roof, empowering individuals to be own utility (merge with SolarCity), Powerwall plus solar
+Expand to Cover the Major Forms of Terrestrial Transport
+	In 2016, Tesla was in 2 smaller markets (premium sedans & SUVs), Model 3 meant for most of the market
+	Design a machine that makes the machine, factory is itself a product
+	5-1x improvement is achievable by version 3 in ~2 year cycle, first Model 3 should be considered version 0.5 with 1.0 out in 2018
+	Heavy duty trucks & high passenger-density urban transport (Tesla Semi) to unveil 2017
+	Reducing size of buses, more seats, driver becomes fleet manager, matching accelerating and braking to other vehicles, accessible, summon button for 	people with no phones
+Autonomy
+	All Tesla vehicles with be fully self-driving (worldwide reg approval requires 6 billion miles), learning rate is at 3 million miles/day
+	Autonomous driving can be safer than a person, therefore more moral to work on it now than delay release due to bad press 
+	Once Autopilot is 10x safer than us vehicle average, beta label will be removed
+Sharing
+	Summoning Tesla from anywhere
+	Add car to shared fleet, make money, lower Total Cost of Ownership (TCO)
+
+-Most cars are only used for 5-10% of the day
+-------------------------------
+Master Plan Part 3: Sustainable Energy for All of Earth (2023)
+
+*Includes 'US fully electrified demand profile - part 1 & 2'
+*Modeling done using data from Energy Information Administration (EIA) from 2019-2022
+*Results for global economy estimates were scaled 6x for simplification
+
+240 TWh Storage
+30TW Renewable Power
+$10T Manufacturing Investment
+1/2 Energy Required
+0.21% Land Area Required
+10% 2022 World GDP
+0 Insurmountable Resource Challenges
+
+A fully electrified and sustainable economy is within reach through the actions in this paper:
+
+1. Repower the Existing Grid with Renewables (36%)
+2. Switch to Electric Vehicles (22%)
+3. Switch to Heat Pumps in Residential, Business & Industry (23%)
+4. Electrify High Temperature Heat Delivery and Hydrogen Production (13%)
+5. Sustainably Fuel Planes & Boats (6%)
+6. Manufacture the Sustainable Energy Economy
+*Tesla currently working on first two steps
+
+Modeling reveals that the electrified and sustainable future is technically feasible and requires less investment and less material 
+extraction than continuing today’s unsustainable energy economy. 
+
+
+Top Materials to Achieve Sustainable Energy Economy:
+Lithium
+Nickel
+Silver
+Zinc
+Copper
+Cobalt
+Iron
+Manganese
+Aluminum
+Graphite
+Phosphorus
+
+-Global primary energy supply is 165 PWh/year, with total fossil supply of 134 PWh/year. 37% (61PWh) is consumed before making it to customer, and 27% (44PWh) is lost through system inefficiencies. *Only 36% (59 PWh) is used to produce useful work or heat
+
+-Applying the 6 steps would displace 125PWh/year of fossil fuels with 66PWh/year of sustainable electricity
+
+-In the 2040’s, recycling will begin to meaningfully reduce primary material demand as batteries, solar panels and wind turbines reach end-of-life and valuable materials are recycled. Although mining demand will decrease, refining capacity will not
+
+-EV are ~4x more efficient than ICE due to higher powertrain efficiency, regenerative braking, and optimized platform design
+* 4.8x more efficient than passenger car
+  4.3x more efficient than light truck/van
+  4.2x more efficient than Class 8 truck
+
+-Tesla Model 3 energy consumption is 131MPGe vs Toyota Corolla with 34MPG (3.9x difference)
+
+-Flexible and inflexible energy consumption portion split
+	Supercharging/commercial charging and vehicles with <50% SOC are inflexible demand
+	Home and workplace AC charging is flexible demand, modeled with 72-hour energy conservation constraint since most drivers can charge at off-peak
+
+-On average, Tesla Drivers charge once every 1.7 days from 60% to 90% SOC
+
+*-Global electrification of transport sector eliminates 28 PWH/year of fossil fuel use and create 7 PWh/year additional electrical demand (4x EV efficiency)
+
+-Heat pumps 3x more efficient than gas furnace
+
+-All global hydrogen production will come from electrolysis (instead of methane pyrolysis)
+
+-Capacity factor of wind higher than solar in the winter
+
+-Optimal generation and storage portfolio results in 32% curtailment
+
+-Higher transmission capacities generally reduce the total generation and storage buildout, but there is an economic tradeoff between building more transmission and building more generation plus storage
+
+-In 2022, 6% of solar generation in California (CAISO) was curtailed due to operational constraints, such as thermal generators’ inability to ramp down below their minimum operating level, or local congestion on the transmission system
+
+-Shoulder months = Spring & Fall. When electricity demand is lower as heating and cooling seasons are over and solar/wind generation is higher
+*Potential space for hydrogen
+
+-Standard-range vehicles can utilize the lower energy density chemistries (LFP), whereas long-range vehicles require higher 
+energy density chemistries (high nickel, low to zero cobalt Nickel Manganese cathodes)
+
+-642 TWh of Hydrogen storage & 112 TWh of vehicle batteries to meet global electricity demand and transportation batteries
+
+-Materials requiring significant capacity growth:
+Mining: Nickel, Lithium, Graphite, Copper
+Refining: Nickel, Lithium, Graphite, Cobalt, Copper, Battery grade Iron & Manganese
+
+-Fossil fuel economy would be $14 trillion of world GDP
+
+-6,785 Lithium kilotons required/year
+
+*-Median power density for fixed-tilt systems installed 2011-2019 was 2.8 acres/MWdc, so a global solar panel fleet of 18.3TW would require 71.4 million acres or 0.19% of global land area
+
+*-Global wind turbine fleet of 12.2TW would require 9.2 million acres or 0.02% of total land area
+
+-~60 million circuit miles will need to be added/reconductored globally to achieve fully sustainable/electrified economy (10% high V, 90% low V)
+
+-68Gt o material are extracted from earth every year
+
+*-solar panels will require 13% of the 2023 USGS silver reserves, but silver can be substituted with copper, which is cheaper and more abundant
+
+-------------------------------
+Impact Report
+
+-Each Tesla on the Road Avoids About 51 Tons of C02e
+
+-18 Gigatons of fossil extracted per year
+
+-Tesla is first auto company to directly buy battery raw materials at mine level, completed more audits (like cobalt mines)
+
+-Reduced water use per vehicle by more than 25% since 2018
+
+-Tesla Model Y all-wheel drive most efficient EV with 3.8 EPA miles/kWh
+
+-Global Supercharge network was 100% renewable in 2023
+
+-Tesla Owned lithium refinery in Corpus Christi, Texas
+
+-Model Y was best-selling vehicle of any kind globally in 2023
+
+-Tesla vehicles are 2-10x (with driver assist) less likely to get into crash
+
+-Vehicle fires for Tesla are 8x less likely than US average
+
+-NEDC, WLTP or EPA Testing Cycles Do Not Represent Real-World Fuel or Electricity Consumption Impact Report 2023 Environment NEDC, WLTP or EPA Testing Cycles Do Not Represent Real-World Fuel or Electricity Consumption 
+
+*-In 2023, Tesla solar owners generated enough energy to power all Tesla location more than 3x
+
+*-Engaged one gold aggregator to become Peru's 1st RMAP-audited gold aggregator
+-------------------------------
+Safety Report
+
+*-Started voluntarily releasing quarterly safety data in October 2018, released vehicle fire data starting July 2019
+
+*-Data shows that Q1 and Q4(mostly) tends to have higher crash rates (2018-2025)
+
+-Counts every crash where Autopilot is deactivated 5s before impact or airbags are deployed
+
+-35%< of Autopilot crashes occurred when Tesla is rear-ended
+
+*-Fire data is released a year after collection to insure that late reporting is included (NFPA method)
+
+-Patented side sill structure supports chassis to absorb impact energy, large empty space in front and back reduce risk of injury, more cabin space for airbags to inflate
+
+-Autopilot tech and 360 camera view (8 cameras)
+
+-Passive and active safety combined with autopilot
+
+-Battery placement at bottom of car allows for strength, large crumple zones, and low center of gravity
+
+-Battery isolated and vents battery fires away from passengers and cabin
+
+-Over air software updates
+
+-16V Li-ion auxiliary battery
+
+-400V Li-ion traction batter pack
+-------------------------------
+Solar Inverter Specs
+
+*Fully compliant to IEEE 1547-2018 and IEEE 1547.1-2020 GW.2.0 or SMC shall be used with Solar Inverter
+*The following specifications reflect Tesla Solar Inverter with Site Controller (Tesla P/N 1538000-45-y)
+
+-Rapid Shutdown Initiation: Upon initiating Rapid Shutdown, the MCI excitation signal is lost and all MCIs will open within 30 seconds, bringing all voltages across the solar assembly and PV strings to safe levels
+
+-Manual Rapid Shutdown Initiation: Rapid Shutdown can be manually initiated using the Solar Inverter AC breaker, AC disconnect, or the System Shutdown Switch if one is present. The loss of AC grid is detected and RSD is initiated.
+
+-Self-Test Function: Each morning Tesla Solar Inverter performs a safety test to ensure Rapid Shutdown can successfully limit array voltage i.e. rendered high impedance and collapse. Failure of the Rapid Shutdown self-test will initiate an alarm and a faulted state that prevents the solar assembly from operating until service is performed.
+
+-Arc Fault Detection and Protection: Compliant with NEC code section 690.11, UL1699B and UL1998 standards. Arc fault detection is performed to detect series arcs within the PV array.The detection algorithms work based on both voltage and current. When an arc fault is detected, Tesla Solar Inverter stops converting power and disconnects from the grid
+
+-Ground Fault Protection: Tesla Solar Inverter is capable of detecting ground faults in compliance with UL 1741
+
+-Protective Earth Impedance Check: The scheduled time for the PE impedance test is every morning before closing the inverter side AC relays. Upon detected loss of PE or identification of a high impedance value Tesla Solar Inverter does not connect to the grid until the fault is cleared manually or a repeated PE impedance test demonstrates a sufficiently low impedance.
+
+-Output (AC):
+Output = 3.8kW - 7.6kW *3.8 has 2 MPPTs to connect up to 2 DC inputs, 7.6 has 4 MPPts to connect up to 4 DC inputs (1 per string) of PV panels or solar roof
+Nominal Power = 3,800W - 7,600W
+Max Apparent Power = 3,800 VA - 7,600VA
+Max Continuous Current = 16A - 32A
+Breaker (Overcurrent protection) = 20A - 40A
+Max Output Fault Current/Duration (AC) = 90.28 A peak, 31.75 A rms, 11.95 ms
+Nominal Power Factor = 1-0.9 (leading/lagging)
+Harmonic Distortion (THD)  at nominal Power = <5%
+Surge withstand voltage on AC ports = 4kV
+Surge withstand Voltage on Comms Ports = 35V/m
+
+-Input (DC):
+MPPT = 4
+Input Connector per MPPT = 1-2-1-2
+Max Input Voltage = 600 Vdc
+DC Input Voltage Range = 60-550 Vdc
+DC MPPT Voltage Range = 60-480 Vdc
+Max Current per MPPT = 13A^2
+Max Short Circuit Current per MPPT = 17A^2
+*Where DC input exceeds MPPT rating, jumpers are used to allow single MPPT to intake more DC current u to 26 A MPPT/34 A short circuit
+
+-General:
+Peak Efficiency = 98.6%
+CEC Efficiency = 98%
+Allowable DC/AC Ration = 1.7
+Protections = Integrated arc fault circuit interrupter (AFCI), Rapid Shutdown
+Supported Grid Types = 60 Hz, 240V, Split phase
+
+-Environmental Specs:
+Operating Temp = -22F-113F
+Operating Humidity (RH) = <100%, condensing
+Storage Temp = -22F-158F
+Max Elevation = 3000m
+Environment = Indoor/outdoor
+Enclosure Rating = Type 3R
+Ingress Rating = IP55 (wiring compartment)
+Pollution Rating = PD2(power electronics), PD3 for all other components
+Operating Noise @1m = <40db nominal, <50 db max
+*Performance may be de-rated to 4.6 kW at 240V when operating at temps 45C<
+
+-Compliance:
+Safety 
+	UL1741:2021
+	CSA C22.2
+Grid Interoperability
+	UL1741SB
+	IEEE1547:2018
+	IEEE1547.1:2020
+	UL1741SA:2021
+	Hawaii Rule No.14H
+	California Rule 21
+Energy Storage
+	ANSI/CAN/UL 9540:2020
+EMC
+	IEEE1547.2:2020
+	IEEE C37.90.1:2012
+	IEEE C62.41.2:2002
+Safety Certifications
+	UL1699B
+	UL1741
+	PVRSS/PVRSE
+	UL1998
+Emissions
+	EN61000-6-3 (Residential)
+	FCC 47CFR15.109(a)
+-------------------------------
+*Product Certification Info*
+
+*NRTL is Intertek
+*The Tesla MCIs are normally open solid-state switches (no moving parts). The Solar Inverter has a built-in exciter circuit that activates (closes) all MCIs via a 250 kHz AC frequency signal when the inverter is operating
+
+UL 1741
+	Powerwall 3
+	Powerwall 2
+	Tesla PV inverter
+	Gateway 3V
+	Solar Shutdown Device: MCI-1 (PVRSE) Photovoltaic Rapid Shutdown System
+	Solar Shutdown Device: MCI-2 (PVRSE)
+UL 9540
+	Powerwall 3
+	Powerwall 3 Expansion
+	Powerwall 2
+	Powerwall+
+UL 3741
+	Powerwall 3
+	Solar Roof
+	Tesla PV inverter
+	Powerwall+
+	Solar Shutdown Device: MCI-1
+	Solar Shutdown Device: MCI-2
+UL 916
+	Gateway 2
+	Backup Switch
+	Gateway 3
+	Powershare (Gateway 3V)
+UL 67
+	Gateway 2, Gateway 3
+UL 414
+	Backup Switch
+UL 9741
+	Powershare
+UL 2735
+	Backup Switch
+UL 1699B
+	Tesla PV Inverter
+	Powerwall 3
+UL 869A
+	Gateway 2
+	Gateway 3
+UL 2594
+	Wall Connectors
+	mobile Connector Gen 2
+	Mobile Connector
+
+-Powerwall installation relevant codes
+*Not all installations are governed by same codes, this depends on AHJ and state-level codes
+
+NFPA 70 (Electrical Safety) Sections
+	100 - Definitions
+	210 - Branch Circuits
+	220 - Branch-circuits, feeder, service load calculations
+	225 - Services
+	310 - Conductors for general wiring
+	690 - Solar Photovoltaic Systems
+	705 - Interconnected Electrical Power Production Sources
+	706 - Energy Storage Systems
+International Fire code (Fire and Explosion Safety)
+	Chapter 12
+	1205 - Solar PV Power Systems
+	1207 - Electrical Energy Storage Systems
+International Residential Code (Building, plumbing, mechanical, fuel gas, electrical reqs for dwellings and townhouses up to 3 stories)
+	Chapter 3
+	R324 - Solar Energy Systems
+	R328 - Energy Storage Systems
+International Building Code (All buildings except detached dwellings and townhouses up to 3 stories)
+	General understanding of what IBC covers
+NFPA 1 (fire code)
+	Chapter 17: Wildland Urban Interface
+	Chapter 52: Energy Storage Systems
+NFPA 855 (Energy Storage System Installation)
+	All
+
+-Wall Connector Compliance:
+*Compliance with Low Voltage Directive, Electro Magnetic Compatibility Directive, Radio Equip. Directive, ROHS Directive
+
+EN 61851-1 - EV Conductive charging system Pt.1
+EN 61851-21-2 - EV conductive charging system Pt.2 (AC/DC supply, EMC reqs)
+EN 62196-1 - Plugs, outlets, vehicle connectors/inlets Pt.1
+IEC 62196-2 - Plugs, sockets, vehicle connectors/inlets Pt.2
+EN 62311:2018** - Assessment of electronic and electrical equip. and human exposure restrictions for EM fields (0-300GHz)
+EN 300 330 V2.1.1 - Short Range Devices, radio equip. with freq. range 9kHz - 25 MHz and inductive loop systems 9kHz-30MHz
+EN 300 220-1 V3.1.1 - Short range Devices operating in frequency range 25-1,000 MHz Pt.1 and methods of measurement
+EN 301 489-1 V2.2.3 - EMC standard for radio equip. Pt.1
+EN 300 328 V2.2.2** - Wideband transmission systems, data transmission in 2.4GHz band, EMC for radio equip.
+EN 63000 - Technical documentation for assessment of electrical products with restriction on hazardous substances
+
+	
+-Powerwall + Rating:
+Nominal Battery Energy = 13.5kWh
+Nominal Grid Voltage = 240 Vac
+Max Continuous Power On Grid = 5 kW input/7.6kW output
+Max Continuous Power Off Grid = 5kW input/9.6kW output
+Frequency - 60Hz
+Phase = 240Vac: 2 wire +neutral+ground
+Max Continuous Power On Grid = 32 A output
+Max Continuous Power Off Grid = 40A output (48 for Powerwall 3)
+PV Max Input Voltage = 600Vdc
+Max Current MPPT = 13A
+Max Short Circuit MPPT = 15A
+Overcurrent Protection = 50A
+Enclosure = Type 3R
+
+-Backup Gateway 2 PCS Rating:
+Import Limit and Import Only Mode
+	Max PCS Controlled Current = 200A
+	Max Open Loop Response Time = 9.09s
+	Steady State % Power = 1% of power stability achieved in <10s
+	Enclosure = NEMA 3R
+Export Limit and Export Only Mode
+	Max PCS Controlled Current = 200A
+	Max Open Loop Response Time = 6.05s
+	Steady State % Power = 1% of power stability achieved in <10s
+	Enclosure = NEMA 3R
+
+
+
+*Gateway 3 is same except faster open loop response time in Export Limit mode
+
+-Tests are step changes and export/import limits in load and generator along with abnormal tests
+-------------------------------
+Supercharger Fire Department Pamphlet
+
+-Equipment at site of Supercharger:
+Transformer - Steps down voltage from utility feeder to 480V
+Switchboard/Disconnect - Means of disconnect for Supercharger and ground fault/overcurrent protection
+Supercharger Cabinet - Converts AC to DC, controls current & voltage to vehicles
+Supercharger Post - Connects to vehicle and communicates between vehicle and cabinet
+
+-Normally-Off State
+With no vehicle charging, only 24V present on Supercharger Post. Vehicle must be connected for comms.
+
+-Isolated DC Output
+Each power converter in Cabinet has internal isolation transformer, allowing downstream DC voltage to be floating (+ & - polarities have high-impedance isolation from ground). If one polarity experiences a fault to ground, no grounded equipment will become energized and not touch hazard. If both polarities fault to ground together, internal fuse will open and deenergize. Isolation tests during charging test between DC + and GND or DC - and GND
+
+-Supercharger Operation Safety
+After connection, Supercharger performs short-circuit test and isolation test. To minimize inrush current, voltage at connector is matched to vehicles battery pack before contactors close.
+-------------------------------
+Megapacks
+*Designed for utilities and large-scale commercial projects
+
+-Each Megapack stores 3.9 MWh and has its own inverter for efficiency (also over-air updates)
+
+-Powerhub = Real time monitoring and control platform
+
+-Opticaster = Optimizes forecasting for energy use to reduce costs
+
+-Autobidder = Auto bidding system to maximize value of energy storage in wholesale markets
+
+-Microgrid Controller = Off-grid control software to automatically maintain grid stability 
+
+-Virtual Machine Mode = Virtually emulates mechanical inertia with grid forming inverters (up to 3,000 megawatt-seconds of inertia in AUS)
+
+-Services:
+Renewable Smoothing (balances renewables output to grid0
+Demand Support (discharge during peak)
+Voltage & frequency & Reactive power regulation
+Infrastructure Investment
+Market Participation (provides energy in response to operator alerts)
+Microgrid
+Peak Shaving (discharge during peak, reducing demand charges)
+Load Shifting (Shift energy use times to avoid high prices)
+Demand Response (response to utility signal when demand is high, earn money)
+Solar Self Consumption
+Backup Power
+Inertia (virtually emulating mechanical inertia)
+Spinning Reserve (Provide power as standalone asset)
+
+

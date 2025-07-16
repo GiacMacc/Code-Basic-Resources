@@ -1,0 +1,1027 @@
+Hardest part of negotiating with a utility for DER interconnection (search prompt)
+
+peak plant = power plant utilities use as backup to DER for times when DER cannot accommodate more demand
+
+Look at 10K and 10Q/8Q to see where companies invest in DER
+
+Renewable Energy and Energy Efficiency Portfolio Standard (REPS)
+
+Obstacles:
+Technology always moving faster than regulation
+Lack of transmission lines for distribution of new DER (growth of 2%/year)*long-distance high capacity transmission needed for DER
+Long interconnection process times
+Difficulties with PPA
+Expires options on land
+Interconnection queue times
+Technical standards
+Cost responsibilities
+
+Transmission level interconnections (large generators) vs Distribution level interconnections (residential)
+
+4-Quadrant of Inverter (active vs reactive power)
+
+DER Unit: A fully compliant DER unit that does not require supplemental DER device to meet IEEE 1547 requirements
+DER System: A system that consist of DER unit(s) and supplemental DER device(s) that is type tested as a system and that, as a whole, is fully compliant with IEEE 1547
+DER Composite: A system that consists of partially compliant DER components and supplemental DER device(s), and requires detailed design evaluation, installation evaluation, and commissioning tests to determine full compliance to IEEE 1547 requirements.
+
+Interconnect integrity: Requirements for DER protection from electromagnetic interference, surge withstand, and requirements for the DER paralleling device
+
+The NEC is the national electrical code to which residential and commercial DERs should be designed, built, and operated
+
+Transformer Classes:
+I: <50kW, single or 3 phase
+II: 51-300kW, 3 phase
+II: 301-5,000kW, 3 phase
+IV: 5,000kW<, 3 phase
+-------------------------------------------
+Sun Smart Engineering 
+
+-Interconnection agreement establishes terms between interconnecting party & utility (dynamic documents as tech changes):
+Tech Specs
+Terms of Ops
+Maintenance Obligations
+Safety (top priority)*energy injection/curtail
+*different for each type of DER
+
+-Process starts with application that includes:
+Site plans
+System designs
+Description of prosed interconnection method
+*maybe chance to discuss specifics of Power Purchase Agreement (PPA) for terms and rates of energy sold back to utility
+
+-Utility studies for potential impacts of proposed installations:
+Feasibility: Determines if interconnection is technically possible
+Impact: How integration affect grid stability
+System: Extent of required upgrades to transmission infrastructure to accommodate new DER.
+
+-Financial aspect like who will bear the costs of infra. improvements and whether there will be contribution from interconnecting party
+
+-Net Energy Metering (NEM) agreements (especially on rooftop solar) determine process of tracking and billing
+
+-Stipulations on performance of project once operating like uptime guarantees and energy production metrics and transmission efficiency. Parties agree on penalties for noncompliance
+
+-Data sharing protocols
+-------------------------------------------
+ UL Solutions: Homer Microgrid News - Interconnection in Curacao island
+
+*-Project: carport with 128kW solar array to reduce energy consumption 75% with high-efficiency HVAC while serving the serving remaining 25% of lead with new solar system
+
+-Factors to consider when navigating utility relationships:
+Financial viability/efficiency
+Data Quality
+Energy Auditing
+Technical Bottlenecks
+Regulatory Mandates
+Price Incentives
+Political Perspectives on DER
+
+-Possibility for utility bills that estimate building loads and create preliminary designs are incorrect
+*reading wrong meter and undercharging customers
+
+-Large interconnection fees imposed on solar projects due to solar market oversaturation/overpenetration and slow utility growth rate. Attitude towards renewables leaned more negatively.
+
+-Factors to evaluate before signing on to a distributed energy project worldwide:
+Ensure accurate technical data before starting project to prove economic viability and monitor ROI (evaluate 2 years< of utility bills and conduct energy audit to verify accuracy)
+Use software models to size systems correctly and accurately estimate production ensuring that it meets facility load reqs. Determine value of energy storage from arbitrage with TOU rates
+Understand level of reliability/sophistication of local utility delivery. Utilities providing uninterrupted power typically have robust asset management programs and are ready for variable DER
+Watch out for red flag of lack of policies supporting renewable energy. *feed-in tariff in Curacao was generous but poorly designed due to lack of energy storage capabilities, transformer distributing and infra.
+Know who manages renewable energy policy at utility. If top execs manage renewables, success is probably taken more seriously and will get priority
+Understand utility relationship to petroleum, an area's economic connections to petrol could be important political factor
+
+-Inherent challenges in introducing high amounts of variable DER into centralized grid with need for constant power supply
+
+-Utilities must balance DER with erosion of revenues and potential increase costs of integration with 
+
+-Single transformer can cost more then $75000
+
+-For portfolios over 30% renewables penetration, future planning should consider:
+Cost of Storage
+Faster Ramping Generators
+Forecasting
+Additional Grid Upgrades
+
+-Solar and wind create problems due to supply/demand mismatch. Ways to demonstrate value to grid include:
+Provide reactive power compensation
+Batteries to support peak demand
+V2G dispatch service provides peak shaving and lowers demand charges via demand response
+Frequency control
+Energy arbitrage
+-------------------------------------------
+Factor This (states ranked for interconn.)
+
+-Interstate Renewable Energy Council (IREC) graded all 50 states DC & PR on their interconnection policies regarding DER
+
+-Freeing the Grid interconnection grades gives each state a score for their policies based on ten categories encompassing:
+Cost
+Efficiency
+Transparency
+Technologies available for interconnect
+Rule applicability
+Incorporation of IEEE1547 & Export provisions
+Streamlined review
+Technical screens
+Supplemental review screens
+Dispute resolution
+Modifications
+Specified Timelines
+Data Sharing
+Outlines interconnection costs and reqs
+
+-'A' Grade: New Mexico
+-'B' Grade: Arizona, California, DC, Illinois, Michigan, New York
+-'F' Grade: Alabama, Alaska, Arkansas, Georgia, Idaho, Kansas, Louisiana, Missouri, Nebraska, North Dakota, Oklahoma, Tennessee, Wyoming
+
+-Grades do not include non-statewide interconnection rules like public utility commission orders
+-------------------------------------------
+North Carolina DER PDF:
+
+-Competitive Procurement for Renewable Energy (CPRE) program established under HB589 created to establish a competitive bidding process for project interconnections where generators receive energy payment aligned to avoided costs of utility
+*CPRE Tranche 1 established 600MW procurement process that will provide twenty years of renewable energy at pricing below Duke’s Avoided Cost
+
+-Net Metering provides compensation for behind-the-meter systems up to 1MW in NC
+
+-NC Solar Rebates
+Residential solar rebate = $0.60/W up to $6,000
+Non-Residential = $0.50/W up to $50,000
+Non-Profit = $0.75/W up to $75,000
+*Expired end of 2022
+
+-Points of contention with policy:
+Injecting more DER onto grid is in tension with need to modernize to enable more DER
+Increasing DER penetration is in tension with lack of data access on where DER are most valuable and mechanisms for utilities to purchase their services
+Grid modernization tension exists due to policy and market frameworks not contemplating customer-owned/third party resources at time of creation, and general statutes that require incumbent utilities to prioritize cheapest sources
+NC is part of regulated monopoly territory which does not require incumbent utilities to grant data access
+
+-Potential DER interconnection policy solutions NC:
+Addition of carbon costs into economic evaluation would improve chance or renewables being dispatched by utilities
+Maximizing DER penetration requires more investment in expanding Integrated System Planning and fair cost allocation
+Move from 'least-cost' model to considering GHG emissions reductions
+Location planning & transparency with more visibility into system constraints down to distribution level (load, supply, distribution constraints) *South California Edison (SCE) provides good distribution-level info
+Utilities provide interconnection capacity by feeder or area so developers can target those
+-------------------------------------------
+The Interconnection Bottleneck: Massachusetts Case Study
+
+-Massachusetts  electric distribution companies:
+National Grid
+Eversource East
+Eversource West
+Unitil
+
+-Storage-specific barriers:
+1)Storage is not included in many interconnection rules, or are unclear
+2)Interconnection rules do not mention acceptable methods for controlling the export from storage system that limit power exports
+3)Non and limited-export systems are assessed using unrealistic assumptions, leading to overestimated grid impacts
+4)Rules lack uniform specs for export equip. response times and impacts of inadvertent exports
+5)Processes to not provide enough info on state of grid (hosting capacity, available interconnect locations)
+6)Interconnection processes cannot make system design changes other than downsizing to avoid upgrading grid
+7)States have not updated interconnection procedures and technical reqs
+8)Rules lack rules for eval on operating schedules of storage (when should storage charge/discharge)
+9)Inflated modeling assumptions where costs increase due to modeling assumptions like bi-directional flow requiring costly upgrades for unlikely scenarios where DER would be pushed to extremes or operate uneconomically
+10)Labor and supply costs
+11)Lack of agreement with utility no modifications leading to unexpected application/study fees
+
+-Interconnection process types (speeds):
+Standard: Impact study and sing an executable interconnection service agreement, study done after pre-study agreement
+Expedited: Sign executable interconnection service agreement with no impact study, internal studies on system with no extra costs, modification to mitigate reverse flow
+Simplified: Straight to installation from application review, minor modification payments
+
+-Regardless of which process a project goes through, the Massachusetts interconnection process has three vital features: determination of hosting capacity, applicants’ payment of costs, and iteration  between utilities and project applicants on the upgrades and system modifications the latter can accept to receive an authorization to interconnect
+
+
+-System impact studies may make unreasonable assumptions regarding how prospective storage projects will operate. For instance, utilities may assess storage systems as though they will be charging at times of peak electric demand, even when project applicants indicate no plans to do so (and when
+doing so would run counter to the project’s economic best interests)
+
+-However, utilities frequently lack historical load data and future load forecasting capability, as well a communications
+system to control curtailment in real time
+
+-From the perspective of the project owner, the utility’s preferred solution—taking full control of the charging and discharging of storage—is almost always a nonstarter
+
+-Utilities are concerned that the flexibility of storage control settings would allow unrestricted charging and discharging and could cause a hybrid solar and storage system to act as a generator when the system already has sufficient capacity
+
+-Procedures should consider distinct screens for non-exporting projects and provide clear lists of acceptable methods for controlling export
+
+-Export capacity of storage should be used instead of nameplate rating (worst-case)
+
+-Increasing solar penetration requires transmission systems and distribution system operators to be more aware of one another's constraints and integrate operations *Good thing
+
+-Iterate interconnection studies like impact tests to solve ad hoc problems
+
+-Fast-track procedures should be established for projects of nameplate capacity under 50 kilowatts and export capacity not exceeding 25 kilowatts because smaller projects will have smaller export potentials and create fewer issues for the distribution grid
+
+-An example of storage-specific interconnection policy is the Hawaiian Electric Quick Connect Program. In 2021, projects on the Oahu, Maui, and Hawaii islands could be installed prior to receiving approval from the utility if the hosting capacity on the circuit was greater than 30 percent
+-------------------------------------------
+-------------------------------------
+Utility Dive: Problems with interconnection process
+
+-Most solar projects run into interconnection delays
+
+-Regions:
+Midcontinent Independent System Operator
+Southwest Power Pool
+PJM
+
+-Queue times have increased dramatically since 2005, when a typical solar project used to take 2 years to complete, today 4 years<
+
+-<25% of projects that enter interconnection queues make it through completion
+
+-Historically bottom up approach to building transmission grids has not kept up with current demand for renewables
+
+-Permitting managed at state level, federal regs have not kept up or synced with needs to today, no standardization
+
+-States have generally tasked their public utility commissions with regulating for the least-cost option within a relatively short planning period, such as 10 years. 
+
+-Regional transmission organizations (RTO) do not share enough information publicly to easily identify the most cost effective locations to connect to the grid, developers apply for interconnection with incomplete information and may learn during the study process that a project will be financially or technically infeasible *developers started applying for exploration purposes to see if they would even be able to proceed
+
+-As developers enter queue earlier, offtakers or property rights do not have time to be secured
+
+-Every project is speculative until passing the queue process
+
+-Project clusters make it through the process easier, but if developers drop out (churn rate), others need to be restudied, usually takes longer and it comparable to regular queue times
+
+-Gas plants easier to build and approve because they can be near existing transmission, DER usually are further away where the resource lies
+-------------------------------------
+FERC Issues Transmission NOPR Addressing Planning, Cost Allocation
+
+-Proposed Changes to Regional Transmission Planning:
+Conduct regional transmission planning on sufficiently long-term scenario to accommodate future transmission needs driven by resource mix/demand
+Identify transmission needs through multiple long-term scenarios studying federal, state, and local laws/regs such as:
+	Resource Mix
+	Demand
+	Tech trends
+	Fuel costs
+	Resource retirements
+	Generator Interconnection requests/withdrawals
+	Extreme weather events
+Consider proposed list of broader set of regional transmission facility benefits
+Establish transparent and nondiscriminatory/preferential criteria to maximize consumer benefit without overbuilding facilities (prevents discrimination against storage and transmission upgrades for customers)
+
+-Proposed Changes to Regional Transmission Cost Allocation (reqs for each transmission provider):
+Seek agreement of relevant state entities within transmission planning regions regarding cost of facilities in long term
+Establish cost allocation method for transmission facilities selected as part of long term planning ex ante cost allocation, or volunteers for cost allocation study
+Establish cost allocation method for transmission facilities than complies with the six Order No.1000 regional cost allocation principles
+-------------------------------------
+FERC Proposes Interconnection Reforms to Address Queue Backlogs
+
+-Implementing first-ready, first-served cluster study process: Transmission providers conduct larger interconnection studies for numerous generators instead of separate studies for individual facilities Fees may be added to prevent drop-outs
+
+-Improve interconnection queue processing speed: New firm deadlines and established penalties for providers who fail to complete studies on time, except when force majeure is applicable. A more detailed affected systems study process, like a specific modeling standards and pro forma affected systems agreement. Simplified process for same state-authorize or mandated resource solicitations
+
+-Incorporate technological advancements into interconnection process: Allow more than one resource to co-locate behind a single point of interconnection and share single interconnection request. Allow interconnection customers to add generating facilities to existing interconnection requests under certain circumstances without losing position in queue. Requires transmission providers to consider alternative transmission solutions if requested.
+
+-Update modeling and performance reqs. for system reliability: Certain modeling and performance requirements for non-synchronous facilities to ensure resources are better ale to support reliably (e.g. continue providing power/voltage support during transience)
+-------------------------------------
+Order No. 1000 - Transmission Planning and Cost Allocation
+
+-Order No. 1000 is a Final Rule that reforms the Commission’s electric transmission planning and cost allocation requirements for public utility transmission providers building on reforms of Order No. 890
+
+-The rule recognizes that incumbent transmission providers may rely on regional transmission facilities to satisfy their reliability needs or service obligations
+
+-The rule requires each public utility transmission provider to amend its tariff to require reevaluation of the regional transmission plan to determine if delays in the development of a transmission facility require evaluation of alternative solutions, including those proposed by the incumbent, to ensure incumbent transmission providers can meet reliability needs or service obligations
+
+-Planning Reforms:
+Each public utility must participate in a regional transmission planning process per Order No.890 and produce a transmission plan
+Local and regional transmission planning must consider needs driven by state/federal policy reqs.
+Public utilities in each pair of neighboring transmission planning regions must coordinate to find most efficient transmission solution
+
+-Cost Allocation Reforms:
+Each public utility must participate in a regional transmission planning process that has cost allocation method for new facilities satisfying 6 regional cost allocation principles
+Utilities in neighboring regions must have common interregional cost allocation method that satisfy six similar interregional cost allocation principles
+Participant-funding of new facilities is permitted, but not as the regional/interregional cost allocation method
+
+-Nonincumbent Developer Reforms: Utilities must remove a federal right of first refusal from commission approved tariffs for a facility in a regional plan except when
+A facility is not selected in a regional transmission plan for purposes of cost allocation
+Does not require a utility in a region to use competitive bidding to solicit project/developers
+Nothing in req. affects state/local laws/regs regarding construction of facilities including authority over siting/permitting
+-------------------------------------
+NC Clean Energy Technology Center: (Inter)Connecting the Dots: Recent Progress in Interconnection Reform (FERC Order No. 2023)
+
+-FERC’s jurisdiction is on large interstate operations but smaller local projects are also affected by queue delays, limited hosting capacity information, and sometimes inequitable cost allocations.
+
+-Federal and state regulators, independent power producers (IPPs), state legislatures, and utilities consider what reforms might be needed and how to implement them
+
+-FERC Order No. 2023 (primarily for interconnections at transmission level) seeks to implement changes which will reduce the time generators spend in the interconnection queue, provide a more equitable cost allocation for IPPs, and support new technological advancements. Queue times are proposed to be reduced in 3 ways:
+Transition from reviewing one project at a time (serial reviews) to reviewing several projects simultaneously (cluster reviews)
+Establishes a penalty for interconnection reviews that exceed established thresholds
+Increases the financial surety requirements and increases penalties for leaving the review process early (limits speculative projects)
+
+-Network upgrade costs historically borne by the one project that exceeds system limits and necessitates the upgrade, regardless of amount of projects
+
+-Cost allocation methods for cluster interconnection seeking to inject power:
+Project Capacity: Ratio of project's capacity to total cluster capacity to determine % of cost borne to each project
+Proportional Impact Basis: Total cost of all network upgrades for cluster are determined, then ratio of cost to total infra. upgrades used to assign % of cost for upgraded substations to support the projects
+
+-Renewables clustered with fossil projects shifts costs, where projects with lower network upgrade costs subsidize projects with higher costs
+
+-Duke Energy (Carolinas) and Xcel (Minnesota) use single annual cluster
+
+-Generators like solar, wind, and natural gas have similar interconnection characteristics
+
+-Order No.2023 allows storage to be added to project without losing place in queue, as long as storage does not add to project's capacity
+
+-Proposed rule change to base interconnection analysis on export capacity instead of aggregate nameplate capacity for renewables (Oregon)
+
+-Hosting Capacity Maps, required in Order No. 2023, are overlays of circuits in the grid with notations for how much new capacity they can host before requiring upgrades. *Help IPPs determine which circuits might have the lowest cost and complexity for interconnection.
+
+-Projects seeking to interconnect to congested areas (those with less than 25% of their hosting capacity available) would pay a premium on top of established fees
+
+-Generators connecting to the transmission system tend to be larger and have much broader impacts than those connecting at the distribution level.
+
+-New Jersey lawmakers introduced a pair of bills requiring the Board to develop a capacity-based fee with a maximum for residential systems under 10 kW to $50/kW
+-------------------------------------
+FEDERAL UTILITY PARTNERSHIP: Best Practices for Interconnection Agreements
+
+-An interconnection agreement (ICA) is a business contract between the utility and the customer for the purpose of interconnecting a distributed energy (DE) project located at the customer site to the utility’s electrical distribution system.
+
+-Meet with utility early in project development to obtain interconnection process reqs. 
+
+-Considerations for interconnections:
+Study Reqs. (time required, queue to start)
+Fees for application, study, upgrades
+Utility participation in commissioning/final approval
+Determine who is responsible for meeting interconnection req (agency/contractor)
+Ensure close communication between agency and contractor
+Consult Federal Energy Management Program or other agency
+
+-Best Practice:
+Obtain template ICA (federal specific if possible) and ask who needs to sign
+Consult federal agency to review ICA early on
+Negotiate with utility (ICA changes may need approval from state PUC for IOU)
+-------------------------------------
+Energy Central: FERC Interconnection Discussions: What Are They and What Are the Implications?
+
+-In 2003, FERC adopted Order Number 2003, which required utilities to adopt interconnection procedures and a standard interconnection agreement for all generators with more than 20 MW. Generator is responsible for the costs at the site of interconnection and any transmission system upgrades. The transmission provider then refunds the amounts paid by the generator during the five years following commercial operation of the generator
+*most providers must use FERC rules with some exceptions
+
+-Material Modification: Modification to a project that materially and adversely impacts other projects lower in the queue
+*Frequency misunderstood by transmission providers
+
+-In the most stringent cases, some transmission providers have maintained that addition of storage to a generation project is a material modification
+*Must be determined with 60 days of request to add storage
+
+-PJM reforms (2023):
+Moved from 'First come, first served'(serial) to 'first ready, first served' (cluster) approach with 'decision points' where projects must meet readiness deposits *inspired by MISO
+Require 100% site control, including gen-tie lines and more site control evals at all decision points
+Project in cluster AD2 or earlier would not fall into the transition period rules. However, a project in clusters AE1, AE2, AF1, AF2, AG1, AG2 and AH1 will fall into a transition cycle
+
+-Some projects that fall into the cycle and receive a retool analysis may be able to receive expedited review if that analysis shows less than $5 Million in upgrade costs are needed. All of these determinations are highly site and project-specific
+
+-While both the FERC NOPR and the PJM Reforms attempt to address interconnection backlogs, they do not address all of the issues facing interconnection customers. Crucially, neither addresses the critical need for interregional transmission planning reform
+
+-In ERCOT most upgrades are socialized and upgrade planning is known in advance, allowing renewable energy generators better cost transparency
+-------------------------------------
+Advanced Energy United: Moving Through the Interconnection Queue - How a Project Gets Built—or Doesn’t
+
+-Increasingly, interconnection challenges and delays are the top barrier to new resources coming online to deliver reliable and affordable electricity
+
+-Main players in interconnection process:
+Project Developers (bear most of costs)
+Transmission Providers (Regional Transm. Org., Independent System Operator, Utility in non-RTO/ISO regions)
+Transmission Owners
+
+-Process is different in every region, bet general trajectory is as follows after reform by FERC Order No.2023:
+1)Initial Project Dev.: Lack of info, anticipated high costs, difficulty securing site control
+2)Submit Request: New info indicates high upgrade costs (decides not to enter study process)
+3)Enter Study Process: High interconnection upgrade costs outlines in studies (drop out of cluster)
+4)Execution of Interconnection Agreement (IA): Siting and permitting challenges, Financing, EPC, supply chain delay/cost increases for upgrades (fails to reach commercial ops)
+5)Commercial Operation
+
+-Submitting Interconnection Request:
+Project Developer:
+	Secure control of project site
+	Provide sufficient tech info about project for viability
+	$5,000 deposit (non-refundable) to transmission provider
+	$35,000-$250,000 study deposit (refundable) to transmission provider
+Transmission Provider:
+	Sets interconnection request reqs. and reviews material submitted
+	FERC Order No.2023 requires to engage with project sponsors before 60 days to determine next steps
+Transmission Owner (if different from provider):
+	No formal role, only relied on to provide information on application and process updates
+Challenges and Potential Points of Failure:
+	Lack of sufficient transmission headroom
+	Lack of publicly available info on transmission capacity
+	Some project have difficulty meeting 'commercial readiness' reqs (site control)*Order No.2023 requires developers to have contract for 90%< of land required for proposed project at time of interconnection
+
+-Interconnection Studies:
+Order No.2023 requires all projects to be studied in clusters
+Project Developer:
+	Pays study deposits and meets milestone reqs for each study phase or decides to drop out (30 days between receive study results and pay deposits)
+	Provides Technical info
+Transmission Provider:
+	Collects deposits and milestones
+	Conducts studies and delivers reports to project dev
+Transmission Owner (if different from provider):
+	Provides non-binding estimates of interconnection upgrade costs and timelines
+Challenges and Potential Points of Failure:
+	Projects are often assigned far way, require deep network upgrades(low threshold to trigger upgrades, assume worst-case, no curtailment/redispatched allowed even for projects paying for more grid access than they receive)
+	'Participant funding' where projects pay full cost of upgrades even though benefits to grid and customers would be more appropriately planned through transmission process
+	Study Delays resulting in more cost and uncertainty(Order No.2023 now has penalties for missed study deadlines)
+	Cost and timeline estimates shift dramatically(Order No.2023 exempts projects from withdrawal feeds at final stage if interconnection costs increase 100%)
+	Lack of transparency and oversight of upgrade costs(developers usually forced to accept estimates by transmission provider
+	Lack of consideration for grid-enhancing tech(efficient and cost effective tech that would help resolve network restrains are ignored even with Order No.2023 requiring consideration)
+	Projects drop out and cause restudy delays
+	Lack of flexibility to make minor project adjustments or adopt new tech
+
+-Executing Interconnection Agreement:
+Project Developer:
+	Negotiate and agree to final IA
+Transmission Provider:
+	Draft IA
+	Oversee negotiations/revisions
+	File execute IA with FERC
+Transmission Owner (if different from provider):
+	Negotiate and agree to final IA
+Challenges and Potential Points of Failure:
+	Project developers have little leverage in negotiations(lack of transparency and accountability in study process, transmission owners face no pressure or incentive to negotiate, dev can request IA be filed with FERC unexecuted
+	and dispute, but this is risky)
+
+-Commercial Operation:
+Ensured viability, complete construction, securing siting and permitting approvals, could be cancelled after executing IA
+Project Developer:
+	Secures final siting and permitting agreements/permissions
+	Completes financing and offtake negotiations
+	Complete procurement and delivery of equip. and components for construction(can request up to 3 year extension of operation date)
+Transmission Provider:
+	Ensures progress on milestones to reaching commercial operations in IA
+Transmission Owner (if different from provider):
+	Constructs and puts in service upgrades
+Challenges and Potential Points of Failure:
+	Cost & timeline overruns due to transmission owner(actual interconnection costs can be 2-4x more than specified in IA, transmission owners can miss construction deadlines and trigger damages in PPA, tax equity financing, etc.)
+	Delays and uncertainty in interconnection process(hard to sync siting, permitting, financing, engineering, and procurement for project management)
+-------------------------------------
+Institute for Local Self-Reliance: Why is Connecting Clean Energy to the Grid So Hard?
+
+-Private utilities can use their government-granted monopoly over the electric grid to make interconnection complicated and expensive for any clean energy project they don’t own. Often, they pour their outsized monopoly power and profits into evading and rigging the rules to further stifle competition and favor their own business.
+
+-Suggestions for how FERC can improve competition and reduce utility/transmission company power:
+Transmission planning should be done by independent entity, not influenced by utility. All utilities should be required to join these transmission associations
+Greater transparency during planning process (mandated hosting capacity analysis)
+More accountability for utility plans
+
+-Non-compete laws (right of first refusal) are used by utilities after FERC banned practice of letting utilities own any transmission lines crossing their existing service territory.
+
+-11 states have 'right of first refusal' law (Minnesota and Texas). Repealing law would encourage competition and development of new transmission lines to serve clean energy despite incumbent utility benefits
+
+-PURPA (Public Utilities Regulatory Policies Act): Governs electricity sales from small power producers to utilities
+
+-Community solar threatens utilities who use PURPA law to avoid paying fair price or signing a contract to buy export power
+
+-Interconnection process is where utilities engage in the most blatant contractual noncompliance
+-------------------------------------
+USAID:An Introduction to Interconnection Policy in the United States 
+
+-Interconnection Jurisdiction:
+Transmission Level Interconnections:
+	Governed by federal policy and FERC, applies to large merchants
+Distribution Level Interconnections:
+	Governed by state policy and PUC, for smaller DG behind the meter, residential & commercial that have NEM (net energy metering)
+
+-Federal interconnection policy is administered by Regional Transmission Organizations (RTO), where none exist, FERC takes over
+
+-Before standardized processes existed, interconnections were left up to the utility and usually determined by two things:
+Utility's obligation to maintain safety and reliability
+Utility's financial disincentive to facilitate DG
+*Policies for standardization began in 2000-2006
+
+-California Rule 21 (2000) was among the first comprehensive, state-wide interconnection policies and involved:
+Screening process streamlined review of applications
+Procedural timelines expedited interconnection process
+
+-Technical Standards for Small Generators or IEEE1547 (2003):
+Provided reqs for performance, ops, testing, safety, and maintenance of generators <10MW
+
+-Federal rules for Large Generators (2003) like FERC Larger Generator Interconnection Procedure (LGIP) and Large Generator Interconnection Agreement (LGIA):
+First federal policy to address interconnection of large merchant generators 20MW<
+Established standard three-study procedure for large generator interconnections applying to all transmission level interconnections
+
+-Federal rules for small generators (2005) like Small Generator Interconnection Procedures and Agreements (SGIP,SGIA):
+Applicable to transmission level interconnections
+3 review levels, scaling DG size with scope
+Adopted fast track review process for generators <2MW with technical screens
+
+-SGIP include provisions for 3 levels of interconnection (mostly at transmission level):
+10 kW Inverter process
+Fast Track Process (<5MW)
+Default Study Process (all others <20MW)
+*PJM has separate queue for <20MW projects that do not require upgrades
+
+-Energy Policy Act (2005):
+Section 1254 requires state regulatory commissions and utilities to consider adopting interconnection procedures based on IEEE1547 and best practices
+
+-Transmission level interconnection for PJM RTO:
+1)Generation resources are not centrally planned by PJM
+2)Any project may request transmission system interconnection
+3)All costs are responsibility of interconnection applicant
+4)Project economic viability determined successful interconnection
+5)PJM has cost-sharing method to allocate costs among generators that benefit from same system upgrades
+
+-PJM Interconnection Process:
+1)Interconnection Request
+2)Studies (Feasibility, Impact, Facilities)
+3)ISA/CSA Execution
+4)ISA/CSA Implementation
+5)Commercial Operation
+
+Interconnection Request:
+Required(Location, Size, Ownership, Configuration, Planned In-Service Date)
+	Applicant submit request to connect at Point of Interconnection (POI)
+	Project assigned to queue, may drop out or agree to remain with each phase within specific timeframes (queue publicly available online)
+	Scoping meeting (One alternative POI, configuration to eval 3 interconnection studies, applicant selects 2 POI, can be waived upon mutual agreement)
+Studies:
+	Feasibility (Identify Transmission upgrades, Cost estimates, Construction Schedule):
+		Deposit based on request timing and MW size
+		Must provide proof of site control
+		Project must be in service within 7 years after PJM receipt of interconnection request
+		Different procedures for generators 20MW< and <20MW
+		Study completion <90 days
+		Between Transmission Owner and PJM
+	Impact (Regional analysis like DFAX modeling, Gen & Load deliverability analysis, Stability analyis, Cost estimates, Mileston schedule):
+	If developer agrees to proceed, results used for PJM Regional Transmission Expansion Planing (RTEP) needing committee/board approve, re-evalutation 
+		50K deposit for 20MW<
+		Initial Air Permit Application
+		Complete <6 months
+		Between Transmission Owner and PJM
+		2 or more projects within electrical proximity can be studied together for cost sharing
+	Facilities (Conceptual design, Design for attachment facility and network upgrades, Cost estimate, Engineering/Construction schedule, cost alloc.):
+	Developer may separately arrange for design of upgrades with itself or third party
+		100k deposit or first 3 months cost estimate of facility design
+		Complete <6 months
+		Between Transmission Owner and PJM
+ISA/CSA Execution:
+	Interconnection Service Agreement:
+		Three Party Agreement filed with FERC (TO, Developer, PJM)
+		Description of Generating Units
+		Obligations of developers (attachment facilities, upgrade costs, capacity interconnection rights)
+		Developers must have security estimates to maintain queue
+	Construction Service Agreement:
+		Three Party Agreement filed with FERC (TO, Developer, PJM)
+		Identifies scope of work, construction schedule, payment schedule
+		Developers may design/build needed upgrades and retain Approved Contractors services
+		Developers may elect Option to Build and adhere to PJM independent activity timeframes
+ISA/CSA Implementation:
+	Construction Milestone tracking (Generation & attachment facilities, Network upgrades)
+	Billing Approval/Cost Tracking 
+	Coordination of Energy Management System, Data link/comms, eTools setup and Implement
+	Outage Coordination
+	Coordination of Test Energy Injection
+Commercial Operation:
+	Generation Resources required to comply with ops terms by PJM Operating Agreement and Open Access Transmission Tariff
+
+-Cost Allocation methods (PJM):
+	Load Flow Cost Allocation:
+		If upgraded $5 million<, costs shared project 5MW< AND 1%< the applicable line rating OR if distribution factor (DFAX) 5%< AND MW impact 3%<
+		Contribution of interconn. customer determined by voltage level of impacted facility
+			Facilities 500kV> cost allocation for project if DFAX 5%< OR MW impact 5%<, but if 500kV<, then DFAX 10%< OR MW 5%<
+		If upgrade costs <$5 million, fist project to cause need for upgrade will have cost allocation
+			if subsequent project impact 5 MW< AND 1%< line rating, contribution of project determined by voltage level of impacted facility
+				Facilities 500kV> cost allocation for project if DFAX 5%< OR MW impact 5%<, but if 500kV<, then DFAX 10%< OR MW 5%<
+	Short Circuit Cost Allocation:
+		Project will have cost allocation if results show 3%< increase in fault current at substation where upgrade required
+			Costs proportional to fault level contribution
+	Generator Step Up Change Cost Allocation:
+		If Generator Setup Costs (GSU) changed after System studies, additional system problem costs assigned to that project
+
+-New project responsible for sharing upgrade costs of previous projects in queues from which they benefit if original costs determined 5 years prior
+*Depreciation of upgrades not factored into cost allocation for developers
+
+-Upgrades costing <$5 Million are shared by all proposed projects in queue, but those $5million< are allocated according to order of request and MW capacity
+
+-Procedures to determine capacity values for intermittent resources:
+Amount of generating capacity during peak summer hours
+Capacity factor based on rolling 3 years of historical operating data
+If new, class average capacity factor applied (wind=13%, solar=38%)
+
+-Per-Application Report intended to reduce number of speculative/unviable projects and includes:
+Total/available generation capacity of facilities serving POI
+Circuit distance between facility and substation
+Circuit voltage, phases, number and rating of protective devices
+
+-Scaled Fast Track Eligibility Size limits:
+Line voltage <5kV = <_500kW project regardless of location
+5kV<15kV = <_2MW
+15kV<30kV = <_3MW
+30kV<69kV = <_4MW
+
+-Supplemental Review Screen:
+Distributed Penetration Screen: Limit aggregate generation on line section to 100% minimum line load
+Power Quality Screen: Flicker, Voltage, Stability standards
+Safety/Reliability Screen
+
+-Ohio adopted IEEE1547 and UL1741, multi-level approach to matching degree of technical review with project, and technical studies with costs to projects
+
+-Ohio Interconnection Review Levels:
+Level 1) Eligibility: IEEE1547/UL1741 certified, Inverted systems <_25kW; Standards (short form) Interconnection Agreement and simplified review
+Level 2) Eligibility: IEEE1547/UL1741 certified, ineligible for L1, fit in Scaled Fast Track Size Limits; Standard Agreement and expedited review
+Level 2 supp) Failed L2 but can interconnect with minor changes; written agreement within 15 days of Supp review, Standard Agreement, Standard Review+Study
+Level 3) Not IEEE1547/UL1741 certified, <_20MW that fail L1 & L2; Standard Agreement and Standard Review + customized studies
+*Level 3 review initiates detailed study process like PJM with Feasibility, System Impact, and Facilities studies
+
+-Potential Interconnection Issues:
+Operator issues
+Network Issues
+	Changing Voltage Profiles	
+	Voltage transients
+	Increased short circuit levels
+	Changing load losses
+	Congestion in system branches
+	Power quality and reliability
+	Utility protection and DG protection
+Generation issues
+-------------------------------------
+Institute for Local Self-Reliance: An Overlooked Solution for Competitive and Local Renewable Power
+
+-PURPA (1978): Requires all utilities to buy power from qualifying small-scale clean energy producers when the price roughly matches what a utility pays to generate and deliver its own electricity, or what it would pay a third-party provider. The law provides competitive access to wholesale electricity markets for producers too small to effectively compete with large companies
+
+-Small scale means 2-20 MW
+
+-If a contract runs shorter than 15 years it largely precludes project development as financiers will not provide loans. States with contract terms shorter than 15 years tend to see little to no development of competitive renewable energy
+
+-Calculated Avoided Cost = Cost a utility would dodge by purchasing power from a qualifying clean energy provider (avoided energy & avoided capacity)
+*Usually does not account for avoided transmission costs, which would boost value of smaller sites
+
+-Many states lack in-house PURPA expertise, so the patchwork of state rules frequently relies on shaky analysis and misinformation from utilities
+-------------------------------------
+Interconnection Innovation Exchange: Possibilities to Enhance Interconnection Processes (2024)
+
+-Majority of projects in queue are solar and storage (half are hybrid)
+
+-Studies show that when PV is closer to feeder, it is more likely for there to be thermal/voltage violation
+
+-Current proposed capacity is 2x more than installed capacity
+
+-Big need for workforce development
+
+-Amazon Q-Bot: AWS based solution for automate generation interconnection modeling and accelerate system impact studies (shorten timeframes using ML)
+
+-Expected Interconnection Study Timelines:
+Standard Interconnection (4 yrs avg)
+Generator Replacement (1 yr avg)
+Surplus Interconnection Service (8 months avg)
+
+-FERC Order 845 (all regions except NYISO and ERCOT follow req):
+Priority to existing Generation owners
+Must no exceed total interconnection service of existing plant
+No network upgrades allowed
+Interconnection right expire within on year of facility retiring
+
+
+-Primary Fast Tracks available today:
+Surplus Interconnection Service (SIS) = Adding new generation at the site of an existing plant (that would continue operating)*Governed by FERC Order 845
+Generator Replacement = Adding new generation at a site of a retinting unit or plant *standard set by MISO, CAISO and ERCOT have more limited process, PJM and ISO-NE not defined process
+
+-Vistra (CA) replaced Moss Landing nat gas plant with 750 MW of 4hr battery storage
+
+-Xcel Energy plans to replace coal in Minnesota and Colorado with solar and long duration iron-air storage
+
+-Worry that by continuing to approve rules one region at a time, we are slowly reshaping interconnection policy without alignment
+
+-Let’s assume the studies are done. The contract that binds the generators to the transmission system is called Generator Interconnection Agreement (GIA). Based on what the generator has elected to pay, these generators receive a Network Resource Interconnection Service (NRIS) or an Energy Resource Interconnection Service (ERIS).
+-------------------------------------
+Factor This: Network Resource Interconnection Service is a better choice than ERIS for small-scale renewable developers
+
+-Interconnection Services:
+Energy Resource Interconnection Service (ERIS) = Non-firm (generator output can be curtailed to accommodate firm transactions)
+Network Resource Interconnection Service (NRIS) = Firm (generator output will not be curtailed unless emergency)
+
+-A generator needs to reserve its spot on the Transmission System. That reservation system is called NITS
+
+--Network Integration Transmission Service (NITS) = A deliverable network resource has the transmission service to meet its load obligations
+*Interconnection customers who use this service are called network customers
+
+-Point-to-Point (PTP) Transmission Service (Firm and non-firm): Transmission service reservation that only works for a designated transmission path with its source and the sink, i.e., where the reservation ends
+
+-When you are filling out the generator interconnection application, you are required to fill out what level of Interconnection Service are you seeking. When you are seeking NRIS, if you don’t want to pay for full Interconnection Service, you can elect to a percentage of the total upgrade costs and receive NRIS up to a certain MW output level. The remaining MW output can be ERIS.
+
+-You can switch from NRIS to ERIS but you cannot switch from ERIS to NRIS in between an interconnection study. You will have to go back to the queue if you are switching from non-firm ERIS to firm NRIS.
+
+-A common question for renewable developers interconnecting to a transmission system is whether they should pay more and procure a network resource interconnection service (NRIS) or pay less for energy resource interconnection service (ERIS)? The difference is this: A network service reserves transmission capacity on the grid for the renewable developer whereas an energy service does not. With an energy resource, there is no guarantee that transmission capacity is available. If renewable resources external to a market wish to serve a load in the market, then they need an external network reservation.
+
+-If a resource external to the MISO market, serves the load internal to MISO – then an External NRIS is needed. External NRIS ensures a renewable resource in PJM, for example, is deliverable to a load in MISO.
+
+-A renewable resource, if deemed “deliverable” by the transmission provider, is available for a Load Serving Entity (LSE) to meet that LSE’s resource adequacy requirements. In a nutshell, resource adequacy requirements ensure there is enough reserve generation capacity (reserve margin) available to serve the load even under emergency conditions
+-------------------------------------
+DOE: Distributed Energy Resource Interconnection Roadmap (2025)
+
+-Goal 1: Increase Data Access, Transparency, Security of Interconnections
+
+Establish guidelines for collecting/sharing grid data
+Expand and standardize reporting of interconnection data like project attributes and costs
+Standardize and clarify technical data that developers of large DER must provide on applications 
+Establish and maintain frequently updated hosting capacity analysis (HCA) tools that model impact of multiple types of DER on grid
+Broaden use case for HCA
+
+-Goal 2: Improve Interconnection Process and Timelines
+
+Provide pre-application educational materials and self-service options for smaller DER
+Establish and require that large DER interconnection applicant meet clear criteria for commercial readiness and queue dwell time
+Implement and enforce appropriate DER interconnection study timelines and consider penalties for delays in study completion
+Continue automating parts of DER interconnection application
+Enable flexible interconnection so DER can be used to defer grid upgrades and avoid delays in exchange for curtailing generation
+Use group study to address existing queue backlogs/avoid anticipated backlogs
+Develop and standardize interconnection process for DER connected to new building construction projects
+Advance equitable interconnection outcomes through distributed system planning
+Help under-resourced groups navigate interconnection process through independent dispute resolution, engineering, admin, and legal services
+Assess growth of workforce required for anticipated DER support
+Upskill workforce
+Enhance retention and target recruitment for DER related jobs
+Outreach to postsecondary education and develop curriculum
+
+-Goal 3:Promote Economic Efficiency in Interconnection
+
+Reform existing 'cost-causer-pays' model, such that upgrades are equitably distributed among those that benefit from feeder circuit
+Build reserve fund by collecting fees from all DER customers to use for upgrades
+Use group study method to reduce individual cost of upgrades
+Proactively upgrade feeder circuits to accommodate forecasted DER and recover costs from future DER developers who share feeder
+Coordinate interconnection of DER projects across distribution, sub-transmission, transmission systems
+Improve coordination and data sharing between DER interconnection process and system planning
+Distinguish between generator's nameplate capacity and export capacity in interconnection studies for accurate projections
+Account for potential grid benefits and costs due to DER in studies
+Allow flexible interconnection as way to mitigate system upgrades
+
+-Goal 4: Maintain a Reliable, Resilient, and Secure Grid
+
+Proactively develop and implement new DER-ready system protection schemes
+Develop alternatives to address unintentional islanding and provide research-based methods to evaluate their cost-effectiveness
+Optimize development and use of electromagnetic transient (EMT) models for evaluating the dynamic performance of DERs 
+Improve models for analyzing the seam between the transmission and distribution/sub-transmission systems
+Collect data from DERs to validate models that ensure aggregate compliance with BPS reliability standards and to perform large-scale reliability assessments
+Accelerate adoption of the Institute of Electrical and Electronics Engineers (IEEE) 1547 interconnection standard
+Develop standards to mitigate the potential impact of inadvertent export
+Use guidance from IEEE Std 1547.3 to address cybersecurity concerns during the interconnection process
+Develop a cybersecurity risk management plan for interconnecting projects
+Develop and adopt standards that address performance from emerging technologies such as grid-forming inverters and vehicle-to-grid systems
+Develop evidence-based interconnection best practices that promote safety and reliability while allowing for local or regional differences
+
+-Cost Allocation reform ideas:
+Regulators should establish method for determining who benefits from upgrades and criteria for eligibility to cost-causer or multi-beneficiary allocation
+*Consider phased approach for revising cost allocation models, starting from reimbursement model aligned to multi-beneficiary allocation
+Utilities can start pilot cost-sharing programs using historical cost data for upgrades, leading to a billing calculator
+An interconnection fee based on project export capacity
+Regulators should determine what it means to 'benefit' from upgrade, translating benefits into proportional costs, eval usefulness of interconnection designations
+Utilities should define size thresholds for individual and group studies
+Regulators should require utilities to incorporate DER forecasts into load forecasts, and provide utilities with rate recovery principles
+
+-Test Methods for Reliability:
+Jurisdictions are requiring utilities to consider Non-Wire Alternatives (NWA) like smart inverters to avoid upgrades with functions like volt-var/PCS & V2G
+High levels of DER in Hawaii led to transition away from NEM towards time-varying rates for exports (export credits), especially in the evening
+New protection methods like Traveling Wave protection for overcurrent
+Not all DER detect islands (especially mixed), so utilities require (Direct Transfer Trip) DTT or detailed islanding study when DER capacity 66%< of min. daytime load
+*DTT uses dedicated comms link to force DER inverter to cease energizing. 'Permissive' DTT sends heartbeat signal to inverter, if lost, then trips <2s
+EMT models clarify dynamic performance of DER interconnected with inverters by simulating high-freq transient phenomena
+*voltage regulation, frequency response, ride-through capabilities, harmonics, fast oscillations, unintended trips due to instantaneous overvoltage or loss of phase-locked loops
+UFLS schemes begin to disconnect feeder circuits from the system to reduce load when system frequency descends below certain thresholds
+
+-Interconnection Standards:
+Adoption of IEEE1547 varies by state
+*Typically, regulators have only regulated the interconnection process for investor-owned utilities
+Latest changes like grid-forming inverters and V2G should be adopted by standards soon
+PV inverters are under UL 1741, while battery storage under UL 9540, defining them as “utility interactive products with grid support functionality"
+Regulators should establish customer protections involving generation losses, voltage excursions, corrective measures, & utility reporting
+Establish working groups to support the adoption of the latest revision of IEEE Std 1547
+Debate on safe response time (want faster) to mitigate risk around inadvertent export outlined in UL1741, currently at 30s open-loop response time req
+*California Rule 21 requires max response time of 2s for PCS, Arizona & Oregon require 30s. Studies on transformer effects using IEEE C57.91 say that 30s is sufficient and quicker adds little value 
+Need for clearer standards related to inadvertent exports is critical for bidirectional EVSE, most rules do not define how utilities specify/eval inadvertent exports from battery storage or bidirectional EVSE, instead use screen and studies applied in same way as projects with full exports
+One proposed power-quality screening method, based on rapid voltage changes, applies to projects with a difference greater than 250 kW between the 
+nameplate rating and export capacity, voltage change due to inadvertent export should not exceed 3%
+Utilities should maintain a list of approved technologies that meet inadvertent export reqs
+Require VPN connections for all DER
+SDOs should incorporate exceptions for non-PV DERs, such as distributed wind, into the next revision of the IEEE Std 1547/UL 1741 standards family to address technology-specific considerations
+Stationary and vehicular battery systems that only provide backup power could be explicitly exempted from the interconnection process
+UL 9741 and V2G supplements to UL 1741 will offer certifications for EV interconnections
+*In 2023, UL issued its first certifications to UL 9741 and UL 1741 SA for a V2G-compliant EV direct current charging system; an additional supplement for alternating current V2G chargers, UL 1741 SC, remains under development as of late 2024
+Draft guide to using IEEE Stds 1547, 1547.9-2002 provides guidance on interconnection of V2G-capable charging stations
+36 states, territories, and Washington, D.C., have rules; another 13 states have less robust or comprehensive guidelines that apply to some DERs; and 4 states have no statewide interconnection rules at all
+Many distribution utilities and state PUCs have based their DER interconnection rules on FERC’s pro forma Small Generator Interconnection Procedures, which outline procedures for facilities up to 20 MW in capacity
+DER interconnection rules can differ by availability of expedited processes for Small Generators, min. insurance reqs, pre-app info available to devs before interconnection application, adoption of recent tech standards, and level of detail
+Updates and clarifications needed on study steps (protection, overvoltage, flicker)
+Resources to support regulators in understanding process of rule adoption include IREC's Model Interconnection Procedures and NREL's guidance on updating interconnection rules
+-------------------------------------
+NREL:Overcoming Challenges for DER Interconnection – Spotlight on Energy Storage (2019)
+
+-Utility procedures (TIR)
+
+-Define the accuracy requirement for DERs to provide "production data" (kW, kVar, V) status
+
+-Create a DG control loop to enable battery storage to become a dispatchable asset
+
+-Determine the most (contextually) effective charge/discharge schedule and communicate it
+
+-Standardize the data interface among components of a solar-plus-storage device (storage, inverter, etc.), perhaps following the MESA-Device/SunSpec 
+Energy Storage Model specification
+
+-Allow for preferred (lower) electric rates for battery and fuel cell zero-emission vehicles (ZEVs)
+
+-Clarify/determine how utilities can rate-base long-term service agreements for NWAs
+
+-Lay out the impacts of NFPA 855 (Standard for the Installation of Energy Storage Systems) on utilities
+
+-Provide guidance to utilities about how to handle existing DER units in the field that are not up to 1547.1 (i.e., what are potential issues with grandfathering? what are costs to replacing?
+
+-Consider the tradeoff and visibility of modeling on an 8760- vs. peak-hour-basis
+
+-Develop better models that identify by phase—not 3Ø value—to improve online hosting capacity maps
+
+-Assess the risks of delta-wye transformers on the DER side of the point of common coupling (PCC). Evaluate the cost benefit of using zig zag or 
+grounding transformers
+
+-Utility Procedural Reform:
+Develop transparent/clarified guidance on energy storage interconnection process
+Address EV charging load profiles as a standard consideration for interconnection considerations
+Determine how solar-plus-storage should be studied and modeled (e.g., As stacked MW’s? Operational during daytime hours? Seasonal? Etc.
+Develop/adapt interconnection applications that are more specific to energy storage. DER applications (including those for microgrids) do not 
+always adequately accommodate battery storage or are confusing to customers
+
+-Tariffs/Metering:
+Adopt tariffs that account for the full value stack of energy storage and that address perverse incentives (e.g., BESS customer export during coincident system peak in parallel with PV system, rather than during residential peak). Determine how value streams can be baked into tariff structures and programs (demand response, frequency regulation, etc.). Sample questions: Who pays for the interconnection and use of the BESS? What does the utility gain?
+Resolve metering differences when PV is legislated as a renewable and energy storage is not
+Align tariffs between utilities/ISOs to overcome retail versus wholesale participation issues for behind-the-meter storage
+Determine if ANSI can certify meters internal to other equipment, such as inverters, chargers, etc.
+Understand gaps in standards that would need to be filled to enable integrated revenue-grade metering and communication to those meters. Does ANSI have a relevant standard for "revenue-grade DC metering"? How should conversion losses in a hybrid inverter be accounted for?
+Lack of effective pricing mechanisms to monetize values of battery storage
+
+
+-Energy Storage Services/Value:
+Generation:
+	Resource Adequacy
+	Energy time-shift/arbitrage
+	Ancillary Services
+Transmission:
+	Investment Deferral
+	Congestion Relief
+Distribution:
+	Peak Load management
+	Loss Reduction
+	Voltage Control
+Customer:
+	Demand Charge Reduction/arbitrage
+	Backup Power
+	Solar Self-Consumption
+
+*-Case Study Battery Storage Multi-Use Application (CEC GFO 16-309):
+
+Storage Characteristics:
+	Front of Meter
+	Resilience (backup power)
+	Installed on feeder with high renewables penetration
+Tech Specs:
+	Feeder name = SONOMA 1104
+	Feeder number = 042721104
+	Nominal Circuit Voltage (kV) = 12kV
+	Circuit Capacity (MW) = 12.19
+	Circuit Projected Peak Load (MW) = 6.59
+	Substation Bank = 1
+	Substation Bank Capacity (MW) = 29.700001
+	Substation Bank Peak Load (MW) = 21.860001
+	Existing Distributed Generation (MW) = 1.58
+	Queued Distributed Generation (MW) = 0.12
+	Total Distributed Generation (MW) = 1.7
+	Total Customers = 3261
+	Residential Customers = 2938
+	Commercial Customers = 211
+	Industrial Customers = 24
+	Agricultural Customers = 72
+	Other Customers = 16
+*Received total of 19 5-day delays
+
+Failed 15% screen, passed supplemental but require SCADA Recloser FLISR (Fault Location Isolation Service Restoration), this means that project is being proposed on automation feeder (project can be automatically switched to alternate feeder) even though there is only one POI and feeder chosen. Because of this issue, a SCADA recloser required to ensure PG&E operations have ability to remotely disconnect project
+
+No metering regulations exist for billing of auxiliary loads
+
+Total Project Cost = $194,100
+*Transformer Cost = $56,000
+SCADA Recloser Cost = $90,000
+
+-SCADA Recloser vs Inverter Control for anti-islanding (legacy. binary output vs new, 4-quadrant variability)
+
+-Inverter Metering Challenges where Utilities Lack Comfort:
+Lack of physical security metering points
+Unfamiliarity with hardware
+Accuracy concerns
+Accounting for conversion losses
+
+-Potential Mitigations:
+ANSI certified inverter meters
+Meters with additional external CT or shunt
+Standards that prevent tampering
+Standards that enable import lockout for batteries coupled to renewables
+Standards that enable export lockout for batteries without renewables
+*Storage projects with <30kW that are paired with charging from on-site renewables must be able to provide data in even of audit using metering
+-------------------------------------
+NREL: A Guide to Updating Interconnection Rules and Incorporating IEEE Standard 1547 (2021)
+
+-Authorities Governing Interconnection Requirements (AGIRs): Entity that has the authority to set the interconnection requirements used in a local 
+territory, are conveners of interconnection working group
+*Define use cases, select inverter categories for functionality (performance categories), set timelines, and update other relevant codes or rules
+
+-Regional reliability coordinator (RRC): At the transmission and bulk power levels, the RRC is the entity that maintains the real-time operating reliability of the BPS within their reliability coordinator area
+
+-Municipal electric utility operating models:
+Operate as city departments (e.g., Los Angeles Department of Water and Power) 
+Report to city council (e.g., Colorado Springs, Colorado) 
+Operate as an independent city agency (e.g., Knoxville, Tennessee) 
+City-owned corporation 
+Municipal utility district (e.g., Sacramento Municipal Utility District)
+Joint powers agency 
+
+-Technical Drivers to Interconnection Rule changes:
+Improvements to DER hosting capacity
+Improvements to DER generation and status (more penetration requires collaboration with BPS)
+Updates to external technical standards or best practices
+Considerations for DER impacts on BPS reliability
+Adding synchronous condensers to provide reactive power for voltage support
+Adding fast frequency response contingency resources
+Developing methods to use inverter based DERs for frequency support
+Evaluating voltage-reactive power optimization to improve distribution circuit hosting capacity
+
+-Market Drivers to Interconnection Rule changes:
+Declining costs of DER technologies
+Improved resilience
+Customer environmental consciousness
+Evolving ownership models
+*The fundamental operating mechanism involves a customer who hosts a distributed energy system (usually a PV system) on their premises but does not own 
+the installed system; the system is financed, installed, and initially owned by a nonutility third party (the customer may obtain ownership of the system at the end of the lease term)
+Equity in energy (low income households)
+
+-Energy Policy Driver to Interconnection Rule changes:
+National legislation
+State policy (Renewable Portfolio Standards)*CA 60% by 2030, AZ 15% by 2025, VA 100% by 2050
+Local policy, legislation, and decisions
+
+-Common interconnection process:
+Phase 1: Project initiation/interconnection application 
+Phase 2: Interconnection screening/study 
+Phase 3: Construction 
+Phase 4: Testing and inspection 
+Phase 5: Interconnection and system energization
+*Audit diagram of interconnection phases with 5 day delays (for corrections and signing) and timelines
+
+-Because purely intrastate distribution grids are generally not considered to be included in “interstate commerce,” FERC’s standards generally do not apply to distribution-level interconnection, which is regulated by the public service commission
+*Many states have used FERCs standards as guide for their own rules at distribution level
+
+-Key changes to FERC standards:
+Provision of a pre-application report for the interconnecting customer 
+Revision of the 2-MW threshold for qualification in the fast-track process
+Revision of customer options for supplemental review
+Inclusion of energy storage devices as part of DERs interconnecting to the grid 
+Revision of the SGIP Facilities Study Agreement
+
+*-Injecting reactive power serves to increase the local voltage, whereas absorbing reactive power decreases the local voltage
+
+*-Voltage regulation modes (IEEE 1547):
+Constant power factor mode: 
+	In this mode, the DER operates at a constant power factor, modulating reactive power to hold the ratio of active and reactive power constant as 	active power changes. This mode, at unity power, is the default factory-setting mode. 
+Voltage-reactive power mode (volt-volt ampere reactive, or volt-VAR):
+	In this mode, the DER actively controls its reactive power output as a function of voltage, which typically acts to push the local voltage back 	toward nominal. This mode is designed so that the DER supplies or absorbs reactive power (e.g., VAR) only when needed to mitigate voltage 	deviations.
+Active power-reactive power mode (watt-VAR): 
+	In this mode, the DER actively controls its reactive power output as a function of the active power output. 
+Constant reactive power mode: 
+	In this mode, the DER maintains a constant reactive power output. 
+Voltage-active power mode (volt-watt): 
+	In this mode, the DER actively limits its active power as a function of the voltage. This mode can be used to reduce the prevalence of very high 	voltages and could be enabled in conjunction with other modes, such as volt var mode.
+
+*-In the new standard, voltage regulation is disabled by default; therefore, states and utilities will need to determine if and when voltage regulation functions should be turned on, which function should be used, which settings should be used, and how enabling these functions will interact with interconnection rules
+
+-Facility Island: Serves single customer/set of customers (one DER unit active)
+
+-Circuit Island: Serves many customers in area power system
+
+-Minnesota first state to incoroporate latest updates to IEEE 1547-2018
+
+-Turn stakeholder goals and primary dirvers into KPI to evaluate efficiency of interconnection rule/procedure, compary to historical expected values
+
+-Weight changes to screening processes that can be too in depth or long
+-------------------------------------
+Factor This: Group studies can solve some, not all, interconnection headaches, study finds
+
+-Group studies (clusters) may have more limited value where DER penetration and upgrade needs are already high
+
+-Distribution-level interconnection studies are typically grouped by their expected timelines or by geographic proximity and shared infrastructure. Some states follow a fixed schedule of once or twice per year, while others take an as-needed approach to triggers or conditions. California combines the two, evaluating groups every six months or as they come together, allowing for some flexibility
+-------------------------------------
+Utility Dive: ‘Interconnection processes must evolve’ to handle DER influx: DOE (2025)
+
+-From 2010 and 2023, the number of U.S. residential rooftop solar PV systems rose from 89,000 to 4.7 million as the capacity of community solar installations grew from 1 GW to 7 GW, according to the i2X road map
+
+-i2X road map defines DER as meeting 3 criteria:
+Interconnected to distribution/subsystem  not under FERC jurisdiction
+Small behind the meter (kW scale) to larger, front of meter systems <80MW
+Tech subject to interconnection study (wind, solar, small hydro, storage), but not generally for demand response or EVs
+
+-i2X 4 categories for enhancing interconnection studies:
+More transparent data sharing  and better automation (host capacity maps provided)
+Streamlining process and reduce bottlenecks (upgrade grid instead of paying for curtailment due to congestion)
+Promote economic efficiency and reduce rates (standard interconnection timelines that are enforced, reform 'cost-causer pays' model)
+Address performance of inverter-based DER to maintain/improve grid reliability/security
+
+-i2X 5 targets for DER interconnection reform:
+Shorter times
+Higher interconnection completion rates
+Better availability data
+No bulk grid disturbance events due to inaccurate DER modeling
+Fast service restorations after outages
+
+-Goals by 2030:
+Median interconnection times of <1 day , Completion rate 99%< for systems <50kW
+Median interconnection times of <75 days, completion rate 90%< for systems 50kW<5MW
+Median interconnection times of <140 days, completion rate 85%< for systems 5MW<
+25% reduction in average outage duration
+Public, detailed, and current queue data
+-------------------------------------

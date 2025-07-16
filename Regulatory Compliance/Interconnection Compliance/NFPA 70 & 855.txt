@@ -1,0 +1,48 @@
+NFPA 70 & 855 (IBC 3111 - Building code for PV, loads on roof and stuff)
+
+NFPA 70
+Installing and maintaining electrical equip, safeguards against electrical hazards
+
+-ANSI approved it as national standard
+
+-Recent revision (2017)Permanent label to equip rated 1,200A<
+
+-Core install and removal reqs for:
+Electrical conductors, raceways, and equip
+Installations for utilities
+Signaling and comms conductors, raceways
+Optical fiber cables and raceways
+Conductors and equip. that connect to electrical supply
+Circuit protection
+Wiring methods & materials
+High/low voltage rules
+Branch circuit reqs
+Conduit cable protection
+Actual vs max current ratings
+Temp ratings for wire/cables
+
+-NFPA 70E (safety, inspections)
+-NFPA 70B (industry safety at workplace)
+
+NFPA 855
+Standard for installation of stationary energy storage systems
+
+-Standard, not a code
+*enforced NFPA 1 (fire code)
+
+-Reqs for max energy between units and spacing:
+	Hazard mitigation analysis
+	Emergency response plan
+	Details of all safety systems
+	Results of fire and explosion 	(UL9540A) or equivalent
+-Best practices for preventing explosions and containing fires
+
+-Explosion control options:
+Deflagration management using blast panels
+Explosion prevention using exhaust ventilation (NFPA 69)
+*cannot combine deflagration and fire suppression
+
+-3 ft spacing between units
+
+-Individual Energy storage units shall have max stored energy of 20 kWh
+*up to 40 kWh within a storage or utility space inside home, outdoors can be up to 80kWh

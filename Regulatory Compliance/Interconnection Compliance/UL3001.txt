@@ -1,0 +1,54 @@
+UL3001 (IEEE1547)
+(Sep 6, 2024 version)*5 revisions
+DER and Storage Systems
+
+Covers DER containing multiple DER units and equip. that provides electrical energy to loads within DER system and EPS. Standard evals impact on the risk of fire/shock.
+
+-DER may be stand-alone or connected to EPS with islanding capability
+
+-Area EPS interaction:
+Inverters, converters, generators or storage or interconnection system equip. (ISE) complies with UL1741 SB
+
+-Transition Modes:
+DER must be able to transition between interactive and islanding mode and comply with IEEE2030.7
+*DER without dispatch function are not required to balance generation and load prior to transition
+
+-Power control systems comply to UL3141
+
+-DER shall prevent backfeeding power to rotating generators through:
+Reverse power relay 
+Power control system per UL3141
+Another method
+
+-Disconnection means/deenergizing circuits shall open each ungrounded conductor of supply circuit. When handle of disconnecting means is operated vertically rather than rotationally/horizontally, up=on
+
+-Steady-state conditions during tests happen when values are +_5% of measured value for 3 consecutive samples with interval between samples 1s<10s
+
+-Steady Steate DER voltage RMS AC voltage is measure after any transient effects due to load application removal have ceased
+
+-Voltage compliance is verified by measuring AC voltage with the DER supplying a resistive load under two conditions:
+No load
+Resistive load equal to lower of combined max continuous power rating for all DER nampeplate rating
+
+-DER RMS voltage shall be 88%<110% of rated nominal. At end of test , a resistive load of 90% max continuous power rating shall eb applied and the system allowed to reach steady state. Load will be increased in increments of 5% until DER shuts down or load sheds
+
+-Transient DER voltage compliance verified by measuring instant AC voltage at certain points after following step changes (IEEE1547) repeated 3 times:
+Lower of combined mx cont. power rating for all DER/DER nameplate and no load(zero power)
+Zero power to the lower of combined max cont. power rating
+
+-Steady state frequency regulation range 56.5Hz<62Hz for AC stand-alone/islands DER
+
+-For DER with inverters, compliance verified by measuring AC output frequency under following conditions under min. and max. rated DC input:
+Inverter supplying no load
+Inverter supplying resistive load equal to inverter's max continuous output power
+
+-For DER employing electrical sources other than inverters, compliance verified by checking AC output frequency while supplying no load and a resistive load equal to max. continuous output power:
+DER energy sources with inverters individually supplied with respective min/max input
+Other DER sources with variable input individually supplied with respective min/max input
+
+-DER system voltage distortion during grid forming mode:
+Total RMS of harmonic voltages (excluding fundamental) shall not exceed 10% of fundamental RMS output voltage rating
+RMS voltage in any single harmonic shall not exceed 6% of nominal fund. RMS output voltage rating
+Sum of harmonics n=2 and n=40 shall be measured as percentage of fundamental frequency for total RMS measurement
+*Measurements to be made with DER delivering 5% or the lowest continuous power available, 50% and 100% of its rating to a resistive load.
+

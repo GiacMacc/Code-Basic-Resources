@@ -1,0 +1,66 @@
+Residential solar Interconnections (Tesla Solar)
+
+-125% rule (continuous load rule): Used to calculate backfeed of solar power into busbar. PV output should only use up 80% of breakers amp rating
+-120% rule: NEC allows for sum of main breaker and solar back-feed breaker to be up to 120% of panels busbar rating
+
+Panel and meter Configurations:
+
+-Separated Meter (20% panel rating>=125% total inverter output):
+Meter physically separated from main breaker, exposing conductors on line side to be accessed
+Easiest interconnection option: Line tap 
+Medium interconnection option: Backfeed breaker on opposite end
+Hardest interconnection Option: Downsize main & backfeed breaker
+
+-Meter Main Combo - No Feed Through Panel (20% panel rating>=125% total inverter output):
+Have main breaker directly connected into the meter base, no accessible side conductors
+Easiest interconnection option: Backfeed breaker
+Hardest interconnection Option: Downsize main & backfeed breaker
+
+-Meter Main Combo - Feed Through MLO Panel (120% rule does not apply):
+In some meter main configs, feed through lugs to a main lug only (MLO) panel which makes things interesting. Lack of overcurrent protection from feed through lug  to feed trhough panel means that this extends busbar into the feed trhough panel to have an MLO panel at end of it. 120% rule would only apply if breaker is connected to end of feed through panel busbar.
+Easiest interconnection option: Backfeed Breaker on opposite end
+Medium interconnection option: Downsize main & load tap
+Hardest interconnection Option: Downsize main & backfeed breaker
+
+-Meter Main Combo - Feed Through Panel w/ Main Breaker (20% panel rating>=125% total inverter output):
+Feed through lugs in the meter main may go to a main breaker panel. Main breaker in feed through panel protects panel from overload to be trated like a meter-main panel with no feed through panel and 120% rule can be used for breaker added at end
+Easiest interconnection option: Load tap 
+Medium interconnection option: Backfeed breaker on opposite end
+Hardest interconnection Option: Downsize main & backfeed breaker
+
+Interconnections (NEC 705.12, 705.31):
+
+-Line Side Tap:
+Line or supply side tap refers to connection between meter and main breaker. This is preferred for solar interconnections as it is the most straight forward and requires the least amount of calculations. Some jurisdictions/utilities do not allow this method even if permitted by code.
+
+-Backfeed Breaker:
+A backfeed breaker can be used to connect a solar system to load-side service. Most common method for residential installs is by connecting it to the end of a busbar using 120% rule.
+
+-Method 1: Backfeed breaker at end of busbar (120% rule)
+To comply with 120% rule, breaker must be connected at end of busbar (opposite to main braker). This allows 120% of busbar rating to be used for calculations. Reasoning behind this is that some current would be used by the loads between the tow sources (utility & inverter) so the full potential current of the two sources are never combines.
+
+e.g. A 200A busbar would be considered 240A rating, where an inverter output up to 40A (125% of rated output current) can be added to panel
+
+-Method 2: Backfeed breaker at any location on busbar
+This can be used only if busbar has a higher rating than the main breaker 9done by downsizing main breaker). The sum of sources (utility + inverter) is less than the busbar rating so no possibility of overload
+
+-Method 3: Backfeed breaker at any location on busbar (Sum rule)
+Sum of all breakers connected to panel is less than panel rating. Idea is that even if all breakers connected (loads & sources) reach max current, there is no potential for overload since sum <= panel rating. This method is code complicated and not recommended since it assumes the sum of beakers will never exceed panel rating (if homeowner adds more loads to panel there is risk of overload).
+
+-Downsize Main & Backfeed Breaker:
+Downsizing main breaker can 'free up' capacity on busbar. Downsizing in combination with 120% rule can be used to connect larger PV systems.
+
+e.g. A 200A rated bus with 150A main breaker has 50A available capacity for another source to be connected. An inverter with 50A output (125% rated output) can be placed anywhere on busbar since sum of both sources is 200A (rating of busbar), so no overload potential.
+
+-Load Tap:
+Used almost exclusively for meter-main panels. The conductors going through feed-through panel are easily accessible and taps can be similar to line tap. Difference is that the connection is made after the main breaker so different rules apply. In line tap, only the size of the wires being tapped are considered with no regard to what is downstream since main breaker protects that. But in Load Tap, inverter output is added to potential utility current and downstream equip. may not be protected.
+
+*When main breaker is added to feed through panel, the meter-main panel is treated as if no feed through panel is connected. Tapping at the feed through conductors would be considered the end of the bus and 120% rule can be applied.
+
+-Downsize Main & Load Tap:
+One way of safely making a load tap is by downsizing main breaker to limit potential current to equipment downstream.
+
+-No Available Breaker Space:
+When backfeed breaker option is available but there is no breaker space, a sub panel can be added. This is useful in jurisdictions that dont allow line/load taps.
+
+To add subpanel, a breaker at end of busbar would be removed and a new breaker would be added to feed the subpanel. The load removed to make space for new breaker is relocated to new subpanel with backfeed breaker used to interconnect to PV. Sum rule can be used to limit size of subpanel.

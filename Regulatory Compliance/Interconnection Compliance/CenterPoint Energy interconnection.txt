@@ -1,0 +1,137 @@
+CenterPoint Energy (Southern Indiana Gas & Electric Company d/b/a CenterPointEnergy Indiana South (SIGE)) interconnection:
+
+-Connection reqs in two docs:
+VEC-007 = Transmission reqs 
+VEC-006 = Interconnection guides for generation 
+	Excess Distributed Generation rider (NEM for qualified customers)
+
+-Frontier Utilities (Saver Plus 12) cheapest REP for Galveston
+
+-CenterPoint Energy is 'pole and wires' utility (transmission owner), and do not sell electricity directly to end user but deliver electricity on behalf of REP
+
+-CenterPoint Energy does not offer energy metering (NEM)*doesn't buy your excess
+
+-Buy back program is with REP
+
+Register and complete application through portal:
+
+Application Materials:
+
+-One-line diagram (breakers, inverter, panels, CenterPoint Energy meter)
+-Layout diagram of site
+-Make and model of approved inverters/solar panels (OEM)
+-Installation inspection photos
+-Interconnection study not typically required for residential systems <25kW AC (Steady state, short circuit, dynamics, etc.)
+-Permit required if within city limits
+-CenterPoint Energy visual inspection will not process until system passes city inspection
+-Interconnection agreement sent to REP before operating
+-Permission to Operate (PTO) granted
+-Bidirectional meter programmed to track power consumed (kWh) and excess generated (kWg) within 24 hours
+*values sent to retail electric provider (REP) and may take 3 billing cycles to reflect in energy bill
+-Document Signing on email
+
+-The AC disconnect switch should be a lockable external handle, visible disconnect switch installed within 10 feet of CenterPoint Energy's meter
+
+Pre-Interconnection Study Fee for SOLAR:
+
+-Applies to larger systems rather than residential
+
+-Design & Construction length : 0-2 months
+
+-Non-Exporting:
+	Pre-Certified, not on network
+	0-10kW = $0 (residential)
+	10-500kW = $0
+	500-2,000kW = $3,273
+	2000-10,000kW = $3,520
+	
+	Non pre-certified, not on network
+	0-10kW = $312
+	10-500kW = $581
+	500-2,000kW = $3,947
+	2000-10,000kW = $4,194
+
+	Pre-Certified, on network
+	0-10kW = $272
+	10-500kW = $1,075
+	500-2,000kW = $6,269
+	2000-10,000kW = $6,516
+
+	Non pre-certified, on network
+	0-10kW = $525
+	10-500kW = $1,150
+	500-2,000kW = $6,943
+	2000-10,000kW = $7,190
+
+-Exporting
+	Pre-Certified, not on network
+	0-10kW = $75
+	10-500kW = $570
+	500-2,000kW = $3,520
+	2000-10,000kW = $3,767
+	
+	Non pre-certified, not on network
+	0-10kW = $312
+	10-500kW = $792
+	500-2,000kW = $4,194
+	2000-10,000kW = $4,441
+
+	Pre-Certified, on network
+	0-10kW = $272
+	10-500kW = $1,286
+	500-2,000kW = $7,175
+	2000-10,000kW = $7,422
+
+	Non pre-certified, on network
+	0-10kW = $495
+	10-500kW = $1,645
+	500-2,000kW = $7,849
+	2000-10,000kW = $8,096
+
+-1MW-10MW DER:
+For unregistered and registered with ERCOT
+
+Email for initial screening discussion
+One-on-one virtual screen discussion to review application and Pre-Screen application
+Pre-screen study
+Send paper application copy, DER Design Specs, Primary Service Specs & Study fees
+*Contact Service Center of MUG Engineering for OH/Underground Primary Service
+After receiving study fees, CenterPoint will perform System Impact Study (2-4 mo.) and provide Construction Cost Estimate
+Sing Interconnection Agreement with receipt of construction estimate payment to start construction (12-18 mo.)
+Once site activity complete, customer schedules witness testing (4 weeks)
+CenterPoint issues Permission to Operate Letter after successfully commissioning site
+
+-Data needed for studies:
+Max continuous AC output of generator or inverter
+AC terminal voltage of generator of inverter
+Positive sequence impedance of transformers and conductors
+Continuous current ratings of transformers and conductors
+Transformers tap settings (center-tapped, more taps)
+Power factor at point of interconnections
+Station service load for synchornou machines
+Reactive capability of any power correction devices (capacitor banks)
+Voltage control settings
+Other data
+
+-Components modeled for dynamics, transient stability:
+Generator
+Inverter
+Exciter
+Governor
+Power system stabilizer
+Compensator
+Outer loop controller
+Inverter controller
+Under/over voltage and frequency relays
+Station service loads
+Power factor correction devices
+Others
+
+-Reliability concerns:
+Locations of interconnected generation on EPS, if location is at transmission level then interruptions have greater impact
+Generator size vs interconnected generator load + EPS line load
+
+-Quality Concerns:
+Lagging or leading power factor, capacitors may be used to correct lagging
+Harmonic currents that occur at freq. other than 60Hz and can cause failure of protective relays, comms, and electronics
+Voltage flicker with sudden changes of current flow in circuit

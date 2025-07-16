@@ -1,0 +1,16 @@
+NEC 705
+
+Covers power source that is operating in parallel (interconnected) with grid typically (primary source)
+
+*-With supply side connection, disconnect must be on service side of fuses
+
+*-Supply side connections rated 1,000A< must have ground fault protection
+
+*-For load side connections, each source interconnection must have dedicated circuit breaker or fusible disconnect means
+
+-Permanent plaque or directory describing power sources on premises
+
+-Installation requirement vary depending on point of connection (POC)
+
+9540 A should be single cell failure test (UL1973), fire official isn't getting gas composition etc., full consumption destructive burn test should be incorporated not thermal runaway, single cell should be enough for residential (test is for OEM)
+

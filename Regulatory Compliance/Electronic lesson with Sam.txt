@@ -1,0 +1,115 @@
+Look at lectures 2, 18, 19 especially
+*Lenz law: force of current ( Back EMF)
+*Wind turbines are not synchronized to 60 hz like most primary movers
+*Reactive power is when current and voltage are 90 degrees out of phase (leading=positive reactive power, lagging=negative reactive power <-idk if flipped)
+
+-Delta vs Wye three phase systems (vs single phase)
+Power consistent with 3 phase load
+3 phases gives rotating magnetic field for primary movers
+3 phases transmits more power for given number of conductors
+Current in neutral can cancel out, 3x power in 3 phase vs 1 phase (2 wire)
+
+main differences are voltage and current levels between wye and delta configs
+
+neutral needed for three phases if current is not equal (typical for utility since loads are different like amount of houses etc.)
+
+wye config has equal root means square for voltage (average), measures line to ground, lower voltage higher current, used for input side of transformer (primary side), needs return path, voltage is lower than delta so need more current for same power
+star point (center of config)*if it has nonzero voltage that means phase imbalance
+
+delta measures line to line, current on any line will be the difference between the current in two of the lines, higher voltage, used on secondary side of transformer, needs no return path
+
+7.2 V line to neutral/ 12.47 kv Line to line
+
+-Phase imbalance (signs, importance)
+
+Neutral used to mitigate phase imbalance (measuring current on neutral means phase imbalance)
+
+Phase imbalance leads to inefficiency
+
+Balanced phases means they are equal in RMS magnitude
+
+Bigger load causes voltage to drop on one phase compared to other phases->leading to imbalance
+
+-Impedance (ohms) vs Admittance (1/impedance) (siemens unit)
+
+Impedance =R+JX (x=reactance) *reciprocal is conductance, *reciprocal of reactance is susceptance)
+
+-X/R ration for overhead distribution
+
+DC (only one kind of power)
+AC (multiple types of power like reactance, active, apparent, total)
+
+j=sqrt(-1)
+
+related to power factor (how real is the power or how much of the power is actually being consumed by the load)
+
+Reactive power (VAR) not actually used (does no work) just goes back and forth between source and the load. occurs when voltage and current are out of phase.
+
+phase offset determines what portion of the power is real vs not real (lower phase offset means more real power)
+
+resistor draws current based on amount of current (more current, draws more)
+
+inductor stores energy in magnetic field and releases does not get used, called reactive power
+
+Unity=power factor=1
+
+-types of energy flow (induction vs conduction) effect on efficiency in circuit
+
+-Inductor vs capacitor uses in circuit/utility scale
+
+houses close to 1 power factor
+
+motor is an inductive source, large factories are a big inductive source due to generators and cause power factor to go down.
+
+leading = current is leading the voltage (capacitors connectors to grid)
+
+inductors connectors to grid= current will be behind voltage (lagging) * typical for power grid
+
+capacitors used to cancel out inductive reactance and approach unity
+
+
+-Power quality (importance in a circuit)
+
+-Zero sequence continuity, impedance
+Order of the phases
+
+-point of common coupling vs point of connection
+
+-Power back feeding causes and effects
+
+-Fault currents (most common causes in PV)
+
+-Neutral vs ground wire uses in power distribution
+
+-Center tap transformers 
+
+-Main causes of transient voltage/current or instability
+
+-Most important aspects of one line diagrams
+
+-3V0 (what apparatus controls it)
+
+-Voltage flicker, load tap changer, tap set point (used to manage voltage, center tap gives half the voltage of full coil), direct transfer Trip
+
+-Ride through (voltage/frequency)
+transfer switches
+creates system that maintains power in event of siwtch between two sources of power or loss of power like a fault, allows to quickly siwtch to a backup source
+
+-Apparent power (p.u. unit), reactive power, Active power, power injections (mechanism)
+
+-VAR (what is measures, how its measured, what to look for when checking 
+stability) P/Q
+
+-Capacity Factor
+
+-Oscillatory behavior (Inverter hunting) what is this
+
+-Harmonics in inverters (what is this, relevance to utility circuit)
+
+-Power flow model
+
+-D-Statcom compensators vs SVC (Static VAR compensator)
+
+-Skinn effect (how big of a concern is this)
+
+-Cogeneration (heat and power from DER)

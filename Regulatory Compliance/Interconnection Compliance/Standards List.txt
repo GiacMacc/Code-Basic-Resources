@@ -1,0 +1,61 @@
+Distribution and Electrical Compliance Standards:
+
+IEEE 1547 - Standard for Interconnection and Interoperability of Distributed Energy Resources with Associated Electric Power Systems Interfaces
+
+IEEE2800 - Standard for Interconnection and Interoperability of Inverter-Based Resources (IBRs) Interconnecting with Associated Transmission Electric Power Systems
+
+IEEE2030 (SEP2.0) - Guide for Smart Grid Interoperability of Energy Technology and Information Technology Operation with the Electric Power System (EPS), End-Use 
+
+IEEE 519 - voltage and current harmonics and distortions for interconnection, Applications, and Loads
+
+UL1741 - safety standard for inverter and power converter equipment used in renewable energy systems, including solar, wind, and fuel cell systems
+
+UL3141 - UL LLC Outline of Investigation for Power Control Systems
+
+UL3741 - Standard for Photovoltaic Hazard Control
+
+UL1699B - Standard for Photovoltaic DC Arc-Fault Circuit Protection
+
+UL2594 - Electric Vehicle Supply Equipment
+
+UL2522 - Safety for EV & connectors (adapters)
+
+UL9540 - Energy Storage Systems and Equipment
+
+UL9741 - Electric Vehicle Power Export Equipment (EVPE)
+
+UL3001 - Distributed Energy Generation and Storage Systems
+
+UL62109-1 - Safety of Power Converters for Use in Photovoltaic Power Systems
+
+UL1973 - ANSI/CAN/UL Batteries for Use in Stationary and Motive Auxiliary Power Applications (safety, durability, performance)
+
+NFPA 70/CSA C22.1 - Benchmark for safe electrical design, installation, and inspection to protect people and property from electrical hazards.
+
+NFPA 855 - Standard for the Installation of Stationary Energy Storage Systems
+
+NEC 625 - requirements for the electrical conductors and equipment used to connect an electric vehicle to a power source, including for charging, power export, or bidirectional current flow
+
+NEC 706 - Applies to permanently installed energy storage systems (ESS) such as this battery room operating at over 50 volts ac or 60 volts dc
+
+NEC 690 -  Interactive and stand-alone PV systems, and the components like arrays, inverters, and controllers Includes provisions for qualified personnel, equipment listing, and maximum system voltage limits
+
+NEC 705 - requirements for the interconnection of electric power sources that operate in parallel with a primary source
+
+NEC 710 - Stand-Alone Energy Systems
+
+NEC 691 - Large PV
+
+RS401,403 - Roof mounted PV materials
+
+IEC 61851 -  International standard for electric vehicle (EV) conductive charging systems, covering both AC and DC charging
+
+IEC 61850 - Defines communication protocols for intelligent electronic devices (IEDs) in electrical substations, enabling interoperability and communication between devices from different manufacturers
+
+IEC/UL62109 - Safety of power converters for use in photovoltaic power systems
+
+IEC 61800 - Adjustable speed electrical power drive systems. Rating specifications for low voltage adjustable speed DC power drive systems
+
+IBC 3111 - Building code for PV
+
+ISO 15118 - International standard that defines the communication protocol between electric vehicles (EVs) and charging stations

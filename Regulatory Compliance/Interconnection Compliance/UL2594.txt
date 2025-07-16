@@ -1,0 +1,278 @@
+UL2594 (UL9741)
+
+Standard covers conductive EV supply equipment with primary voltage source voltage of <600V AC and frequency of 60Hz intended to provide AC power to an electric vehicle with an on-board charging unit. This standard covers electric vehicle supply equipment intended for use where ventilation is not required.
+
+Low-Voltage (LVLE) Circuit = AC current <30Vrms (42.4 peak) or 60Vdc where there is no automatic reclosing, trip-free, not interchangeable with different rating device (V-2 min.)
+Comparative Tracking Index (CTI) rating
+Hot Wire Ignition (HWI) rating
+High-current arc resistance to ignition (HAI) rating
+Relative Thermal Index (RTI)
+
+-Insulations parameters:
+Hot Wire Ignition
+High-current arc ignition
+High-Voltage arc ignition
+Dielectric strength
+Insulation resistance
+Heat resistance
+
+-EVSE covered (operating temps -22F-104F):
+Portable EV Cord sets: <125Vac, <20A, indoor/outdoor
+Stationary EV Cord sets: <125Vac, <20A, indoor/outdoor
+Stationary EV Cord sets: <250Vac, <40A, indoor
+Movable EV Charging Station: <125Vac, indoor/outdoor
+Movable EV Charging Station: <600Vac, <40A, indoor
+Permanent EV Charging Station: <600Vac, indoor/outdoor
+Permanent EV Power Outlet: <600Vac, indoor/outdoor
+*includes international parameters
+
+-Insulation Classes:
+Basic
+Supplementary: Additional to basic
+Double: two independent insulators, each capable of acting as sole insulator
+Reinforced: single insulation system that provides same protection as double insulation system (doesn't have to be homogeneous piece)
+
+-EV cord construction (evaluated on expected operating conditions -22F-104F):
+Attachment plug
+Flexible power cord
+Personnel protection system with enclosures
+EV cable
+Vehicle connector
+*Flexible power cord not provided for direct plug-in EV
+*Frame/chassis of device cannot carry current
+
+-EV power outlets (operating temps -22F-104F):
+Shall have a rated ground terminal, and be non-locking
+
+-EVSE that can arc or spark shall have components located <18in above floor
+
+-Magnesium shall not be used as enclosure material (must be Al, stainless, etc.)
+
+-Materials for enclosures and safety per UL9540 (Thickness of cast metal 3.2mm - 6.4mm), must have torsional rigidity to resist bending moments applied by enclosure surface
+
+-Construction does NOT have a supporting frame when:
+A single sheet with single formed flanges/formed edges
+A single sheet that is corrugated or ribbed
+An enclosure formed from sheet metal
+An enclosure surface loosely attached to a frame (e.g. spring clips)
+
+-Polymeric material enclosure with any single unbroken section of surface area 10sqft< or single linear dimension 6ft< shall have flame-spread rating of 200 or less
+*if polymer encloses live parts, thickness must be 0.028in<
+*if polymeric material is in an enclosure that is separated by 0.8mm< of air for uninsulated live parts 0.5in< from arcing parts, need not comply
+
+-Enclosures regardless of material shall not be provided with ventilation openings unless Type 1 or Type 2 enclosures
+
+-Ventilation openings on top of unit over an uninsulated live part with risk of shock shall not exceed 4.8mm unless risk of falling object
+*4.8mm limit does not apply to openings located 6ft above floor
+*Slanted vs vertical openings
+
+-Ventilation openings on the side of enclosure shall comply with following:
+<4.8mm in any dimension
+<1mm in width regardless of length
+Shall be provided by louvers shaped to deflect outwards an external vertically falling object
+Shall be located so that object upon entering enclosure is unlikely to fall on uninsulated live parts rising fire or shock
+*where portion on the side of enclosure falls within area traced by 5 degree angle, limits for bottom ventilation openings apply to that portion
+
+-Bottom ventilation openings:
+Requires complete noncombustible bottom (baffle plates to catch falling materials)
+Perforated metal plate (galvanized steel or stainless) or 2x2 mesh per mm(14x14 mess per in) constructed of wire (diam. 0.4mm<)
+Products intended to be mounted on noncombustible surface, where the surface complete the enclosure, need not comply
+
+-Openings for wire (Knockout and hole sizes/dimensions for bushings table):
+For thru tapped holes on enclosure or wall, there shall be 3<5 threads in the metal. When not thru-tapped, 3.5< threads
+A knockout in a sheet-metal enclosure shall be secured and removable without deforming enclosure (no spacing between uninsulated part and bushing)
+No knockouts for Type 12 enclosure
+
+-Drainage:
+Type 2 and 3R enclosures shall have provisions for drainage (3.2mm<6.4mm diam. unless baffled or drainage fitting provided). Removable plug needed
+
+-Mounting (max number of holes for mounting 4-8 for enclosure surface area 32 sqin - 1,000+ sqin):
+Mounting may pass through enclosure wall into enclosure cavity if attached to intermediate bracket for enclosure types 3,3S,4,4X,6,6P,12,12K,13
+
+-Glass used to cover openings shall be 1.6-3.2mm thick, non-shattering
+
+-Environmental reqs:
+Enclosures (metallic & non) and coatings shall comply with:
+UV Exposure Test
+Chemical Exposure Test
+Water Exposure Test
+Gasket Test
+
+-Access:
+For opening with minor dimensions 1in> such that wire or part not be contacted by probe (force of 1lb)
+Min. req. distance from opening for part that risks shock is 165mm-762mm
+
+-User shall not have access to any circuits or uninsulated parts the exceed limits for LVLE circuit, if access needed then interlock system is provided to remove hazard
+
+-User shall be protected against electric shock, all accessible circuits have potential to earth <42.4V peak or 60Vdc
+
+-Interupting device (Personnel protection system) shall be located accordingly:
+12in from attachment plug for portable EV Cord sets and movable charging stations
+6ft from attachment plug for stationary EV Cord sets that are wall/ceiling mounted
+*Canada and mexico (6ft all, 12in all)
+
+-Stored energy on capacitors shall disipate <1s per Capacitor Discharge Test 50. If total capacitance is <0.1microF then no test needed
+
+-Field wiring:
+Shall not be smaller than 18AWG (ex. 10AWG lead needed to connect to 6 AWG conductor)
+Shall be 6in< 
+Shall be general building wire or have insulation of 0.8mm< thermoplastic, 0.4mm< rubber + braid for 300V>, or 0.8mm< rubber + braid for 301<600V
+
+-Wiring bend space reqs
+
+-Cord connected devices shall use cord types G,SEO,SO,STO,SJEO,SJO,SJTO, or W
+
+-When interrupting device of personnel protection system is located at attachment plug, cord length shall be 6ft<15ft
+
+-A cord connected device with a 208V single phase rating may used an attachment plug rated to 250V if there is no risk of shock or fire and complies with Leakage Current Test 46, Input Test 48, and Temperature Test 49
+*output value of device shall not exceed its output rating by 10%< while energized from 240V source
+*current rating of attachment plug for AC input shall be 125%< of rated input current from device
+
+-Strain relief (EV Cable Secureness Test 55):
+Knot in power cord is not valid strain relief, must use Push-Back and Pull tests (UL9741)
+Material to form strain relief bushing needs min. flammability rating of HB
+Relative Thermal Index (RTI) of material shall be higher than max temp observed on material during Temperature Test 49
+Strain relief bushing subject to Effects of Cyclic Conditions using Outdoor Use Application conditions and Strain Relief Test 54
+Material subject to Chemical Exposure Tests 
+
+-Bushing must be used for wire through openings (1.6mm< thick), unless opening edges are smooth material
+
+-Product made for direct plug-in shall not have means of connection to AC current source other than the blades provided for plug-in feature
+
+-Max acceptable moment, center of gravity, dimension & weight of device shall be:
+Quotient of WY/Z shall be <48oz
+Quotient of WY/S shall be <48oz
+Product of WX shall be <80ozin
+Weight of device shall be <28oz
+W=weight of device
+Y=Distance
+Z=Lesser of Z1 or Z2
+S=Lesser of S1 or S2
+X=greater of X1 or X2
+*equations above on illustration of plug
+
+-Output cord shall be cut off at enclosure or at strain relief if outside enclousure
+
+-EV cables shall be type EV,EVJ,EVE,EVJE,EVT,EVJT (shall not exced 25fet unless having cable managementso cable does not rest on floor or surface)
+
+-Product shall ground all exposed non-current carrying conductive parts and internal metal parts exposed to contact during servicing
+Dead metal parts like small adhesive attached foil marking, screw, or handle on the exterior of the enclosure and separated from other components need not comply
+Dead part insulated by vulcanized fiber, varnished cloth, phenolic composite, or other moisture resistant materiall o.8mm< thick need not comply
+
+-All non-current carrying conductive parts shall be bonded together and connected to electrical supply equip. grounding meand per Bonding 15. The connection to the electrical supply equip. grounding means is considered a principal equip. ground cunductor pathh and shall not include a trace on printed wiring board
+
+-Equip. grounding shall not contain any splices unless provided with ground monitor
+
+-Equip. groudning conductor shall be green with/without yellow stripes if insulated and no loarger than the circuit conductors
+
+-Sheet metal screw shall not be used to conntect equip grounding conductors to enclosures
+
+-Grounding terminal shall have hexagonal nut and green color, marked with G,GR,GND, Ground, Grounding, etc.
+
+-Bonding shall be by positive means such as clamp,rivet,bolt,screw,weld,solder,brazed joint using materials with melting point 454C<
+Conductors 18-16AWG have connector tab width of 2.8mm<
+Conductors 14AWG have connector tab width of 6.4mm<
+Connector tab thickness 0.8mm<
+
+-For wiring on-board EV, effects of vibes, impact, exposure shall be evaluated for wires <24AWG
+
+-All internal wiring shall be PVS, PTFE, FEP, or neoprene insulated and comply with Vertical Wire Flame test with marking VW-1
+
+-Internal wires shall not be accessible in accordance with Protection of Users-Accessibility & User Servicing 8
+
+-Non-metallic materials used for enclosures shall have the following flammability ratings:
+Portable Equip. = V-1
+Stationary Equip. = V-1
+Movable Equip. = 5V
+Permanent Equip. = 5V
+*Nonmetal internal materials not intended to support live parts shall be rated V-2 min. unless part cannot propagate flame
+
+-Nonmetallic parts outside enclosure are considered decorative, shall be rated HB min.
+
+-Cables entering and exiting enclosure shall be rated FT2 min.
+
+-Printed wiring board materials shall be rated V-2 min., PCB shall be V-1
+
+-Current carrying parts materials comply with UL9741
+
+-Soldered wire has specific turns and angle of connection reqs.
+
+-Quick connect terminal nominal sizes:
+2.8mm
+3.2mm
+4.8mm
+5.2mm
+6.35mm
+
+-Equip. shall be rated for overvoltage category II
+
+-Printer wiring bords shall have comparative tracking index of 100
+
+-Barriers separating wiring of different circuits shall be grounded metal or insulation compliant to Flammability 18 and Insulating Materials 31. Thickness shall be 0.71mm<
+
+-Conductors of different circuits shall be separated by 6.4mm< in the field
+
+-Voltage and current limits for control circuits:
+0-42.4V Peak = 8A
+0-30V DC = 8A
+30-60V DC = 150/Vmax
+
+-Rating for secondary fuse circuit protector (protection devices like circuit breaker, fuse,etc.):
+<20Vrms = <5A overcurrent
+20<60Vrms = 100 overcurrent
+
+-External control circuit from Class 2 trasnformer is not requires to provide overcurrent protection specified
+
+-Primary overcurrent protection for control circuit transformers:
+<2A = 300% overcurrent rating
+2<9A = 167%
+9A< = 125%
+
+-A primary circuit controling inductive load with power factor <75% (like a transformer) shall be rated <2x max load current under normal conditions
+
+-Suppressors shall be housed in a noncombustibel, moisture resistant enclosure. If made of sheet steel, thickness is 0.52mm<
+
+-Branch circuits cannot use supplementary protectors
+
+-Fuses for supplementary overcurrent protection shall be plug or cartridge fuse.
+Plug fuses:Edison base, Type S (need line connection to center contact)*not allowed for circuits 125V< or 125/20V 3-wire
+Cartridge fuses: Class CC,G,H,J,K,RK1,RK5,T
+*Fuses shall be in all underground conductors
+
+-Transformer coil shall be treated with insulating varnish and baked if no inherently moisture resistant. Thermal cutoff shall mitigate risk of fire/shock
+Insulation types between primary and secondary wiring: a,b,c,d,e,f,g,h
+*Spacing and insulation per UL9741
+
+-When environmental tests are required, protection control parts shall be subject to following tests (UL991) with a control:
+Transient Overvoltage
+Ramp Voltage
+Electromagnetic Susceptibility
+Electrostatic Discharge
+Thermal Cycling
+Humidity (88% @ 32 C for 48 hours, then dielectric test)
+Effects of shipping and storage
+
+-Max surface temps:
+Handles/knobs that are grasped = 50C,60C (metal,nonmetal)
+Handles/knobs not for lifting & other contact surfaces = 60C,85C (Metal,nonmetal)
+Surfaces for casual contact, but not required to operate = 70C,95C (Metal,nonmetal)
+
+-Height of Coupling:
+For outdoor use, pedestal mounted devices, coupling device located 24in-4ft above grade
+For indoor use, pedestal mounted devices, coupling device located 18in-4ft above grade
+
+-Performance tests (See UL9741):
+Input test: EVSE shall be connected to variable resistive load to draw max rated output
+Capacitor Discharge Test
+Induced potential test: Primary winding of transformer subjected to alternative potential 2x rated with open winding ends for 7200 cycles or 60s at 120-1000Hz
+EV Cable Secureness test: cable to be cut at right angle but not stripped, incremental 5lb force applied until 35lb< applied to EV cable at point 6in< from cable grip perp. to plan of opening of cable line for 1 minute. Torque (0.41-16.3Nm, 15A-800A rating, 2.38mm-4.76mm max displacement) applied on cable 6in from cable grip for 1 minute in least favorable direction.
+Vehicle Drive Over Test: check for cracking, breaking, deformation of enclosure after crushing force of 100lbf applied by automotive tire inflated to 32psi at speed of 5mph while enclosure is in natural position
+Strength of Terminal Insulating Base and Support
+Impact on Glass Cover: 2.5 ftlb impact by steel sphere
+Current test: bonded conductor shall not open when carrying current 2x the branch circuit protective rating but no less then 40A (0-200A, 2-120mins)
+Limited short circuit: tests for fuse to not open in <12s at 2x rated current
+Eval of reduced spacing on Printed Wiring Boards
+Mounting Means test
+Mold Stress-Relief Distortion
+Water exposure test: Flammability class (unchanged), Tensile strength (50%), Charpy impact (50%) *after immersion 7 days at 70C
+Metallic coating thickness test: use chromic acid, distilled water, sulfuric acid to test cad and zinc plate at temps 70F-90F

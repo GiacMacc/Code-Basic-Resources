@@ -1,0 +1,129 @@
+UL 3141(IEC 60812, IEC 61025, IEC 61508)
+
+Proposed Dec 6, 2024
+Binational standard (US/Canada)
+
+Standard for Power Control Systems. Specific to DER with more grid support function like active/reactive power/currents. Worse-case scenarios are no longer valid with onset of bi-directional EVSE and more DER penetration.
+
+Power Control Systems (PCS) = limits/controls power to stay within defined limits
+RPA = Reference Point of Applicability
+Busbar Overload Control
+Single source vs multisource PCS
+Single source = No control over sources like grid or DER, can only reduce or shed loads via load management to maintain current/power levels in busbars/feeders
+Passive protective devices (OCPD)
+Nominal voltage = 0.88-1.2 pu
+Nominal frequency = 58.8-61.2 Hz
+
+-NFPA 70 established ampacity reqs based on worst-case continuous currents which are not always representative of actual operating conditions for PV & storage systems.
+
+-PCS may be evaluated for power import limiting (PIL) or power export limiting (PEL) functions where the PCS at an external reference point such as point of common coupling with EPS.
+
+-All monitoring circuits shall comply with Control Circuits reqs (UL1741, sec. 31) and treated as Class 1 circuits and be installed per NEC chap.3
+
+-Following conditions of safety analysis are considered minimum:
+PCS current/power overload limits for conductors
+PCS control functions of sources and loads preventing overloads
+Power import and export limiting functions
+Overload prevention priority relative to PIL/PEL functions
+PCS max response time for overload control and import/export max limit functions
+Ability for PCS to enter controlled state (fail safe) when critical comms lost
+
+-Active protective devices to comply with IEC 61508, Safety Integrity Level (SIL) 2, ISO 13849, Performance Level (PL) c, ISO 26262, Automotive Safety Integrity Level (ASIL) C unless manufacturer provides Layer of Protection Analysis
+
+-PCS with active protective devices shall be tested for environmental stresses with Functional Safety Evaluation and Environmental Stress Testing
+
+-PCS Functionalities:
+PIL/PEL designed to provide control of power exchange with area EPS or external RPA like PCC or POC
+Busbar Overload Control (BBOC): Function to provide protection from overload conditions in busbar on panel boards
+Feeder Conductor Overload Control (FCOC): Function designed to limit current/overload protection in feeder conductors due to sources/loads
+Branch Conductor Overload Control (BCOC): A PCS designed to provide current limiting/overload protection on branch conductors between panelboard and sources/loads to prevent overload
+Single Source PCS (SSOC): PCS control function to provide current limiting/overload protection via only load management/load shedding of PCS from single source supply like area EPS
+
+-During tests, measured current/power  of PCS shall be within +_7.5% of PCS control setting
+
+-Normal Operating Tests monitor current flowing in PCS and step changes in load with generation held constant
+
+-Max response time for PIL/PEL shall be <_30s
+
+-Measured time to steady state shall not exceed 50% of max response time of passive protection device
+
+-Step Change in Load Test for Multisource PCS: 
+Sources set to max output rating (must exceed PCS control setting by 110%<, bidirectional source shall be source
+Record state & settings of any grid support function
+Set PCS settings to max of function being evaluated, or 0 for PEL PCS
+Close S1 switch and adjust test load to consume 95%-100% of generating source capability, record steady state current & power
+Open S1 switch and record current/power
+Close s1 switch and record
+Repeat for 3 samples
+Repeat last 4 steps with test load step tuned to 66% and then 33% of source capacity
+Repeat steps with PCS setting set to 50% and 0% of range
+For multiphase repeat steps opening S1 switch on only one phase and again with the phases simultaneously
+
+-Step Change in Generation Test for Multisource PCS
+
+-Normal Operation Tests for Single Source PCS (SSOC)
+Max time to steady state for a single source PCS shall be <30s
+Set AC source to deliver 150%< of the single source PCS max range
+PCS controlled load shall consume current at equal rate to max PCS setting
+Close S1 Switch and adjust test load to draw current at single source PCS setpoint greater 110%<_ of single source PCS
+Open S1 Switch and wait for grid current to reach new steady state
+Close S1 Switch and wait for grid current to reach new steady state
+Repeat steps for 3 samples
+Repeat steps with test load at 33% and 66%
+Single source PCS range shall be evaluated with control setpoint limit adjusted to min. +_10% of range and 50% of full-scale value
+For multiphase units including single phase 3 wire, repeat steps and open S1 switch on one phase and again with both phases simultaneously
+
+-Functional Tests for PEL and PIL (similar procedure as above)
+
+-Dielectric Voltage-Withstand Test after Abnormal Tests (Unit to be placed on soft wood covered by white tissue paper)
+1 = AC power circuit to DC 
+2 = AC and DC circuits to dead metal
+3 = Primary to secondary windings of an isolated transformer
+
+Risk of fire/shock/injury exists when:
+Emission of flame, molten metal, glowing parts through any opening
+Charring, glowing, flaming on support surface, tissue paper/cheesecloth
+Ignition of enclosure
+Creation of an opening in enclosure resulting in accessibility of live parts per UL1741 Uninsulated Live Parts section 11
+Opening of a 3A fuse connected to ground
+*unit must  be connected to ground through 3A fast acting fuse
+*when a reset (shorting, opening of internal fuse) function happens, test continues for 7 hours and until protector is operated for 10 cycles
+
+-Terminology for steady state active power flows between ESS and Area EPS supported by PCS:
+Unrestricted Mode: ESS may import active power from Area EPS while charging and may export active power to Area EPS while discharching
+Export Only Mode: ESS may export active power to the Area EPS during discharge but not shall not import for charging
+Import Only Mode: ESS may import active power from Area EPS for charging but shall not export to Area EPS
+No Exchange Mode: ESS shall not exchange active power with Area EPS for charging or discharging
+*Exchange of active power shall be allowed to prevent damage on batteries of ESS
+
+-When PCS limits current flow from ESS to external point like PCC to Area EPS, this test sequence follows:
+Install external current sensors
+For PCS with multiple input sources (PV, ESS), verify other non-ESS input sources are set to 100%+_5% of max nameplate rating
+Set/verify that ESS external export current limit is set to 0% to +5% of PCS max nameplate rating
+Run tests to measure AC current flow to Area EPS with timing of step transitions
+Do not test PCS with 0 export
+Repeat steps with external current limit set at 66% and 33% of max nameplate rating
+For PCS with multiple inputs (PV, ESS), repeat steps with other non-ESS input sources set to 50% and 0% of max nameplate
+
+-For DC couples systems, AV output current of PCS shall be proportional to relative DC current from each source divided by sum of DC current from all sources
+
+-Import limiting to Energy Storage System (PCS  limits current flow from Area EPS to ESS)
+Set ESS at lowest state of charge ESS can support for duration of test 
+Set Area EPS charge current limit to 0% to +5% of PCS max nameplate
+For PCS with multiple inputs, set other non-ESS input sources to 100% of max nameplate
+Do not test PCS with 0 export
+Repeat steps in above bullet point*
+
+-PCS Net Energy Metering Integrity Mode:
+*Moving from legacy systems to a Net Generation Output Meter (NGOM), compliance tested with 15 minute energy valued between NCOM and NEW meter.
+*Adopting Cal Rule 21 where response time is <2s and <10s to reach steady state
+Set PCS export limits to NEM integrity mode
+Verify PCS source  is set to produce 90%<_ nameplate power
+Adjust test load to absorb 100%< of combined nameplate PCS rating (new) and 90% (legacy)
+Open S1 switch and record resonse time to steady state
+Test load at 66%, 33%, 0% absorption
+
+-Appropriate markings for current, fire, and power
+
+
+

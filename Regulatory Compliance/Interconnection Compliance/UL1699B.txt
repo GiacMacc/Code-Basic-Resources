@@ -1,0 +1,101 @@
+UL1699B
+
+Standard for Photovoltaic DC Arc-Fault Circuit Protection
+
+-Reqs for DC PV arc-fault protection in devices intended for electrical energy system per Article 690 of NEC , NFPA 70
+
+-Reqs cover devices such as dc arc-fault interrupters (AFCI), arc-fault detectors (AFD), interrupting devices (ID), inverters, converters, charging controller with integral arc-fault protection
+
+-Power source shall be commercial light and power source available in building, dc power from PV, or both
+
+-'Off' state/standby mode current: When arcing is interrupted by electronic means, available current in the off state after interruption shall not exceed 250mA with DC system as max voltage
+
+-Solid state components functioning as interrupting contact or shunting contact to terminate arc fault shall comply with UL 991
+
+-Free length of a terminal lead shall be 6in<
+
+-Proper grounding should be ensured (methods not specified)
+
+-AFCI or AFD devices exceeding limits of region A shall be provided with annunciator (local or remote) that provides visual indication that device has operated when arc fault is detected
+
+-Test sequence:
+Humidity
+Leakage
+Voltage surge
+Environmental sequence
+Arc fault detection
+Unwanted tripping (Ring wave)
+Normal Temperature
+Overvoltage
+Overload
+Endurance
+Dielectric voltage withstand
+Abnormal operations
+Short circuit
+Corrosion
+Surge current
+Abnormal overvoltage
+Supplemental voltage surge
+Resistance to environmental noise
+Electrostatic discharge
+Radiated EMI
+Fast transients
+Voltage surge immunity
+Conducted EMI
+Voltage dips
+Strain relief
+Mechanical
+Dust
+
+-Where tests are conducted at max power, PV power source shall be adjusted for its Maximum Power Point (MPP) as follows:
+Open circuit voltage supply shall be within 10% of rated voltage of tested device but less than its rating
+Total current capability of PV shall be 125%< of max DC source short circuit current rating of DUT
+Power may be limited by DC source or inverter
+
+-Humidity conditioning:
+Device exposed to 168 hours to air at relative humidity of 93% and 89.6F
+Afterwards, device shall be immediately connected to source of power and tested
+
+-Leakage current:
+Leakage current shall be <0.5mA
+All accessible parts to be tested
+If surface other than metal used for enclosure, leakage current measured using metal foil same size as surface
+
+-Voltage Surge:
+Surges shall be applied to PV DC input with no power applied
+If device employs a contactor or air gap in supply circuit, it shall be placed 'on' or bypassed
+
+Surge Values:
+Max DC input rating=71 Vdc, Test Surge=500V
+...
+1500Vdc, 6000V
+
+*-Arc-fault interrupter shall be capable of detecting or interrupting arcing as described:
+Region A: Disrupt arcing event <2.5s, limit energy <200J
+Region B: Disrupt arcing <2.5s, limit energy 200J<750J
+Region C: Disrupt arcing <2.5s, or energy 750J< makes noncompliant
+*After arc extinguished, operation must resume <5minutes
+*After 5 arc events within 24h in Region B, circuit shall open and require manual testing
+
+-Inductance shall be 10kHz<300kHz
+
+-Capacitor and resistor values shall be +_10%
+
+-If multiple PV modules placed in series on DC-DC converter input, 'Middle of String" arc detection shall only be conducted if exposed wiring exists in module
+
+-Unwanted tripping tests Loading Conditions shall consist of one of the following:
+Single-phase inverter
+Three phase inverter
+Converter
+Charge controller
+
+DUT shall be 2ft from load device
+
+-Overvoltage test: Device shall operate continuously while connected to supply set at 110% of rated voltage for 4 hours or until thermal equilibrium without tripping
+
+-Dielectric voltage withstand tests insulation and spacing resistance at 2x max voltage plus 1000V
+
+-Power factor and fault current:
+Available fault current=200A, Power Factor=0.8-1
+1,000A,0.7-0.8
+2,000-10,000A=0.4-0.5

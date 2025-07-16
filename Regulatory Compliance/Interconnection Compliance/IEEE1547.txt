@@ -1,0 +1,92 @@
+N-1 contingency safe = any single power element going out will not lead to abnormal voltage or loading conditions
+
+Hidden failures (permanent defect causing relay to incorrectly remove circuit elements from a circuit)
+
+Current Lags voltage -> Reactive power Positive
+Current Leads voltage -> Reactive power negative
+Frequency depends on rpm of primary mover
+Injecting reactive power increases voltage
+-------------------------------------------------------
+For consistency, Category I is paired with Category A, and Categories II and III are paired with Category B
+*Most DER should have at least Category B performance especially in high DER penetration areas where DER handle power output variability (solar PV)
+
+Cat I and II DER shall not reduce total apparent current during disturbance in mandatory operation mode <80% of pre-disturbance value.
+
+Cat I,II max ride through disturbances =2 (20s between, 10s between)
+Cat III =3 (5s between)
+
+ROCOF ride through Cat I:0.5 Hz/S
+ROCOF ride through Cat II:2 Hz/S
+ROCOF ride through Cat III:3 Hz/S
+*Nadir = Lowest point in frequency before goes up
+
+Ramp up takes 10s for full output
+
+
+Cat I OV1-OV2: 1.1-1.2 (trip time 2-0.176 s), UV1-UV2: 0.7-0.16(trip time 2-0.16s)
+
+
+Island Types
+
+Uncategorized: Not designated as an intentional island, only allowed under certain criteria
+Intentional island-capable: DER that can disable or modify its islanding detection function
+Black Start Capable: DER that can energize EPS that contains no other energy source
+Isochronous-capable: DER can independently regulate voltage and frequency to fixed set points
+
+Tests/verifications/evals
+-Average annual load & aggregate nameplate capacity decide wither these evals apply at PCC or PoC (sec 4.2)
+*Smaller DER testing usually at PoC, Larger usually at PCC
+
+Max DER response time to maintain constant power factor is 10s
+
+Type tests (enough for PoC): Verifies that component or multiple can operate together (if tested component power rating 50-200% of product family, it is representative)
+Production tests: Done on every unit of DER and interconnect of equip. prior to customer delivery to verify conformance to standards
+Commissioning tests
+Periodic Tests
+DER Design evaluation (desk study): Eval during interconnection review process to verify conformance to whole system, done off-site
+As-Built Eval (on-site): Eval at time of commissioning to verify that system parts meet reqs (no testing)
+Basic vs Details DER Evals: Eval on design and build to standards vs engineering verification of chosen components with models and simlulations
+
+
+RPA = Reference Point of Applicability (usually PCC)
+-In Local EPS where zero sequence continuity between PCC and PoC, PoC may be RPA
+-If aggregate nameplate capacity <_500 kVA, PoC may be RPA
+
+Applicable voltages are average of three phases (RMS)
+
+If Authorities Having Jurisdiction designate DER for critical ops (hospitals, fires stations), they are exampted from
+ 
+voltage ride through, 
+frequency ride through, 
+Info Interoperability, 
+Intentional islanding reqs
+
+DER shall inject or absorb reactive power for active power output levels <_min steady state active power or 5% of rated (whichever is greater)
+*Some active power may curtail to mee apparent power constraints
+
+Reactive power control functions (constant power factor default mode *sec. 4.13)
+-response time to maintain constant power factor 10s>
+
+Constant power factor
+Voltage-reactive power mode
+Active power-reactive power mode
+Constant reactive power mode
+-------------------------------------------------------------------
+ROCOF (rate of chnage of frequency) ride trhough is average of ROCOF over window of at least 0.1s
+
+DER shall limit active power output in <30s to active power limit set point
+
+Where trip during setting are atleast 160ms or 1% of tripping time beyond the ride through duration, DER must follow sec 6.4 before trip
+
+DER capable of delaying enter service by adjustable min delay between 0-600s (300s default)*Enter service period is between 1-1000s (default 300s), active power increase of any single step <_20% of DER active power rating
+
+Sync with Area EPS shall not cause step changes in RMS voltage at PCC exceeding 3% nominal at medium voltage, 5% at low voltage
+
+Freq difference during sync: 0.1-0.3 Hz
+Voltage difference: 3-10
+Phase angle difference: 10-20
+*Larger systems get tight constraint
+
+
+
+

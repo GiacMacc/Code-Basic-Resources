@@ -1,0 +1,64 @@
+Reddit
+
+-Tesla is on CPUC list of non-compliant solar interconnection providers
+
+-Tesla files residential customer interconnection for $100+ and permit for $450+
+
+-For NEM 2.0 in California, interconnection needs to be started before April
+
+-Wind turbines have variable frequency drives that drive an offset frequency into the rotos which change freq to offset changing wind speed, output is always 60 Hz
+
+*-Problem is not energy generation, but cost effective energy storage
+
+-Frequency phase correction on grid is a feature on megapacks
+
+*-Right now decentralized grid is hard because all responsibility is on utility for damages, if utility no longer controls all generators, there is no grid-wide control, may be human safety risk without regulation (smart inverters/meters)
+
+-Large transmission line = Meshed, Small Distribution Lines = Radial
+
+-Power industry one of the last to adopt embrace the microprocessor
+
+*-Basic overcurrent relays have over 60 years of use and resist the elements and no cyber vulnerabilities, while digital relays have a lifespan of about 20 years or less
+
+*-A problem with more roof top solar/modern energy consumption is that old lines are not large enough to transport energy back efficiently due high impedance, causing houses to see higher voltages as more generation is added, upgrades to radial feeders are costly
+
+*-Power companies like lines, hate switches
+
+*-Most wind turbines today are Doubly Fed Induction Generators (DFIGs)
+
+-Natural gas power plants can change speeds and ramp up much faster than nuclear or other slow primary movers
+
+-Fault points with DER:
+DERs add more fault currents, need expensive upgrades 
+DERs cause power flows in unintended directions and inject large amounts of harmonics that are usually used to detect problems/cause trips
+DERs can keep feeders on when they should be off
+Reclosing (ride through)
+Can turn on off (sagging) intermittently due to cloud cover/weather 
+
+*-Energy is produced microseconds before its used in traditional centralized energy (demand response)*DER need battery storage to integrate better
+
+*-Excess solar export allow primary mover to spin at lower rate, saves fuel
+
+*-Warm up cycle for primary movers before syncing to grid is about 15 mins (except hydro which is less then 20s, 30-60 for Nat Gas simple vs combined cycle)
+
+*-Some parts of the grid (substations, transformers) are so old that the internal components are unknown
+
+*-Solar customers pull the cheap baseload  high margin revenue from utilities, pissing them off because they cant ask for more transmission/distribution or raise rates during peak times
+
+*-Solar roofs dont usually cause overvoltage since their power usually doesn't exceed the users demand
+
+-In CA, PG&E are asking PUC for 18% rate increase and trying to gut Net Metering laws (2022)
+
+*-FERC Order 2222: Enables DER to participate in electricity markets, requires Independent System Operators (ISO and Regional Transmission Orgs (RTO) to make plans for DER access to wholesale energy markets (fought by utilities b/c they want to own DER) *does NOT apply to Texas ERCOT 
+
+-Wholesale electricity is meant to be resold by the utility that bought it 
+
+-Monte Carlo Analysis for energy resource adequacy/reduce intermittency
+
+*-Lowest point of frequency before rising again is called Nadir
+
+*-Synchronous condensers: Big motors attached to nothing, they spin freely and generate/absorb reactive power from grid and provide inertia
+
+*-Shunt Capacitor Banks: Increase power factor, modulate voltage
+
+*-Public utility commission dockets have utility direct comments on DER (PJM example, opened on laptop)

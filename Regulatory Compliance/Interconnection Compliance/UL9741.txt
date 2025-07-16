@@ -1,0 +1,224 @@
+UL9741 (UL1741, NFPA 70)
+
+Interconnection Systems Equipment
+Low Voltage Limited Energy Circuit (LVLE)= 30V AC or 42.4V DC max
+Overcurrent protection
+
+-Reqs for off-board uni & bidirectional equipment rated to 1000 Vac or 1500 Vdc or less that work in parallel with area EPS
+
+-Equip. with optional bidirectional function serves as Electric Vehicle Power Export Equip. and electric vehicle supply equip.
+
+-Regs don't apply to battery chargers
+Battery charger regs: UL1236, UL1564, CSA C22.2 No.107.2
+
+-Hinged cover should cover fuse/overload protection device, unless it is rated <2A or for loads <100 volt-amperes
+
+-Cast metal enclosures 1.6mm-6.3mm thick depending on area (galvanized steel must be 0.86mm< thick, non-ferrous metal 1.14mm< thick)
+
+-Polymeric enclosure must comply with UL746C for UV and water exposure, non-shatter tempered glass enclosure must be 1.6mm< thick
+
+-Bottom of enclosure must be noncombustible and provide ventilating openings with baffle/metal mesh to catch material from coming out
+
+*-Outdoor equip. shall be rated to a Type 3R minimum and comply with Sprinkler Test, metallic enclosures comply with Corrosion Protection reqs (painting, hot-dipped galvanize, sherardizing, plating, etc)
+
+-Min req distance from opening to part that has risk of electric shock/injury to person:
+25.4mm-54mm (minor dimension of opening)
+165mm-762mm (min distance opening to part)
+(sharp or ball probe shall be used to assess openings with max force of 1lb and shall not touch any uninsulated live part)
+
+*-Max voltage before risk of electric shock (indoor/low potential for wet contact, outdoor/high potential wet contact):
+Sinusoidal ac =30 V rms, 15 V rms
+Non-sin ac =43.4 V peak, 21.2 V peak
+Pure dc =60V, 30V
+DC interrupted @ 10-200Hz=24.8V peak, 12.4
+
+-Allowable capacitance (stored energy) varies in wet and dry environments:
+V<40,000 where C<0.00328
+...
+V<30 where C>_497 (wet)
+
+V=voltage across capacitors 5s after terminals are accessible
+
+-Part with potential of more than 40kV peak shall be evaluated to determine risk of electric shock
+
+-Bidirectional EVPE shall follow protection reqs in UL2231-1,2
+
+-Mounting bolts/screws/etc shall be separate from parts used to secure components to unit, screws shall not project into a compartment with electrical parts following spacing reqs
+
+-Casters shall not be as supports unless used for transport
+
+-Corrosion resistance not required for Al, Stainless, Polymers, Copper alloys of 80%< Cu
+
+-Corrosion resistance tested with salt spray, moist C02-sulfur air mixtures, moist hydrogen sulfide air mixes, UV, and water (UL1332)
+
+-EV receptacle/plug/connector/inlet shall be type EV, EVJ, EVE, EVJE, EVT, EVJT and the overall length of the cable shall be 7.6 meters unless otherwise specified and protected by mechanical interlock so that connection is not energized until connection with EV and properly ventilated
+
+-Vibes, impact, and exposure testing will be done on wires less than 24 AWG
+
+-Current carrying parts should be of silver, copper alloy, stainless steel, Al, or equivalent
+
+-Bus size vs current rating (Cu & Al):
+225A = 3.2mm x 22.2 mm
+...
+800A = 6.4mm x 76.2 mm
+
+-Heat sink should comply with Heat Sink Temperature Cycling Test
+
+-PCB with flammability class of V-0 (V-0, V-1, V-2) with base material having min. Comparative Tracking Index rating of 175 Volts
+
+-Vulcanized fiber,mica can be used as insulation in lieu of spacing
+
+-Level of pollution for ventilated indoor use shall be degree 2, cot ventilated outdoor degree 3. Hermetically sealed enclosures are pollution degree 1.
+
+-Equip. shall be rated overvoltage cat. VI, III, II, and I (UL 840 or CSA C22.2 No.0.2)
+
+-Insulation type for primary wires, primary & secondary windings, winding/lead connections to dead metal parts, and crossover leads, metal enclosure, core:
+a,b,c,d,e,f,g,h
+
+-Minimum spacing through air and over surface of transformer:
+0-50V = 1.2mm
+...
+250-600< = 6.4mm
+
+-Barrier between wiring shall be grounded with a thickness of 0.71mm<
+
+-Plug fuses shall not be used in circuit over 125v/250v 3-wire and shall be Type S construction.
+
+-A circuit breaker connected to circuit shall open all ungrounded conductors
+
+-Primary overcurrent protection for control circuit transformers:
+<2A = 300(max rating of overcurrent, percent of primary current)
+..
+9< = 125
+
+-Compliance of capacitors determined by abnormal testing
+bleeder resistor shall drain the charge in a capacitor to avoid electric shock (risk of electrical energy/high current level = store energy of 20j<)
+capacitor containing oil more combustible than askarel shall not be risky of fire/shock
+
+-When environmental tests are required, protection control parts shall be subject to following tests (UL991) with a control:
+Transient Overvoltage
+Ramp Voltage
+Electromagnetic Susceptibility
+Electrostatic Discharge
+Thermal Cycling
+Humidity (88% @ 32 C for 48 hours, then dielectric test)
+Effects of shipping and storage
+
+Parameters for testing:
+Field strength of 3 volts per meter used for Radiated EMI test
+Exposure class H5 used for Humidity Test
+
+Critical components identified by failure mode  above shall be derated according to Military Handbook No.338
+
+-Moving part that involves injury to person is evaluated with respect to:
+Degree of exposure required to perform intended function
+Sharpness of moving part
+Risk of unintentional contact
+Speed of moving part
+Risk of clothing entanglement
+
+-Features of guards to be evaluated:
+Removability without use of tools
+Removability for servicing
+Strength and rigidity
+Completeness
+Creation of risk to persons
+
+Tests:
+Drop Test
+Stability
+Impact
+Static Load
+Handle Strength
+
+-Utility grid interactive products such as inverters are subject to UL1741 reqs.
+
+-Energy storage and batteries must follow connection reqs. in UL9540/UL1973
+
+-Output of a utility-interactive EVPE device shall be connected to these supply voltages (AC):
+
+<110 to 600< (Rated voltages : 120, 240, 277, 480, 600)
+120/240 split phase
+120/208 2-phase
+240/416
+
+-The impedance of a simlulated utility source  shall be <5% of EVPE device output impedance
+
+-Input supply voltage evaluated across 10+_ rated voltage
+
+-Load for a standalone AC unit converter shall include both resistance and inductance with power factor of 0.5
+
+-Max allowable temps:
+Capacitors: 65-90C (electrolytic vs non)
+Field wiring terminal: 75C
+Vulcanized fiber: 90C
+Plated bus bar: 90C
+Unplated bus bar & joint: 75C
+Relays/solenoids/devices: 90-120C
+Transformer insulation: 90-190C (Class 105, 220)
+
+-Thermocouples size <24 AWG, 30 AWG <
+
+-Dielectric test must be at least 500 volt-amperes increasing at 200V per second
+
+-AC and DC power circuits  shall withsatand 1 minute without breakdown at max temp (DC circuit with <30V not req test)
+30V<333.3 = 10x max V tests
+333.3V< 3x max V test
+1000< 1750+V1.25 test
+
+-Risk of fire test with cheesecloth draped over transformer
+
+-Abnormal Conditions Tests:
+Transformer burnout
+Transformer overload: (50-200% of rated load current, 20-30 min test time for insulation class 220-105) followed by dielectric  test 1 hour after
+Short Circuit: Tested over 50 cycles
+Capacitor fault
+Forced ventilation: Operated with fan disabled and ventilated openings clogged 50% until 100% 
+Component short/open circuit
+Electrolytic capacitor fault: available fault current of 10,000A of lower
+Vibration: 48 hours, 22 cycles per second, 6.4mm displacement from vertical plane
+Flanged Bobbin Transformer: 15 days with overloaded secondary winding
+Strain Relief (pull, push back): applies to flexible cord/cable connections, pull with 10lb-35lb force, push back cable to start 1 inch from point where cord emerges and then shall be pushed back into unit until force exceeds 6lb
+Flexing: 500 cyles
+Grounding impedance: 25A at 60Hz with <6V, impedance between ground and metal part <0.1 Ohm
+Overcurrent protection calibration
+Strength of Terminal Insulation Base and Support
+Neutral to ground potential Measurement
+Bonding Conductor
+Glass covered openings impact: withstand 2.5 foot pound force without cracking, smooth solid steel sphere (1.18lb) 25 inch fall
+Shorted trace: PCB board test
+Heat sink temperature cycling: 500 cycles on/off current, temp of solid dtate component samples shall not be more than 15C higher than temp during 24th cycle
+Cord tag tests: legibility of tags
+Transformer insulating material
+Bus bar test: temp rise at join during 500 cycles shall not be 15C higher than temp at 25 cycle
+Charging harmonic distortion: total harmonic distortion<10% of rated, tested at 33%, 66%, and 100% current draw
+Impact test: 5 foot pound impact on any surface by same steel sphere as above (different conditions for polymeric)
+Drop test: only done on units <18kg that are intended to be carried, dropped from 3 feet to concrete, then dielectric test
+Stability test: doors, hinges, etc., tipped 10 degrees from vertical plane
+Static load: support a load 4x weight of unit but no less than 20lb at center of gravity
+Handle Strength test: 1 minute test
+Sprinkler test:0.5-1 hour long, tests wetting of electrical parts that should be water proof
+Production-line dielectric voltage-withstand test: AC current @ 40-70 Hz with 42.4 V (low-voltage)-60V applied for 1s-1minute
+Production-line continuity
+Source Transfer test: tests EVPE transfer to grid
+Utility grid interactive functionality type testing (Canada only)
+
+-Units should be plainly and permanently marked, code used by manufacuter cannot repeat within 20 years
+
+-Instruction manual shall be provided
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

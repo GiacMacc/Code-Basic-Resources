@@ -1,0 +1,71 @@
+UL-1973 - Batteries
+ISO 15118 - EV to grid
+IEC 61851 - Charging reqs for EV
+^ from research
+
+technical interview (charging technical or utility technical):
+
+Utility:
+understand arguments against IEEE1547
+what would you do to help bridge the gap between Utility problems and DER problems (volt to var frequencies incorrect etc.)
+
+charging: 
+NAC (north American charging) standard
+SAE J1772
+SAE J3400
+power share standard 
+NEC 2023 article 625: supply equipment
+UL9741 - (safety standard electrical export to grid)
+UL2594 - electric vehicle supply equipment standards (superchargers)
+
+UL free account to read customer documents (login) *digital view and create login
+
+from interview
+
+-Current Topics/project and bottlenecks
+optimus robot UL standards?
+EV charging bidirectionality to grid (only have to home)
+Fire safety utility industry settles on good standards (want to see powerwall on fire)
+9540B poor test for this b/c need component to catch fire
+9540A for Ul9540 test for thermal propagation for wall mount to not catch on fire
+UL 1741
+
+-Flowdown of escalations during utility negotiations
+tier 1 plan checker  (hardest to negotiate with)
+building official or director (policy lead leads you are SME support)
+city mayor (assistant)
+Hawaii past experience permit phase delayed for 6m - 1y
+
+-Most common issues in field
+interconnection settings not set correctly
+documentation largest escalation bucket or not understanding docs
+triaging more efficient way
+plan checkers no understanding reg interpretations
+mainting database
+power control systems ul1741 sb ul 3141 *still in works (utilities require testing to these standards) *NEM standards
+EV side: metering (super charging network in other countries)
+kiosk pricing and real time pricing
+finding metering standards and compliance with FINRA
+---------------------------------------------
+JCA team 
+projects vs escalations
+grid codes inverter setting, dedicated grid code profiles for each utility
+cat 3 default values for IEEE1547 for any utility
+otherwise if utitlity deviates, must create new grid codes
+process longer than it has to be, 2 months at a time,based on release date of code freezout date for next firmware version
+
+breaking into new market and communication is not clear with major utilities for inverter reqs. (usually not done proactively, causing delays). processs gaps to bridge
+
+day to day
+addressing escalations
+progressing on project initiatives:
+foster PCS
+project plan with stakeholder and documenting
+evaluate success
+addressing channel partners nationwide
+
+interact with commercial, my role probably wont at first
+EV side a lot of collaboration, but still more interconnection focus
+what constitutes compliance with EV to home, what to provide as proof we are safe, still up in the air, interconnection standards not really built for it right now
+
+lot of binational standards with Canada, this role more domestic, other countries take cues to for USA, hiring someone else for international

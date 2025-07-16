@@ -1,0 +1,105 @@
+IEEE 1547 
+- Tech specs for interconnection and interoperabitlity for DER and utility
+-Reqs for performance, Islanding, power quality (Voltage, Freq.)
+- DER <10MVA
+-Only for grid-tied DER
+-Lockable break isolation device needed between Area EPS and DER
+-Frequency droop
+- Voltage range +-2% nominal
+- Frequency range 58-61 Hz (when greater than 30% of nominal, DER trips)
+- Enter service period default time 300 seconds for synchronism
+- Withstand voltage and current surge per C37.90.1
+- Continuous operation region (ride through) when voltage between 0.88 and 1.1 times the nominal Vn
+- Reactive power injection capability 44% of nameplate apparent power kVA (absorption 25% of rated)
+-Max DER response time to maintain constant power factor <10 seconds
+- Impedance  between PoC and PCC is less than 0.5%
+-2 second islanding req (trip and cease to energize during open phase condition)
+breaker hold down kits convince jurisdictions
+- Power factor mode typical mode for frequency/voltage ride through
+
+UL1741
+
+-SA contains:
+Anti-islanding
+Low/high voltage ride through
+Low/high frequency rice through
+Must trip test
+Ramp rate (normal/soft start)
+Specified Power Factor
+Volt/Var Mode (deadband)
+Optional Tests: Frequency Watt, Volt-Watt
+
+-SB contains:
+Watt/VAR mode
+Voltage magnitude and trip time
+EMI (interference)
+Surge
+Rate if change of frequency (ROCOF)
+Dynamic voltage Support
+Enter service
+Sync
+Open phase
+Harmonics
+DC injection
+Ground Fault overvoltage
+Load Rejection Overvoltage
+Prioritization of DER responses
+Fault current
+Persistence of DER parameter
+
+*-UL 1741 SC draft (2026) specifically for EV charging and interconnection (will include SAE J3072 compliance)
+
+-Minimum reqs for inverters, converters, relays, and other interconnect equipment
+-Used in conjunction with IEEE 1547
+-Specifically for AC modules, rapid shutdown (2 sec), anti-islanding, harmonic distortions, voltage flicker, ride through, volt/watt VAR, remote control SCADA
+
+IEC 62109
+-Power converter safety for PV systems
+-EU regulation for shock, fire, hazard safety
+
+IEEE 2800
+-Reqs for interconnection, capability, lifetime performance of inverter based resources
+-utility scale, reactive power, fault ride through, inertia/rapid response
+
+IEEE 2030 (SEP2.0)
+-Supports smart grid comms, allows utilities to manage EV charging loads (smart inverter protocols)
+
+NFPA 70 - safety regs for wiring in commercial (overcurrent, proper wiring techniques, grounding and bonding)
+NEC 706 - 1kWh< capacity battery ventilation, location, etc
+IEEE 519 - voltage and current harmonics and distortions for interconnection
+NFPA 855 - Stationary Energy storage design, install, ops, commissioning reqs (Li-ion) like spacing from units of 3ft< *hazard mitigation analysis in UL 9540
+RS401,403- roof mounted solar (120% rule where sum of main braker and pv breaker rating cannot exceed 120% of busbar rating)
+
+
+NEC 690 - pv systems building codes
+NEC 705 - interconnections between onsite generators and grid
+UL 9540: Energy Storage (Nickel Cobalt Aluminum battery cathode)
+
+IEC 61850, IEEE 2030.5 - SCADA (SNP3, Modbus)
+Low Voltage Directive/EMC - EN 61800
+
+IBC 3111 - Building code for PV
+NEC 705,710,706,690,691,625
+
+UL-1973 - Batteries
+ISO 15118 - EV to grid
+IEC 61851 - Charging reqs for EV
+
+NEM
+-Retail vs Export rate
+-TOU and rate fluctuation
+-Location value/Dynamic pricing
+-Energy storage
+-Utility tarrifs
+-CA Self-generation Incentive program
+-NY-Sun Initiative 
+
+SREC
+-Only based on MWH solar produced
+-Fixed price vs Market based contracts
+-SPECTrade, PJM FATS markets
+-RPS carve outs for % of electric to be solar (10k,10Q docs)
+-ACP fine for not meeting RPS solar req
+-Most of New England have SREC market
+-New Jersey with highest SREC prices $250-450/MWh
+

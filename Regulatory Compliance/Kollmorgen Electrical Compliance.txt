@@ -1,0 +1,31 @@
+Kollmorgen Electrical Compliance:
+
+EN/IEC61800-5-2 (Machinery Directive)
+EN/IEC61800-5-1 (Low Voltage Directive)
+EN/IEC61800-3(EMC Directive)
+IEC61000(immunity tests)
+^Main safety standard for motors
+
+UL/EN61010-1
+^Controllers
+
+UL1004-1
+EN60034-1(Rotating electrical machines pt.1)
+EN60034-5(Rotating electrical machines pt.5)
+^Motors additional
+
+CISPR 16-4-2 (how to calculate uncertainty budget in emissions tests)
+IEC62061
+ISO13849
+ROHS
+
+
+CE marking
+ATEX compliance (explosives)
+IECx(explosives)
+CCC(China explosion proof)
+UL 1004-1 (Safety for Rotating Electrical Machines)
+UL 674(Electrical Motors and generators for Use in Division 1 Hazardous Locations)
+UL60079(Electrical apparatus for explosive gas atmosphere)
+CSA C22.2 No.0-124-11(Canadian electrical code, bonding, motors and generators)
+

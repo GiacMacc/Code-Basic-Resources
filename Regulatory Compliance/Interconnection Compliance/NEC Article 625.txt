@@ -1,0 +1,50 @@
+NEC Article 625
+
+Electrical conductors and equipment external to an electric vehicle that connect an electric vehicle to a supply of electricity by conductive, inductive, or wireless power transfer (contactless inductive charging) means, and the installation of equipment and devices related to electric vehicle charging
+
+Charger Power Converter=The device used to convert energy from the power grid to a high-frequency output for wireless power transfer.
+Unless other voltages are specified, the nominal ac system voltages of 120, 120/240, 208Y/120, 240, 480Y/277, 480, 600Y/347, 600, and 1000 volts and dc system voltages of up to 1000 volts shall be used to supply equipment covered by this article.
+
+-Electric Vehicle Coupler
+Coupler must guard against inadvertent contact by persons with parts made live from the electric vehicle supply equipment or the electric vehicle battery.
+Unintentional Disconnection (The electric vehicle coupler shall be provided with a positive means to prevent unintentional disconnection)
+Grounding Pole (The electric vehicle coupler shall be provided with a grounding pole, unless provided as part of a listed isolated electric vehicle supply equipment system)*first to make and the last to break contact
+Ventilation Marking (Where marking is required by 625.52(A), the equipment shall be clearly marked by the manufacturer as follows: VENTILATION NOT REQUIRED or Ventilation Required. The marking shall be located so as to be clearly visible after installation)
+Means of Coupling (The means of coupling to the electric vehicle shall be conductive, inductive, or wireless power transfer. Attachment plugs, electric vehicle connectors, and electric vehicle inlets shall be listed or labeled for the purpose)
+Power Supply Cord (8 AWG< and 60C, when interrupting device of protection system is in enclosure then cord <12in long, but if protection system is located at attachment plug or within 12 in of supply cord, overall cord length is 6ft<15ft
+Output Cable to the Electric Vehicle (The output cable to the electric vehicle shall be Type EV, EVJ, EVE, EVJE, EVT, or EVJT flexible cable)
+Overall Cord and Cable Length (The overall usable length shall not exceed 7.5 m (25 ft) unless equipped with a cable management system that is part of the listed electric vehicle supply equipment)
+*Not Fastened in Place = Where the electric vehicle supply equipment or charging system is not fastened in place, the cord-exposed usable length shall be measured from the face of the attachment plug to the face of the electric vehicle connector.
+Fastened in Place = Where the electric vehicle supply equipment or charging system is fastened in place, the usable length of the output cable shall be measured from the cable exit of the electric vehicle supply equipment or charging system to the face of the electric vehicle connector
+Interlock (interlock that de energizes connector when uncoupled must be installed except for in portable plugs intended for outlets of 125V single phase, 15-20A or 60V dc.
+Automatic De-Energize Cable (De energizes upon exposure to strain)
+
+-Electric Vehicle Branch Circuit: Each outlet installed for the purpose of charging electric vehicles shall be supplied by an individual branch circuit. Each circuit shall have no other outlets
+
+-Overcurrent protection for feeders and branch circuits supplying equipment shall be sized for continuous duty and shall have a rating of not less than 125 percent of the maximum load of the equipment. For non-continuous loads from same feeder, overcurrent rating shall be sum of loads +125% of continuous loads
+
+-For equip. 60A< or 150V< to ground, disconnecting instructions shall be provided
+
+-Portable equip. connection methods/wiring systems:
+Nonlocking, 2-pole, 3-wire grounded, 60V dc max, 15-20A
+Nonlocking, 2-pole, 3-wire grounded, 125V single phase, 15-20A
+Nonlocking, 2-pole, 3-wire grounded, 125-250V, single phase, <50A
+Nonlocking, 3-pole, 4-wire grounded, 250V, three phase, <50A
+
+-Loss of Primary Source: Upon losing voltage from utility or other ESS, energy cannot be back fed through EV unless permitted
+
+-Electric vehicle supply equipment shall vent directly to outdoors. Positive pressure ventilation shall be permitted only in vehicle charging buildings or other specified areas
+
+-Min. ventilation reqs for supply voltage and currents for each of te total number of EVs that can charge at one time
+
+-Coupler for EV supply equip shall be 18in above ground when indoors and 24in above ground outdoors
+
+-Grounding:
+Primary pad base plate shall be non-ferrous metal (grounded unless double insulation system)
+Charge power converter shall have minimum Type 3R enclosure rating
+Charger power converter shall be mounted 18in above floor indoors or 24in above floor outdoors on a pedestal, wall or pole, building/structure, raise concrete pad
+Primary pad (Type 3R min.) shall be installed on surface, embedded in the surface of the floor with its top flush with the surface, or embedded in the surface of the floor with its top below the surface. If the primary pad is located in an area requiring snow removal, it shall not be located on or above the surface.Exception: Where installed on private property where snow removal is done manually, the primary pad shall be permitted to be located on or above the surface
+
+
+
+

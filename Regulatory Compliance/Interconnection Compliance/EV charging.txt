@@ -1,0 +1,72 @@
+Duty cycle
+Total Cost of Ownership of EV (TCO)
+Charge Point Operator (CPO)
+ISO 15118 (IEC 61851-1) = Charging comms and Plug-in and bidirectional
+Open Charge Point Protocol (OCPP)(IEC 61850-90-8, IEEE 2030.5))*uses MAC address, 2.0.1 latest
+Open Clearing House Protocol (OCHP) = Uniform comms for charging system used by eMobility Service Provider
+Open Interchange Protocol (OICP) = Developed by Hubjet, centralized comms between CPO and EMSP 
+Open Smart Charging Protocol (OSCP) = Comms between energy management and Distribution System Operator
+National Access Point (NAP) = Database for charging locations
+GB/T = China charging protocol
+Open Charge Point Interface (OCPI) = Tariffs, reservation, roaming, smart charging, charge point info,authorization
+Battery life diminishes with V2G (Depth of Discharge, State of Charge, Rate of Discharge, Side reactions, SEI, Lithium plating)
+State of Health of battery EV
+Battery storage for ancillary voltage and frequency services to grid
+Plug & Charge*no RFID tag
+Autocharge
+
+National Electric Vehicle Infrastructure Formula Program (NEVI) *gives grants for charging stations and EV, rescinded June 11, 2024 and funding paused
+
+-Charging Stages:
+I = Charging Stage
+II= Battery Stage
+III = Power Train Stage
+
+-CCS(Combined charging system):
+CCS1 = J1172, 1 phase AC, USA, DC power
+CCS2 = EU, 3 phase AC, DC power
+
+Connector Types:
+Type 1 (SAE J1772) = North America and Japan, 5 pin, <16A
+Type 2 (IEC62196) = Europe and Australia, 7 pins, <43kW, fast charging
+CHAdeMO = Japan, DC fast charging, 62.5kW
+CCS = Type 2 connector with 2 more pins (DC), AC and DC 350kW fast charging
+*Ground Fault Circuit Interrupter for all single phase EV chargers of <150V and <50A.
+NACS(SAE J3400) = Tesla, 1MW DC max
+Mennekes = Germany, like CCS2 with no DC
+
+-Types of EV chargers:
+Level 1 = AC, 120V single phase, 12-16A, 1.4-1.9kW, 3-5 miles per hour charge rate, J1772, Home
+Level 2 = AC, 208-240V single phase, 30-80A, 3.3-19.2kW+, 10-60 miles per hour charge rate, J1772 & Tesla (NACS), hardwire or NEMA 14-50 cable
+Level 3 = DC Fast Charge, 480V, 400A, 50-350kW+, 180 miles in 30 mins rate, CCS & CHAdeMO & Tesla, Public charging & highways, liquid cooled cable
+
+-IEC 61841-1(4 modes):
+1 = Standard electrical socket, 250V single phase or 480V three phase AC, 10-15A
+2 = For overnight charging, 32A single or three phase AC
+3 = Bidirectional
+4 = DC supply, 200A, 600V, public charging, maybe bidirectional
+
+-OpenEVSE is universal electric vehicle charging station controller used for SAE J1772 and IEC Type 1 & 2 charging stations
+
+-Charging statuses:
+A = Standby
+B = Vehicle detected (12v to 9V)
+C = Ready for charging (no ventilation req.)
+D = Ready for charging (ventilation req.)
+E = EVSE shut off
+F = Error
+*Duty cycle of pulse notifies vehicle of current available for charging (e.g. 10% duty cycle means 6A available, 96% duty cycle indicates 65A available of total.
+
+-SAE J3072 = Interconnection reqs for onboard, Utility interactive inverter systems
+*SAE J2847/3 recommended practice for communications between plug in vehicle and DER
+
+-SAE J3068 for large batteries and higher power levels
+
+-UL 2202 = Electric Vehicle Charging System Equip
+
+-UL 9741 for grid interactive inverters (ref. UL 1741 SB)
+
+-UL 1741 SC draft (2026) specifically for EV charging and interconnection (will include SAE J3072 compliance)
+
+*-For compliance with IEEE 1547, EVSE and EV must be tested as a paired system
+*Currently, EV not addressed in IEEE1547

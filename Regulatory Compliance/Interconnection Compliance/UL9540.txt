@@ -1,0 +1,148 @@
+UL9540 (NFPA 70)
+
+Covers energy storage systems (ESS) that receive and store energy so that it can provide energy to electrical power systems (EPS).
+
+Ancillary operations (frequency, voltage modulation)
+Safety Extra Low Voltage (SELV) Circuit = 42.4 Vpeak/30 Vrms or 60 Vdc
+UL1998,5500 = Software & Comms
+DUT = Device Under Test
+Flammability Classificatons:V-0, V-1, V-2, V-3, VTM-0, VTM-1
+
+-Max energy capacities (UL9540A):
+Residential: 20kWh
+Non-res: 50kWh
+Remote outdoor: No limit
+
+-Polymeric enclosures comply with UL 746C and UL9540A Unit Level Testing
+
+-Non-metallic enclosures need testing regarding thermal aging among other factors such as:
+Resistance to impact
+Crush resistance
+Abnormal operations
+Severe conditions
+Mold stress relief distortion
+
+-Additional properties of polymeric enclosures:
+5 VA flame rating
+Insulation materials per Material Property Considerations in UL 746C
+Compliance with strain-relief test and mold-stress of UL746C
+Compliance with UV exposure per UL746C
+Compliance wit water exposure and immersion test per UL746C if exposed to rain
+Compliance with Conduit Connections per Enclosure Reqs per UL 746C
+
+-Above reqs to not apply with enclosure meets material class V-0, V-1, V-3 or HB
+
+-Conductive parts with dissimilar metals in contact at terminals and connections shall not be subject to corrosion du to electrochemical action (coatings can be used)
+
+-Rack assemblies comply with UL2416, different for walk-in units
+
+-Ingress protection of IPX3 or higher
+
+-Outdoor Walk-in enclosures shall not exceed 53x8.5x9.5 ft, with entrance width of 32 in< and clear height of 72 in<, and include safety placards
+
+-Arc flash risk assessment per NFPA 70E:
+Arch flash incidental energy level
+Arch flash boundary, restricted approach boundary
+Required PPE
+
+-Boundary for unprotected arc flash shall be considered on that has arc rating about 5 J/cm^3 incident energy level (causes 2nd degree burn) per NFPA 70E
+
+-Min. ventilation for energy storage enclosures provide ventilation of 1 cf/min/ft^2
+
+-Lighting for enclosed workspace min. of 100 lux per NFPA 70
+
+-Field-wiring lead shall not be more than two sizes smaller than copper conductor to which it is connected or 14 AWG. Field wiring shall be 6 in <.
+
+-Hole for which insulated wires pass through shall have smoothly rounded bushing free of burs, fins, sharp edges, and abrasive surfaces.
+
+-Exposed hazardous voltage in ESS shall have lockable manual disconnect with Lock-out-tag-out per NFPA 70E
+
+-Transformers in ESS shall be dry type of type filled with non-combustible dielectric medium per NFPA 70.
+
+-Rated input short circuit current of inverter and other components must be equal or greater than rated output short circuit current of battery
+
+-Electrical spacings:
+Live parts and dead metal with basic insulation: 0-300V, 1.6-6.5 mm air
+Live parts and dead metal with double/reinforced insulation: 0-300V, 3.2-12.7 mm air
+Uninsulated live part: 3001-1500V, 9.5-21.6 mm air
+Uninsulated live part and metal enclosure walls: 301-1500V, 12.7-30.5mm air
+*over surface distance is higher
+*no min. spacing for parts where insulation completely fills the casing/subassembly if the distance through the insulation is 0.02in thick & passess Dielectric Voltage Withstand Test
+
+-ESS with 100V< between conductors and ground can be ungrounded if system has ground fault detector/indicator
+
+-Failure modes and effects analysis (FMEA) conducted on battery system, charger, & inverter by the manufacturer of ESS energy storage integrator per IEC 60812, IEC 61025, MIL-STD-882E
+
+-Software Safety functions: Safety Integrity Level (SIL,IEC 61508) 2, Performance Level (PL, ISO 13849-1) c, and Automotive Safety Integrity Level (ASIL, ISO26262) C
+*these reqs can be reduced if manufacturer provides additional safety analysis (Layer of Protection Analysis)
+
+-Functional safety of electronic controls interaction:
+Noise: such as in PCS and BMS
+Surge protection
+Surge suppression
+Fault current/short circuit
+Comm delays
+
+-Software criterion:
+Comm protocol for remote connection (Class B)
+Software update process
+Identity & access management
+Validation measures
+
+-ESS with capacity of 500kWh< shall have external warning comm system (with backup power source that responds before 10s after delay and is separate fom primary power source). Backup must provide 5h< power.
+
+-Audio alarms shall not exceed 110 dBA and be placed between 80 and 96 in from ground
+
+-Piping systems that carry water, heated air, fuel, etc. shall comply with ASME B31 and have leakage detection with manual shutoff valve
+
+-Noise level over 8h should be average 85 dBA
+
+-Fluid/spill control applies to ESS with 55 gal in a single vessel or 1000 gal in aggregate
+
+-Combustible vapors shall be vented if concentrations 25%< lower flammability limit (LFL)
+
+-Fire detection & suppression per MFPA 1
+
+-Large scale fire testing for ESS in these categories:
+Increased energy capacity
+Systems with decreased separation distances adjacent to ESS unit, door, windows
+Indoor systems
+Systems in dwelling units (Cell Level Test required per UL9540A)
+
+-Inverters chargers and control equip. shall comply with UL1741
+
+-Electrical tests (ambient temp):
+Normal operations test: 2 cycles< at max load with complete discharge and immediate recharge to full state of charge followed by delay to achieve duty cycle. Max component temps without temp marking = 75C. Max surface temps [metal:70C, Glass:80C, Plastic: 95C, Wall: 75C]
+Dielectric Voltage Withstand
+Impulse Test: test to withstand lightning or similar surges. Performed with impulse voltage having a 1.2/50 microsecond waveform
+Grounding and Bonding: voltage drop recorded using low voltage supply, fault loop impedance of <0.1 Ohm
+Insulation resistance: resistance shall be 1 MOhm<_ with 500 Vdc for 1 min, earthing conductor cross section 10mm^2< Cu
+Electrostatic discharge: +_ 6kV contact discharge and +_ 8kV air discharge
+Radio frequency EM field: immunity to radio-frequency at 10V/m from 80 mHz-1 GHz and 3 V/m from 1.4 GHz to 6 GHz (both at 1kHz 80% AM)
+Fast transient burst immunity: cables longer than 3m
+Surge immunity: cables longer than 30m
+Radio frequency common mode
+Power Frequency magnetic field: 10A/m
+
+-Mechanical Tests:
+Leakage test: apply 1.5x max operating pressure for liquid and 1.1x for air
+Hydrostatic strength: 1.5x design pressure for 1 min
+Pneumatic strength: 1.3x design pressure for 1 min
+Wall mount fixture test: 3x weight of ESS for 1 min
+Enclosure impact: for residential applications or non-res using <_50kWh, 3 impacts of 5ft-lb on any surface with steel sphere from 50.8 inch drop height followed by dielectric test
+Enclosure steady force: <_50kWh, fully charged DUT withstands 56.2lb force for 5s followed by dielectric test
+Mold stress: for polymer enclosure accelerated aging test, placed in over at 10C above max temp for 7h and must show no mechanical damage
+
+-Environmental Tests:
+Salt fog: for marine environments
+Seismic tests: Explosion, fire, combustible concentrations, rupture, electrolyte leakage, electric shock hazard, loss of protection controls
+Moisture: IPX2, Type 4X
+
+-Battery recommendations:
+Two-fault tolerance for catastrophic failures like overcharge, over discharge (long-term storage),short circuit, and extreme temps
+Cell level protection not sufficient for battery pack protection unless verified
+For Li-ion, voltage, temp, battery level current and control circuit reaction should be monitored for every series element.
+
+
+
+

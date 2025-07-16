@@ -1,0 +1,158 @@
+Flexible Interconnection
+
+-Flexible Interconnection (FICS) / Active Network Management (ANM): Defers/removes grid upgrade reqs, discovery of potential grid-ops violations does not require infra upgrade, curtailment possible
+*Focuses on economic factors governing how much curtailment a DER can accommodate instead of worst-case scenario of grid conditions + upgrade costs
+
+-Firm Interconnection: Guaranteed availability on grid, should have no/minimal curtailment
+
+-In California, utilities like Pacific Gas & Electric and Southern California Edison have piloted flexible interconnection models
+*PG&E FlexConnect, ComED(Illinois) using DERMS for solar, Xcel Energy (Colorado) using flexible and phased interconnection options
+
+-Distributed Energy Resource Management System (DERMS)
+
+-Phased Agreements: Offer temporary load limits while grid upgrades are completed, but lack long term benefits of flexible agreements that continuously manage load
+
+-Line regulator: Device that maintains constant output voltage despite variations in input voltage or load conditions
+---------------------------
+
+PV Magazine: Tesla proposes enabling renewables developers to estimate a project’s interconnection costs
+
+-Developers deciding whether to submit interconnection requests for large-scale renewables or storage should be allowed to perform informational studies that estimate the cost of interconnection
+
+-Tesla proposes that it can estimate a project's interconnection costs with an informational study in <2 weeks, save time on interconnection studies
+
+*-Tesla comment on FERC relying on transmission providers to perform informational studies, “threatens to consume already thinning transmission provider resources and delay customer projects.” In contrast, developers, equipment manufacturers, and third parties acting on their behalf “are in a much better position to handle these studies and ensure their ultimate relevance to a specific project or group of projects.”  These entities can assess not only different project locations but also different project control configurations “that might optimize available interconnection capacity and reduce the need for network upgrades.”
+
+*-To enable developers, equipment manufacturers and third parties to perform informational studies, Tesla asked FERC to direct transmission providers to furnish prospective interconnection customers with access to grid models, previous cluster studies, and cluster study models
+*Australian Energy Market Operator (AEMO) already does this
+
+-Equipment manufacturers “can fine-tune aggregate plant controls regarding voltage and frequency stability at the point of interconnection, which can significantly influence the results of informational studies
+
+*-Battery storage has more software than traditional synchronous generation and transmission providers are not familiar with nuances
+
+*-SEIA, Advanced Energy Economy, and Tesla advocating FERC to allow third parties to conduct actual interconnection studies as well
+---------------------------
+
+Factor This: California utility using DERMS to speed up grid interconnection of EV charger and battery sites
+
+-PG&E’s new Flexible Service Connection (Flex Connect) leverages a DERMS to coordinate power demand based on when electricity supply is readily available
+*Allows some DER to connect to grid without waiting for grid upgrades, which are completed by utility on own timeline
+
+*-PG&E has installed more than 6,300 EV charging ports throughout Northern and Central California through its infrastructure programs (Flex Connect)
+
+*-Let’s say Tesla needs 2 megawatts (MW) of power for a Supercharger site, and the grid can provide that much most of the time, but not always, like during hot summer evenings. Tesla can either wait for necessary upgrades to ensure the 2 MW 24/7/365, or integrate the site with Flex Connect, which links it up with PG&E’s grid and DERMS to adjust power based on day-ahead availability. This would give Tesla 2 MW right away, nearly all of the time
+*FlexConnect help install Superchargers in Santa Nella and Upper Lake, CA
+---------------------------
+NYSEG-RG&E: Flexible Interconnect Capacity Solution (FICS)
+
+-Flexible interconnections enable more DER capacity without time consuming Static Capacity grid upgrades
+
+*-3 Factors that affected DER application choosing Flexible Interconnection:
+Cost of Flexible Interconnection eligible static capacity upgrades (higher is better)
+Existing voltage class of distribution feeder (higher is better) *may need reconductoring
+Generation to load ratio (Lower is better, reduces probability of curtailment)
+*Flexible Interconnections that addressed thermal & steady state voltage constraints were more likely to be chosen
+
+*-Total energy curtailment under Flexible Interconnection due to thermal constraints of substation was about 0.27%
+
+*-Factors affecting large DER that reduce total energy output:
+Utility hotline work
+Distribution circuit abnormal configuration
+Equipment failure at DER
+Power outage
+Travel time and availability of O&M to and from DER site
+Limited experience with DER (utilities & Developers)
+
+-Static Interconnection: Conventional utility approach where grid must be capable of always accommodating full load/generation of DER under any condition
+*Upgrades paid for by DER
+
+-Capacity Bucketing/Capacity Windows: Refine interconnection study assumption by placing capacity caps on DER during certain times of day
+*Popular with dispatchable/controllable sources like ESS
+
+-Dynamic Hosting Capacity: Idea that the capacity a portion of the grid can accommodate changes throughout day/year
+*Flexible Interconnection allows DER to behave closer to limits of Dynamic Hosting Capacity
+
+-Requirement for DER to modify output (curtailment or increase generation with Non-Wire Alternatives)is main disadvantage of Flexible Interconnection since it reduces capacity factor of DER
+
+*-The real-world total hosting capacity limit of a specific Point-of-Interconnection (POI) is dependent on the interaction of this economic limit with other factors such as land availability, permitting restrictions, and other grid capacity constraints
+
+-Marginal Curtailment Lost Revenue Cost: Lost revenue from curtailing the last MW
+
+*-Principles of Access (Main types of curtailment allocation strategies):
+Priority Based - Curtailment is assigned to DER one at a time in priority order
+Pro-Rata - Curtailment is shared among DER proportional to their size
+Vintaging (hybrid) - Pro Rata applied to DER Flexible Interconnection behind same location within a certain time of each other (1 year), Priority Based applied between project that receive Flexible Interconnections outside of vintaging time-window
+
+Priority Based
+	Last-In-First-Out (order of application to interconnection)
+	First DER to apply is curtailed last, least burden of curtailment
+	Provides more certainty about future curtailment vs Pro Rata
+	Curtail based on carbon intensity of DER (nat gas)
+	Lowest bidder DER curtailed first
+Pro Rata
+	Curtailment evenly distributed among DER Flexibly Interconnected regardless of order
+	Proportional to DER capacity
+	Control logic more complex
+	Less certain
+	Encourages DER to share costs of grid upgrades
+
+*-Common constraints & upgrades during Interconnection:
+Low-Voltage on adjacent Feeder - Install 2 single-phase line regulators on adjacent feeder
+Substation Bank Thermal limit - Upgrade Transformer bank ($3,000,000)
+Distribution Over-Voltage - Install new 3 phase line regulator bank ($75,000)
+Substation Regulator Thermal limit - Upgrade bank
+Voltage Flicker - None
+
+*-Death of a landowner during project site acquisition can stop an interconnection 
+
+-Utility 'Platform-as-a-service' Fee ($30,000)
+
+-Curtailment Analysis and Flexible Interconnection Agreement are extra steps that may delay Flexible Interconnections
+
+*-DER can operate closer to the rating of equipment with Flexible Interconnections rather than being conservative as in Static Interconnections
+
+-Flexible Interconnection process should have its own queue and process separate from Static Interconnections
+
+-Adopt location based site acquisition process instead of application based to identify optimal electrical locations in a given service territory
+---------------------------
+
+EPRI: Characterizing the Value of Flexible Interconnection Capacity Solutions (FICS)
+
+*-Integration cost vs Total Capacity (line graph shows when it become economical to upgrade)
+
+*-Rising grid penetration of DER is challenging the limits of existing distribution infra
+
+-Curtailing can be cheaper than conventional network upgrades
+
+-Flexible interconnection allows DER who want firm connection to connect while grid upgrades
+
+*-Ratepayers may benefit by not being forced to pay higher rate due to flow down of grid upgrades
+
+*-Single site host capacity is determined by the lesser of time-varying thermal or voltage limits (location dependent)
+
+-Flexible Interconnection more economically feasible at low penetrations, higher penetration distribute costs of upgrades across DER, leads to firm connects
+
+-'FICS90': Increase in DER size above baseline hosting capacity before annual production drops to 90% of uncurtailed value
+
+*-Transparency:
+Openness about dispatch rules
+Cost Apportionment rules
+Auditable constraints logs
+How the economics of flexible interconnection vary with control method
+
+-When transmission limits are exceeded, reconductoring is required for more PV capacity
+---------------------------
+
+EPRI: UNDERSTANDING FLEXIBLE INTERCONNECTION
+
+-In recent years, the complexity of grid codes has risen sharply, moving from simple “do no harm” rules to “grid-friendly” requirements
+
+-If DER are located toward end of feeder, hosting capacity may be less than if near a substation
+
+*-Utilities aim to reduce power delivery costs by maximizing the quantities of energy that can be handled by a given circuit infrastructure
+
+-Volt-Watt function to mitigate overvoltage or DERMS to limit power output and mitigate thermal constraints
+
+-Common problem of lack of support and communication with DER O&M when they unexpectedly turn off DER for maintenance or permanent shutdown
+
+

@@ -1,0 +1,170 @@
+Tesla Car Internals
+
+-Induction motor or IPM-SynRM motor
+
+-Brick: Group of cells in one of modules (16 modules in Model S pack)
+
+-Cell: Fuel cell in brick
+
+-Traction battery pack = Bigger battery that powers car throughout drive
+*usually at bottom of car for weight distribution
+
+-On-board charger
+
+-Tesla is a Battery Electric Vehicle (BEV)
+
+-3 parts in transmission
+Primary Drive
+Counter Gear
+Differential (axle connects)
+
+-Most EVs have inverter as separate component rather than directly part of the drive unit (Tesla)
+
+-Control speed by modulate frequency
+
+-Power (kW) vs Energy (kWh) *energy is how many kW battery can supply motor in 1h
+---------------------------
+Inside and Electric Car Repair Shop (QC Electric)
+
+*-How many EV have Tesla inspired designs?
+
+*Info below for Model S
+
+-Batteries are rarely replaced at third party EV repair shops, usually repaired
+
+-Main contactors tend to burn out (end-side of battery pack)
+
+-Remanufactured battery : $10,000-$15,0000
+
+-New Battery ~$20,000
+
+-Repaired battery: $5,000-$6,0000
+
+-Coolant seal on end of rotor (of motors) can wear and leak coolant inside the motor *common problem
+
+-Carb States: States that follow California Air Resources Board Emissions Standards
+
+-Inverter is hardest part to source
+
+-Nissan Leaf does not have adequate battery cooling system historically
+
+---------------------------
+Tesla Drive Unit Repair
+
+-Uses Tesla drivetrain
+
+-Coolant seal fails and washes out grease from inside
+
+-Toyota has parking pull unlike Tesla
+
+-Most EVs have inverter as separate component rather than directly part of the drive unit (Tesla)
+
+---------------------------
+ICE vs EV - IN-DEPTH comparison of BATTERY ELECTRIC and INTERNAL COMBUSTION ENGINE vehicles
+
+-Need starter motor to start ICE engine by spinning flywheel using electricity (through motor)
+
+-ICE Starter motor = DC motor 
+
+-EV motor = 3 phase AC induction motor
+
+*-IPM-SynRM motor replacing induction motor in EVs now
+
+-ICE motor must convert reciprocation into rotation (unless vakeel engine, triangle engine)
+
+-Electric motor is already rotating, is vibration free, lighter, more compact
+
+-ICE and EV weigh about the same +_ a few hundred pounds (ICE engine vs heavy batteries *about 500kg)
+
+-Batteries product DC power, which needs inverter (60kg) to convert to AC for motor
+
+*-Speed control for motor types:
+Gas: Open throttle more or less
+Diesel: Control amount of fuel injected
+Electric: Modulate frequency 
+*Only way to control DC motor is to control voltage
+
+-EV transmissions are typically one speed (single gear), used to gear down the high RPM from electric motor and increase torque output of motor
+
+Gear Ratios:
+Model S = 9.7:1 or 9.3:1 (9 motor rotations, 1 wheel rotation, torque x9 more at wheel compared to motor)
+ICE 1st gear: 5:1
+ICE 6th gear: 0.8:1 
+
+-EV have a wider flat torque curve (peak torque over wider range of speeds/rpms)*drops off at higher speeds past 100mph due to back EMF
+
+-Instant torque/acceleration (at 0 mph) cannot be replicated by ICE
+*Such high torque can eat gears up quickly
+
+-Porsche Taycan only EV with 2-gear transmission for higher top speeds while maintaining acceleration
+
+---------------------------
+How an Electric Car Works? Its Parts & Functions [Explained]
+
+-Motor gets energy from controller depending on use of accelerator pedal
+
+-Power converter from DC to AC 
+
+-Pedal sends signal to controller, which adjust speed by adjusting frequency of AC power from inverter to motor
+
+-When brakes are pressed/deceleration, motor becomes an alternator and produces power that is sent back to battery
+
+-Engine is type of motor but specifically uses thermal energy
+
+-Bidirectional inverter
+
+-Average home consumed about 3,100 kWh/year
+
+-Average EV consumed 2,000 kWh/year
+---------------------------
+Electric Cars For DUMMIES: Absolutely EVerything Explained 
+
+-September 9th is World EV day
+
+-12 volt battery used to start ICE cars also in electric cars and used to start vehicle
+*12 volt vs traction battery
+
+-50kWh is average traction battery size, 100kWh is a lot
+
+-115 kW = 154 horsepower
+
+-50 kWh battery pack can run 1 kW motor (1.3 horsepower) for 50 hours
+
+-EVs mandated to make noise at low speeds (54 db) so pedestrians can hear
+
+-DC to DC converter converts DC power from battery (300-400Vdc) to 12 V DC for vehicle accessories like lights and info systems
+---------------------------
+
+The adoption of silicon carbide (SiC) and gallium nitride (GaN) technologies in power electronics will improve the efficiency of inverters and onboard chargers. These advancements reduce energy losses during conversion and charging, which can help stabilize the grid by minimizing unnecessary demand spikes.
+
+Electric Vehicles: A Comprehensive Review of Technologies, Integration, Adoption, and Optimization
+
+
+A simulation research performed on the IEEE RTS-96 24 bus system discovered that the integration of EVs had a positive impact on the Short-Term Voltage Stability Index (SVSI). *The improvement was dependent on the aggregated connected load and the specific location (load bus) where the EVs were connected 
+
+The integration of EVs into the power grid introduces challenges such as phase unbalance and overload, particularly as EV adoption increases
+
+Phase balancing algorithms are used to dynamically adjust the load on each phase by switching the charging phases of EVs.
+
+In localized grids or microgrids, DERs can significantly enhance phase balance and reduce the risk of overload by providing supplementary power during peak demand periods.
+
+Studies have shown that at low penetration levels (e.g., 1-5% of the total vehicle fleet), the impact on power losses is relatively moderate. However, as penetration levels reach 20% or more, the losses can increase significantly. For instance, at a 20% penetration level with uncoordinated charging, power losses can rise by approximately 40%
+
+Where EVs are charged as soon as they are plugged in without any consideration for the grid’s load conditions, typically leads to the highest power losses. The simultaneous charging of multiple EVs during peak hours can create severe stress on the grid, leading to congestion and increased losses in distribution lines
+
+Prior research indicated that the rise in total harmonic distortion (THD) resulting from residential single-phase loads and EV charging was not excessive and should not be worrisome
+
+Level 1 chargers can elevate the neutral to earth voltage, increasing the probability of stray voltage incidents. EV rapid chargers can have a substantial effect on the power system by introducing high harmonic currents that can cause voltage distortion above acceptable limits 
+
+The analysis considered various charging strategies and found that uncoordinated charging at high penetration levels exceeded the acceptable voltage limits, unlike in the case of V2G charging where the voltage remained within acceptable limits up to a penetration level of 50%
+
+The increased prevalence of EVs is commonly linked to thermal overloading, reduced lifespan of assets, and aging.
+
+A study examining the impact of AC level 1 and level 2 chargers on the aging of distribution transformers discovered that the aging factor of the transformers was more than double for level 2 chargers compared to level 1 chargers
+
+The study discovered that under typical charging conditions, a cable can handle up to 25% of EVs being connected. However, in fast charging situations, the cable’s capacity is limited to only 15%, which restricts the ability to accommodate higher levels of EV usage
+
+the influence of EV charging and discharging on the aging of grid assets, namely the shortening of the lifetime of distribution transformers 
+
+The implemented decentralized strategy for load scheduling sought to minimize the peak to average (PAR) ratio, reduce the time required for charging and discharging, and optimize energy usage.
+
