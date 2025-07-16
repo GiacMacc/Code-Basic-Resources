@@ -143,6 +143,8 @@ Two-fault tolerance for catastrophic failures like overcharge, over discharge (l
 Cell level protection not sufficient for battery pack protection unless verified
 For Li-ion, voltage, temp, battery level current and control circuit reaction should be monitored for every series element.
 
+-3 ft spacing between units (unsure if part of this specific reg, but used as cross reference)
+
 
 
 
